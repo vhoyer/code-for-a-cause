@@ -14,6 +14,11 @@ config/name="Code-for-a-cause-gamejam"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[debug]
+
+gdscript/warnings/shadowed_variable=0
+gdscript/warnings/shadowed_global_identifier=2
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

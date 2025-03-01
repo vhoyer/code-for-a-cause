@@ -34,7 +34,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: windows
+          name: JoeAdventure-win
           path: build/windows
 
   export-linux:
@@ -60,7 +60,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: linux
+          name: JoeAdventure-linux
           path: build/linux
 
   export-web:
@@ -86,7 +86,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: web
+          name: JoeAdventure-web
           path: build/web
       - name: Install rsync 📚
         run: |
@@ -115,5 +115,5 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: mac
+          name: JoeAdventure-mac
           path: build/mac

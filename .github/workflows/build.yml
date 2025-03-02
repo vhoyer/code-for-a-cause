@@ -34,7 +34,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: JoeAdventure-win
+          name: windows
           path: build/windows
 
   export-linux:
@@ -60,7 +60,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: JoeAdventure-linux
+          name: linux
           path: build/linux
 
   export-web:
@@ -86,11 +86,8 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: JoeAdventure-web
+          name: web
           path: build/web
-      - name: Install rsync 📚
-        run: |
-          apt-get update && apt-get install -y rsync
 
   export-mac:
     name: Mac Export
@@ -115,5 +112,39 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: JoeAdventure-mac
+          name: mac
           path: build/mac
+
+  butler-push:
+    # only run this if running the CI on the main branch
+    if: github.ref == 'refs/heads/main'
+    needs: [export-mac, export-web, export-linux, export-windows]
+    name: Upload builds to itch.io
+    runs-on: ubuntu-20.04
+    container:
+      image: barichello/godot-ci:4.3
+    env:
+      BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+      ITCH_USER: vhoyer
+      ITCH_GAME: joe-adventure
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: build
+      - name: setup butler
+        run: |
+          # -O specifies output name
+          wget -O butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+          unzip butler.zip
+          # GNU unzip tends to not set the executable bit even though it's set in the .zip
+          chmod +x butler
+          # just a sanity check run (and also helpful in case you're sharing CI logs)
+          ./butler -V
+      - name: upload builds
+        run: |
+          ls build
+          for channel in windows linux mac web; do
+            echo "uploading $channel..."
+            ./butler push build/$channel $ITCH_USER/$ITCH_GAME:$channel
+          done
+

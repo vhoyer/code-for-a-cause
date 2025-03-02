@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cod16iwe4mb0c"]
+
+[ext_resource type="Script" path="res://modules/UI/credits_roll/credits_roll.gd" id="1_c2crl"]
+[ext_resource type="Resource" uid="uid://kvfpp3sxfl6a" path="res://stages/credits/credits.tres" id="2_gnuxy"]
+[ext_resource type="Script" path="res://stages/credits/go_back.gd" id="3_f6i1q"]
+
+[node name="CreditRoll" type="ScrollContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scroll_vertical = 351
+vertical_scroll_mode = 3
+script = ExtResource("1_c2crl")
+content = ExtResource("2_gnuxy")
+credits_duration = 10.0
+scroll_vertical_ratio = 0.54
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("3_f6i1q")
+
+[connection signal="credits_end" from="." to="Node" method="_on_credit_roll_credits_end"]

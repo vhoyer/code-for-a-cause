@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="CreditsContent" load_steps=10 format=3 uid="uid://kvfpp3sxfl6a"]
+
+[ext_resource type="Script" path="res://modules/UI/credits_roll/credtis_content.gd" id="1_qsq7d"]
+[ext_resource type="Script" path="res://modules/UI/credits_roll/credits_section.gd" id="2_poujl"]
+[ext_resource type="Script" path="res://modules/UI/credits_roll/credits_block.gd" id="3_fm7xd"]
+
+[sub_resource type="Resource" id="Resource_iiad3"]
+script = ExtResource("3_fm7xd")
+main = "Pemmy"
+secondary = Array[String](["pixel artist"])
+
+[sub_resource type="Resource" id="Resource_esuuv"]
+script = ExtResource("3_fm7xd")
+main = "Twisty9"
+secondary = Array[String](["music artist"])
+
+[sub_resource type="Resource" id="Resource_8ypg7"]
+script = ExtResource("3_fm7xd")
+main = "vhoyer"
+secondary = Array[String](["code artist"])
+
+[sub_resource type="Resource" id="Resource_tiaoh"]
+script = ExtResource("2_poujl")
+type = 0
+title = "team"
+blocks = Array[ExtResource("3_fm7xd")]([SubResource("Resource_iiad3"), SubResource("Resource_esuuv"), SubResource("Resource_8ypg7")])
+
+[sub_resource type="Resource" id="Resource_infj6"]
+script = ExtResource("3_fm7xd")
+main = "quaver"
+secondary = Array[String](["caffinate.itch.io"])
+
+[sub_resource type="Resource" id="Resource_nmp5h"]
+script = ExtResource("2_poujl")
+type = 0
+title = "cc attribuition"
+blocks = Array[ExtResource("3_fm7xd")]([SubResource("Resource_infj6")])
+
+[resource]
+script = ExtResource("1_qsq7d")
+sections = Array[ExtResource("2_poujl")]([SubResource("Resource_tiaoh"), SubResource("Resource_nmp5h")])

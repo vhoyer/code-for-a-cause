@@ -18,7 +18,9 @@ func _physics_process(delta: float) -> void:
 		select_joe.process_movement(delta)
 
 func process_swap(action: StringName, joe: CharacterBody2D) -> void:
+	if not joe: return
 	if Input.is_action_just_pressed(action):
-		select_joe.prompt_sprite.visible = true
+		if select_joe:
+			select_joe.prompt_sprite.visible = true
 		select_joe = joe
 		select_joe.prompt_sprite.visible = false

@@ -6,6 +6,8 @@ const MAX_JUMPS = 1
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 
+@export var swap_prompt: Texture2D
+
 var jump_force_accumulator: float = 0
 @export var gravity_multi_curve: Curve = Curve.new()
 
@@ -20,9 +22,11 @@ var can_jump: bool:
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var prompt_sprite: Sprite2D = $PromptSprite
 
 func _ready() -> void:
 	health.value = health.max_value
+	prompt_sprite.texture = swap_prompt
 
 
 func _physics_process(delta: float) -> void:
@@ -37,6 +41,9 @@ func _physics_process(delta: float) -> void:
 		var mult = 1 + gravity_multi_curve.sample_baked(remaped)
 		velocity += get_gravity() * mult * delta
 
+	move_and_slide()
+
+func process_movement(delta: float) -> void:
 	# coyote time
 	if is_on_floor():
 		delta_since_last_on_floor = 0
@@ -60,12 +67,20 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	move_and_slide()
-
 
 func _on_health_value_changed(value: float) -> void:
-	if value != health.min_value: return
-	sprite_2d.visible = false
-	animated_sprite_2d.visible = true
-	animated_sprite_2d.play()
-	self.process_mode = Node.PROCESS_MODE_DISABLED
+	match value:
+		# run out of health
+		health.min_value:
+			sprite_2d.visible = false
+			health.visible = false
+			prompt_sprite.visible = false
+			animated_sprite_2d.visible = true
+			animated_sprite_2d.play()
+			prompt_sprite.modulate.a = 0
+			self.process_mode = Node.PROCESS_MODE_DISABLED
+		# getting close to no health
+		var x when x < (health.max_value / 5):
+			prompt_sprite.modulate.a = 1
+		_:
+			prompt_sprite.modulate.a = 0.4

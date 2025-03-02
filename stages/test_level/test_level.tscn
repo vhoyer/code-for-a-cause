@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://b13hsha0bdokx"]
+[gd_scene load_steps=10 format=4 uid="uid://b13hsha0bdokx"]
 
 [ext_resource type="Texture2D" uid="uid://dqx2y1dwlb5ii" path="res://stages/test_level/assets/tile.png" id="1_8ygb5"]
 [ext_resource type="Script" path="res://stages/test_level/player.gd" id="2_alp4g"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b7glr27rerlpd" path="res://stages/test_level/assets/xbox_dpad_right.png" id="4_kvrx1"]
 [ext_resource type="Texture2D" uid="uid://dyb5frlkvvxjm" path="res://stages/test_level/assets/xbox_dpad_down.png" id="5_cmhyk"]
 [ext_resource type="Texture2D" uid="uid://ueytf85tlnh1" path="res://stages/test_level/assets/xbox_dpad_left.png" id="6_powd4"]
+[ext_resource type="AudioStream" uid="uid://bxa51v5tt1o27" path="res://stages/test_level/assets/Don't Stop Moving.mp3" id="7_dvpk7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mjfo7"]
 texture = ExtResource("1_8ygb5")
@@ -77,3 +78,8 @@ swap_prompt = ExtResource("5_cmhyk")
 [node name="Joe4" parent="Player" instance=ExtResource("3_2y54p")]
 position = Vector2(56, 131)
 swap_prompt = ExtResource("6_powd4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_dvpk7")
+autoplay = true
+parameters/looping = true

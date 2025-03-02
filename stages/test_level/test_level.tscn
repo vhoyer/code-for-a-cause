@@ -42,9 +42,11 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_mjfo7")
 
 [sub_resource type="Curve" id="Curve_bg0q3"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
+max_value = 2.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25, 0.5), 0.0, 0.0, 0, 0, Vector2(0.75, 1.5), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
 metadata/_snap_enabled = true
+metadata/_snap_count = 20
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rtpf8"]
 radius = 16.0

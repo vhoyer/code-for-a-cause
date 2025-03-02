@@ -15,7 +15,22 @@ var can_jump: bool:
 	get():
 		return jump_count < MAX_JUMPS and delta_since_last_on_floor < MAX_COYOTE_TIME
 
+
+@onready var health: ProgressBar = $Health
+
+@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+func _ready() -> void:
+	health.value = health.max_value
+
+
 func _physics_process(delta: float) -> void:
+	if velocity.length() < 0.01:
+		health.value -= delta
+	else:
+		health.value = health.max_value
+
 	# Add the gravity.
 	if not is_on_floor():
 		var remaped = clamp(remap(velocity.y, -500, 500, 0, 1), 0, 1)
@@ -46,3 +61,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_health_value_changed(value: float) -> void:
+	if value != health.min_value: return
+	sprite_2d.visible = false
+	animated_sprite_2d.visible = true
+	animated_sprite_2d.play()
+	self.process_mode = Node.PROCESS_MODE_DISABLED

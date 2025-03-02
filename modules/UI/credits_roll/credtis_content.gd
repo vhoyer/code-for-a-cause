@@ -9,10 +9,14 @@ func is_empty() -> bool:
 
 
 func populate_bbtext(rtl: RichTextLabel) -> void:
+	if not rtl:
+		print('Warning: no rtl available at this time, skipping bbtext population')
+		return
+
 	rtl.text = ""
 	rtl.push_outline_color(Color.from_hsv(0,0,0.1,0.8))
 	rtl.push_outline_size(4)
-	rtl.push_font_size(18)
+	rtl.push_font_size(16)
 	rtl.append_text("[center]")
 
 	for section: CreditsSection in sections:

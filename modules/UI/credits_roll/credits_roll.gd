@@ -49,9 +49,6 @@ var max_scroll: float:
 
 
 func _ready() -> void:
-	for child in self.get_children():
-		self.remove_child(child)
-	
 	rich_text_label = RichTextLabel.new()
 	rich_text_label.bbcode_enabled = true
 	rich_text_label.fit_content = true
@@ -67,7 +64,7 @@ func _ready() -> void:
 	margin_container.add_child(rich_text_label)
 
 	self.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_SHOW_NEVER
-	self.add_child(margin_container)
+	self.add_child(margin_container, false, Node.INTERNAL_MODE_BACK)
 	
 	if Engine.is_editor_hint(): return
 	if 0 < credits_duration:

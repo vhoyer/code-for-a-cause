@@ -27,6 +27,7 @@ var can_jump: bool:
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var prompt_sprite: Sprite2D = $PromptSprite
 @onready var area_2d: Area2D = $Area2D
+@onready var animation_tree: AnimationTree = $AnimationTree
 
 func _ready() -> void:
 	health.value = health.max_value
@@ -52,6 +53,15 @@ func _physics_process(delta: float) -> void:
 		velocity.x = 0
 
 	move_and_slide()
+
+	animation_tree.set('parameters/dir/blend_position', velocity.x)
+	animation_tree.set('parameters/StateMachine/air_anim/blend_position', velocity.y)
+	animation_tree.set('parameters/StateMachine/conditions/walking', velocity.x != 0)
+	animation_tree.set('parameters/StateMachine/conditions/idling', velocity.x == 0)
+	animation_tree.set('parameters/StateMachine/conditions/falling', velocity.y > 0)
+	animation_tree.set('parameters/StateMachine/conditions/jumping', velocity.y < 0)
+	animation_tree.set('parameters/StateMachine/conditions/landing', velocity.y == 0)
+	animation_tree.set('parameters/StateMachine/conditions/winding', jump_force_accumulator > 0)
 
 func process_movement(delta: float) -> void:
 	# coyote time
@@ -104,7 +114,8 @@ func _on_health_value_changed(value: float) -> void:
 			animated_sprite_2d.play()
 			prompt_sprite.modulate.a = 0
 			self.process_mode = Node.PROCESS_MODE_DISABLED
-			die.emit()
+			animated_sprite_2d.animation_finished.connect(func():
+				die.emit())
 		# getting close to no health
 		var x when x < (health.max_value / 5):
 			prompt_sprite.modulate.a = 1

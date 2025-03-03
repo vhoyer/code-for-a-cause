@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Character
 
+signal die()
+
 const MAX_COYOTE_TIME = 0.15
 const MAX_JUMPS = 1
 
@@ -102,6 +104,7 @@ func _on_health_value_changed(value: float) -> void:
 			animated_sprite_2d.play()
 			prompt_sprite.modulate.a = 0
 			self.process_mode = Node.PROCESS_MODE_DISABLED
+			die.emit()
 		# getting close to no health
 		var x when x < (health.max_value / 5):
 			prompt_sprite.modulate.a = 1

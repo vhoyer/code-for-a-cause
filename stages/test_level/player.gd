@@ -24,3 +24,14 @@ func process_swap(action: StringName, joe: CharacterBody2D) -> void:
 			select_joe.prompt_sprite.visible = true
 		select_joe = joe
 		select_joe.prompt_sprite.visible = false
+
+func _ready() -> void:
+	joe1.die.connect(died)
+	joe2.die.connect(died)
+	joe3.die.connect(died)
+	joe4.die.connect(died)
+
+func died() -> void:
+	StageManager.go_back(1, {
+		'score': int(%Label.text)
+	})

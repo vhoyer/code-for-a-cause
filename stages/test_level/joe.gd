@@ -11,6 +11,8 @@ const JUMP_VELOCITY = -500.0
 
 @export var swap_prompt: Texture2D
 
+@export_enum("jump_king", "hollow_knight") var jump_mode: String
+
 var jump_force_accumulator: float = 0
 @export var gravity_multi_curve: Curve = Curve.new()
 
@@ -72,13 +74,20 @@ func process_movement(delta: float) -> void:
 		delta_since_last_on_floor += delta
 
 	# Handle jump.
-	if can_jump:
+	if can_jump and jump_mode == 'jump_king':
 		if Input.is_action_pressed("jump"):
 			jump_force_accumulator = min(jump_force_accumulator + delta * 10, 1)
 		if Input.is_action_just_released("jump"):
 			velocity.y = JUMP_VELOCITY * jump_force_accumulator
 			jump_force_accumulator = 0
 			jump_count += 1
+	if can_jump and jump_mode == 'hollow_knight':
+		if Input.is_action_just_pressed("jump"):
+			velocity.y = JUMP_VELOCITY
+			jump_count += 1
+	if Input.is_action_just_released("jump"):
+		print(velocity.y)
+		if velocity.y < 0: velocity.y = 0
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("left", "right")
@@ -120,4 +129,4 @@ func _on_health_value_changed(value: float) -> void:
 		var x when x < (health.max_value / 5):
 			prompt_sprite.modulate.a = 1
 		_:
-			prompt_sprite.modulate.a = 0.4
+			prompt_sprite.modulate.a = 0.5

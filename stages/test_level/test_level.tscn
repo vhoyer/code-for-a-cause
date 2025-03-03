@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://b13hsha0bdokx"]
+[gd_scene load_steps=13 format=4 uid="uid://b13hsha0bdokx"]
 
 [ext_resource type="Texture2D" uid="uid://dqx2y1dwlb5ii" path="res://stages/test_level/assets/tile.png" id="1_8ygb5"]
 [ext_resource type="Script" path="res://stages/test_level/player.gd" id="2_alp4g"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b7glr27rerlpd" path="res://stages/test_level/assets/xbox_dpad_right.png" id="4_kvrx1"]
 [ext_resource type="Texture2D" uid="uid://dyb5frlkvvxjm" path="res://stages/test_level/assets/xbox_dpad_down.png" id="5_cmhyk"]
 [ext_resource type="Texture2D" uid="uid://ueytf85tlnh1" path="res://stages/test_level/assets/xbox_dpad_left.png" id="6_powd4"]
+[ext_resource type="AudioStream" uid="uid://bxa51v5tt1o27" path="res://stages/test_level/assets/Don't Stop Moving.mp3" id="9_qjq8y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mjfo7"]
 texture = ExtResource("1_8ygb5")
@@ -113,3 +114,7 @@ grow_horizontal = 2
 text = "0"
 label_settings = SubResource("LabelSettings_atw4e")
 horizontal_alignment = 1
+
+[node name="Don\'tStopMoving" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_qjq8y")
+volume_db = -18.779

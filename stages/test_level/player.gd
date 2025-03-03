@@ -7,7 +7,6 @@ extends Node2D
 
 var select_joe: CharacterBody2D
 
-
 func _physics_process(delta: float) -> void:
 	process_swap(&'swap_char_1', joe1)
 	process_swap(&'swap_char_2', joe2)
@@ -23,6 +22,7 @@ func process_swap(action: StringName, joe: CharacterBody2D) -> void:
 		if select_joe:
 			select_joe.prompt_sprite.visible = true
 		select_joe = joe
+		select_joe.velocity.y -= 200
 		select_joe.prompt_sprite.visible = false
 
 func _ready() -> void:

@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Character
 
 const MAX_COYOTE_TIME = 0.15
 const MAX_JUMPS = 1
@@ -23,6 +24,7 @@ var can_jump: bool:
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var prompt_sprite: Sprite2D = $PromptSprite
+@onready var area_2d: Area2D = $Area2D
 
 func _ready() -> void:
 	health.value = health.max_value
@@ -40,6 +42,12 @@ func _physics_process(delta: float) -> void:
 		var remaped = clamp(remap(velocity.y, -500, 500, 0, 1), 0, 1)
 		var mult = 1 + gravity_multi_curve.sample_baked(remaped)
 		velocity += get_gravity() * mult * delta
+
+	# drag
+	velocity.x *= 0.8 if is_on_floor() else 0.99
+
+	if abs(velocity.x) < 1:
+		velocity.x = 0
 
 	move_and_slide()
 
@@ -66,6 +74,21 @@ func process_movement(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	if velocity.x > 0:
+		area_2d.scale.x = 1
+		sprite_2d.flip_h = false
+	elif velocity.x < 0:
+		area_2d.scale.x = -1
+		sprite_2d.flip_h = true
+	
+	if Input.is_action_just_pressed("smack"):
+		var bodies = area_2d.get_overlapping_bodies()
+		for body in bodies:
+			if body == self: continue
+			if body is Character:
+				body.velocity.y = -350
+				body.velocity.x = 600 * area_2d.scale.x
 
 
 func _on_health_value_changed(value: float) -> void:

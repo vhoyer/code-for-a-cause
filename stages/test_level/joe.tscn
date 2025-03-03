@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://3o48msfclx6o"]
+[gd_scene load_steps=27 format=3 uid="uid://3o48msfclx6o"]
 
 [ext_resource type="Script" path="res://stages/test_level/joe.gd" id="1_q8cs5"]
 [ext_resource type="Texture2D" uid="uid://buf7jokyx4w6e" path="res://stages/test_level/assets/xbox_dpad_up.png" id="2_5bmtq"]
@@ -150,8 +150,12 @@ animations = [{
 radius = 16.0
 height = 32.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5j8rj"]
+radius = 13.0
+
 [node name="Joe1" type="CharacterBody2D"]
 position = Vector2(232, 227)
+collision_layer = 3
 script = ExtResource("1_q8cs5")
 swap_prompt = ExtResource("2_5bmtq")
 gravity_multi_curve = SubResource("Curve_bg0q3")
@@ -195,5 +199,14 @@ shape = SubResource("CapsuleShape2D_rtpf8")
 position = Vector2(0, -55)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_5bmtq")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(16, -16)
+shape = SubResource("CircleShape2D_5j8rj")
 
 [connection signal="value_changed" from="Health" to="." method="_on_health_value_changed"]

@@ -156,6 +156,7 @@ radius = 13.0
 [sub_resource type="Animation" id="Animation_7ds3i"]
 resource_name = "idle"
 length = 0.8
+loop_mode = 1
 step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -331,6 +332,7 @@ blend_point_0/node = SubResource("AnimationNodeAnimation_2l2gn")
 blend_point_0/pos = -1.0
 blend_point_1/node = SubResource("AnimationNodeAnimation_wcx27")
 blend_point_1/pos = 1.0
+blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r7kvw"]
 animation = &"air_down"
@@ -406,7 +408,7 @@ states/landing/position = Vector2(712, -5)
 states/walk/node = SubResource("AnimationNodeAnimation_rdk78")
 states/walk/position = Vector2(614, 115)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_ai3ca"), "idle", "jump_winding", SubResource("AnimationNodeStateMachineTransition_76evl"), "air_down", "landing", SubResource("AnimationNodeStateMachineTransition_27er0"), "landing", "idle", SubResource("AnimationNodeStateMachineTransition_7yhk5"), "landing", "walk", SubResource("AnimationNodeStateMachineTransition_4x6un"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_nr0s0"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_toxo4"), "walk", "air_down", SubResource("AnimationNodeStateMachineTransition_7tir2"), "walk", "End", SubResource("AnimationNodeStateMachineTransition_s1d37"), "jump_winding", "air_anim", SubResource("AnimationNodeStateMachineTransition_u0ojk"), "air_anim", "landing", SubResource("AnimationNodeStateMachineTransition_kcluh")]
-graph_offset = Vector2(-164, -118)
+graph_offset = Vector2(-171, -140)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o84sr"]
 animation = &"turn_left"
@@ -425,7 +427,7 @@ graph_offset = Vector2(-784.85, 38.709)
 nodes/Add2/node = SubResource("AnimationNodeAdd2_u3u31")
 nodes/Add2/position = Vector2(-20, 160)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_qlteu")
-nodes/StateMachine/position = Vector2(-380, 140)
+nodes/StateMachine/position = Vector2(-640, 120)
 nodes/dir/node = SubResource("AnimationNodeBlendSpace1D_bicj6")
 nodes/dir/position = Vector2(-360.854, 350.535)
 node_connections = [&"Add2", 0, &"StateMachine", &"Add2", 1, &"dir", &"output", 0, &"Add2"]
@@ -450,13 +452,14 @@ offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_type_variation = &"HealthProgressBar"
-max_value = 10.0
+max_value = 12.0
 value = 10.0
 show_percentage = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_jvunk")
 offset = Vector2(0, -23)
+flip_h = true
 hframes = 10
 vframes = 7
 metadata/_edit_lock_ = true
@@ -497,12 +500,12 @@ tree_root = SubResource("AnimationNodeBlendTree_3vjla")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Add2/add_amount = 1.0
 parameters/StateMachine/conditions/falling = false
-parameters/StateMachine/conditions/idling = false
+parameters/StateMachine/conditions/idling = true
 parameters/StateMachine/conditions/jumping = false
 parameters/StateMachine/conditions/landing = false
 parameters/StateMachine/conditions/walking = false
 parameters/StateMachine/conditions/winding = false
-parameters/StateMachine/air_anim/blend_position = 0
+parameters/StateMachine/air_anim/blend_position = 0.0921212
 parameters/dir/blend_position = -0.991515
 
 [connection signal="value_changed" from="Health" to="." method="_on_health_value_changed"]

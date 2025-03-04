@@ -1,4 +1,8 @@
 extends Node2D
+class_name TestPlayer
+
+@onready var joes: Node2D = $joes
+
 
 @export var joe1: CharacterBody2D
 @export var joe2: CharacterBody2D
@@ -35,3 +39,15 @@ func died() -> void:
 	StageManager.go_back(1, {
 		'score': int(%Label.text)
 	})
+	pass
+
+func get_rect_containing_all_joes() -> Rect2:
+	var list = joes.get_children() as Array[CharacterBody2D]
+	var ajoe = list.pop_front()
+	var rect:= Rect2(ajoe.global_position, Vector2(50, 50))
+
+	for joe: CharacterBody2D in list:
+		rect = rect.expand(joe.global_position)
+
+	rect.position.y -= 30
+	return rect

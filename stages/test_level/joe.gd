@@ -6,7 +6,7 @@ signal die()
 const MAX_COYOTE_TIME = 0.15
 const MAX_JUMPS = 1
 
-const SPEED = 300.0
+const SPEED = 200.0
 const JUMP_VELOCITY = -500.0
 
 @export var swap_prompt: Texture2D
@@ -56,7 +56,8 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-	animation_tree.set('parameters/dir/blend_position', velocity.x)
+	if abs(velocity.x) > 0:
+		animation_tree.set('parameters/dir/blend_position', velocity.x)
 	animation_tree.set('parameters/StateMachine/air_anim/blend_position', velocity.y)
 	animation_tree.set('parameters/StateMachine/conditions/walking', velocity.x != 0)
 	animation_tree.set('parameters/StateMachine/conditions/idling', velocity.x == 0)
@@ -74,20 +75,21 @@ func process_movement(delta: float) -> void:
 		delta_since_last_on_floor += delta
 
 	# Handle jump.
-	if can_jump and jump_mode == 'jump_king':
-		if Input.is_action_pressed("jump"):
-			jump_force_accumulator = min(jump_force_accumulator + delta * 10, 1)
+	if jump_mode == 'jump_king':
+		if can_jump:
+			if Input.is_action_pressed("jump"):
+				jump_force_accumulator = min(jump_force_accumulator + delta * 10, 1)
+			if Input.is_action_just_released("jump"):
+				velocity.y = JUMP_VELOCITY * jump_force_accumulator
+				jump_force_accumulator = 0
+				jump_count += 1
+	elif jump_mode == 'hollow_knight':
+		if can_jump:
+			if Input.is_action_just_pressed("jump"):
+				velocity.y = JUMP_VELOCITY
+				jump_count += 1
 		if Input.is_action_just_released("jump"):
-			velocity.y = JUMP_VELOCITY * jump_force_accumulator
-			jump_force_accumulator = 0
-			jump_count += 1
-	if can_jump and jump_mode == 'hollow_knight':
-		if Input.is_action_just_pressed("jump"):
-			velocity.y = JUMP_VELOCITY
-			jump_count += 1
-	if Input.is_action_just_released("jump"):
-		print(velocity.y)
-		if velocity.y < 0: velocity.y = 0
+			velocity.y = max(velocity.y, -100)
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("left", "right")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bxa51v5tt1o27"
+path="res://.godot/imported/Don't Stop Moving V1.mp3-696e3b403bb821bdac02de4b93bcf0c8.mp3str"
+
+[deps]
+
+source_file="res://assets/ost/Don't Stop Moving V1.mp3"
+dest_files=["res://.godot/imported/Don't Stop Moving V1.mp3-696e3b403bb821bdac02de4b93bcf0c8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

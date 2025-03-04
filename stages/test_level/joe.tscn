@@ -1,7 +1,7 @@
 [gd_scene load_steps=63 format=3 uid="uid://3o48msfclx6o"]
 
 [ext_resource type="Script" uid="uid://6jasfvtef0ra" path="res://stages/test_level/joe.gd" id="1_q8cs5"]
-[ext_resource type="Texture2D" uid="uid://buf7jokyx4w6e" path="res://stages/test_level/assets/xbox_dpad_up.png" id="2_5bmtq"]
+[ext_resource type="Texture2D" uid="uid://buf7jokyx4w6e" path="res://assets/input_prompt/controller/xbox_dpad_up.png" id="2_5bmtq"]
 [ext_resource type="Texture2D" uid="uid://b3vd8gdl27puc" path="res://stages/test_level/assets/Joe-Sheet.png" id="3_jvunk"]
 [ext_resource type="Texture2D" uid="uid://c03nfw41w7h1t" path="res://stages/test_level/assets/sprExplos_strip18.png" id="3_lmqi8"]
 

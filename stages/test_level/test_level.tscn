@@ -126,4 +126,3 @@ volume_db = -18.779
 position = Vector2(134, 145)
 script = ExtResource("10_cgpsk")
 player = NodePath("../Player")
-zoom_constant = 0.7

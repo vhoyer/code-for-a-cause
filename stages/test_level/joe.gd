@@ -9,6 +9,8 @@ const MAX_JUMPS = 1
 const SPEED = 200.0
 const JUMP_VELOCITY = -500.0
 
+@export var do_life_drain: bool = true
+
 @export var swap_prompt: Texture2D
 
 @export_enum("jump_king", "hollow_knight") var jump_mode: String
@@ -37,10 +39,11 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if velocity.length() < 0.01:
-		health.value -= delta
-	else:
-		health.value = health.max_value
+	if do_life_drain:
+		if velocity.length() < 0.01:
+			health.value -= delta
+		else:
+			health.value = health.max_value
 
 	# Add the gravity.
 	if not is_on_floor():

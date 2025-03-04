@@ -10,11 +10,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scroll_vertical = 318
 vertical_scroll_mode = 3
 script = ExtResource("1_c2crl")
 content = ExtResource("2_gnuxy")
-in_editor_show_scroll_margin = false
 credits_duration = 10.0
+scroll_vertical_ratio = 0.462209
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource("3_f6i1q")

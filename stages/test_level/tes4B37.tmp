@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b7glr27rerlpd" path="res://stages/test_level/assets/xbox_dpad_right.png" id="4_kvrx1"]
 [ext_resource type="Texture2D" uid="uid://dyb5frlkvvxjm" path="res://stages/test_level/assets/xbox_dpad_down.png" id="5_cmhyk"]
 [ext_resource type="Texture2D" uid="uid://ueytf85tlnh1" path="res://stages/test_level/assets/xbox_dpad_left.png" id="6_powd4"]
-[ext_resource type="AudioStream" uid="uid://cmfdehlnmqnll" path="res://stages/test_level/assets/Don't Stop Moving V2.mp3" id="9_4ngc7"]
+[ext_resource type="AudioStream" uid="uid://bxa51v5tt1o27" path="res://stages/test_level/assets/Don't Stop Moving.mp3" id="9_qjq8y"]
 [ext_resource type="Script" path="res://stages/test_level/camera_2d.gd" id="10_cgpsk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mjfo7"]
@@ -66,13 +66,12 @@ metadata/_edit_lock_ = true
 script = ExtResource("2_oifwc")
 
 [node name="Area2D" parent="Map/objectives" instance=ExtResource("3_yrilw")]
-position = Vector2(-96, 189)
 
 [node name="Area2D2" parent="Map/objectives" instance=ExtResource("3_yrilw")]
-position = Vector2(31, 477)
+position = Vector2(94, 252)
 
 [node name="Area2D3" parent="Map/objectives" instance=ExtResource("3_yrilw")]
-position = Vector2(895, 635)
+position = Vector2(545, 255)
 
 [node name="Area2D4" parent="Map/objectives" instance=ExtResource("3_yrilw")]
 position = Vector2(543, 93)
@@ -119,21 +118,9 @@ swap_prompt = ExtResource("5_cmhyk")
 position = Vector2(-249, 278)
 swap_prompt = ExtResource("6_powd4")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Player/CanvasLayer"]
-unique_name_in_owner = true
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-alignment = 1
-
 [node name="Don\'tStopMoving" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_4ngc7")
-parameters/looping = true
+stream = ExtResource("9_qjq8y")
+volume_db = -18.779
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(134, 145)

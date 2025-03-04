@@ -412,7 +412,7 @@ states/landing/position = Vector2(712, -5)
 states/walk/node = SubResource("AnimationNodeAnimation_rdk78")
 states/walk/position = Vector2(614, 115)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_ai3ca"), "idle", "jump_winding", SubResource("AnimationNodeStateMachineTransition_76evl"), "air_down", "landing", SubResource("AnimationNodeStateMachineTransition_27er0"), "landing", "idle", SubResource("AnimationNodeStateMachineTransition_7yhk5"), "landing", "walk", SubResource("AnimationNodeStateMachineTransition_4x6un"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_nr0s0"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_toxo4"), "walk", "air_down", SubResource("AnimationNodeStateMachineTransition_7tir2"), "walk", "End", SubResource("AnimationNodeStateMachineTransition_s1d37"), "jump_winding", "air_anim", SubResource("AnimationNodeStateMachineTransition_u0ojk"), "air_anim", "landing", SubResource("AnimationNodeStateMachineTransition_kcluh"), "idle", "air_anim", SubResource("AnimationNodeStateMachineTransition_gl6ao")]
-graph_offset = Vector2(-153, -107)
+graph_offset = Vector2(-133, -166)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o84sr"]
 animation = &"turn_left"
@@ -427,13 +427,14 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_hjsgh")
 blend_point_1/pos = 1.0
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_3vjla"]
-graph_offset = Vector2(-889.116, 60.0496)
+graph_offset = Vector2(-957.16, 60.9622)
 nodes/Add2/node = SubResource("AnimationNodeAdd2_u3u31")
 nodes/Add2/position = Vector2(-20, 160)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_qlteu")
-nodes/StateMachine/position = Vector2(-640, 120)
+nodes/StateMachine/position = Vector2(-580, 100)
 nodes/dir/node = SubResource("AnimationNodeBlendSpace1D_bicj6")
 nodes/dir/position = Vector2(-360.854, 350.535)
+nodes/output/position = Vector2(420, 100)
 node_connections = [&"Add2", 0, &"StateMachine", &"Add2", 1, &"dir", &"output", 0, &"Add2"]
 
 [node name="Joe1" type="CharacterBody2D"]
@@ -444,26 +445,10 @@ swap_prompt = ExtResource("2_5bmtq")
 jump_mode = "hollow_knight"
 gravity_multi_curve = SubResource("Curve_bg0q3")
 
-[node name="Health" type="ProgressBar" parent="."]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -55.0
-offset_right = 20.0
-offset_bottom = -50.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_type_variation = &"HealthProgressBar"
-max_value = 11.0
-value = 10.0
-show_percentage = false
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_jvunk")
 offset = Vector2(0, -23)
+flip_h = true
 hframes = 10
 vframes = 7
 metadata/_edit_lock_ = true
@@ -476,13 +461,9 @@ sprite_frames = SubResource("SpriteFrames_e02y3")
 animation = &"explode"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -21)
 shape = SubResource("CapsuleShape2D_rtpf8")
-
-[node name="PromptSprite" type="Sprite2D" parent="."]
-position = Vector2(0, -68)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_5bmtq")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
@@ -490,6 +471,7 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(16, -16)
 shape = SubResource("CircleShape2D_5j8rj")
 
@@ -508,7 +490,94 @@ parameters/StateMachine/conditions/jumping = false
 parameters/StateMachine/conditions/landing = false
 parameters/StateMachine/conditions/walking = false
 parameters/StateMachine/conditions/winding = false
-parameters/StateMachine/air_anim/blend_position = 0.0921212
-parameters/dir/blend_position = -0.991515
+parameters/StateMachine/air_anim/blend_position = 1.818
+parameters/dir/blend_position = 0.141089
 
-[connection signal="value_changed" from="Health" to="." method="_on_health_value_changed"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.5
+offset_right = 36.5
+offset_bottom = 40.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("2_5bmtq")
+expand_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="Health" type="ProgressBar" parent="VBoxContainer/PanelContainer/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"HealthProgressBar"
+max_value = 11.0
+value = 10.0
+show_percentage = false
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/PanelContainer2/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("2_5bmtq")
+expand_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="Health2" type="ProgressBar" parent="VBoxContainer/PanelContainer2/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"HealthProgressBar"
+max_value = 11.0
+value = 10.0
+show_percentage = false
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+visible = false
+position = Vector2(-1.18487, -24.7225)
+scale = Vector2(1.2605, 2.32775)
+rect = Rect2(-10.96, -10, 23.8, 21.48)
+
+[connection signal="value_changed" from="VBoxContainer/PanelContainer/HBoxContainer/MarginContainer/Health" to="." method="_on_health_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/PanelContainer2/HBoxContainer/MarginContainer/Health2" to="." method="_on_health_value_changed"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

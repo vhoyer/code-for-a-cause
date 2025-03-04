@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cmfdehlnmqnll"
+path="res://.godot/imported/Don't Stop Moving V2.mp3-d745a7767a8112fdfaa00c155a9d6c7c.mp3str"
+
+[deps]
+
+source_file="res://stages/test_level/assets/Don't Stop Moving V2.mp3"
+dest_files=["res://.godot/imported/Don't Stop Moving V2.mp3-d745a7767a8112fdfaa00c155a9d6c7c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

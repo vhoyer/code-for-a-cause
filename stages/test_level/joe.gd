@@ -25,11 +25,14 @@ var can_jump: bool:
 		return jump_count < MAX_JUMPS and delta_since_last_on_floor < MAX_COYOTE_TIME
 
 
-@onready var health: ProgressBar = $Health
+@onready var health: ProgressBar = %Health
+@onready var health2: ProgressBar = %Health2
+
+@onready var prompt_sprite: TextureRect = %TextureRect
+@onready var prompt_sprite2: TextureRect = %TextureRect2
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var prompt_sprite: Sprite2D = $PromptSprite
 @onready var area_2d: Area2D = $Area2D
 @onready var animation_tree: AnimationTree = $AnimationTree
 
@@ -41,9 +44,9 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if do_life_drain:
 		if velocity.length() < 0.01:
-			health.value -= delta
+			set_health(-delta, true)
 		else:
-			health.value = health.max_value
+			set_health(health.max_value, false)
 
 	# Add the gravity.
 	if not is_on_floor():
@@ -135,3 +138,19 @@ func _on_health_value_changed(value: float) -> void:
 			prompt_sprite.modulate.a = 1
 		_:
 			prompt_sprite.modulate.a = 0.5
+
+@onready var panel_container: PanelContainer = %PanelContainer2
+
+
+func set_health(value: float, do_increment: bool) -> void:
+	if do_increment:
+		health.value += value
+		health2.value += value
+	else:
+		health.value = value
+		health2.value = value
+
+func set_prompt_visibility(visible: bool) -> void:
+	prompt_sprite.visible = visible
+	prompt_sprite2.visible = visible
+	panel_container.visible = visible

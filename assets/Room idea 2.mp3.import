@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8h2x2h1hri10"
+path="res://.godot/imported/Room idea 2.mp3-0e8f0ccc8005b3ce196815efa86c603a.mp3str"
+
+[deps]
+
+source_file="res://assets/Room idea 2.mp3"
+dest_files=["res://.godot/imported/Room idea 2.mp3-0e8f0ccc8005b3ce196815efa86c603a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

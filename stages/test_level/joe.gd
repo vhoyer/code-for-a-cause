@@ -38,7 +38,9 @@ var can_jump: bool:
 
 func _ready() -> void:
 	health.value = health.max_value
+	health2.value = health.max_value
 	prompt_sprite.texture = swap_prompt
+	prompt_sprite2.texture = swap_prompt
 
 
 func _physics_process(delta: float) -> void:

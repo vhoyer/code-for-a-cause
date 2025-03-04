@@ -2,14 +2,15 @@ extends Node2D
 class_name TestPlayer
 
 @onready var joes: Node2D = $joes
+@onready var h_box_container: HBoxContainer = %HBoxContainer
 
 
-@export var joe1: CharacterBody2D
-@export var joe2: CharacterBody2D
-@export var joe3: CharacterBody2D
-@export var joe4: CharacterBody2D
+@export var joe1: Character
+@export var joe2: Character
+@export var joe3: Character
+@export var joe4: Character
 
-var select_joe: CharacterBody2D
+var select_joe: Character
 
 func _physics_process(delta: float) -> void:
 	process_swap(&'swap_char_1', joe1)
@@ -24,16 +25,18 @@ func process_swap(action: StringName, joe: CharacterBody2D) -> void:
 	if not joe: return
 	if Input.is_action_just_pressed(action):
 		if select_joe:
-			select_joe.prompt_sprite.visible = true
+			select_joe.set_prompt_visibility(true)
 		select_joe = joe
 		select_joe.velocity.y -= 200
-		select_joe.prompt_sprite.visible = false
+		select_joe.set_prompt_visibility(false)
+
 
 func _ready() -> void:
-	joe1.die.connect(died)
-	joe2.die.connect(died)
-	joe3.die.connect(died)
-	joe4.die.connect(died)
+	var list = joes.get_children() as Array[Character]
+	for joe: Character in list:
+		joe.die.connect(died)
+		joe.panel_container.reparent(h_box_container)
+
 
 func died() -> void:
 	StageManager.go_back(1, {

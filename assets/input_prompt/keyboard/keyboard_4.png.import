@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyb5frlkvvxjm"
-path="res://.godot/imported/xbox_dpad_down.png-2634891bbd5e0e2e1bda482050e672be.ctex"
+uid="uid://clyrvxxtgy2a4"
+path="res://.godot/imported/keyboard_4.png-69b4ce2a6aecfc129c332d97f81f668a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://stages/test_level/assets/xbox_dpad_down.png"
-dest_files=["res://.godot/imported/xbox_dpad_down.png-2634891bbd5e0e2e1bda482050e672be.ctex"]
+source_file="res://assets/input_prompt/keyboard/keyboard_4.png"
+dest_files=["res://.godot/imported/keyboard_4.png-69b4ce2a6aecfc129c332d97f81f668a.ctex"]
 
 [params]
 

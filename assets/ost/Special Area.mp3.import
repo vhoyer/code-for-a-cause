@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctbmw6crflhww"
+path="res://.godot/imported/Special Area.mp3-abd755e8541faae9ae7e50f54864f01d.mp3str"
+
+[deps]
+
+source_file="res://assets/ost/Special Area.mp3"
+dest_files=["res://.godot/imported/Special Area.mp3-abd755e8541faae9ae7e50f54864f01d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

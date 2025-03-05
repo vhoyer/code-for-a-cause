@@ -3,10 +3,6 @@ extends Camera2D
 @export var player: PlayerController
 @export var zoom_constant: float = 0.8
 
-func _ready() -> void:
-	var rect = player.get_rect_containing_all_joes()
-	self.position = rect.get_center()
-
 
 func _physics_process(_delta: float) -> void:
 	if player.selected_joe:

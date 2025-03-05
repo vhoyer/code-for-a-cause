@@ -1,11 +1,101 @@
-[gd_scene load_steps=3 format=3 uid="uid://bw08m4c7hnol"]
+[gd_scene load_steps=17 format=3 uid="uid://bw08m4c7hnol"]
 
 [ext_resource type="Script" uid="uid://83i8fnbc31h5" path="res://entities/player/player.gd" id="1_symyc"]
 [ext_resource type="PackedScene" uid="uid://cg7liji5n86ce" path="res://entities/joe/joe.tscn" id="2_abrql"]
+[ext_resource type="PackedScene" uid="uid://c7avdxof1ncqx" path="res://entities/joe_hud/joe_hud.tscn" id="3_7thud"]
+[ext_resource type="Texture2D" uid="uid://buf7jokyx4w6e" path="res://assets/input_prompt/controller/xbox_dpad_up.png" id="4_a1qjk"]
+[ext_resource type="Shader" uid="uid://sitqcpfrtjqu" path="res://entities/joe_hud/pulse.gdshader" id="4_j3ovn"]
+[ext_resource type="Texture2D" uid="uid://vemj6imgfw7p" path="res://assets/input_prompt/keyboard/keyboard_1.png" id="5_j3ovn"]
+[ext_resource type="Texture2D" uid="uid://b7glr27rerlpd" path="res://assets/input_prompt/controller/xbox_dpad_right.png" id="6_afbqv"]
+[ext_resource type="Texture2D" uid="uid://syx6nejk36ly" path="res://assets/input_prompt/keyboard/keyboard_2.png" id="7_gx6sm"]
+[ext_resource type="Texture2D" uid="uid://dyb5frlkvvxjm" path="res://assets/input_prompt/controller/xbox_dpad_down.png" id="8_yqrof"]
+[ext_resource type="Texture2D" uid="uid://bws8rm56ud71k" path="res://assets/input_prompt/keyboard/keyboard_3.png" id="9_3wlsy"]
+[ext_resource type="Texture2D" uid="uid://ueytf85tlnh1" path="res://assets/input_prompt/controller/xbox_dpad_left.png" id="10_b2kln"]
+[ext_resource type="Texture2D" uid="uid://clyrvxxtgy2a4" path="res://assets/input_prompt/keyboard/keyboard_4.png" id="11_we0b7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_afbqv"]
+resource_local_to_scene = true
+shader = ExtResource("4_j3ovn")
+shader_parameter/shine_color = Color(1, 0.803922, 0, 1)
+shader_parameter/alpha_limit = 0.0
+shader_parameter/cycle_speed = 10.0
+shader_parameter/full_pulse_cycle = true
+shader_parameter/mode = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gx6sm"]
+resource_local_to_scene = true
+shader = ExtResource("4_j3ovn")
+shader_parameter/shine_color = Color(1, 0.803922, 0, 1)
+shader_parameter/alpha_limit = 0.0
+shader_parameter/cycle_speed = 10.0
+shader_parameter/full_pulse_cycle = true
+shader_parameter/mode = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yqrof"]
+resource_local_to_scene = true
+shader = ExtResource("4_j3ovn")
+shader_parameter/shine_color = Color(1, 0.803922, 0, 1)
+shader_parameter/alpha_limit = 0.0
+shader_parameter/cycle_speed = 10.0
+shader_parameter/full_pulse_cycle = true
+shader_parameter/mode = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3wlsy"]
+resource_local_to_scene = true
+shader = ExtResource("4_j3ovn")
+shader_parameter/shine_color = Color(1, 0.803922, 0, 1)
+shader_parameter/alpha_limit = 0.0
+shader_parameter/cycle_speed = 10.0
+shader_parameter/full_pulse_cycle = true
+shader_parameter/mode = 0
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_symyc")
+joe_scene = ExtResource("2_abrql")
 
-[node name="Joes" type="Node" parent="."]
+[node name="Joes" type="Node2D" parent="."]
 
 [node name="Joe" parent="Joes" instance=ExtResource("2_abrql")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="JoeHudHolder" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="JoeHud1" parent="CanvasLayer/JoeHudHolder" node_paths=PackedStringArray("player", "joe") instance=ExtResource("3_7thud")]
+material = SubResource("ShaderMaterial_afbqv")
+layout_mode = 2
+player = NodePath("../../..")
+joe = NodePath("../../../Joes/Joe")
+controller_input = ExtResource("4_a1qjk")
+keyboard_input = ExtResource("5_j3ovn")
+
+[node name="JoeHud2" parent="CanvasLayer/JoeHudHolder" node_paths=PackedStringArray("player") instance=ExtResource("3_7thud")]
+material = SubResource("ShaderMaterial_gx6sm")
+layout_mode = 2
+player = NodePath("../../..")
+controller_input = ExtResource("6_afbqv")
+keyboard_input = ExtResource("7_gx6sm")
+
+[node name="JoeHud3" parent="CanvasLayer/JoeHudHolder" node_paths=PackedStringArray("player") instance=ExtResource("3_7thud")]
+material = SubResource("ShaderMaterial_yqrof")
+layout_mode = 2
+player = NodePath("../../..")
+controller_input = ExtResource("8_yqrof")
+keyboard_input = ExtResource("9_3wlsy")
+
+[node name="JoeHud4" parent="CanvasLayer/JoeHudHolder" node_paths=PackedStringArray("player") instance=ExtResource("3_7thud")]
+material = SubResource("ShaderMaterial_3wlsy")
+layout_mode = 2
+player = NodePath("../../..")
+controller_input = ExtResource("10_b2kln")
+keyboard_input = ExtResource("11_we0b7")

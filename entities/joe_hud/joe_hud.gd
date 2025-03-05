@@ -16,6 +16,7 @@ const HEALTH_WARN = Joe.MAX_HEALTH / 4
 
 @export var floating: bool = false
 @export var floating_center: Control
+var floating_position_increment_factor: float = 0
 
 @onready var progress_bar: ProgressBar = %ProgressBar
 @onready var input_prompt: InputPrompt = %InputPrompt
@@ -57,7 +58,9 @@ func _process(_delta: float) -> void:
 	var bubble_size = 40
 	var direction_to_center = ((self.global_position + half_size) - floating_center.global_position - joe.visual_root.position)
 	var distance = direction_to_center.length()
-	self.global_position += direction_to_center.normalized() * bubble_size * (-1 if (distance > bubble_size * 2) else 1)
+	var desired_increment = (-1 if (distance > bubble_size * 2) else 1)
+	floating_position_increment_factor = move_toward(floating_position_increment_factor, desired_increment, 0.3)
+	self.global_position += direction_to_center.normalized() * bubble_size * floating_position_increment_factor
 
 
 func update_view() -> void:

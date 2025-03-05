@@ -3,6 +3,7 @@ class_name PlayerController
 
 @onready var joes: Node2D = $Joes
 @onready var joe_hud_holder: HBoxContainer = $CanvasLayer/JoeHudHolder
+@onready var joe_hud_floating_holder: Control = $CanvasLayer/JoeHudFloatingHolder
 
 @export var joe_scene: PackedScene
 @export var joe_count: int = 1
@@ -37,13 +38,16 @@ func _physics_process(delta: float) -> void:
 
 func process_switch(action: StringName, index: int) -> void:
 	var hud: JoeHud = joe_hud_holder.get_child(index)
+	var floating_hud: JoeHud = joe_hud_floating_holder.get_child(index)
 
 	if index > joes.get_child_count() - 1:
 		hud.joe = null
+		floating_hud.joe = null
 		return
 	
 	var joe: Joe = joes.get_child(index)
 	hud.joe = joe
+	floating_hud.joe = joe
 
 	if joe.health <= 0: return
 	if not Input.is_action_just_pressed(action): return

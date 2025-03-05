@@ -68,7 +68,6 @@ func update_animation_tree_parameters() -> void:
 	animation_tree.set('parameters/BlendTree/animations/conditions/is_on_air', !is_on_floor())
 	animation_tree.set('parameters/BlendTree/animations/conditions/is_on_floor', is_on_floor())
 
-	animation_tree.set('parameters/BlendTree/animations/conditions/is_punching', Input.is_action_just_pressed("smack"))
 	animation_tree.set('parameters/BlendTree/animations/conditions/is_hurting', false)
 	animation_tree.set('parameters/BlendTree/animations/conditions/is_grabbing', is_grabbing)
 	animation_tree.set('parameters/BlendTree/animations/conditions/is_exploding', health <= 0)
@@ -108,6 +107,7 @@ func process_movent(delta: float) -> void:
 
 	process_jump()
 	process_walking()
+	animation_tree.set('parameters/BlendTree/animations/conditions/is_punching', Input.is_action_just_pressed("smack"))
 
 func process_jump() -> void:
 	# handle jump

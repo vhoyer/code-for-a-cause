@@ -6,6 +6,7 @@ static var singleton: CameraMain:
 		assert(not singleton or value == null, 'Error: singleton already loaded, only one instance allowed')
 		singleton = value
 
+
 @export var player: PlayerController
 @export var zoom_constant: float = 0.8
 

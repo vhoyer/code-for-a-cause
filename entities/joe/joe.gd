@@ -40,23 +40,20 @@ var can_jump: bool:
 		return jump_count < MAX_JUMPS and delta_since_last_on_floor < MAX_COYOTE_TIME
 
 
-var health: float
+var health: float:
+	set(value):
+		health = value
+		health_updated.emit(health)
 
 
 func _ready() -> void:
 	health = MAX_HEALTH
 	update_animation_tree_parameters()
-	
-	# has to be a timer instead of a setter, cuz when the `health_updated` was on the setter
-	# godot was queuing more events than it could process, leading to a "process overflow" or
-	# something like that, bottom line, it ran at like 1 fps with 30 secons of gameplay
-	# this fixes :)
-	health_reporter_timeout.timeout.connect(func():
-		health_updated.emit(health))
 
 
 func _process(_delta: float) -> void:
 	update_animation_tree_parameters()
+	pass
 
 func update_animation_tree_parameters() -> void:
 	if abs(velocity.x) > 0:

@@ -49,18 +49,29 @@ func _process(_delta: float) -> void:
 	var camera = CameraMain.singleton
 	var half_size = size / 2
 
+	# position floating hud on top of joe
 	self.global_position = joe.global_position \
 		+ joe.visual_root.position \
 		- camera.global_position \
 		+ floating_center.position \
 		- half_size
 
+	# make floating hud orbit joe while being pulled towards the center
 	var bubble_size = 40
 	var direction_to_center = ((self.global_position + half_size) - floating_center.global_position - joe.visual_root.position)
 	var distance = direction_to_center.length()
+	# instead of pulling to the center, pull away if selected joe and this hud are too close
 	var desired_increment = (-1 if (distance > bubble_size * 2) else 1)
 	floating_position_increment_factor = move_toward(floating_position_increment_factor, desired_increment, 0.3)
 	self.global_position += direction_to_center.normalized() * bubble_size * floating_position_increment_factor
+
+	# limit floating hud to never go outside the screen
+	var screen_limit = get_viewport_rect()
+	screen_limit.position -= floating_center.position
+	screen_limit.size = (screen_limit.size / 2) - self.size
+	screen_limit = screen_limit.grow(-25)
+	self.position.x = clamp(self.position.x, screen_limit.position.x, screen_limit.size.x)
+	self.position.y = clamp(self.position.y, screen_limit.position.y, screen_limit.size.y)
 
 
 func update_view() -> void:

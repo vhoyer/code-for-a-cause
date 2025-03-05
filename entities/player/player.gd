@@ -6,7 +6,7 @@ class_name PlayerController
 @onready var joe_hud_floating_holder: Control = $CanvasLayer/JoeHudFloatingHolder
 
 @export var joe_scene: PackedScene
-@export var joe_count: int = 1
+@export_range(1, 4, 1.0) var joe_count: int = 1
 
 signal updated_selected_joe(joe: Joe)
 

@@ -132,7 +132,7 @@ func smack() -> void:
 
 	for body in bodies:
 		if body == self: continue
-		if body is Character:
+		if body is Joe:
 			body.velocity.y = -350
 			body.velocity.x = 600 * visual_root.scale.x
 

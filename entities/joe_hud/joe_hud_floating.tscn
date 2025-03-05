@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqhy0sq863k4g"]
+
+[ext_resource type="PackedScene" uid="uid://c7avdxof1ncqx" path="res://entities/joe_hud/joe_hud.tscn" id="1_jl03e"]
+[ext_resource type="Shader" uid="uid://sitqcpfrtjqu" path="res://entities/joe_hud/pulse.gdshader" id="2_fyrrf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bpfua"]
+resource_local_to_scene = true
+shader = ExtResource("2_fyrrf")
+shader_parameter/shine_color = Color(1, 0.803922, 0, 1)
+shader_parameter/alpha_limit = 0.0
+shader_parameter/cycle_speed = 10.0
+shader_parameter/full_pulse_cycle = true
+shader_parameter/mode = 0
+
+[node name="JoeHudFloating" instance=ExtResource("1_jl03e")]
+material = SubResource("ShaderMaterial_bpfua")
+offset_right = 28.0
+floating = true
+
+[node name="MarginContainer" parent="HBoxContainer" index="1"]
+visible = false

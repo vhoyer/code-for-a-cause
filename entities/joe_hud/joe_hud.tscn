@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7avdxof1ncqx"]
+[gd_scene load_steps=7 format=3 uid="uid://c7avdxof1ncqx"]
 
 [ext_resource type="Script" uid="uid://bi8qwmaflqea2" path="res://entities/joe_hud/joe_hud.gd" id="1_05w76"]
 [ext_resource type="Shader" uid="uid://sitqcpfrtjqu" path="res://entities/joe_hud/pulse.gdshader" id="1_i211p"]
 [ext_resource type="Texture2D" uid="uid://buf7jokyx4w6e" path="res://assets/input_prompt/controller/xbox_dpad_up.png" id="2_i211p"]
 [ext_resource type="Script" uid="uid://dy0scq6mq6mid" path="res://modules/UI/input_prompt/input_prompt.gd" id="2_s3bwq"]
+[ext_resource type="Texture2D" uid="uid://vemj6imgfw7p" path="res://assets/input_prompt/keyboard/keyboard_1.png" id="5_hr3bn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i211p"]
 resource_local_to_scene = true
@@ -33,6 +34,8 @@ layout_mode = 2
 texture = ExtResource("2_i211p")
 expand_mode = 3
 script = ExtResource("2_s3bwq")
+controller_texture = ExtResource("2_i211p")
+keyboard_texture = ExtResource("5_hr3bn")
 metadata/_custom_type_script = "uid://dy0scq6mq6mid"
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]

@@ -17,6 +17,7 @@ radius = 7.0
 height = 34.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7fmcv"]
+radius = 6.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ak1vs"]
 height = 42.0
@@ -633,9 +634,9 @@ script = ExtResource("1_7fmcv")
 gravity_by_velocity_mapping = SubResource("Curve_7fmcv")
 
 [node name="VisualRoot" type="Node2D" parent="."]
+position = Vector2(0, -23)
 
 [node name="Body" type="Sprite2D" parent="VisualRoot"]
-position = Vector2(0, -23)
 texture = ExtResource("2_bwvaa")
 hframes = 12
 vframes = 14
@@ -643,7 +644,6 @@ vframes = 14
 [node name="BodyHandless" type="Sprite2D" parent="VisualRoot"]
 visible = false
 z_index = -10
-position = Vector2(0, -23)
 texture = ExtResource("2_bwvaa")
 hframes = 12
 vframes = 14
@@ -652,7 +652,6 @@ frame = 108
 [node name="Hands" type="Sprite2D" parent="VisualRoot"]
 visible = false
 z_index = 10
-position = Vector2(0, -23)
 texture = ExtResource("2_bwvaa")
 hframes = 12
 vframes = 14
@@ -660,7 +659,6 @@ frame = 109
 
 [node name="Exploding" type="Sprite2D" parent="VisualRoot"]
 visible = false
-position = Vector2(0, -23)
 texture = ExtResource("3_cskce")
 hframes = 22
 
@@ -669,19 +667,17 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VisualRoot/HitboxPunch"]
 visible = false
-position = Vector2(25, -22)
+position = Vector2(25, 2)
 shape = SubResource("CapsuleShape2D_cabhh")
 
 [node name="HitboxGrab" type="Area2D" parent="VisualRoot"]
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VisualRoot/HitboxGrab"]
-visible = false
-position = Vector2(0, -42)
+position = Vector2(0, -19)
 shape = SubResource("CircleShape2D_7fmcv")
 
 [node name="BodyCollision" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -21)
 shape = SubResource("CapsuleShape2D_ak1vs")
 

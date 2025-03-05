@@ -1,7 +1,20 @@
 extends Camera2D
+class_name CameraMain
+
+static var singleton: CameraMain:
+	set(value):
+		assert(not singleton or value == null, 'Error: singleton already loaded, only one instance allowed')
+		singleton = value
 
 @export var player: PlayerController
 @export var zoom_constant: float = 0.8
+
+
+func _init() -> void:
+	singleton = self
+
+func _exit_tree() -> void:
+	singleton = null
 
 
 func _physics_process(_delta: float) -> void:

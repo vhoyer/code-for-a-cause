@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw08m4c7hnol"]
+
+[ext_resource type="Script" uid="uid://83i8fnbc31h5" path="res://entities/player/player.gd" id="1_symyc"]
+[ext_resource type="PackedScene" uid="uid://cg7liji5n86ce" path="res://entities/joe/joe.tscn" id="2_abrql"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_symyc")
+
+[node name="Joes" type="Node" parent="."]
+
+[node name="Joe" parent="Joes" instance=ExtResource("2_abrql")]

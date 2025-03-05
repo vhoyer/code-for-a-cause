@@ -6,11 +6,11 @@ extends Camera2D
 
 func _physics_process(_delta: float) -> void:
 	if player.selected_joe:
-		self.position += (player.selected_joe.position - self.position) * 0.2
+		self.global_position += (player.selected_joe.global_position - self.global_position) * 0.2
 		self.zoom = Vector2.ONE
 	else:
 		var rect = player.get_rect_containing_all_joes()
-		self.position = rect.get_center()
+		self.global_position = rect.get_center()
 
 		var zoom_factor_x = get_viewport_rect().size.x / rect.size.x * zoom_constant
 		var zoom_factor_y = get_viewport_rect().size.y / rect.size.y * zoom_constant

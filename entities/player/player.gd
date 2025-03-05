@@ -20,10 +20,17 @@ func _ready() -> void:
 		joes.remove_child(child)
 
 	var joe: Joe
+	var hud: JoeHud
+	var floating_hud: JoeHud
 	for i in joe_count:
 		joe = joe_scene.instantiate()
 		joes.add_child(joe)
 		joe.position.x = -30 * i
+		
+		hud = joe_hud_holder.get_child(i)
+		hud.joe = joe
+		floating_hud = joe_hud_floating_holder.get_child(i)
+		floating_hud.joe = joe
 
 
 func _physics_process(delta: float) -> void:
@@ -37,17 +44,10 @@ func _physics_process(delta: float) -> void:
 
 
 func process_switch(action: StringName, index: int) -> void:
-	var hud: JoeHud = joe_hud_holder.get_child(index)
-	var floating_hud: JoeHud = joe_hud_floating_holder.get_child(index)
-
 	if index > joes.get_child_count() - 1:
-		hud.joe = null
-		floating_hud.joe = null
 		return
 	
 	var joe: Joe = joes.get_child(index)
-	hud.joe = joe
-	floating_hud.joe = joe
 
 	if joe.health <= 0: return
 	if not Input.is_action_just_pressed(action): return

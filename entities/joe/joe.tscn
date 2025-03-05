@@ -702,8 +702,4 @@ parameters/BlendTree/animations/air/blend_position = 0.195
 parameters/BlendTree/direction/blend_position = 0.466
 parameters/BlendTree/flip/add_amount = 1.0
 
-[node name="HealthReporterTimeout" type="Timer" parent="."]
-wait_time = 0.1
-autostart = true
-
 [connection signal="body_entered" from="VisualRoot/HitboxGrab" to="." method="_on_hitbox_grab_body_entered"]

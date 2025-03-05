@@ -5,6 +5,7 @@ signal _joe_updated()
 
 const HEALTH_WARN = Joe.MAX_HEALTH / 4
 
+
 @export var player: PlayerController
 @export var joe: Joe:
 	set(value):
@@ -29,7 +30,7 @@ func _ready() -> void:
 
 	progress_bar.max_value = joe.MAX_HEALTH
 
-	player.updated_selected_joe.connect(func(selected_joe):
+	player.updated_selected_joe.connect(func _on_selected_joe_changed(selected_joe):
 		is_selected = selected_joe == joe
 		if floating:
 			self.modulate.a = 0 if is_selected else 1
@@ -78,7 +79,11 @@ func update_view() -> void:
 	self.visible = !!joe
 	if not joe: return
 
-	joe.health_updated.connect(func(health):
+	if not joe.health_updated.is_connected(_on_health_updated):
+		joe.health_updated.connect(_on_health_updated)
+
+
+func _on_health_updated(health):
 		match health:
 			var x when x <= 0:
 				input_prompt.modulate.a = 0
@@ -92,4 +97,4 @@ func update_view() -> void:
 				input_prompt.modulate.a = 1
 		if is_selected:
 				input_prompt.modulate.a = 0.2
-		progress_bar.value = health)
+		progress_bar.value = health

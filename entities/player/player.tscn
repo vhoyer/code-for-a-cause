@@ -108,11 +108,10 @@ grow_vertical = 0
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="JoeHud1" parent="CanvasLayer/JoeHudHolder" node_paths=PackedStringArray("player", "joe") instance=ExtResource("3_7thud")]
+[node name="JoeHud1" parent="CanvasLayer/JoeHudHolder" node_paths=PackedStringArray("player") instance=ExtResource("3_7thud")]
 material = SubResource("ShaderMaterial_afbqv")
 layout_mode = 2
 player = NodePath("../../..")
-joe = NodePath("../../../Joes/Joe")
 controller_input = ExtResource("4_a1qjk")
 keyboard_input = ExtResource("5_j3ovn")
 

@@ -415,6 +415,26 @@ tracks/0/keys = {
 "update": 1,
 "values": [96, 97, 98, 99]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [true],
+"method": &"control_lock"
+}, {
+"args": [],
+"method": &"smack"
+}, {
+"args": [false],
+"method": &"control_lock"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_otd8w"]
 resource_name = "throw_upwards"
@@ -508,7 +528,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(-1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_a6vk3"]
@@ -524,7 +544,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-1, 1)]
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_f25al"]
@@ -617,7 +637,6 @@ gravity_by_velocity_mapping = SubResource("Curve_7fmcv")
 [node name="Body" type="Sprite2D" parent="VisualRoot"]
 position = Vector2(0, -23)
 texture = ExtResource("2_bwvaa")
-flip_h = true
 hframes = 12
 vframes = 14
 
@@ -626,7 +645,6 @@ visible = false
 z_index = -10
 position = Vector2(0, -23)
 texture = ExtResource("2_bwvaa")
-flip_h = true
 hframes = 12
 vframes = 14
 frame = 108
@@ -636,7 +654,6 @@ visible = false
 z_index = 10
 position = Vector2(0, -23)
 texture = ExtResource("2_bwvaa")
-flip_h = true
 hframes = 12
 vframes = 14
 frame = 109
@@ -645,7 +662,6 @@ frame = 109
 visible = false
 position = Vector2(0, -23)
 texture = ExtResource("3_cskce")
-flip_h = true
 hframes = 22
 
 [node name="HitboxPunch" type="Area2D" parent="VisualRoot"]
@@ -679,17 +695,15 @@ tree_root = SubResource("AnimationNodeStateMachine_pa4f7")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 parameters/BlendTree/animations/conditions/is_exploding = false
-parameters/BlendTree/animations/conditions/is_grabbing = 0.0
+parameters/BlendTree/animations/conditions/is_grabbing = false
 parameters/BlendTree/animations/conditions/is_hurting = false
 parameters/BlendTree/animations/conditions/is_idle = true
-parameters/BlendTree/animations/conditions/is_jumping = false
 parameters/BlendTree/animations/conditions/is_on_air = false
 parameters/BlendTree/animations/conditions/is_on_floor = false
 parameters/BlendTree/animations/conditions/is_punching = false
 parameters/BlendTree/animations/conditions/is_walking = false
-parameters/BlendTree/animations/air/blend_position = 0
-parameters/BlendTree/animations/walking/blend_position = -0.686093
-parameters/BlendTree/direction/blend_position = 0.0
+parameters/BlendTree/animations/air/blend_position = 0.195
+parameters/BlendTree/direction/blend_position = 0.466
 parameters/BlendTree/flip/add_amount = 1.0
 
 [connection signal="body_entered" from="VisualRoot/HitboxGrab" to="." method="_on_hitbox_grab_body_entered"]

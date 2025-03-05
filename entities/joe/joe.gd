@@ -30,6 +30,7 @@ var do_life_drain: bool = true
 @export
 var gravity_by_velocity_mapping: Curve = Curve.new()
 
+var is_control_locked: bool = false
 
 var delta_since_last_on_floor: float = 0.0
 var jump_count: int = 0
@@ -105,11 +106,10 @@ func process_movent(delta: float) -> void:
 
 	process_jump()
 	process_walking()
-	process_smack()
 
 func process_jump() -> void:
 	# handle jump
-	if can_jump:
+	if can_jump and not is_control_locked:
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = JUMP_VELOCITY
 			jump_count += 1
@@ -117,6 +117,7 @@ func process_jump() -> void:
 		velocity.y = max(velocity.y, -100)
 
 func process_walking() -> void:
+	if is_control_locked: return
 	# handle horizontal movement
 	var direction := Input.get_axis("left", "right")
 	if direction:
@@ -124,11 +125,7 @@ func process_walking() -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-func process_smack() -> void:
-	# handle smack
-	if not Input.is_action_just_pressed("smack"):
-		return
-
+func smack() -> void:
 	var bodies = hitbox_punch.get_overlapping_bodies()
 
 	for body in bodies:
@@ -136,6 +133,10 @@ func process_smack() -> void:
 		if body is Character:
 			body.velocity.y = -350
 			body.velocity.x = 600 * visual_root.scale.x
+
+
+func control_lock(lock) -> void:
+	is_control_locked = lock
 
 
 func _on_hitbox_grab_body_entered(body: Node2D) -> void:

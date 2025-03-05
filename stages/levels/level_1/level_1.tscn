@@ -59,7 +59,7 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_13y66")]
 position = Vector2(146, 253)
-joe_count = 2
+joe_count = 4
 
 [node name="Camera" parent="Player" node_paths=PackedStringArray("player") instance=ExtResource("3_h3tyy")]
 player = NodePath("..")

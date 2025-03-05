@@ -200,7 +200,7 @@ offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
 player = NodePath("../../..")
-controller_input = ExtResource("6_afbqv")
+controller_input = ExtResource("8_yqrof")
 keyboard_input = ExtResource("9_3wlsy")
 floating_center = NodePath("..")
 

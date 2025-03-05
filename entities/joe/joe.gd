@@ -18,6 +18,7 @@ signal health_updated(health: float)
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var visual_root: Node2D = $VisualRoot
 @onready var hitbox_punch: Area2D = $VisualRoot/HitboxPunch
+@onready var health_reporter_timeout: Timer = $HealthReporterTimeout
 
 
 @export
@@ -39,15 +40,19 @@ var can_jump: bool:
 		return jump_count < MAX_JUMPS and delta_since_last_on_floor < MAX_COYOTE_TIME
 
 
-var health: float:
-	set(value):
-		health = value
-		health_updated.emit(value)
+var health: float
 
 
 func _ready() -> void:
 	health = MAX_HEALTH
 	update_animation_tree_parameters()
+	
+	# has to be a timer instead of a setter, cuz when the `health_updated` was on the setter
+	# godot was queuing more events than it could process, leading to a "process overflow" or
+	# something like that, bottom line, it ran at like 1 fps with 30 secons of gameplay
+	# this fixes :)
+	health_reporter_timeout.timeout.connect(func():
+		health_updated.emit(health))
 
 
 func _process(_delta: float) -> void:

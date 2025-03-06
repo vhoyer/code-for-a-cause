@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bi8qwmaflqea2" path="res://entities/joe_hud/joe_hud.gd" id="1_05w76"]
 [ext_resource type="Shader" uid="uid://sitqcpfrtjqu" path="res://entities/joe_hud/pulse.gdshader" id="1_i211p"]
 [ext_resource type="Texture2D" uid="uid://buf7jokyx4w6e" path="res://assets/input_prompt/controller/xbox_dpad_up.png" id="2_i211p"]
-[ext_resource type="Script" uid="uid://dy0scq6mq6mid" path="res://modules/UI/input_prompt/input_prompt.gd" id="2_s3bwq"]
+[ext_resource type="Script" uid="uid://dy0scq6mq6mid" path="res://modules/UI/ui_elements/input_prompt/input_prompt.gd" id="2_s3bwq"]
 [ext_resource type="Texture2D" uid="uid://vemj6imgfw7p" path="res://assets/input_prompt/keyboard/keyboard_1.png" id="5_hr3bn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i211p"]

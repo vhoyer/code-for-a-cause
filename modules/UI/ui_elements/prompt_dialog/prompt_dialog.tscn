@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cf88lw1hrg055"]
 
-[ext_resource type="Script" uid="uid://bd5x5nystsl2o" path="res://modules/UI/prompt_dialog/prompt_dialog.gd" id="1_kou3n"]
+[ext_resource type="Script" uid="uid://bd5x5nystsl2o" path="res://modules/UI/ui_elements/prompt_dialog/prompt_dialog.gd" id="1_kou3n"]
 [ext_resource type="StyleBox" uid="uid://bg8tf403k7ydc" path="res://modules/UI/assets/backdrop_panel.tres" id="1_m75if"]
 
 [node name="PromptDialog" type="CanvasLayer"]

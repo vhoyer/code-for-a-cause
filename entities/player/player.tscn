@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bw08m4c7hnol"]
+[gd_scene load_steps=24 format=3 uid="uid://bw08m4c7hnol"]
 
 [ext_resource type="Script" uid="uid://83i8fnbc31h5" path="res://entities/player/player.gd" id="1_symyc"]
 [ext_resource type="PackedScene" uid="uid://cg7liji5n86ce" path="res://entities/joe/joe.tscn" id="2_abrql"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://ueytf85tlnh1" path="res://assets/input_prompt/controller/xbox_dpad_left.png" id="10_b2kln"]
 [ext_resource type="Texture2D" uid="uid://clyrvxxtgy2a4" path="res://assets/input_prompt/keyboard/keyboard_4.png" id="11_we0b7"]
 [ext_resource type="PackedScene" uid="uid://dqhy0sq863k4g" path="res://entities/joe_hud/joe_hud_floating.tscn" id="13_j3ovn"]
+[ext_resource type="Script" uid="uid://lexgt2mmoxam" path="res://entities/player/pause_layer.gd" id="14_yqrof"]
+[ext_resource type="Script" uid="uid://yqn6ekdfwf7n" path="res://modules/UI/stage_manager/button_stage_changer.gd" id="15_3wlsy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_afbqv"]
 resource_local_to_scene = true
@@ -221,3 +223,45 @@ player = NodePath("../../..")
 controller_input = ExtResource("10_b2kln")
 keyboard_input = ExtResource("11_we0b7")
 floating_center = NodePath("..")
+
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+script = ExtResource("14_yqrof")
+
+[node name="CenterContainer" type="CenterContainer" parent="PauseLayer"]
+process_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PauseLayer/CenterContainer"]
+layout_mode = 2
+theme_type_variation = &"MarinPanelContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseLayer/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="PauseLayer/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseLayer/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MainMenu" type="Button" parent="PauseLayer/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "main menu"
+script = ExtResource("15_3wlsy")
+go_back = true
+metadata/_custom_type_script = "uid://yqn6ekdfwf7n"
+
+[node name="Resume" type="Button" parent="PauseLayer/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "resume"
+
+[connection signal="button_down" from="PauseLayer/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/Resume" to="PauseLayer" method="_on_resume_button_down"]

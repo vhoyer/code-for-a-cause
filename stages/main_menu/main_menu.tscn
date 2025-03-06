@@ -41,6 +41,7 @@ scene = ExtResource("3_7wn7o")
 
 [node name="Levels" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
+disabled = true
 text = "choose level"
 
 [node name="ButtonSceneChanger2" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/PanelContainer/VBoxContainer"]

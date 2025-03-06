@@ -24,7 +24,7 @@ signal health_updated(health: float)
 var is_grabbed: bool = false
 @export
 var is_grabbing: bool = false
-var grab_list: Array[CharacterBody2D] = []
+var grab_list:= Set.new()
 
 @export
 var do_life_drain: bool = true
@@ -147,7 +147,8 @@ func _on_hitbox_grab_body_entered(body: Node2D) -> void:
 		is_grabbing = true
 		if body is Joe:
 			body.is_grabbed = true
-			grab_list.push_back(body)
+			grab_list.add(body)
+			body.global_position.x = self.global_position.x
 
 
 func _on_hitbox_grab_body_exited(body: Node2D) -> void:

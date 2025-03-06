@@ -26,7 +26,7 @@ func _ready() -> void:
 		joe = joe_scene.instantiate()
 		joes.add_child(joe)
 		joe.position.x = -30 * i
-		
+
 		hud = joe_hud_holder.get_child(i)
 		hud.joe = joe
 		floating_hud = joe_hud_floating_holder.get_child(i)
@@ -46,11 +46,12 @@ func _physics_process(delta: float) -> void:
 func process_switch(action: StringName, index: int) -> void:
 	if index > joes.get_child_count() - 1:
 		return
-	
+
 	var joe: Joe = joes.get_child(index)
 
 	if joe.health <= 0: return
 	if not Input.is_action_just_pressed(action): return
+	if selected_joe == joe: return
 
 	selected_joe = joe
 	selected_joe.velocity.y -= 200

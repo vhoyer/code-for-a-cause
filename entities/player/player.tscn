@@ -93,6 +93,7 @@ script = ExtResource("1_symyc")
 joe_scene = ExtResource("2_abrql")
 
 [node name="Joes" type="Node2D" parent="."]
+position = Vector2(0, 20)
 
 [node name="Joe" parent="Joes" instance=ExtResource("2_abrql")]
 

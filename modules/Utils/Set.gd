@@ -12,5 +12,14 @@ func has(value: Variant) -> bool:
 func has_all(arr: Array[Variant]) -> bool:
 	return arr.all(func(item): return self.has(item))
 
+func erase(value: Variant) -> void:
+	_elements.erase(value)
+
 func erase_all() -> void:
 	_elements.resize(0)
+
+func size() -> int:
+	return _elements.size()
+
+func pop_front() -> Variant:
+	return _elements.pop_front()

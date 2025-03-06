@@ -23,3 +23,9 @@ func size() -> int:
 
 func pop_front() -> Variant:
 	return _elements.pop_front()
+
+func at(index: int) -> Variant:
+	return _elements[index]
+
+func values() -> Array:
+	return _elements.duplicate()

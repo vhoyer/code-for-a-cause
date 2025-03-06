@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cg7liji5n86ce"]
+[gd_scene load_steps=35 format=3 uid="uid://cg7liji5n86ce"]
 
 [ext_resource type="Script" uid="uid://c6oe8oddyhcg2" path="res://entities/joe/joe.gd" id="1_7fmcv"]
 [ext_resource type="Texture2D" uid="uid://dw7hj0wqq5ye6" path="res://entities/joe/assets/Joe-Sheet.png" id="2_bwvaa"]
@@ -328,7 +328,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_m5tcf"]
 resource_name = "grabbed"
-length = 0.2
+length = 0.001
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -349,10 +349,10 @@ tracks/1/path = NodePath("VisualRoot/Body:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(0, 42), Vector2(0, 45), Vector2(0, 0)]
+"values": [Vector2(0, 44)]
 }
 
 [sub_resource type="Animation" id="Animation_6dj7v"]
@@ -608,12 +608,18 @@ tracks/0/keys = {
 "values": [24, 25, 26, 27, 28, 29, 30, 31]
 }
 
+[sub_resource type="Animation" id="Animation_7fmcv"]
+resource_name = "dummy"
+length = 0.001
+step = 0.1
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7dwdv"]
 _data = {
 &"RESET": SubResource("Animation_o3s3l"),
 &"air_down": SubResource("Animation_0525o"),
 &"air_up": SubResource("Animation_uiuvq"),
 &"blink": SubResource("Animation_exgsc"),
+&"dummy": SubResource("Animation_7fmcv"),
 &"explode": SubResource("Animation_8n0oo"),
 &"grab": SubResource("Animation_nf0km"),
 &"grabbed": SubResource("Animation_m5tcf"),
@@ -714,9 +720,11 @@ position = Vector2(0, -19)
 shape = SubResource("CircleShape2D_7fmcv")
 
 [node name="BodyCollision" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -21)
 shape = SubResource("CapsuleShape2D_ak1vs")
+
+[node name="GrabPosition" type="Marker2D" parent="."]
+position = Vector2(0, -44)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

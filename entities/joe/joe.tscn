@@ -665,6 +665,7 @@ graph_offset = Vector2(-151, -40)
 [node name="Joe" type="CharacterBody2D" groups=["grabbable"]]
 collision_layer = 3
 script = ExtResource("1_7fmcv")
+do_life_drain = false
 gravity_by_velocity_mapping = SubResource("Curve_7fmcv")
 
 [node name="VisualRoot" type="Node2D" parent="."]

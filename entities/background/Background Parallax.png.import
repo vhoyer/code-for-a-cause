@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b67e0v1lu5lsy"
-path="res://.godot/imported/TileMap.png-c10cff5c8bd39120a09625b2f5ab5a62.ctex"
+uid="uid://c65hhgji0wjr7"
+path="res://.godot/imported/Background Parallax.png-768a9d41066d8ed0674fb7c3643f3576.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TileMap.png"
-dest_files=["res://.godot/imported/TileMap.png-c10cff5c8bd39120a09625b2f5ab5a62.ctex"]
+source_file="res://entities/background/Background Parallax.png"
+dest_files=["res://.godot/imported/Background Parallax.png-768a9d41066d8ed0674fb7c3643f3576.ctex"]
 
 [params]
 

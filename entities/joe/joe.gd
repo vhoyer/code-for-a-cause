@@ -18,6 +18,7 @@ signal health_updated(health: float)
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var visual_root: Node2D = $VisualRoot
 @onready var hitbox_punch: Area2D = $VisualRoot/HitboxPunch
+@onready var grab_position: Marker2D = $GrabPosition
 
 
 @export
@@ -84,10 +85,12 @@ func _physics_process(delta: float) -> void:
 			health = MAX_HEALTH
 
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() or not is_grabbed:
 		var remaped = clamp(remap(velocity.y, -500, 500, 0, 1), 0, 1)
 		var mult = 1 + gravity_by_velocity_mapping.sample_baked(remaped)
 		velocity += get_gravity() * mult * delta
+	elif is_grabbed:
+		velocity.y = 0
 
 	# drag
 	velocity.x *= DRAG_FLOOR if is_on_floor() else DRAG_AIR
@@ -96,6 +99,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = 0
 
 	move_and_slide()
+
+	for body in grab_list.values():
+		if body is Joe:
+			body.global_position = grab_position.global_position
 
 
 func process_movent(delta: float) -> void:
@@ -137,7 +144,7 @@ func smack() -> void:
 			body.velocity.x = 600 * visual_root.scale.x
 
 
-func control_lock(lock) -> void:
+func control_lock(lock: bool) -> void:
 	is_control_locked = lock
 
 
@@ -149,6 +156,7 @@ func _on_hitbox_grab_body_entered(body: Node2D) -> void:
 			body.is_grabbed = true
 			grab_list.add(body)
 			body.global_position.x = self.global_position.x
+			body.control_lock(true)
 
 
 func _on_hitbox_grab_body_exited(body: Node2D) -> void:
@@ -158,9 +166,11 @@ func _on_hitbox_grab_body_exited(body: Node2D) -> void:
 		if body is Joe:
 			body.is_grabbed = false
 			grab_list.erase(body)
+			body.control_lock(false)
 
 
 func throw_grabbed() -> void:
 	while grab_list.size():
 		var body: CharacterBody2D = grab_list.pop_front()
+		body.is_grabbed = false
 		body.velocity.y = JUMP_VELOCITY * 1.2

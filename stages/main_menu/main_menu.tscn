@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3756fh13dbkc"]
+[gd_scene load_steps=8 format=3 uid="uid://d3756fh13dbkc"]
 
 [ext_resource type="Script" uid="uid://co7f7ulxs588o" path="res://stages/main_menu/main_menu.gd" id="1_8ybf8"]
 [ext_resource type="Script" uid="uid://yqn6ekdfwf7n" path="res://modules/UI/stage_manager/button_stage_changer.gd" id="1_sknds"]
 [ext_resource type="PackedScene" uid="uid://b13hsha0bdokx" path="res://stages/test_level/test_level.tscn" id="2_qvve4"]
 [ext_resource type="PackedScene" uid="uid://dukei2ipri818" path="res://stages/levels/level_1/level_1.tscn" id="3_7wn7o"]
 [ext_resource type="PackedScene" uid="uid://cod16iwe4mb0c" path="res://stages/credits/credit_roll.tscn" id="3_xkwhf"]
+[ext_resource type="Script" uid="uid://dqq2wjpanl6fx" path="res://stages/main_menu/options.gd" id="5_mcab4"]
+[ext_resource type="Script" uid="uid://61q2h71kluj0" path="res://modules/UI/ui_elements/volume_slider/h_volume_slider.gd" id="6_jofpu"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_8ybf8")
@@ -18,33 +20,83 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/CenterContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainer"]
 layout_mode = 2
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
 theme_type_variation = &"MarinPanelContainer"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer/HBoxContainer/PanelContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/PanelContainer/VBoxContainer"]
+[node name="StartGame" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "0"
-horizontal_alignment = 1
-
-[node name="ButtonSceneChanger1" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-text = "lvl1"
+text = "start game"
 script = ExtResource("1_sknds")
 scene = ExtResource("3_7wn7o")
 
-[node name="ButtonSceneChanger2" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/VBoxContainer"]
+[node name="Levels" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "choose level"
+
+[node name="ButtonSceneChanger2" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "test scene"
 script = ExtResource("1_sknds")
 scene = ExtResource("2_qvve4")
 
-[node name="ButtonSceneChanger3" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/VBoxContainer"]
+[node name="Options" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../../../OptionsPanel/VBoxContainer/HVolumeSlider")
+toggle_mode = true
+text = "options"
+script = ExtResource("5_mcab4")
+
+[node name="ButtonSceneChanger3" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "credits"
 script = ExtResource("1_sknds")
 scene = ExtResource("3_xkwhf")
+
+[node name="OptionsPanel" type="PanelContainer" parent="CanvasLayer/CenterContainer/HBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_type_variation = &"MarinPanelContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer/HBoxContainer/OptionsPanel"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/HBoxContainer/OptionsPanel/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="HVolumeSlider" type="VBoxContainer" parent="CanvasLayer/CenterContainer/HBoxContainer/OptionsPanel/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+focus_next = NodePath("../HVolumeSlider2")
+focus_previous = NodePath("../../../PanelContainer/VBoxContainer/Options")
+script = ExtResource("6_jofpu")
+bus = &"Master"
+metadata/_custom_type_script = "uid://61q2h71kluj0"
+
+[node name="HVolumeSlider2" type="VBoxContainer" parent="CanvasLayer/CenterContainer/HBoxContainer/OptionsPanel/VBoxContainer"]
+layout_mode = 2
+focus_next = NodePath("../HVolumeSlider3")
+focus_previous = NodePath("../HVolumeSlider")
+script = ExtResource("6_jofpu")
+bus = &"BGM"
+metadata/_custom_type_script = "uid://61q2h71kluj0"
+
+[node name="HVolumeSlider3" type="VBoxContainer" parent="CanvasLayer/CenterContainer/HBoxContainer/OptionsPanel/VBoxContainer"]
+layout_mode = 2
+focus_next = NodePath("../../../PanelContainer/VBoxContainer/Options")
+focus_previous = NodePath("../HVolumeSlider2")
+script = ExtResource("6_jofpu")
+bus = &"SFX"
+metadata/_custom_type_script = "uid://61q2h71kluj0"

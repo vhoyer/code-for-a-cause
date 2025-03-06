@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cod16iwe4mb0c"]
 
-[ext_resource type="Script" uid="uid://cdvu0i3xtflk5" path="res://modules/UI/credits_roll/credits_roll.gd" id="1_c2crl"]
+[ext_resource type="Script" uid="uid://cdvu0i3xtflk5" path="res://modules/UI/ui_elements/credits_roll/credits_roll.gd" id="1_c2crl"]
 [ext_resource type="Resource" uid="uid://kvfpp3sxfl6a" path="res://stages/credits/credits.tres" id="2_gnuxy"]
 [ext_resource type="Script" uid="uid://b5hbl56s22vne" path="res://stages/credits/go_back.gd" id="3_f6i1q"]
 

@@ -18,13 +18,13 @@ signal health_updated(health: float)
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var visual_root: Node2D = $VisualRoot
 @onready var hitbox_punch: Area2D = $VisualRoot/HitboxPunch
-@onready var health_reporter_timeout: Timer = $HealthReporterTimeout
 
 
 @export
 var is_grabbed: bool = false
 @export
 var is_grabbing: bool = false
+var grab_list: Array[CharacterBody2D] = []
 
 @export
 var do_life_drain: bool = true
@@ -142,11 +142,24 @@ func control_lock(lock) -> void:
 
 
 func _on_hitbox_grab_body_entered(body: Node2D) -> void:
+	if body == self: return
 	if body.is_in_group('grabbable'):
 		is_grabbing = true
-		# TODO: move body to the grab position
+		if body is Joe:
+			body.is_grabbed = true
+			grab_list.push_back(body)
+
+
+func _on_hitbox_grab_body_exited(body: Node2D) -> void:
+	if body == self: return
+	if body.is_in_group('grabbable'):
+		is_grabbing = false
+		if body is Joe:
+			body.is_grabbed = false
+			grab_list.erase(body)
 
 
 func throw_grabbed() -> void:
-	is_grabbing = false
-	# TODO: make obj go birr
+	while grab_list.size():
+		var body: CharacterBody2D = grab_list.pop_front()
+		body.velocity.y = JUMP_VELOCITY * 1.2

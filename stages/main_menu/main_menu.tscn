@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b13hsha0bdokx" path="res://stages/test_level/test_level.tscn" id="2_qvve4"]
 [ext_resource type="PackedScene" uid="uid://dukei2ipri818" path="res://stages/levels/level_1/level_1.tscn" id="3_7wn7o"]
 [ext_resource type="PackedScene" uid="uid://cod16iwe4mb0c" path="res://stages/credits/credit_roll.tscn" id="3_xkwhf"]
-[ext_resource type="Script" uid="uid://dqq2wjpanl6fx" path="res://stages/main_menu/options.gd" id="5_mcab4"]
+[ext_resource type="Script" path="res://stages/main_menu/options.gd" id="5_mcab4"]
 [ext_resource type="Script" uid="uid://61q2h71kluj0" path="res://modules/UI/ui_elements/volume_slider/h_volume_slider.gd" id="6_jofpu"]
 
 [node name="MainMenu" type="Node2D"]
@@ -87,6 +87,7 @@ bus = &"Master"
 metadata/_custom_type_script = "uid://61q2h71kluj0"
 
 [node name="HVolumeSlider2" type="VBoxContainer" parent="CanvasLayer/CenterContainer/HBoxContainer/OptionsPanel/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 focus_next = NodePath("../HVolumeSlider3")
 focus_previous = NodePath("../HVolumeSlider")
@@ -95,6 +96,7 @@ bus = &"BGM"
 metadata/_custom_type_script = "uid://61q2h71kluj0"
 
 [node name="HVolumeSlider3" type="VBoxContainer" parent="CanvasLayer/CenterContainer/HBoxContainer/OptionsPanel/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 focus_next = NodePath("../../../PanelContainer/VBoxContainer/Options")
 focus_previous = NodePath("../HVolumeSlider2")

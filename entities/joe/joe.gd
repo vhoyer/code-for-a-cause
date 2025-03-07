@@ -174,3 +174,8 @@ func throw_grabbed() -> void:
 		var body: CharacterBody2D = grab_list.pop_front()
 		body.is_grabbed = false
 		body.velocity.y = JUMP_VELOCITY * 1.2
+
+
+func _on_hitbox_entered(_body: Node2D) -> void:
+	do_life_drain = false
+	health = 0

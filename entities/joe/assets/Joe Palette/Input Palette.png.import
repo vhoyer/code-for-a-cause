@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfyb0o6nv0tij"
-path="res://.godot/imported/Title.png-5d19de31a8c2afadf73726c806487981.ctex"
+uid="uid://bpxt6b6sae2pv"
+path="res://.godot/imported/Input Palette.png-d8441d105fbb0be8619fbe0ec7210962.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Title.png"
-dest_files=["res://.godot/imported/Title.png-5d19de31a8c2afadf73726c806487981.ctex"]
+source_file="res://entities/joe/assets/Joe Palette/Input Palette.png"
+dest_files=["res://.godot/imported/Input Palette.png-d8441d105fbb0be8619fbe0ec7210962.ctex"]
 
 [params]
 

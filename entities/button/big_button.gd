@@ -18,7 +18,6 @@ var active: bool:
 @export
 var weight_to_trigger: int = 4
 
-@export
 var weight: int = 0:
 	set(value):
 		weight = value

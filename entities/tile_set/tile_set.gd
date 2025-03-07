@@ -1,3 +1,4 @@
+@tool
 extends TileMapLayer
 class_name ForegroundTileMapLayer
 
@@ -27,7 +28,12 @@ class ForegroundTileMapLayerDebug extends Node2D:
 		draw_circle(conveyor_selected_cell, 5, Color.RED)
 
 
+func _ready() -> void:
+	self.tile_set = preload("uid://bnfmghrj16pdr")
+
+
 func _physics_process(delta: float) -> void:
+	if Engine.is_editor_hint(): return
 	conveyor_belt_process(delta)
 
 

@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqmu50sku78bw"]
+
+[ext_resource type="Script" uid="uid://dooi52085lusc" path="res://entities/tutorial_prompt/tutorial_prompt.gd" id="1_8fmd6"]
+[ext_resource type="Script" uid="uid://dy0scq6mq6mid" path="res://modules/UI/ui_elements/input_prompt/input_prompt.gd" id="2_y8je4"]
+
+[node name="TutorialPrompt" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_8fmd6")
+
+[node name="InputPrompt" type="TextureRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -95.0
+offset_right = 17.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 0
+expand_mode = 5
+script = ExtResource("2_y8je4")
+metadata/_custom_type_script = "uid://dy0scq6mq6mid"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered_exited"]
+[connection signal="body_exited" from="." to="." method="_on_body_entered_exited"]

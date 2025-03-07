@@ -1,12 +1,18 @@
+@tool
 extends Node2D
 class_name PlayerController
+
+signal _model_updated()
 
 @onready var joes: Node2D = $Joes
 @onready var joe_hud_holder: HBoxContainer = $CanvasLayer/JoeHudHolder
 @onready var joe_hud_floating_holder: Control = $CanvasLayer/JoeHudFloatingHolder
 
 @export var joe_scene: PackedScene
-@export_range(1, 4, 1.0) var joe_count: int = 1
+@export_range(1, 4, 1.0) var joe_count: int = 1:
+	set(value):
+		joe_count = value
+		_model_updated.emit()
 
 signal updated_selected_joe(joe: Joe)
 
@@ -16,6 +22,10 @@ var selected_joe: Joe:
 		updated_selected_joe.emit(value)
 
 func _ready() -> void:
+	update_view()
+	_model_updated.connect(update_view)
+
+func update_view() -> void:
 	for child in joes.get_children():
 		joes.remove_child(child)
 
@@ -25,7 +35,7 @@ func _ready() -> void:
 	for i in joe_count:
 		joe = joe_scene.instantiate()
 		joes.add_child(joe)
-		joe.position.x = -30 * i
+		joe.position.x = 35 * i
 
 		hud = joe_hud_holder.get_child(i)
 		hud.joe = joe
@@ -34,6 +44,8 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if Engine.is_editor_hint(): return
+
 	process_switch(&"swap_char_1", 0)
 	process_switch(&"swap_char_2", 1)
 	process_switch(&"swap_char_3", 2)

@@ -196,6 +196,11 @@ tracks/0/keys = {
 "values": [12, 13, 14, 15, 16, 17, 18, 19]
 }
 
+[sub_resource type="Animation" id="Animation_7fmcv"]
+resource_name = "dummy"
+length = 0.001
+step = 0.1
+
 [sub_resource type="Animation" id="Animation_8n0oo"]
 resource_name = "explode"
 length = 2.20001
@@ -608,11 +613,6 @@ tracks/0/keys = {
 "values": [24, 25, 26, 27, 28, 29, 30, 31]
 }
 
-[sub_resource type="Animation" id="Animation_7fmcv"]
-resource_name = "dummy"
-length = 0.001
-step = 0.1
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7dwdv"]
 _data = {
 &"RESET": SubResource("Animation_o3s3l"),
@@ -668,7 +668,7 @@ states/grabbed/position = Vector2(434, 237)
 transitions = ["Start", "BlendTree", SubResource("AnimationNodeStateMachineTransition_kmyr7"), "BlendTree", "grabbed", SubResource("AnimationNodeStateMachineTransition_lukas"), "grabbed", "RESET", SubResource("AnimationNodeStateMachineTransition_bwvaa"), "RESET", "BlendTree", SubResource("AnimationNodeStateMachineTransition_cskce")]
 graph_offset = Vector2(-151, -40)
 
-[node name="Joe" type="CharacterBody2D" groups=["grabbable"]]
+[node name="Joe" type="CharacterBody2D" groups=["button_actor", "grabbable"]]
 collision_layer = 3
 script = ExtResource("1_7fmcv")
 do_life_drain = false
@@ -704,6 +704,8 @@ texture = ExtResource("3_cskce")
 hframes = 22
 
 [node name="HitboxPunch" type="Area2D" parent="VisualRoot"]
+collision_layer = 0
+collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VisualRoot/HitboxPunch"]
@@ -712,6 +714,8 @@ position = Vector2(25, 2)
 shape = SubResource("CapsuleShape2D_cabhh")
 
 [node name="HitboxGrab" type="Area2D" parent="VisualRoot"]
+collision_layer = 0
+collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VisualRoot/HitboxGrab"]

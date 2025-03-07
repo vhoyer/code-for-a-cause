@@ -35,6 +35,12 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
 	conveyor_belt_process(delta)
+	deathzone_process(delta)
+
+
+func deathzone_process(delta: float) -> void:
+	for joe: Joe in player.joes.get_children():
+		pass
 
 
 func conveyor_belt_process(delta: float) -> void:

@@ -19,6 +19,8 @@ const DEFAULT_MARGIN = 8
 		if !margin_container: return true
 		return margin_container.get_theme_constant("margin_top") != DEFAULT_MARGIN
 	set(value):
+		if not Engine.is_editor_hint():
+			value = true
 		var margin = self.size.y if value else DEFAULT_MARGIN
 		if !margin_container:
 			set_deferred("in_editor_show_scroll_margin", value)

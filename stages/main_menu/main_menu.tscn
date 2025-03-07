@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://stages/main_menu/main_menu.gd" id="1_8ybf8"]
 [ext_resource type="Script" uid="uid://yqn6ekdfwf7n" path="res://modules/UI/stage_manager/button_stage_changer.gd" id="1_sknds"]
-[ext_resource type="PackedScene" uid="uid://b13hsha0bdokx" path="res://stages/test_level/test_level.tscn" id="2_qvve4"]
 [ext_resource type="PackedScene" uid="uid://dukei2ipri818" path="res://stages/levels/level_1/level_1.tscn" id="3_7wn7o"]
 [ext_resource type="PackedScene" uid="uid://cod16iwe4mb0c" path="res://stages/credits/credit_roll.tscn" id="3_xkwhf"]
+[ext_resource type="PackedScene" uid="uid://cq07soegjgdgx" path="res://stages/level_select/level_select.tscn" id="4_onbu3"]
 [ext_resource type="Script" path="res://stages/main_menu/options.gd" id="5_mcab4"]
 [ext_resource type="Script" uid="uid://61q2h71kluj0" path="res://modules/UI/ui_elements/volume_slider/h_volume_slider.gd" id="6_jofpu"]
 
@@ -39,16 +39,11 @@ text = "start game"
 script = ExtResource("1_sknds")
 scene = ExtResource("3_7wn7o")
 
-[node name="Levels" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="ButtonSceneChanger4" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-disabled = true
 text = "choose level"
-
-[node name="ButtonSceneChanger2" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-text = "test scene"
 script = ExtResource("1_sknds")
-scene = ExtResource("2_qvve4")
+scene = ExtResource("4_onbu3")
 
 [node name="Options" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2

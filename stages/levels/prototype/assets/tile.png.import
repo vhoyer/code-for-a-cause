@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3vd8gdl27puc"
-path="res://.godot/imported/Joe-Sheet.png-14c74fbac73f01bf4e83e98c7fa613ce.ctex"
+uid="uid://dqx2y1dwlb5ii"
+path="res://.godot/imported/tile.png-64e208bc057a677300944e0acca08f5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://stages/test_level/assets/Joe-Sheet.png"
-dest_files=["res://.godot/imported/Joe-Sheet.png-14c74fbac73f01bf4e83e98c7fa613ce.ctex"]
+source_file="res://stages/levels/prototype/assets/tile.png"
+dest_files=["res://.godot/imported/tile.png-64e208bc057a677300944e0acca08f5e.ctex"]
 
 [params]
 

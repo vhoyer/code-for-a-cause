@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://cq07soegjgdgx"]
+
+[ext_resource type="Script" uid="uid://yqn6ekdfwf7n" path="res://modules/UI/stage_manager/button_stage_changer.gd" id="1_q105f"]
+[ext_resource type="Script" uid="uid://d0rjcb54sccp8" path="res://stages/level_select/level_list.gd" id="2_4hnof"]
+[ext_resource type="PackedScene" uid="uid://dukei2ipri818" path="res://stages/levels/level_1/level_1.tscn" id="3_jkw1v"]
+[ext_resource type="PackedScene" uid="uid://bi5ucwgmbpbw2" path="res://stages/levels/level_2/level_2.tscn" id="4_0kiw0"]
+[ext_resource type="PackedScene" uid="uid://b13hsha0bdokx" path="res://stages/levels/prototype/prototype.tscn" id="5_0kiw0"]
+
+[node name="LevelSelect" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/CenterContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="ButtonSceneChanger" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Back"
+script = ExtResource("1_q105f")
+method = "back by count"
+metadata/_custom_type_script = "uid://yqn6ekdfwf7n"
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 3
+script = ExtResource("2_4hnof")
+level_dir = "res://stages/levels"
+
+[node name="level 1" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "level 1"
+script = ExtResource("1_q105f")
+scene = ExtResource("3_jkw1v")
+
+[node name="level 2" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "level 2"
+script = ExtResource("1_q105f")
+scene = ExtResource("4_0kiw0")
+
+[node name="prototype" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "prototype"
+script = ExtResource("1_q105f")
+scene = ExtResource("5_0kiw0")

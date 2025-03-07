@@ -36,12 +36,23 @@ func update_view() -> void:
 		joe = joe_scene.instantiate()
 		joes.add_child(joe)
 		joe.position.x = 35 * i
+		joe.died.connect(_on_joe_died)
 
 		hud = joe_hud_holder.get_child(i)
 		hud.joe = joe
 		floating_hud = joe_hud_floating_holder.get_child(i)
 		floating_hud.joe = joe
 
+
+func _on_joe_died(is_finished: bool, joe: Joe) -> void:
+	if is_finished:
+		StageManager.go_to_start()
+	else:
+		selected_joe = joe
+		for child: Joe in joes.get_children():
+			child.process_mode = Node.PROCESS_MODE_DISABLED
+			child.control_lock(true)
+		selected_joe.process_mode = Node.PROCESS_MODE_INHERIT
 
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
@@ -61,6 +72,7 @@ func process_switch(action: StringName, index: int) -> void:
 
 	var joe: Joe = joes.get_child(index)
 
+	if selected_joe and selected_joe.health <= 0: return
 	if joe.health <= 0: return
 	if not Input.is_action_just_pressed(action): return
 	if selected_joe == joe: return

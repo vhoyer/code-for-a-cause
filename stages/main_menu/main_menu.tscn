@@ -1,15 +1,14 @@
 [gd_scene load_steps=8 format=3 uid="uid://d3756fh13dbkc"]
 
-[ext_resource type="Script" path="res://stages/main_menu/main_menu.gd" id="1_8ybf8"]
 [ext_resource type="Script" uid="uid://yqn6ekdfwf7n" path="res://modules/UI/stage_manager/button_stage_changer.gd" id="1_sknds"]
 [ext_resource type="PackedScene" uid="uid://c2v7s5fjbeqhy" path="res://stages/levels/level_1/level_1.tscn" id="3_7wn7o"]
+[ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://modules/UI/make_parent/make_parent_controller_focus_start.gd" id="3_mcab4"]
 [ext_resource type="PackedScene" uid="uid://cod16iwe4mb0c" path="res://stages/credits/credit_roll.tscn" id="3_xkwhf"]
 [ext_resource type="PackedScene" uid="uid://cq07soegjgdgx" path="res://stages/level_select/level_select.tscn" id="4_onbu3"]
 [ext_resource type="Script" path="res://stages/main_menu/options.gd" id="5_mcab4"]
 [ext_resource type="Script" uid="uid://61q2h71kluj0" path="res://modules/UI/ui_elements/volume_slider/h_volume_slider.gd" id="6_jofpu"]
 
 [node name="MainMenu" type="Node2D"]
-script = ExtResource("1_8ybf8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -33,11 +32,14 @@ theme_type_variation = &"MarinPanelContainer"
 layout_mode = 2
 
 [node name="StartGame" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/PanelContainer/VBoxContainer"]
-unique_name_in_owner = true
 layout_mode = 2
 text = "start game"
 script = ExtResource("1_sknds")
 scene = ExtResource("3_7wn7o")
+
+[node name="MakeParentControllerFocusStart" type="Node" parent="CanvasLayer/CenterContainer/HBoxContainer/PanelContainer/VBoxContainer/StartGame"]
+script = ExtResource("3_mcab4")
+metadata/_custom_type_script = "uid://b6827tfdgmrq2"
 
 [node name="ButtonSceneChanger4" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2

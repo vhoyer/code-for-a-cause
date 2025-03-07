@@ -3,15 +3,15 @@
 [ext_resource type="Script" uid="uid://83i8fnbc31h5" path="res://entities/player/player.gd" id="1_symyc"]
 [ext_resource type="PackedScene" uid="uid://cg7liji5n86ce" path="res://entities/joe/joe.tscn" id="2_abrql"]
 [ext_resource type="PackedScene" uid="uid://c7avdxof1ncqx" path="res://entities/joe_hud/joe_hud.tscn" id="3_7thud"]
-[ext_resource type="Texture2D" uid="uid://buf7jokyx4w6e" path="res://assets/input_prompt/controller/xbox_dpad_up.png" id="4_a1qjk"]
 [ext_resource type="Shader" uid="uid://sitqcpfrtjqu" path="res://entities/joe_hud/pulse.gdshader" id="4_j3ovn"]
-[ext_resource type="Texture2D" uid="uid://vemj6imgfw7p" path="res://assets/input_prompt/keyboard/keyboard_1.png" id="5_j3ovn"]
-[ext_resource type="Texture2D" uid="uid://b7glr27rerlpd" path="res://assets/input_prompt/controller/xbox_dpad_right.png" id="6_afbqv"]
-[ext_resource type="Texture2D" uid="uid://syx6nejk36ly" path="res://assets/input_prompt/keyboard/keyboard_2.png" id="7_gx6sm"]
-[ext_resource type="Texture2D" uid="uid://dyb5frlkvvxjm" path="res://assets/input_prompt/controller/xbox_dpad_down.png" id="8_yqrof"]
-[ext_resource type="Texture2D" uid="uid://bws8rm56ud71k" path="res://assets/input_prompt/keyboard/keyboard_3.png" id="9_3wlsy"]
-[ext_resource type="Texture2D" uid="uid://ueytf85tlnh1" path="res://assets/input_prompt/controller/xbox_dpad_left.png" id="10_b2kln"]
-[ext_resource type="Texture2D" uid="uid://clyrvxxtgy2a4" path="res://assets/input_prompt/keyboard/keyboard_4.png" id="11_we0b7"]
+[ext_resource type="Texture2D" uid="uid://d1l37doqwlq6d" path="res://assets/input_prompt/controller/xbox_lt.png" id="5_gx6sm"]
+[ext_resource type="Texture2D" uid="uid://dtqd4tpjrp4q2" path="res://assets/input_prompt/keyboard/keyboard_h.png" id="6_yqrof"]
+[ext_resource type="Texture2D" uid="uid://bdvmifovqky3j" path="res://assets/input_prompt/controller/xbox_lb.png" id="7_3wlsy"]
+[ext_resource type="Texture2D" uid="uid://quujhvjhchuk" path="res://assets/input_prompt/keyboard/keyboard_j.png" id="8_b2kln"]
+[ext_resource type="Texture2D" uid="uid://mpw768tv4e8v" path="res://assets/input_prompt/controller/xbox_rb.png" id="9_we0b7"]
+[ext_resource type="Texture2D" uid="uid://dxweyferpsdqy" path="res://assets/input_prompt/keyboard/keyboard_k.png" id="10_mtric"]
+[ext_resource type="Texture2D" uid="uid://dmcqgal6wdcbb" path="res://assets/input_prompt/controller/xbox_rt.png" id="11_eyb6c"]
+[ext_resource type="Texture2D" uid="uid://xvuqtiufxfm0" path="res://assets/input_prompt/keyboard/keyboard_l.png" id="12_221hk"]
 [ext_resource type="PackedScene" uid="uid://dqhy0sq863k4g" path="res://entities/joe_hud/joe_hud_floating.tscn" id="13_j3ovn"]
 [ext_resource type="Script" uid="uid://lexgt2mmoxam" path="res://entities/player/pause_layer.gd" id="14_yqrof"]
 [ext_resource type="Script" uid="uid://yqn6ekdfwf7n" path="res://modules/UI/stage_manager/button_stage_changer.gd" id="15_3wlsy"]
@@ -115,29 +115,29 @@ alignment = 1
 material = SubResource("ShaderMaterial_afbqv")
 layout_mode = 2
 player = NodePath("../../..")
-controller_input = ExtResource("4_a1qjk")
-keyboard_input = ExtResource("5_j3ovn")
+controller_input = ExtResource("5_gx6sm")
+keyboard_input = ExtResource("6_yqrof")
 
 [node name="JoeHud2" parent="CanvasLayer/JoeHudHolder" node_paths=PackedStringArray("player") instance=ExtResource("3_7thud")]
 material = SubResource("ShaderMaterial_gx6sm")
 layout_mode = 2
 player = NodePath("../../..")
-controller_input = ExtResource("6_afbqv")
-keyboard_input = ExtResource("7_gx6sm")
+controller_input = ExtResource("7_3wlsy")
+keyboard_input = ExtResource("8_b2kln")
 
 [node name="JoeHud3" parent="CanvasLayer/JoeHudHolder" node_paths=PackedStringArray("player") instance=ExtResource("3_7thud")]
 material = SubResource("ShaderMaterial_yqrof")
 layout_mode = 2
 player = NodePath("../../..")
-controller_input = ExtResource("8_yqrof")
-keyboard_input = ExtResource("9_3wlsy")
+controller_input = ExtResource("9_we0b7")
+keyboard_input = ExtResource("10_mtric")
 
 [node name="JoeHud4" parent="CanvasLayer/JoeHudHolder" node_paths=PackedStringArray("player") instance=ExtResource("3_7thud")]
 material = SubResource("ShaderMaterial_3wlsy")
 layout_mode = 2
 player = NodePath("../../..")
-controller_input = ExtResource("10_b2kln")
-keyboard_input = ExtResource("11_we0b7")
+controller_input = ExtResource("11_eyb6c")
+keyboard_input = ExtResource("12_221hk")
 
 [node name="JoeHudFloatingHolder" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -164,8 +164,8 @@ offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
 player = NodePath("../../..")
-controller_input = ExtResource("4_a1qjk")
-keyboard_input = ExtResource("5_j3ovn")
+controller_input = ExtResource("5_gx6sm")
+keyboard_input = ExtResource("6_yqrof")
 floating_center = NodePath("..")
 
 [node name="JoeHudFloating2" parent="CanvasLayer/JoeHudFloatingHolder" node_paths=PackedStringArray("player", "floating_center") instance=ExtResource("13_j3ovn")]
@@ -183,8 +183,8 @@ offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
 player = NodePath("../../..")
-controller_input = ExtResource("6_afbqv")
-keyboard_input = ExtResource("7_gx6sm")
+controller_input = ExtResource("7_3wlsy")
+keyboard_input = ExtResource("8_b2kln")
 floating_center = NodePath("..")
 
 [node name="JoeHudFloating3" parent="CanvasLayer/JoeHudFloatingHolder" node_paths=PackedStringArray("player", "floating_center") instance=ExtResource("13_j3ovn")]
@@ -202,8 +202,8 @@ offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
 player = NodePath("../../..")
-controller_input = ExtResource("8_yqrof")
-keyboard_input = ExtResource("9_3wlsy")
+controller_input = ExtResource("9_we0b7")
+keyboard_input = ExtResource("10_mtric")
 floating_center = NodePath("..")
 
 [node name="JoeHudFloating4" parent="CanvasLayer/JoeHudFloatingHolder" node_paths=PackedStringArray("player", "floating_center") instance=ExtResource("13_j3ovn")]
@@ -221,8 +221,8 @@ offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
 player = NodePath("../../..")
-controller_input = ExtResource("10_b2kln")
-keyboard_input = ExtResource("11_we0b7")
+controller_input = ExtResource("11_eyb6c")
+keyboard_input = ExtResource("12_221hk")
 floating_center = NodePath("..")
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]

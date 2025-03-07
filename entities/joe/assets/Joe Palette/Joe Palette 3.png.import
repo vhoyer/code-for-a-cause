@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c16xn62acx3wt"
-path="res://.godot/imported/Joe Palette 2.png-2b3d94ca1de66797da8d3364e7148304.ctex"
+uid="uid://c846wnvhks87i"
+path="res://.godot/imported/Joe Palette 3.png-d6d0c59aa7734925efc445876243390a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Joe Palette/Joe Palette 2.png"
-dest_files=["res://.godot/imported/Joe Palette 2.png-2b3d94ca1de66797da8d3364e7148304.ctex"]
+source_file="res://entities/joe/assets/Joe Palette/Joe Palette 3.png"
+dest_files=["res://.godot/imported/Joe Palette 3.png-d6d0c59aa7734925efc445876243390a.ctex"]
 
 [params]
 

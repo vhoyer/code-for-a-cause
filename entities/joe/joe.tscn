@@ -1,9 +1,16 @@
-[gd_scene load_steps=35 format=3 uid="uid://cg7liji5n86ce"]
+[gd_scene load_steps=37 format=3 uid="uid://cg7liji5n86ce"]
 
 [ext_resource type="Script" uid="uid://c6oe8oddyhcg2" path="res://entities/joe/joe.gd" id="1_7fmcv"]
+[ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://entities/joe/assets/Joe Palette/eye_dropper.gdshader" id="1_bwvaa"]
 [ext_resource type="Texture2D" uid="uid://dw7hj0wqq5ye6" path="res://entities/joe/assets/Joe-Sheet.png" id="2_bwvaa"]
 [ext_resource type="Texture2D" uid="uid://qlu3l8wa6173" path="res://entities/joe/assets/Joe_Explode-Sheet.png" id="3_cskce"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://c6lsykbsbquak" path="res://entities/joe/assets/animation_blend_tree.tres" id="4_xevyh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cskce"]
+shader = ExtResource("1_bwvaa")
+shader_parameter/palette_array_size = 0
+shader_parameter/input_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/output_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
 [sub_resource type="Curve" id="Curve_7fmcv"]
 _limits = [0.0, 2.0, 0.0, 1.0]
@@ -669,6 +676,7 @@ transitions = ["Start", "BlendTree", SubResource("AnimationNodeStateMachineTrans
 graph_offset = Vector2(-151, -40)
 
 [node name="Joe" type="CharacterBody2D" groups=["button_actor", "grabbable", "lever_actor"]]
+material = SubResource("ShaderMaterial_cskce")
 collision_layer = 3
 script = ExtResource("1_7fmcv")
 gravity_by_velocity_mapping = SubResource("Curve_7fmcv")

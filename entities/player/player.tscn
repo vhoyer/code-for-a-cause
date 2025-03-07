@@ -118,27 +118,24 @@ joe = NodePath("../../../Joes/Joe")
 controller_input = ExtResource("5_gx6sm")
 keyboard_input = ExtResource("6_yqrof")
 
-[node name="JoeHud2" parent="CanvasLayer/JoeHudHolder" node_paths=PackedStringArray("player", "joe") instance=ExtResource("3_7thud")]
+[node name="JoeHud2" parent="CanvasLayer/JoeHudHolder" node_paths=PackedStringArray("player") instance=ExtResource("3_7thud")]
 material = SubResource("ShaderMaterial_gx6sm")
 layout_mode = 2
 player = NodePath("../../..")
-joe = NodePath("")
 controller_input = ExtResource("7_3wlsy")
 keyboard_input = ExtResource("8_b2kln")
 
-[node name="JoeHud3" parent="CanvasLayer/JoeHudHolder" node_paths=PackedStringArray("player", "joe") instance=ExtResource("3_7thud")]
+[node name="JoeHud3" parent="CanvasLayer/JoeHudHolder" node_paths=PackedStringArray("player") instance=ExtResource("3_7thud")]
 material = SubResource("ShaderMaterial_yqrof")
 layout_mode = 2
 player = NodePath("../../..")
-joe = NodePath("")
 controller_input = ExtResource("9_we0b7")
 keyboard_input = ExtResource("10_mtric")
 
-[node name="JoeHud4" parent="CanvasLayer/JoeHudHolder" node_paths=PackedStringArray("player", "joe") instance=ExtResource("3_7thud")]
+[node name="JoeHud4" parent="CanvasLayer/JoeHudHolder" node_paths=PackedStringArray("player") instance=ExtResource("3_7thud")]
 material = SubResource("ShaderMaterial_3wlsy")
 layout_mode = 2
 player = NodePath("../../..")
-joe = NodePath("")
 controller_input = ExtResource("11_eyb6c")
 keyboard_input = ExtResource("12_221hk")
 
@@ -172,7 +169,7 @@ controller_input = ExtResource("5_gx6sm")
 keyboard_input = ExtResource("6_yqrof")
 floating_center = NodePath("..")
 
-[node name="JoeHudFloating2" parent="CanvasLayer/JoeHudFloatingHolder" node_paths=PackedStringArray("player", "joe", "floating_center") instance=ExtResource("13_j3ovn")]
+[node name="JoeHudFloating2" parent="CanvasLayer/JoeHudFloatingHolder" node_paths=PackedStringArray("player", "floating_center") instance=ExtResource("13_j3ovn")]
 material = SubResource("ShaderMaterial_j3ovn")
 layout_mode = 1
 anchors_preset = 8
@@ -187,12 +184,11 @@ offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
 player = NodePath("../../..")
-joe = NodePath("")
 controller_input = ExtResource("7_3wlsy")
 keyboard_input = ExtResource("8_b2kln")
 floating_center = NodePath("..")
 
-[node name="JoeHudFloating3" parent="CanvasLayer/JoeHudFloatingHolder" node_paths=PackedStringArray("player", "joe", "floating_center") instance=ExtResource("13_j3ovn")]
+[node name="JoeHudFloating3" parent="CanvasLayer/JoeHudFloatingHolder" node_paths=PackedStringArray("player", "floating_center") instance=ExtResource("13_j3ovn")]
 material = SubResource("ShaderMaterial_we0b7")
 layout_mode = 1
 anchors_preset = 8
@@ -207,12 +203,11 @@ offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
 player = NodePath("../../..")
-joe = NodePath("")
 controller_input = ExtResource("9_we0b7")
 keyboard_input = ExtResource("10_mtric")
 floating_center = NodePath("..")
 
-[node name="JoeHudFloating4" parent="CanvasLayer/JoeHudFloatingHolder" node_paths=PackedStringArray("player", "joe", "floating_center") instance=ExtResource("13_j3ovn")]
+[node name="JoeHudFloating4" parent="CanvasLayer/JoeHudFloatingHolder" node_paths=PackedStringArray("player", "floating_center") instance=ExtResource("13_j3ovn")]
 material = SubResource("ShaderMaterial_mtric")
 layout_mode = 1
 anchors_preset = 8
@@ -227,7 +222,6 @@ offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
 player = NodePath("../../..")
-joe = NodePath("")
 controller_input = ExtResource("11_eyb6c")
 keyboard_input = ExtResource("12_221hk")
 floating_center = NodePath("..")

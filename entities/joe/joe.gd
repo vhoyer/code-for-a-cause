@@ -13,6 +13,7 @@ const MAX_HEALTH = 11.0
 
 
 signal health_updated(health: float)
+signal died(is_finished: bool, joe: Joe)
 
 
 @onready var animation_tree: AnimationTree = $AnimationTree
@@ -176,6 +177,15 @@ func throw_grabbed() -> void:
 		body.velocity.y = JUMP_VELOCITY * 1.2
 
 
+func die_begin() -> void:
+	died.emit(false, self)
+
+
+func die_end() -> void:
+	died.emit(true, self)
+
+
 func _on_hitbox_entered(_body: Node2D) -> void:
+	control_lock(true)
 	do_life_drain = false
 	health = 0

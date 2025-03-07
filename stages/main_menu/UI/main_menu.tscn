@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://dfyb0o6nv0tij" path="res://stages/main_menu/UI/Title.png" id="1_4cwpn"]
 [ext_resource type="Texture2D" uid="uid://b511paydkej4x" path="res://assets/Joe-Sheet.png" id="1_d8nwk"]
-[ext_resource type="Script" uid="uid://co7f7ulxs588o" path="res://stages/main_menu/main_menu.gd" id="1_e0kmp"]
 [ext_resource type="Texture2D" uid="uid://cpu32fn0r0hgq" path="res://entities/background/Background Parallax smal.png" id="1_p8ccj"]
 [ext_resource type="TileSet" uid="uid://bnfmghrj16pdr" path="res://assets/joe_tile_set.tres" id="2_tk8dj"]
 [ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://entities/joe/assets/Joe Palette/eye_dropper.gdshader" id="3_2mudq"]
+[ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://modules/UI/make_parent/make_parent_controller_focus_start.gd" id="3_jy7dd"]
 [ext_resource type="Texture2D" uid="uid://bpxt6b6sae2pv" path="res://entities/joe/assets/Joe Palette/Input Palette.png" id="4_cafmx"]
 [ext_resource type="Texture2D" uid="uid://02h5cfuh1sa" path="res://entities/joe/assets/Joe Palette/Joe Palette 1.png" id="5_tcix6"]
 [ext_resource type="Texture2D" uid="uid://c16xn62acx3wt" path="res://entities/joe/assets/Joe Palette/Joe Palette 2.png" id="6_mmlvu"]
@@ -163,9 +163,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_e0kmp")
 
 [node name="ExitButton" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 592.0
 offset_top = 16.0
 offset_right = 624.0
@@ -202,12 +202,15 @@ size_flags_horizontal = 4
 alignment = 1
 
 [node name="StartGame" type="TextureButton" parent="Main Menu/VBoxContainer/VBoxContainer"]
-unique_name_in_owner = true
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_kk073")
 texture_pressed = SubResource("AtlasTexture_ioomu")
 texture_hover = SubResource("AtlasTexture_ero2x")
 texture_focused = SubResource("AtlasTexture_dkskn")
+
+[node name="MakeParentControllerFocusStart" type="Node" parent="Main Menu/VBoxContainer/VBoxContainer/StartGame"]
+script = ExtResource("3_jy7dd")
+metadata/_custom_type_script = "uid://b6827tfdgmrq2"
 
 [node name="SettingButton" type="TextureButton" parent="Main Menu/VBoxContainer/VBoxContainer"]
 layout_mode = 2

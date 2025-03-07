@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bw08m4c7hnol"]
+[gd_scene load_steps=25 format=3 uid="uid://bw08m4c7hnol"]
 
 [ext_resource type="Script" uid="uid://83i8fnbc31h5" path="res://entities/player/player.gd" id="1_symyc"]
 [ext_resource type="PackedScene" uid="uid://cg7liji5n86ce" path="res://entities/joe/joe.tscn" id="2_abrql"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dqhy0sq863k4g" path="res://entities/joe_hud/joe_hud_floating.tscn" id="13_j3ovn"]
 [ext_resource type="Script" uid="uid://lexgt2mmoxam" path="res://entities/player/pause_layer.gd" id="14_yqrof"]
 [ext_resource type="Script" uid="uid://yqn6ekdfwf7n" path="res://modules/UI/stage_manager/button_stage_changer.gd" id="15_3wlsy"]
+[ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://modules/UI/make_parent/make_parent_controller_focus_start.gd" id="16_yqrof"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_afbqv"]
 resource_local_to_scene = true
@@ -266,6 +267,10 @@ text = "main menu"
 script = ExtResource("15_3wlsy")
 method = "back to start"
 metadata/_custom_type_script = "uid://yqn6ekdfwf7n"
+
+[node name="MakeParentControllerFocusStart" type="Node" parent="PauseLayer/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/MainMenu"]
+script = ExtResource("16_yqrof")
+metadata/_custom_type_script = "uid://b6827tfdgmrq2"
 
 [node name="Resume" type="Button" parent="PauseLayer/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2

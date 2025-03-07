@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=4 uid="uid://c2v7s5fjbeqhy"]
+[gd_scene load_steps=11 format=4 uid="uid://c2v7s5fjbeqhy"]
 
 [ext_resource type="PackedScene" uid="uid://s4i10mewh67y" path="res://stages/level_base/level_base.tscn" id="1_qtc3j"]
 [ext_resource type="PackedScene" uid="uid://oybgjtijj1fy" path="res://entities/button/big_button.tscn" id="2_13y66"]
 [ext_resource type="Script" uid="uid://bc3swpk52572o" path="res://entities/level_utils/level_utils_go_to_next.gd" id="3_h3tyy"]
 [ext_resource type="PackedScene" uid="uid://ba6rhkgoxue7b" path="res://stages/levels/level_2/level_2.tscn" id="4_advbd"]
+[ext_resource type="PackedScene" uid="uid://cqmu50sku78bw" path="res://entities/tutorial_prompt/tutorial_prompt.tscn" id="5_ekd4q"]
+[ext_resource type="Texture2D" uid="uid://k82s2ofll15i" path="res://assets/input_prompt/controller/xbox_stick_l_horizontal.png" id="6_qk3f4"]
+[ext_resource type="Texture2D" uid="uid://5iuvsrd80ulp" path="res://assets/input_prompt/keyboard/keyboard_arrows_horizontal.png" id="7_ik8q2"]
+[ext_resource type="Texture2D" uid="uid://cqj5exaq5k6pp" path="res://assets/input_prompt/controller/xbox_button_a.png" id="8_qk3f4"]
+[ext_resource type="Texture2D" uid="uid://6eh8mysi2oet" path="res://assets/input_prompt/keyboard/keyboard_space_icon.png" id="9_ik8q2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2arti"]
+size = Vector2(94, 85)
 
 [node name="Level" instance=ExtResource("1_qtc3j")]
 
@@ -18,6 +26,24 @@ weight_to_trigger = 1
 script = ExtResource("3_h3tyy")
 next_level = ExtResource("4_advbd")
 metadata/_custom_type_script = "uid://bc3swpk52572o"
+
+[node name="TutorialPrompt" parent="Map" index="2" instance=ExtResource("5_ekd4q")]
+position = Vector2(-674, 255)
+controller_texture = ExtResource("6_qk3f4")
+keyboard_texture = ExtResource("7_ik8q2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/TutorialPrompt" index="1"]
+position = Vector2(-47, -41.5)
+shape = SubResource("RectangleShape2D_2arti")
+
+[node name="TutorialPrompt2" parent="Map" index="3" instance=ExtResource("5_ekd4q")]
+position = Vector2(-263, 255)
+controller_texture = ExtResource("8_qk3f4")
+keyboard_texture = ExtResource("9_ik8q2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/TutorialPrompt2" index="1"]
+position = Vector2(-47, -41.5)
+shape = SubResource("RectangleShape2D_2arti")
 
 [node name="Player" parent="." index="4"]
 position = Vector2(-746, 233)

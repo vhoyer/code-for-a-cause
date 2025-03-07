@@ -1,11 +1,18 @@
-[gd_scene load_steps=5 format=4 uid="uid://dukei2ipri818"]
+[gd_scene load_steps=7 format=4 uid="uid://dukei2ipri818"]
 
+[ext_resource type="AudioStream" uid="uid://d2jc8r3heogdw" path="res://assets/ost/FactoryV4.ogg" id="1_2arti"]
 [ext_resource type="PackedScene" uid="uid://h6lx57r8157l" path="res://entities/background/background.tscn" id="1_advbd"]
 [ext_resource type="PackedScene" uid="uid://bw08m4c7hnol" path="res://entities/player/player.tscn" id="2_13y66"]
 [ext_resource type="TileSet" uid="uid://bnfmghrj16pdr" path="res://assets/joe_tile_set.tres" id="2_advbd"]
 [ext_resource type="PackedScene" uid="uid://byqhcnagy2kio" path="res://entities/camera/camera.tscn" id="3_h3tyy"]
+[ext_resource type="PackedScene" uid="uid://4umro3rhenhv" path="res://entities/button/button.tscn" id="6_2arti"]
 
 [node name="Level1" type="Node2D"]
+
+[node name="FactoryV4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_2arti")
+autoplay = true
+bus = &"BGM"
 
 [node name="Background" parent="." instance=ExtResource("1_advbd")]
 position = Vector2(0, 228)
@@ -24,3 +31,6 @@ player = NodePath("../Player")
 [node name="Player" parent="." instance=ExtResource("2_13y66")]
 position = Vector2(148, 235)
 joe_count = 4
+
+[node name="Button" parent="." instance=ExtResource("6_2arti")]
+position = Vector2(96, 96)

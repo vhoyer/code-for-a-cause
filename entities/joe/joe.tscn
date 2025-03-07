@@ -668,7 +668,7 @@ states/grabbed/position = Vector2(434, 237)
 transitions = ["Start", "BlendTree", SubResource("AnimationNodeStateMachineTransition_kmyr7"), "BlendTree", "grabbed", SubResource("AnimationNodeStateMachineTransition_lukas"), "grabbed", "RESET", SubResource("AnimationNodeStateMachineTransition_bwvaa"), "RESET", "BlendTree", SubResource("AnimationNodeStateMachineTransition_cskce")]
 graph_offset = Vector2(-151, -40)
 
-[node name="Joe" type="CharacterBody2D" groups=["button_actor", "grabbable"]]
+[node name="Joe" type="CharacterBody2D" groups=["button_actor", "grabbable", "lever_actor"]]
 collision_layer = 3
 script = ExtResource("1_7fmcv")
 do_life_drain = false

@@ -1,14 +1,20 @@
+@tool
 extends StaticBody2D
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var activation_area: Area2D = $ActivationArea
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
+signal _model_updated()
 signal active_changed(active: bool)
+
+@export_enum("red", "brown", "yellow", "violet", "cyan")
+var color: int = 0:
+	set(value):
+		color = value
+		_model_updated.emit()
 
 @export_range(0, 15, 0.5, "or_greater")
 var seconds_to_require_reactivation: float = 10.0
-
-var tween: Tween
 
 var active: bool:
 	set(value):
@@ -19,14 +25,18 @@ var active: bool:
 
 func _ready() -> void:
 	active_changed.connect(_on_active_changed)
+	_model_updated.connect(update_view)
+
+
+func update_view() -> void:
+	sprite_2d.frame_coords.x = color * 2 + int(active)
 
 
 func _on_active_changed(_active: bool) -> void:
-	animation_player.speed_scale = 1
 	if active:
-		animation_player.play("down")
+		sprite_2d.frame += 1
 	else:
-		animation_player.play("up")
+		sprite_2d.frame -= 1
 
 
 func _on_reactivation_required() -> void:

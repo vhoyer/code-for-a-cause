@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://dukei2ipri818"]
+[gd_scene load_steps=8 format=4 uid="uid://dukei2ipri818"]
 
 [ext_resource type="AudioStream" uid="uid://d2jc8r3heogdw" path="res://assets/ost/FactoryV4.ogg" id="1_2arti"]
 [ext_resource type="PackedScene" uid="uid://h6lx57r8157l" path="res://entities/background/background.tscn" id="1_advbd"]
@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://bnfmghrj16pdr" path="res://assets/joe_tile_set.tres" id="2_advbd"]
 [ext_resource type="PackedScene" uid="uid://byqhcnagy2kio" path="res://entities/camera/camera.tscn" id="3_h3tyy"]
 [ext_resource type="PackedScene" uid="uid://4umro3rhenhv" path="res://entities/button/button.tscn" id="6_2arti"]
+[ext_resource type="PackedScene" uid="uid://oybgjtijj1fy" path="res://entities/button/big_button.tscn" id="7_4lu2v"]
 
 [node name="Level1" type="Node2D"]
 
@@ -34,3 +35,6 @@ joe_count = 4
 
 [node name="Button" parent="." instance=ExtResource("6_2arti")]
 position = Vector2(96, 96)
+
+[node name="BigButton" parent="." instance=ExtResource("7_4lu2v")]
+position = Vector2(315, 352)

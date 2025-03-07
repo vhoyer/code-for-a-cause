@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Code-for-a-cause-gamejam"
+config/name="Joe Adventure"
 run/main_scene="res://stages/main/main.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://assets/Joe.png"

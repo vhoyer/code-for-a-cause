@@ -1,9 +1,76 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bnfmghrj16pdr"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bnfmghrj16pdr"]
 
-[ext_resource type="Texture2D" uid="uid://b67e0v1lu5lsy" path="res://assets/joe_tile_map.png" id="1_ao4k8"]
+[ext_resource type="Texture2D" uid="uid://bx6qbmx4nng7y" path="res://entities/tile_set/ConvetorBelt-Sheet.png" id="1_sgbwv"]
+[ext_resource type="Texture2D" uid="uid://b67e0v1lu5lsy" path="res://entities/tile_set/joe_tile_map.png" id="2_gumpc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ftse2"]
+texture = ExtResource("1_sgbwv")
+texture_region_size = Vector2i(32, 32)
+0:0/next_alternative_id = 2
+0:0/animation_columns = 1
+0:0/animation_speed = 10.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 1
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -9.6, -12.8, -9.6, -12.8, 9.6, 16, 9.6)
+0:0/0/terrains_peering_bit/right_side = 1
+0:0/0/custom_data_0 = 1
+0:0/1 = 1
+0:0/1/flip_h = true
+0:0/1/terrain_set = 0
+0:0/1/terrain = 2
+0:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(12.8, -9.6, -16, -9.6, -16, 9.6, 12.8, 9.6)
+0:0/1/terrains_peering_bit/left_side = 2
+0:0/1/custom_data_0 = -1
+1:0/next_alternative_id = 2
+1:0/animation_columns = 1
+1:0/animation_speed = 10.0
+1:0/animation_frame_0/duration = 1.0
+1:0/animation_frame_1/duration = 1.0
+1:0/animation_frame_2/duration = 1.0
+1:0/animation_frame_3/duration = 1.0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 1
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -9.6, -16, -9.6, -16, 9.6, 16, 9.6)
+1:0/0/terrains_peering_bit/right_side = 1
+1:0/0/terrains_peering_bit/left_side = 1
+1:0/0/custom_data_0 = 1
+1:0/1 = 1
+1:0/1/flip_h = true
+1:0/1/terrain_set = 0
+1:0/1/terrain = 2
+1:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(16, -9.6, -16, -9.6, -16, 9.6, 16, 9.6)
+1:0/1/terrains_peering_bit/right_side = 2
+1:0/1/terrains_peering_bit/left_side = 2
+1:0/1/custom_data_0 = -1
+2:0/next_alternative_id = 2
+2:0/animation_columns = 1
+2:0/animation_speed = 10.0
+2:0/animation_frame_0/duration = 1.0
+2:0/animation_frame_1/duration = 1.0
+2:0/animation_frame_2/duration = 1.0
+2:0/animation_frame_3/duration = 1.0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 1
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -9.6, 12.8, -9.6, 12.8, 9.6, -16, 9.6)
+2:0/0/terrains_peering_bit/left_side = 1
+2:0/0/custom_data_0 = 1
+2:0/1 = 1
+2:0/1/flip_h = true
+2:0/1/terrain_set = 0
+2:0/1/terrain = 2
+2:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-12.8, -9.6, 16, -9.6, 16, 9.6, -12.8, 9.6)
+2:0/1/terrains_peering_bit/right_side = 2
+2:0/1/custom_data_0 = -1
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nkh5q"]
-texture = ExtResource("1_ao4k8")
+texture = ExtResource("2_gumpc")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -244,4 +311,12 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "factory floor"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+terrain_set_0/terrain_1/name = "conveyor right"
+terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
+terrain_set_0/terrain_2/name = "conveyor left"
+terrain_set_0/terrain_2/color = Color(0.46875, 0.5, 0.25, 1)
+navigation_layer_0/layers = 1
+custom_data_layer_0/name = "drag_along"
+custom_data_layer_0/type = 2
 sources/1 = SubResource("TileSetAtlasSource_nkh5q")
+sources/0 = SubResource("TileSetAtlasSource_ftse2")

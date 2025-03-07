@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx6qbmx4nng7y"
-path="res://.godot/imported/ConvetorBelt-Sheet.png-5b7b1c0a353e7d5f6ec613a769e12d40.ctex"
+uid="uid://b67e0v1lu5lsy"
+path="res://.godot/imported/joe_tile_map.png-881c23f36dca6aed7ce7f70c2c5db986.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/conveyor_belt/ConvetorBelt-Sheet.png"
-dest_files=["res://.godot/imported/ConvetorBelt-Sheet.png-5b7b1c0a353e7d5f6ec613a769e12d40.ctex"]
+source_file="res://entities/tile_set/joe_tile_map.png"
+dest_files=["res://.godot/imported/joe_tile_map.png-881c23f36dca6aed7ce7f70c2c5db986.ctex"]
 
 [params]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://stages/main_menu/main_menu.gd" id="1_8ybf8"]
 [ext_resource type="Script" uid="uid://yqn6ekdfwf7n" path="res://modules/UI/stage_manager/button_stage_changer.gd" id="1_sknds"]
-[ext_resource type="PackedScene" uid="uid://dukei2ipri818" path="res://stages/levels/level_1/level_1.tscn" id="3_7wn7o"]
+[ext_resource type="PackedScene" uid="uid://c2v7s5fjbeqhy" path="res://stages/levels/level_1/level_1.tscn" id="3_7wn7o"]
 [ext_resource type="PackedScene" uid="uid://cod16iwe4mb0c" path="res://stages/credits/credit_roll.tscn" id="3_xkwhf"]
 [ext_resource type="PackedScene" uid="uid://cq07soegjgdgx" path="res://stages/level_select/level_select.tscn" id="4_onbu3"]
 [ext_resource type="Script" path="res://stages/main_menu/options.gd" id="5_mcab4"]

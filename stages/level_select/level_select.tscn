@@ -51,30 +51,35 @@ script = ExtResource("2_4hnof")
 level_dir = "res://stages/levels"
 
 [node name="level 1" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(150, 15)
 layout_mode = 2
 text = "level 1"
 script = ExtResource("1_q105f")
 scene = ExtResource("3_jkw1v")
 
 [node name="level 2" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(150, 15)
 layout_mode = 2
 text = "level 2"
 script = ExtResource("1_q105f")
 scene = ExtResource("4_0kiw0")
 
 [node name="level 3" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(150, 15)
 layout_mode = 2
 text = "level 3"
 script = ExtResource("1_q105f")
 scene = ExtResource("5_eclcj")
 
 [node name="level 4" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(150, 15)
 layout_mode = 2
 text = "level 4"
 script = ExtResource("1_q105f")
 scene = ExtResource("6_1s47j")
 
 [node name="prototype" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(150, 15)
 layout_mode = 2
 text = "prototype"
 script = ExtResource("1_q105f")

@@ -31,4 +31,5 @@ func add_game(path: String, title: String):
 	self.add_child(btn, true)
 	btn.scene = load(path)
 	btn.text = btn.name
+	btn.custom_minimum_size = Vector2(150, 15)
 	btn.owner = self.owner;

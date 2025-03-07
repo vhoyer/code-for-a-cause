@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://byqhcnagy2kio" path="res://entities/camera/camera.tscn" id="5_fgqh2"]
 [ext_resource type="PackedScene" uid="uid://bw08m4c7hnol" path="res://entities/player/player.tscn" id="6_kkvj6"]
 
-[node name="LevelBase" type="Node2D"]
+[node name="Level_" type="Node2D"]
 
 [node name="FactoryV4" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_f85yq")

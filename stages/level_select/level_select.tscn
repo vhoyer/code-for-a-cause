@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cq07soegjgdgx"]
+[gd_scene load_steps=9 format=3 uid="uid://cq07soegjgdgx"]
 
 [ext_resource type="Script" uid="uid://yqn6ekdfwf7n" path="res://modules/UI/stage_manager/button_stage_changer.gd" id="1_q105f"]
 [ext_resource type="Script" uid="uid://d0rjcb54sccp8" path="res://stages/level_select/level_list.gd" id="2_4hnof"]
-[ext_resource type="PackedScene" uid="uid://dukei2ipri818" path="res://stages/levels/level_1/level_1.tscn" id="3_jkw1v"]
-[ext_resource type="PackedScene" uid="uid://bi5ucwgmbpbw2" path="res://stages/levels/level_2/level_2.tscn" id="4_0kiw0"]
+[ext_resource type="PackedScene" uid="uid://c2v7s5fjbeqhy" path="res://stages/levels/level_1/level_1.tscn" id="3_jkw1v"]
+[ext_resource type="PackedScene" uid="uid://ba6rhkgoxue7b" path="res://stages/levels/level_2/level_2.tscn" id="4_0kiw0"]
 [ext_resource type="PackedScene" uid="uid://b13hsha0bdokx" path="res://stages/levels/prototype/prototype.tscn" id="5_0kiw0"]
 [ext_resource type="PackedScene" uid="uid://bvjsy2dwjfxa4" path="res://stages/levels/level_3/level_3.tscn" id="5_eclcj"]
 [ext_resource type="PackedScene" uid="uid://dx3bgn5x8qmc5" path="res://stages/levels/level_4/level_4.tscn" id="6_1s47j"]
+[ext_resource type="PackedScene" uid="uid://dukei2ipri818" path="res://stages/levels/level_test/level_test.tscn" id="7_1s47j"]
 
 [node name="LevelSelect" type="Node2D"]
 
@@ -77,6 +78,13 @@ layout_mode = 2
 text = "level 4"
 script = ExtResource("1_q105f")
 scene = ExtResource("6_1s47j")
+
+[node name="level test" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(150, 15)
+layout_mode = 2
+text = "level test"
+script = ExtResource("1_q105f")
+scene = ExtResource("7_1s47j")
 
 [node name="prototype" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(150, 15)

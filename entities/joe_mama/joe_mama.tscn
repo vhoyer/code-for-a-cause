@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://ciswmahgqsixt"]
+
+[ext_resource type="Texture2D" uid="uid://cwtpjwhufvpx7" path="res://entities/joe_mama/JoeMama-Sheet.png" id="1_m6v1a"]
+[ext_resource type="Script" uid="uid://cdtfkfra31g3w" path="res://entities/joe_mama/joe_mama.gd" id="1_uettv"]
+
+[sub_resource type="Animation" id="Animation_uettv"]
+resource_name = "idle"
+length = 2.00005
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_drutn"]
+resource_name = "help"
+
+[sub_resource type="Animation" id="Animation_1nill"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xiddm"]
+_data = {
+&"RESET": SubResource("Animation_1nill"),
+&"help": SubResource("Animation_drutn"),
+&"idle": SubResource("Animation_uettv")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m6v1a"]
+size = Vector2(160, 163)
+
+[node name="JoeMama" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_uettv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_m6v1a")
+offset = Vector2(0, -80)
+hframes = 4
+vframes = 2
+frame = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xiddm")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, -81.5)
+shape = SubResource("RectangleShape2D_m6v1a")

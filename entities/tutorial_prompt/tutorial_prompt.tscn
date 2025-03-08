@@ -9,6 +9,7 @@ collision_mask = 2
 script = ExtResource("1_8fmd6")
 
 [node name="InputPrompt" type="TextureRect" parent="."]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -20,7 +21,6 @@ offset_right = 17.0
 offset_bottom = -61.0
 grow_horizontal = 2
 grow_vertical = 0
-expand_mode = 5
 script = ExtResource("2_y8je4")
 metadata/_custom_type_script = "uid://dy0scq6mq6mid"
 

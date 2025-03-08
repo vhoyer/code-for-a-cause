@@ -25,7 +25,7 @@ position = Vector2(293, 288)
 door = NodePath("../../DoorUp5")
 
 [node name="Button2" parent="." index="7" instance=ExtResource("5_wcd4r")]
-position = Vector2(193, 288)
+position = Vector2(171, 288)
 
 [node name="OpenDoor" parent="Button2" index="3" node_paths=PackedStringArray("door") instance=ExtResource("4_iwyd2")]
 door = NodePath("../../DoorUp2")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cg7liji5n86ce"]
+[gd_scene load_steps=38 format=3 uid="uid://cg7liji5n86ce"]
 
 [ext_resource type="Script" uid="uid://c6oe8oddyhcg2" path="res://entities/joe/joe.gd" id="1_7fmcv"]
 [ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://entities/joe/assets/Joe Palette/eye_dropper.gdshader" id="1_bwvaa"]

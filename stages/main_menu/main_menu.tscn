@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://modules/UI/make_parent/make_parent_controller_focus_start.gd" id="3_mcab4"]
 [ext_resource type="PackedScene" uid="uid://cod16iwe4mb0c" path="res://stages/credits/credit_roll.tscn" id="3_xkwhf"]
 [ext_resource type="PackedScene" uid="uid://cq07soegjgdgx" path="res://stages/level_select/level_select.tscn" id="4_onbu3"]
-[ext_resource type="Script" uid="uid://dqq2wjpanl6fx" path="res://stages/main_menu/options.gd" id="5_mcab4"]
+[ext_resource type="Script" path="res://stages/main_menu/options.gd" id="5_mcab4"]
 [ext_resource type="Script" uid="uid://61q2h71kluj0" path="res://modules/UI/ui_elements/volume_slider/h_volume_slider.gd" id="6_jofpu"]
 
 [node name="MainMenu" type="Node2D"]
@@ -49,7 +49,6 @@ scene = ExtResource("4_onbu3")
 
 [node name="Options" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-focus_neighbor_right = NodePath("../../../OptionsPanel/VBoxContainer/HVolumeSlider")
 toggle_mode = true
 text = "options"
 script = ExtResource("5_mcab4")
@@ -74,26 +73,29 @@ theme_override_constants/separation = 16
 layout_mode = 2
 text = "Options"
 
-[node name="HVolumeSlider" type="VBoxContainer" parent="CanvasLayer/CenterContainer/HBoxContainer/OptionsPanel/VBoxContainer"]
+[node name="HVolumeSlider" type="HSlider" parent="CanvasLayer/CenterContainer/HBoxContainer/OptionsPanel/VBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-focus_next = NodePath("../HVolumeSlider2")
-focus_previous = NodePath("../../../PanelContainer/VBoxContainer/Options")
+max_value = 1.0
+step = 0.05
+value = 1.0
 script = ExtResource("6_jofpu")
 metadata/_custom_type_script = "uid://61q2h71kluj0"
 
-[node name="HVolumeSlider2" type="VBoxContainer" parent="CanvasLayer/CenterContainer/HBoxContainer/OptionsPanel/VBoxContainer"]
+[node name="HVolumeSlider2" type="HSlider" parent="CanvasLayer/CenterContainer/HBoxContainer/OptionsPanel/VBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-focus_next = NodePath("../HVolumeSlider3")
-focus_previous = NodePath("../HVolumeSlider")
+max_value = 1.0
+step = 0.05
+value = 1.0
 script = ExtResource("6_jofpu")
 metadata/_custom_type_script = "uid://61q2h71kluj0"
 
-[node name="HVolumeSlider3" type="VBoxContainer" parent="CanvasLayer/CenterContainer/HBoxContainer/OptionsPanel/VBoxContainer"]
+[node name="HVolumeSlider3" type="HSlider" parent="CanvasLayer/CenterContainer/HBoxContainer/OptionsPanel/VBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-focus_next = NodePath("../../../PanelContainer/VBoxContainer/Options")
-focus_previous = NodePath("../HVolumeSlider2")
+max_value = 1.0
+step = 0.05
+value = 1.0
 script = ExtResource("6_jofpu")
 metadata/_custom_type_script = "uid://61q2h71kluj0"

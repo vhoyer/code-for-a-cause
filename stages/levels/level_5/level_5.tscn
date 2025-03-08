@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://defwy7xr5v522"]
+[gd_scene load_steps=9 format=4 uid="uid://defwy7xr5v522"]
 
 [ext_resource type="PackedScene" uid="uid://s4i10mewh67y" path="res://stages/level_base/level_base.tscn" id="1_ay8m7"]
+[ext_resource type="Script" uid="uid://bc3swpk52572o" path="res://entities/level_utils/level_utils_go_to_next.gd" id="3_wcd4r"]
 [ext_resource type="PackedScene" uid="uid://bgys0vnwmn450" path="res://entities/door/open_door.tscn" id="4_iwyd2"]
+[ext_resource type="PackedScene" uid="uid://bbito4fxpij2v" path="res://stages/levels/level_mama/level_mama.tscn" id="4_oe8px"]
 [ext_resource type="PackedScene" uid="uid://tnqhkfo5hqro" path="res://entities/door/lever.tscn" id="5_2vwoa"]
 [ext_resource type="PackedScene" uid="uid://4umro3rhenhv" path="res://entities/button/button.tscn" id="5_wcd4r"]
 [ext_resource type="PackedScene" uid="uid://bqkwecik3x6xd" path="res://entities/lever/door_up.tscn" id="6_iwyd2"]
@@ -17,6 +19,11 @@ position = Vector2(490, 15)
 
 [node name="BigButton" parent="." index="5" instance=ExtResource("6_oe8px")]
 position = Vector2(795, 288)
+
+[node name="LevelUtilsGoToNext" type="Node" parent="BigButton" index="5"]
+script = ExtResource("3_wcd4r")
+next_level = ExtResource("4_oe8px")
+metadata/_custom_type_script = "uid://bc3swpk52572o"
 
 [node name="Button" parent="." index="6" instance=ExtResource("5_wcd4r")]
 position = Vector2(293, 288)

@@ -13,8 +13,6 @@ config_version=5
 config/name="Joe Adventure"
 run/main_scene="res://stages/main/main.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-boot_splash/use_filter=false
-boot_splash/image="uid://q8smio7d2dmr"
 config/icon="res://assets/Joe.png"
 
 [debug]

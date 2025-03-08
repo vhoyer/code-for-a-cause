@@ -20,7 +20,10 @@ signal died(is_finished: bool, joe: Joe)
 @onready var visual_root: Node2D = $VisualRoot
 @onready var hitbox_punch: Area2D = $VisualRoot/HitboxPunch
 @onready var grab_position: Marker2D = $GrabPosition
-
+@onready var jump_audio: AudioStreamPlayer2D = $JumpAudio
+@onready var punch_audio: AudioStreamPlayer2D = $PunchAudio
+@onready var explode_audio: AudioStreamPlayer2D = $ExplodeAudio
+@onready var beep_audio: AudioStreamPlayer2D = $BeepAudio
 
 @export
 var is_grabbed: bool = false
@@ -121,6 +124,7 @@ func process_jump() -> void:
 	# handle jump
 	if can_jump and not is_control_locked:
 		if Input.is_action_just_pressed("jump"):
+			jump_audio.play()
 			velocity.y = JUMP_VELOCITY
 			jump_count += 1
 	if Input.is_action_just_released("jump"):
@@ -141,6 +145,7 @@ func smack() -> void:
 	for body in bodies:
 		if body == self: continue
 		if body is Joe:
+			punch_audio.play()
 			body.velocity.y = -350
 			body.velocity.x = 600 * visual_root.scale.x
 
@@ -179,6 +184,7 @@ func throw_grabbed() -> void:
 
 func die_begin() -> void:
 	died.emit(false, self)
+	explode_audio.play()
 
 
 func die_end() -> void:

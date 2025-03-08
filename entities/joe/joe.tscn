@@ -1,10 +1,14 @@
-[gd_scene load_steps=38 format=3 uid="uid://cg7liji5n86ce"]
+[gd_scene load_steps=42 format=3 uid="uid://cg7liji5n86ce"]
 
 [ext_resource type="Script" uid="uid://c6oe8oddyhcg2" path="res://entities/joe/joe.gd" id="1_7fmcv"]
 [ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://entities/joe/assets/Joe Palette/eye_dropper.gdshader" id="1_bwvaa"]
 [ext_resource type="Texture2D" uid="uid://dw7hj0wqq5ye6" path="res://entities/joe/assets/Joe-Sheet.png" id="2_bwvaa"]
 [ext_resource type="Texture2D" uid="uid://qlu3l8wa6173" path="res://entities/joe/assets/Joe_Explode-Sheet.png" id="3_cskce"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://c6lsykbsbquak" path="res://entities/joe/assets/animation_blend_tree.tres" id="4_xevyh"]
+[ext_resource type="AudioStream" uid="uid://bj025lbun4dmj" path="res://entities/joe/assets/JustExplosion.ogg" id="5_cskce"]
+[ext_resource type="AudioStream" uid="uid://ccosmfvafsc6a" path="res://entities/joe/assets/beeping2.ogg" id="6_ak1vs"]
+[ext_resource type="AudioStream" uid="uid://f2oum2qnyjil" path="res://entities/joe/assets/Jump.ogg" id="6_cskce"]
+[ext_resource type="AudioStream" uid="uid://crhqeayokdfyk" path="res://entities/joe/assets/Punch.ogg" id="6_xevyh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cskce"]
 shader = ExtResource("1_bwvaa")
@@ -787,6 +791,25 @@ parameters/BlendTree/animations/conditions/is_walking = false
 parameters/BlendTree/animations/air/blend_position = 0.195
 parameters/BlendTree/direction/blend_position = 0.466
 parameters/BlendTree/flip/add_amount = 1.0
+
+[node name="BeepAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ak1vs")
+volume_db = -13.633
+pitch_scale = 0.81
+
+[node name="ExplodeAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_cskce")
+volume_db = -0.992
+pitch_scale = 0.81
+
+[node name="PunchAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_xevyh")
+volume_db = -9.906
+pitch_scale = 0.81
+
+[node name="JumpAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_cskce")
+volume_db = -20.8
 
 [connection signal="body_entered" from="VisualRoot/HitboxGrab" to="." method="_on_hitbox_grab_body_entered"]
 [connection signal="body_exited" from="VisualRoot/HitboxGrab" to="." method="_on_hitbox_grab_body_exited"]

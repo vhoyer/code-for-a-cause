@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://tnqhkfo5hqro" path="res://entities/door/lever.tscn" id="3_cxabn"]
 [ext_resource type="PackedScene" uid="uid://bgys0vnwmn450" path="res://entities/door/open_door.tscn" id="4_i0ukj"]
 [ext_resource type="PackedScene" uid="uid://oybgjtijj1fy" path="res://entities/button/big_button.tscn" id="5_cxabn"]
-[ext_resource type="Texture2D" uid="uid://b511paydkej4x" path="res://assets/Joe-Sheet.png" id="6_i0ukj"]
+[ext_resource type="PackedScene" uid="uid://dk0v54smdf5t8" path="res://entities/joe/joe_in_waiting/joe_in_waiting.tscn" id="6_i0ukj"]
 
 [node name="LevelBase2" instance=ExtResource("1_pu3vt")]
 
@@ -45,9 +45,6 @@ weight_to_trigger = 3
 position = Vector2(52, 303)
 joe_count = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="11"]
-position = Vector2(1426, 303)
-texture = ExtResource("6_i0ukj")
-hframes = 12
-vframes = 12
-frame = 1
+[node name="JoeInWaiting" parent="." index="11" node_paths=PackedStringArray("player") instance=ExtResource("6_i0ukj")]
+position = Vector2(1426, 323)
+player = NodePath("")

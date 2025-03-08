@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://mktlkqcir8k2"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://mktlkqcir8k2"]
 
 [ext_resource type="Texture2D" uid="uid://cen31lisf5s7j" path="res://stages/main_menu/UI/UI.png" id="1_5x3i2"]
 
@@ -12,10 +12,22 @@ region = Rect2(328, 235, 15, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wycmq"]
 atlas = ExtResource("1_5x3i2")
-region = Rect2(1, 262, 94, 4)
+region = Rect2(1, 278, 94, 4)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5x3i2"]
+texture = SubResource("AtlasTexture_wycmq")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+modulate_color = Color(0.129412, 1, 0.290196, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x2pqw"]
 texture = SubResource("AtlasTexture_wycmq")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knkbs"]
 bg_color = Color(0.0923971, 0.0923971, 0.092397, 1)
@@ -69,6 +81,7 @@ anti_aliasing_size = 0.15
 [resource]
 HSlider/icons/grabber = SubResource("AtlasTexture_wl1kw")
 HSlider/icons/grabber_highlight = SubResource("AtlasTexture_lu33j")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_5x3i2")
 HSlider/styles/slider = SubResource("StyleBoxTexture_x2pqw")
 HealthProgressBar/base_type = &"ProgressBar"
 HealthProgressBar/styles/background = SubResource("StyleBoxFlat_knkbs")

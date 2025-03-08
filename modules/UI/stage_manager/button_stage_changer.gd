@@ -1,4 +1,4 @@
-extends Button
+extends BaseButton
 class_name ButtonSceneChanger
 
 ## If go_back is set to true, scene variable will be ignored

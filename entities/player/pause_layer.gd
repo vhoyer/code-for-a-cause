@@ -10,3 +10,7 @@ func _input(event: InputEvent) -> void:
 func _on_resume_button_down() -> void:
 	self.visible = false
 	get_tree().paused = false
+
+
+func _on_restart_button_down() -> void:
+	StageManager.reload_current_stage()

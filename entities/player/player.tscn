@@ -283,7 +283,6 @@ floating_center = NodePath("..")
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
 process_mode = 3
-visible = false
 script = ExtResource("14_yqrof")
 
 [node name="CenterContainer" type="CenterContainer" parent="PauseLayer"]
@@ -310,6 +309,22 @@ horizontal_alignment = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseLayer/CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="Resume" type="Button" parent="PauseLayer/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "resume"
+
+[node name="MakeParentControllerFocusStart" type="Node" parent="PauseLayer/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/Resume"]
+script = ExtResource("16_yqrof")
+metadata/_custom_type_script = "uid://b6827tfdgmrq2"
+
+[node name="Restart" type="Button" parent="PauseLayer/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "restart"
+
+[node name="MakeParentControllerFocusStart" type="Node" parent="PauseLayer/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/Restart"]
+script = ExtResource("16_yqrof")
+metadata/_custom_type_script = "uid://b6827tfdgmrq2"
+
 [node name="MainMenu" type="Button" parent="PauseLayer/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "main menu"
@@ -317,12 +332,5 @@ script = ExtResource("15_3wlsy")
 method = "back to start"
 metadata/_custom_type_script = "uid://yqn6ekdfwf7n"
 
-[node name="MakeParentControllerFocusStart" type="Node" parent="PauseLayer/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/MainMenu"]
-script = ExtResource("16_yqrof")
-metadata/_custom_type_script = "uid://b6827tfdgmrq2"
-
-[node name="Resume" type="Button" parent="PauseLayer/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "resume"
-
 [connection signal="button_down" from="PauseLayer/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/Resume" to="PauseLayer" method="_on_resume_button_down"]
+[connection signal="button_down" from="PauseLayer/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/Restart" to="PauseLayer" method="_on_restart_button_down"]

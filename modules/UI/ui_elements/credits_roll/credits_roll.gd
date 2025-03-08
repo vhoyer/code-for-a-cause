@@ -14,19 +14,6 @@ const DEFAULT_MARGIN = 8
 	set(_value):
 		populate_credits.call_deferred()
 
-@export var in_editor_show_scroll_margin: bool = true:
-	get():
-		if !margin_container: return true
-		return margin_container.get_theme_constant("margin_top") != DEFAULT_MARGIN
-	set(value):
-		if not Engine.is_editor_hint():
-			value = true
-		var margin = self.size.y if value else DEFAULT_MARGIN
-		if !margin_container:
-			set_deferred("in_editor_show_scroll_margin", value)
-			return
-		margin_container.add_theme_constant_override("margin_top", margin)
-		margin_container.add_theme_constant_override("margin_bottom", margin)
 
 @export_group("scrolling options")
 @export var credits_duration: float = 0
@@ -88,11 +75,6 @@ func _process(delta: float) -> void:
 
 func update_size() -> void:
 	var height = self.size.y
-	
-	if Engine.is_editor_hint():
-		if not in_editor_show_scroll_margin:
-			height = DEFAULT_MARGIN
-		return
 	
 	margin_container.add_theme_constant_override("margin_top", height)
 	margin_container.add_theme_constant_override("margin_bottom", height)

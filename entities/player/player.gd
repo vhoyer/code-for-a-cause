@@ -46,7 +46,7 @@ func update_view() -> void:
 
 func _on_joe_died(is_finished: bool, joe: Joe) -> void:
 	if is_finished:
-		StageManager.go_to_start()
+		StageManager.reload_current_stage()
 	else:
 		selected_joe = joe
 		for child: Joe in joes.get_children():

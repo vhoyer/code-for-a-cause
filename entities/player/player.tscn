@@ -283,6 +283,7 @@ floating_center = NodePath("..")
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
 process_mode = 3
+visible = false
 script = ExtResource("14_yqrof")
 
 [node name="CenterContainer" type="CenterContainer" parent="PauseLayer"]

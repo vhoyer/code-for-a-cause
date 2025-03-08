@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://s4i10mewh67y"]
 
-[ext_resource type="AudioStream" uid="uid://d2jc8r3heogdw" path="res://assets/ost/FactoryV4.ogg" id="1_f85yq"]
+[ext_resource type="AudioStream" uid="uid://dppx16haaybah" path="res://assets/ost/FactoryV5 (percussion fix).ogg" id="1_o0ix0"]
 [ext_resource type="PackedScene" uid="uid://h6lx57r8157l" path="res://entities/background/background.tscn" id="2_vhqtq"]
 [ext_resource type="TileSet" uid="uid://bnfmghrj16pdr" path="res://entities/tile_set/joe_tile_set.tres" id="3_f3wab"]
 [ext_resource type="Script" uid="uid://b07nojqj26vcj" path="res://entities/tile_set/tile_set.gd" id="4_ktus5"]
@@ -10,7 +10,7 @@
 [node name="Level_" type="Node2D"]
 
 [node name="FactoryV4" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_f85yq")
+stream = ExtResource("1_o0ix0")
 autoplay = true
 bus = &"BGM"
 

@@ -1,5 +1,6 @@
-[gd_scene load_steps=49 format=4 uid="uid://d3756fh13dbkc"]
+[gd_scene load_steps=50 format=4 uid="uid://d3756fh13dbkc"]
 
+[ext_resource type="AudioStream" uid="uid://s4v27rx1rsau" path="res://assets/ost/Don't Stop Moving V3.mp3" id="1_1fmbc"]
 [ext_resource type="Texture2D" uid="uid://b511paydkej4x" path="res://assets/Joe-Sheet.png" id="1_jan3x"]
 [ext_resource type="Script" uid="uid://yqn6ekdfwf7n" path="res://modules/UI/stage_manager/button_stage_changer.gd" id="1_sknds"]
 [ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://entities/joe/assets/Joe Palette/eye_dropper.gdshader" id="2_8ei0a"]
@@ -178,6 +179,10 @@ atlas = ExtResource("10_8ei0a")
 region = Rect2(224, 256, 32, 32)
 
 [node name="MainMenu" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_1fmbc")
+autoplay = true
 
 [node name="BG" type="Node2D" parent="."]
 position = Vector2(0, 16)
@@ -429,7 +434,7 @@ custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 max_value = 1.0
 step = 0.05
-value = 0.5
+value = 1.0
 script = ExtResource("6_jofpu")
 metadata/_custom_type_script = "uid://61q2h71kluj0"
 
@@ -443,6 +448,7 @@ custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 max_value = 1.0
 step = 0.05
+value = 1.0
 script = ExtResource("6_jofpu")
 bus = &"SFX"
 metadata/_custom_type_script = "uid://61q2h71kluj0"

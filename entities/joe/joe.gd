@@ -9,7 +9,7 @@ const JUMP_VELOCITY = -500.0
 const DRAG_FLOOR = 0.8
 const DRAG_AIR = 0.99
 
-const MAX_HEALTH = 10.0
+const MAX_HEALTH = 12.0
 
 
 signal health_updated(health: float)

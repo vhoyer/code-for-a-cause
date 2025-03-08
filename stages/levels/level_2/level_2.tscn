@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://s4i10mewh67y" path="res://stages/level_base/level_base.tscn" id="1_wk7pp"]
 [ext_resource type="PackedScene" uid="uid://dk0v54smdf5t8" path="res://entities/joe/joe_in_waiting/joe_in_waiting.tscn" id="2_21kpk"]
-[ext_resource type="PackedScene" uid="uid://bqkwecik3x6xd" path="res://entities/door/door_up.tscn" id="2_uslrr"]
+[ext_resource type="PackedScene" uid="uid://bqkwecik3x6xd" path="res://entities/lever/door_up.tscn" id="2_uslrr"]
 [ext_resource type="PackedScene" uid="uid://4umro3rhenhv" path="res://entities/button/button.tscn" id="3_1k7yh"]
 [ext_resource type="PackedScene" uid="uid://bgys0vnwmn450" path="res://entities/door/open_door.tscn" id="4_vnepo"]
 [ext_resource type="PackedScene" uid="uid://oybgjtijj1fy" path="res://entities/button/big_button.tscn" id="5_21kpk"]
 [ext_resource type="Script" uid="uid://bc3swpk52572o" path="res://entities/level_utils/level_utils_go_to_next.gd" id="6_8h6y0"]
 [ext_resource type="PackedScene" uid="uid://bvjsy2dwjfxa4" path="res://stages/levels/level_3/level_3.tscn" id="7_c2xoi"]
-[ext_resource type="PackedScene" uid="uid://tnqhkfo5hqro" path="res://entities/lever/lever.tscn" id="8_jpuhn"]
+[ext_resource type="PackedScene" uid="uid://tnqhkfo5hqro" path="res://entities/door/lever.tscn" id="8_jpuhn"]
 
 [node name="LevelBase" instance=ExtResource("1_wk7pp")]
 

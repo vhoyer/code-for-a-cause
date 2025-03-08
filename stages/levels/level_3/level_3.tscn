@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://bvjsy2dwjfxa4"]
 
 [ext_resource type="PackedScene" uid="uid://s4i10mewh67y" path="res://stages/level_base/level_base.tscn" id="1_pu3vt"]
-[ext_resource type="PackedScene" uid="uid://bqkwecik3x6xd" path="res://entities/door/door_up.tscn" id="2_jyppi"]
+[ext_resource type="PackedScene" uid="uid://bqkwecik3x6xd" path="res://entities/lever/door_up.tscn" id="2_jyppi"]
 [ext_resource type="PackedScene" uid="uid://tnqhkfo5hqro" path="res://entities/door/lever.tscn" id="3_cxabn"]
 [ext_resource type="PackedScene" uid="uid://bgys0vnwmn450" path="res://entities/door/open_door.tscn" id="4_i0ukj"]
 [ext_resource type="PackedScene" uid="uid://oybgjtijj1fy" path="res://entities/button/big_button.tscn" id="5_cxabn"]
@@ -25,10 +25,7 @@ position = Vector2(1400, -32)
 [node name="Lever" parent="." index="6" instance=ExtResource("3_cxabn")]
 position = Vector2(1170, 160)
 
-[node name="OpenDoor" parent="Lever" index="4" node_paths=PackedStringArray("door") instance=ExtResource("4_i0ukj")]
-door = NodePath("../../DoorUp")
-
-[node name="OpenDoor2" parent="Lever" index="5" node_paths=PackedStringArray("door") instance=ExtResource("4_i0ukj")]
+[node name="OpenDoor2" parent="Lever" index="4" node_paths=PackedStringArray("door") instance=ExtResource("4_i0ukj")]
 door = NodePath("../../DoorUp2")
 
 [node name="Lever2" parent="." index="7" instance=ExtResource("3_cxabn")]
@@ -36,6 +33,9 @@ position = Vector2(1705, 160)
 
 [node name="OpenDoor" parent="Lever2" index="4" node_paths=PackedStringArray("door") instance=ExtResource("4_i0ukj")]
 door = NodePath("../../DoorUp3")
+
+[node name="OpenDoor2" parent="Lever2" index="5" node_paths=PackedStringArray("door") instance=ExtResource("4_i0ukj")]
+door = NodePath("../../DoorUp")
 
 [node name="BigButton" parent="." index="8" instance=ExtResource("5_cxabn")]
 position = Vector2(967, 416)

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://s4i10mewh67y" path="res://stages/level_base/level_base.tscn" id="1_qdjag"]
 [ext_resource type="PackedScene" uid="uid://oybgjtijj1fy" path="res://entities/button/big_button.tscn" id="2_cyfj8"]
 [ext_resource type="Texture2D" uid="uid://b511paydkej4x" path="res://assets/Joe-Sheet.png" id="2_e6m1p"]
-[ext_resource type="PackedScene" uid="uid://bqkwecik3x6xd" path="res://entities/door/door_up.tscn" id="3_qv2xk"]
+[ext_resource type="PackedScene" uid="uid://bqkwecik3x6xd" path="res://entities/lever/door_up.tscn" id="3_qv2xk"]
 [ext_resource type="PackedScene" uid="uid://tnqhkfo5hqro" path="res://entities/door/lever.tscn" id="4_e6m1p"]
 [ext_resource type="PackedScene" uid="uid://bgys0vnwmn450" path="res://entities/door/open_door.tscn" id="5_1pill"]
 

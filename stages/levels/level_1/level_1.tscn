@@ -97,4 +97,4 @@ position = Vector2(750, 0)
 
 [node name="JoeInWaiting" parent="." index="7" node_paths=PackedStringArray("player") instance=ExtResource("10_ik8q2")]
 position = Vector2(773, 323)
-player = NodePath("")
+player = NodePath("../Player")

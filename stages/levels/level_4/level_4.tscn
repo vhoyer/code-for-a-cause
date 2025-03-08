@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://dx3bgn5x8qmc5"]
+[gd_scene load_steps=9 format=4 uid="uid://dx3bgn5x8qmc5"]
 
 [ext_resource type="PackedScene" uid="uid://s4i10mewh67y" path="res://stages/level_base/level_base.tscn" id="1_qdjag"]
 [ext_resource type="PackedScene" uid="uid://oybgjtijj1fy" path="res://entities/button/big_button.tscn" id="2_cyfj8"]
+[ext_resource type="Script" uid="uid://bc3swpk52572o" path="res://entities/level_utils/level_utils_go_to_next.gd" id="3_obuy4"]
 [ext_resource type="PackedScene" uid="uid://bqkwecik3x6xd" path="res://entities/lever/door_up.tscn" id="3_qv2xk"]
 [ext_resource type="PackedScene" uid="uid://tnqhkfo5hqro" path="res://entities/door/lever.tscn" id="4_e6m1p"]
+[ext_resource type="PackedScene" uid="uid://defwy7xr5v522" path="res://stages/levels/level_5/level_5.tscn" id="4_vkpkf"]
 [ext_resource type="PackedScene" uid="uid://bgys0vnwmn450" path="res://entities/door/open_door.tscn" id="5_1pill"]
 [ext_resource type="PackedScene" uid="uid://dk0v54smdf5t8" path="res://entities/joe/joe_in_waiting/joe_in_waiting.tscn" id="6_e6m1p"]
 
@@ -18,6 +20,11 @@ joe_count = 3
 
 [node name="BigButton" parent="." index="5" instance=ExtResource("2_cyfj8")]
 position = Vector2(796, 416)
+
+[node name="LevelUtilsGoToNext" type="Node" parent="BigButton" index="5"]
+script = ExtResource("3_obuy4")
+next_level = ExtResource("4_vkpkf")
+metadata/_custom_type_script = "uid://bc3swpk52572o"
 
 [node name="DoorUp" parent="." index="6" instance=ExtResource("3_qv2xk")]
 position = Vector2(157, 224)
@@ -50,4 +57,4 @@ door = NodePath("../../DoorUp2")
 
 [node name="JoeInWaiting" parent="." index="12" node_paths=PackedStringArray("player") instance=ExtResource("6_e6m1p")]
 position = Vector2(-126, 195)
-player = NodePath("")
+player = NodePath("../Player")

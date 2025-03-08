@@ -183,6 +183,7 @@ region = Rect2(224, 256, 32, 32)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_1fmbc")
 autoplay = true
+bus = &"BGM"
 
 [node name="BG" type="Node2D" parent="."]
 position = Vector2(0, 16)

@@ -1,18 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://bw08m4c7hnol"]
+[gd_scene load_steps=34 format=3 uid="uid://bw08m4c7hnol"]
 
 [ext_resource type="Script" uid="uid://83i8fnbc31h5" path="res://entities/player/player.gd" id="1_symyc"]
 [ext_resource type="PackedScene" uid="uid://cg7liji5n86ce" path="res://entities/joe/joe.tscn" id="2_abrql"]
 [ext_resource type="PackedScene" uid="uid://c7avdxof1ncqx" path="res://entities/joe_hud/joe_hud.tscn" id="3_7thud"]
 [ext_resource type="Shader" uid="uid://sitqcpfrtjqu" path="res://entities/joe_hud/pulse.gdshader" id="4_j3ovn"]
-[ext_resource type="Texture2D" uid="uid://d1l37doqwlq6d" path="res://assets/input_prompt/controller/xbox_lt.png" id="5_gx6sm"]
-[ext_resource type="Texture2D" uid="uid://dtqd4tpjrp4q2" path="res://assets/input_prompt/keyboard/keyboard_h.png" id="6_yqrof"]
-[ext_resource type="Texture2D" uid="uid://bdvmifovqky3j" path="res://assets/input_prompt/controller/xbox_lb.png" id="7_3wlsy"]
-[ext_resource type="Texture2D" uid="uid://quujhvjhchuk" path="res://assets/input_prompt/keyboard/keyboard_j.png" id="8_b2kln"]
-[ext_resource type="Texture2D" uid="uid://mpw768tv4e8v" path="res://assets/input_prompt/controller/xbox_rb.png" id="9_we0b7"]
-[ext_resource type="Texture2D" uid="uid://dxweyferpsdqy" path="res://assets/input_prompt/keyboard/keyboard_k.png" id="10_mtric"]
-[ext_resource type="Texture2D" uid="uid://dmcqgal6wdcbb" path="res://assets/input_prompt/controller/xbox_rt.png" id="11_eyb6c"]
-[ext_resource type="Texture2D" uid="uid://xvuqtiufxfm0" path="res://assets/input_prompt/keyboard/keyboard_l.png" id="12_221hk"]
 [ext_resource type="PackedScene" uid="uid://dqhy0sq863k4g" path="res://entities/joe_hud/joe_hud_floating.tscn" id="13_j3ovn"]
+[ext_resource type="Texture2D" uid="uid://cen31lisf5s7j" path="res://stages/main_menu/UI/UI.png" id="14_3wlsy"]
 [ext_resource type="Script" uid="uid://lexgt2mmoxam" path="res://entities/player/pause_layer.gd" id="14_yqrof"]
 [ext_resource type="Script" uid="uid://yqn6ekdfwf7n" path="res://modules/UI/stage_manager/button_stage_changer.gd" id="15_3wlsy"]
 [ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://modules/UI/make_parent/make_parent_controller_focus_start.gd" id="16_yqrof"]
@@ -26,6 +19,14 @@ shader_parameter/cycle_speed = 10.0
 shader_parameter/full_pulse_cycle = true
 shader_parameter/mode = 0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bectd"]
+atlas = ExtResource("14_3wlsy")
+region = Rect2(68, 391, 23, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvtmh"]
+atlas = ExtResource("14_3wlsy")
+region = Rect2(8, 358, 16, 18)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gx6sm"]
 resource_local_to_scene = true
 shader = ExtResource("4_j3ovn")
@@ -34,6 +35,14 @@ shader_parameter/alpha_limit = 0.0
 shader_parameter/cycle_speed = 10.0
 shader_parameter/full_pulse_cycle = true
 shader_parameter/mode = 0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7thud"]
+atlas = ExtResource("14_3wlsy")
+region = Rect2(4, 393, 23, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1qjk"]
+atlas = ExtResource("14_3wlsy")
+region = Rect2(40, 358, 16, 18)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yqrof"]
 resource_local_to_scene = true
@@ -44,6 +53,14 @@ shader_parameter/cycle_speed = 10.0
 shader_parameter/full_pulse_cycle = true
 shader_parameter/mode = 0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3ovn"]
+atlas = ExtResource("14_3wlsy")
+region = Rect2(36, 393, 23, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afbqv"]
+atlas = ExtResource("14_3wlsy")
+region = Rect2(72, 358, 16, 18)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3wlsy"]
 resource_local_to_scene = true
 shader = ExtResource("4_j3ovn")
@@ -52,6 +69,14 @@ shader_parameter/alpha_limit = 0.0
 shader_parameter/cycle_speed = 10.0
 shader_parameter/full_pulse_cycle = true
 shader_parameter/mode = 0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx6sm"]
+atlas = ExtResource("14_3wlsy")
+region = Rect2(100, 391, 23, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqrof"]
+atlas = ExtResource("14_3wlsy")
+region = Rect2(104, 358, 16, 18)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b2kln"]
 resource_local_to_scene = true
@@ -62,6 +87,14 @@ shader_parameter/cycle_speed = 10.0
 shader_parameter/full_pulse_cycle = true
 shader_parameter/mode = 0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2kln"]
+atlas = ExtResource("14_3wlsy")
+region = Rect2(67, 324, 26, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we0b7"]
+atlas = ExtResource("14_3wlsy")
+region = Rect2(4, 291, 24, 25)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j3ovn"]
 resource_local_to_scene = true
 shader = ExtResource("4_j3ovn")
@@ -70,6 +103,14 @@ shader_parameter/alpha_limit = 0.0
 shader_parameter/cycle_speed = 10.0
 shader_parameter/full_pulse_cycle = true
 shader_parameter/mode = 0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wlsy"]
+atlas = ExtResource("14_3wlsy")
+region = Rect2(3, 327, 26, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtric"]
+atlas = ExtResource("14_3wlsy")
+region = Rect2(36, 291, 24, 25)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_we0b7"]
 resource_local_to_scene = true
@@ -80,6 +121,14 @@ shader_parameter/cycle_speed = 10.0
 shader_parameter/full_pulse_cycle = true
 shader_parameter/mode = 0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyb6c"]
+atlas = ExtResource("14_3wlsy")
+region = Rect2(35, 327, 26, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_221hk"]
+atlas = ExtResource("14_3wlsy")
+region = Rect2(68, 291, 24, 25)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mtric"]
 resource_local_to_scene = true
 shader = ExtResource("4_j3ovn")
@@ -88,6 +137,14 @@ shader_parameter/alpha_limit = 0.0
 shader_parameter/cycle_speed = 10.0
 shader_parameter/full_pulse_cycle = true
 shader_parameter/mode = 0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghoj8"]
+atlas = ExtResource("14_3wlsy")
+region = Rect2(99, 324, 26, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1t22"]
+atlas = ExtResource("14_3wlsy")
+region = Rect2(100, 291, 24, 25)
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_symyc")
@@ -114,29 +171,29 @@ alignment = 1
 material = SubResource("ShaderMaterial_afbqv")
 layout_mode = 2
 player = NodePath("../../..")
-controller_input = ExtResource("5_gx6sm")
-keyboard_input = ExtResource("6_yqrof")
+controller_input = SubResource("AtlasTexture_bectd")
+keyboard_input = SubResource("AtlasTexture_wvtmh")
 
 [node name="JoeHud2" parent="CanvasLayer/JoeHudHolder" node_paths=PackedStringArray("player") instance=ExtResource("3_7thud")]
 material = SubResource("ShaderMaterial_gx6sm")
 layout_mode = 2
 player = NodePath("../../..")
-controller_input = ExtResource("7_3wlsy")
-keyboard_input = ExtResource("8_b2kln")
+controller_input = SubResource("AtlasTexture_7thud")
+keyboard_input = SubResource("AtlasTexture_a1qjk")
 
 [node name="JoeHud3" parent="CanvasLayer/JoeHudHolder" node_paths=PackedStringArray("player") instance=ExtResource("3_7thud")]
 material = SubResource("ShaderMaterial_yqrof")
 layout_mode = 2
 player = NodePath("../../..")
-controller_input = ExtResource("9_we0b7")
-keyboard_input = ExtResource("10_mtric")
+controller_input = SubResource("AtlasTexture_j3ovn")
+keyboard_input = SubResource("AtlasTexture_afbqv")
 
 [node name="JoeHud4" parent="CanvasLayer/JoeHudHolder" node_paths=PackedStringArray("player") instance=ExtResource("3_7thud")]
 material = SubResource("ShaderMaterial_3wlsy")
 layout_mode = 2
 player = NodePath("../../..")
-controller_input = ExtResource("11_eyb6c")
-keyboard_input = ExtResource("12_221hk")
+controller_input = SubResource("AtlasTexture_gx6sm")
+keyboard_input = SubResource("AtlasTexture_yqrof")
 
 [node name="JoeHudFloatingHolder" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -163,8 +220,8 @@ offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
 player = NodePath("../../..")
-controller_input = ExtResource("5_gx6sm")
-keyboard_input = ExtResource("6_yqrof")
+controller_input = SubResource("AtlasTexture_b2kln")
+keyboard_input = SubResource("AtlasTexture_we0b7")
 floating_center = NodePath("..")
 
 [node name="JoeHudFloating2" parent="CanvasLayer/JoeHudFloatingHolder" node_paths=PackedStringArray("player", "floating_center") instance=ExtResource("13_j3ovn")]
@@ -182,8 +239,8 @@ offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
 player = NodePath("../../..")
-controller_input = ExtResource("7_3wlsy")
-keyboard_input = ExtResource("8_b2kln")
+controller_input = SubResource("AtlasTexture_3wlsy")
+keyboard_input = SubResource("AtlasTexture_mtric")
 floating_center = NodePath("..")
 
 [node name="JoeHudFloating3" parent="CanvasLayer/JoeHudFloatingHolder" node_paths=PackedStringArray("player", "floating_center") instance=ExtResource("13_j3ovn")]
@@ -201,8 +258,8 @@ offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
 player = NodePath("../../..")
-controller_input = ExtResource("9_we0b7")
-keyboard_input = ExtResource("10_mtric")
+controller_input = SubResource("AtlasTexture_eyb6c")
+keyboard_input = SubResource("AtlasTexture_221hk")
 floating_center = NodePath("..")
 
 [node name="JoeHudFloating4" parent="CanvasLayer/JoeHudFloatingHolder" node_paths=PackedStringArray("player", "floating_center") instance=ExtResource("13_j3ovn")]
@@ -220,8 +277,8 @@ offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
 player = NodePath("../../..")
-controller_input = ExtResource("11_eyb6c")
-keyboard_input = ExtResource("12_221hk")
+controller_input = SubResource("AtlasTexture_ghoj8")
+keyboard_input = SubResource("AtlasTexture_t1t22")
 floating_center = NodePath("..")
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]

@@ -42,12 +42,6 @@ main = "uheartbeast"
 secondary = Array[String](["Pixel Font"])
 metadata/_custom_type_script = "uid://djih8r1b8d88p"
 
-[sub_resource type="Resource" id="Resource_logpw"]
-script = ExtResource("3_fm7xd")
-main = "@nadjiel"
-secondary = Array[String](["Eye Dropper Shader"])
-metadata/_custom_type_script = "uid://djih8r1b8d88p"
-
 [sub_resource type="Resource" id="Resource_nmp5h"]
 script = ExtResource("2_poujl")
 type = 0

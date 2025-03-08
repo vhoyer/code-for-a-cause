@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://modules/UI/make_parent/make_parent_controller_focus_start.gd" id="3_mcab4"]
 [ext_resource type="PackedScene" uid="uid://cod16iwe4mb0c" path="res://stages/credits/credit_roll.tscn" id="3_xkwhf"]
 [ext_resource type="PackedScene" uid="uid://cq07soegjgdgx" path="res://stages/level_select/level_select.tscn" id="4_onbu3"]
-[ext_resource type="Script" path="res://stages/main_menu/options.gd" id="5_mcab4"]
+[ext_resource type="Script" uid="uid://dqq2wjpanl6fx" path="res://stages/main_menu/options.gd" id="5_mcab4"]
 [ext_resource type="Script" uid="uid://61q2h71kluj0" path="res://modules/UI/ui_elements/volume_slider/h_volume_slider.gd" id="6_jofpu"]
 
 [node name="MainMenu" type="Node2D"]

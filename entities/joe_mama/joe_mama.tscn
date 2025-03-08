@@ -3,6 +3,24 @@
 [ext_resource type="Texture2D" uid="uid://cwtpjwhufvpx7" path="res://entities/joe_mama/JoeMama-Sheet.png" id="1_m6v1a"]
 [ext_resource type="Script" uid="uid://cdtfkfra31g3w" path="res://entities/joe_mama/joe_mama.gd" id="1_uettv"]
 
+[sub_resource type="Animation" id="Animation_1nill"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_drutn"]
+resource_name = "help"
+
 [sub_resource type="Animation" id="Animation_uettv"]
 resource_name = "idle"
 length = 2.00005
@@ -19,24 +37,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_drutn"]
-resource_name = "help"
-
-[sub_resource type="Animation" id="Animation_1nill"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2i(0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xiddm"]

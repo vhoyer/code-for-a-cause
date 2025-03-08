@@ -3,7 +3,7 @@ extends StaticBody2D
 class_name Door
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
+@onready var audio_player: AudioStreamPlayer = $audio_stream_player_pool
 signal _model_updated()
 
 @export
@@ -20,5 +20,6 @@ func _ready() -> void:
 func _update_view() -> void:
 	if is_open:
 		animation_player.play("open")
+		audio_player.play_immediately("Door")
 	else:
 		animation_player.play_backwards("open")

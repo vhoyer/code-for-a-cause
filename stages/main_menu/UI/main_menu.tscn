@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cpu32fn0r0hgq" path="res://entities/background/Background Parallax smal.png" id="1_p8ccj"]
 [ext_resource type="TileSet" uid="uid://bnfmghrj16pdr" path="res://entities/tile_set/joe_tile_set.tres" id="2_tk8dj"]
 [ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://entities/joe/assets/Joe Palette/eye_dropper.gdshader" id="3_2mudq"]
-[ext_resource type="Script" path="res://modules/UI/make_parent/make_parent_controller_focus_start.gd" id="3_jy7dd"]
+[ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://modules/UI/make_parent/make_parent_controller_focus_start.gd" id="3_jy7dd"]
 [ext_resource type="Texture2D" uid="uid://bpxt6b6sae2pv" path="res://entities/joe/assets/Joe Palette/Input Palette.png" id="4_cafmx"]
 [ext_resource type="Texture2D" uid="uid://02h5cfuh1sa" path="res://entities/joe/assets/Joe Palette/Joe Palette 1.png" id="5_tcix6"]
 [ext_resource type="Texture2D" uid="uid://c16xn62acx3wt" path="res://entities/joe/assets/Joe Palette/Joe Palette 2.png" id="6_mmlvu"]

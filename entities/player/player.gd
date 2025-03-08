@@ -54,6 +54,21 @@ func _on_joe_died(is_finished: bool, joe: Joe) -> void:
 			child.control_lock(true)
 		selected_joe.process_mode = Node.PROCESS_MODE_INHERIT
 
+
+func add_a_joe() -> void:
+	var i = joes.get_child_count()
+
+	var hud: JoeHud = joe_hud_holder.get_child(i)
+	var floating_hud: JoeHud = joe_hud_floating_holder.get_child(i)
+	var joe: Joe = joe_scene.instantiate()
+	joes.add_child(joe)
+	joe.global_position = selected_joe.global_position + Vector2.UP * 40
+	joe.died.connect(_on_joe_died)
+
+	hud.joe = joe
+	floating_hud.joe = joe
+
+
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
 

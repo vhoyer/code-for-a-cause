@@ -38,7 +38,7 @@ lever_actor="group of bodies that can interact with a lever"
 [gui]
 
 theme/custom="res://assets/theme.tres"
-theme/custom_font="res://assets/quaver.ttf"
+theme/custom_font="uid://cwntvjj7guloq"
 
 [input]
 

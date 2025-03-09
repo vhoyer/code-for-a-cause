@@ -324,7 +324,6 @@ script = ExtResource("3_mcab4")
 metadata/_custom_type_script = "uid://b6827tfdgmrq2"
 
 [node name="ButtonSceneChanger4" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 text = "choose level"
 script = ExtResource("1_sknds")

@@ -10,7 +10,8 @@
 [node name="JoeMama" parent="." index="5" instance=ExtResource("2_q801t")]
 position = Vector2(480, 320)
 
-[node name="LevelUtilsGoToNext" type="Node" parent="JoeMama" index="3"]
+[node name="LevelUtilsGoToNext" type="Node" parent="JoeMama" index="3" node_paths=PackedStringArray("player")]
 script = ExtResource("3_6uytm")
 next_level = ExtResource("4_11ohc")
+player = NodePath("../../Player")
 metadata/_custom_type_script = "uid://bc3swpk52572o"

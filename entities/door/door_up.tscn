@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqkwecik3x6xd"]
+[gd_scene load_steps=8 format=3 uid="uid://bqkwecik3x6xd"]
 
 [ext_resource type="Texture2D" uid="uid://pll0kyblccpx" path="res://entities/door/MovingDoors-Sheet.png" id="1_05v0y"]
 [ext_resource type="Script" uid="uid://cjnv3l321n7np" path="res://entities/door/door_up.gd" id="1_xv1b5"]
@@ -45,6 +45,34 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(-1.5, 32)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("glow:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hn8tw"]
+resource_name = "glow"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("glow:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_05v0y"]
 resource_name = "open"
@@ -90,6 +118,7 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dsbe1"]
 _data = {
 &"RESET": SubResource("Animation_bfv6c"),
+&"glow": SubResource("Animation_hn8tw"),
 &"open": SubResource("Animation_05v0y")
 }
 
@@ -106,7 +135,18 @@ vframes = 2
 position = Vector2(-1.5, 32)
 shape = SubResource("RectangleShape2D_05v0y")
 
+[node name="glow" type="Polygon2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+color = Color(0.976471, 0.929412, 0.184314, 0.658824)
+polygon = PackedVector2Array(-8, 0, 5, 0, 5, 64, -8, 64)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_dsbe1")
+}
+speed_scale = 2.0
+
+[node name="glow_player" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_dsbe1")
 }

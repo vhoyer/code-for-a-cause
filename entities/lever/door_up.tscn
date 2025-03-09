@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cjnv3l321n7np" path="res://entities/door/door_up.gd" id="1_xv1b5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05v0y"]
+resource_local_to_scene = true
 size = Vector2(13, 64)
 
 [sub_resource type="Animation" id="Animation_bfv6c"]

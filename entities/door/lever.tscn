@@ -1,10 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://tnqhkfo5hqro"]
+[gd_scene load_steps=8 format=3 uid="uid://tnqhkfo5hqro"]
 
 [ext_resource type="Texture2D" uid="uid://cwda2wsxelocn" path="res://entities/lever/Lever-sheet.png" id="1_5uc6n"]
 [ext_resource type="Script" uid="uid://bandsob70uxwr" path="res://entities/lever/lever.gd" id="1_kcgeh"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcgeh"]
-size = Vector2(3.00001, 32)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kcgeh"]
 radius = 41.1096
@@ -68,25 +65,21 @@ _data = {
 [node name="Lever" type="StaticBody2D"]
 script = ExtResource("1_kcgeh")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_5uc6n")
-offset = Vector2(0, -13)
-hframes = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5.42998e-06, -1.5)
-rotation = -1.5708
-shape = SubResource("RectangleShape2D_kcgeh")
-
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
-rotation = 0.785398
 shape = SubResource("CircleShape2D_kcgeh")
-debug_color = Color(0.961314, 0.103112, 0.426771, 0.42)
+debug_color = Color(1.78084e-06, 0.641399, 0.334926, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5uc6n")
+offset = Vector2(0, -13)
+hframes = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-16, 0, -9, -3, 9, -3, 16, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

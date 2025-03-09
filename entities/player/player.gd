@@ -36,6 +36,9 @@ func update_view() -> void:
 		joe = joe_scene.instantiate()
 		joes.add_child(joe)
 		joe.position.x = 35 * i
+
+		if Engine.is_editor_hint(): continue
+
 		joe.died.connect(_on_joe_died)
 
 		hud = joe_hud_holder.get_child(i)

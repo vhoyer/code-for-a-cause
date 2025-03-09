@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bx6qbmx4nng7y" path="res://entities/tile_set/ConvetorBelt-Sheet.png" id="1_sgbwv"]
 [ext_resource type="Texture2D" uid="uid://b67e0v1lu5lsy" path="res://entities/tile_set/joe_tile_map.png" id="2_gumpc"]
-[ext_resource type="Texture2D" uid="uid://dfjlcr4durh85" path="res://entities/spikes/spikes3.png" id="3_efw52"]
+[ext_resource type="Texture2D" uid="uid://dfjlcr4durh85" path="res://entities/tile_set/spikes3.png" id="3_efw52"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ftse2"]
 texture = ExtResource("1_sgbwv")

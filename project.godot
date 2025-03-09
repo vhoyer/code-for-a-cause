@@ -29,6 +29,14 @@ window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/name="Joe Adventure"
 
+[file_customization]
+
+folder_colors={
+"res://entities/": "teal",
+"res://modules/": "purple",
+"res://stages/": "yellow"
+}
+
 [global_group]
 
 grabbable="joe can grab this"

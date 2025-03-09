@@ -1,7 +1,14 @@
-[gd_scene load_steps=26 format=3 uid="uid://oybgjtijj1fy"]
+[gd_scene load_steps=28 format=3 uid="uid://oybgjtijj1fy"]
 
 [ext_resource type="Script" uid="uid://ctcxubg4de43o" path="res://entities/button/big_button.gd" id="1_03o1e"]
 [ext_resource type="Texture2D" uid="uid://rnfifrmnfmki" path="res://entities/button/Buttons.png" id="1_ss3nw"]
+[ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://modules/UI/assets/eye_dropper.gdshader" id="2_84sa2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vfrk8"]
+shader = ExtResource("2_84sa2")
+shader_parameter/palette_array_size = 0
+shader_parameter/input_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/output_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_84sa2"]
 size = Vector2(116, 26)
@@ -288,6 +295,7 @@ graph_offset = Vector2(-4, 22)
 script = ExtResource("1_03o1e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_vfrk8")
 texture = ExtResource("1_ss3nw")
 offset = Vector2(0, -13)
 hframes = 5
@@ -304,6 +312,7 @@ shape = SubResource("RectangleShape2D_84sa2")
 debug_color = Color(0.879186, 0.318942, 0.31312, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_03o1e")
 
@@ -316,6 +325,23 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_ior5c")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -4.0
+offset_right = 4.0
+offset_bottom = 13.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 8
+
+[node name="Label" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "4"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="ActivationArea" to="." method="_on_activation_area_body_entered_or_exited"]
 [connection signal="body_exited" from="ActivationArea" to="." method="_on_activation_area_body_entered_or_exited"]

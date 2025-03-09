@@ -3,8 +3,10 @@ extends StaticBody2D
 
 @onready var activation_area: Area2D = $ActivationArea
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var label: Label = %Label
 
 signal active_changed(active: bool)
+signal _model_changed()
 
 @export_range(0, 15, 0.5, "or_greater")
 var seconds_to_require_reactivation: float = 10.0
@@ -15,17 +17,27 @@ var active: bool:
 		active = value
 		active_changed.emit(value)
 
-@export
-var weight_to_trigger: int = 4
+@export_range(1, 4, 1)
+var weight_to_trigger: int = 4:
+	set(value):
+		weight_to_trigger = value
+		_model_changed.emit()
 
 var weight: int = 0:
 	set(value):
 		weight = value
 		active = (weight >= weight_to_trigger)
+		_model_changed.emit()
 
 
 func _ready() -> void:
 	active_changed.connect(_on_active_changed)
+	_model_changed.connect(update_view)
+	update_view()
+
+
+func update_view() -> void:
+	label.text = str(weight_to_trigger - weight)
 
 
 func _on_active_changed(_active: bool) -> void:

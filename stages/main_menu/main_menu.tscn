@@ -3,7 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://s4v27rx1rsau" path="res://assets/ost/Don't Stop Moving V3.mp3" id="1_1fmbc"]
 [ext_resource type="Texture2D" uid="uid://b511paydkej4x" path="res://assets/Joe-Sheet.png" id="1_jan3x"]
 [ext_resource type="Script" uid="uid://yqn6ekdfwf7n" path="res://modules/UI/stage_manager/button_stage_changer.gd" id="1_sknds"]
-[ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://entities/joe/assets/Joe Palette/eye_dropper.gdshader" id="2_8ei0a"]
+[ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://modules/UI/assets/eye_dropper.gdshader" id="2_8ei0a"]
 [ext_resource type="PackedScene" uid="uid://c2v7s5fjbeqhy" path="res://stages/levels/level_1/level_1.tscn" id="3_7wn7o"]
 [ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://modules/UI/make_parent/make_parent_controller_focus_start.gd" id="3_mcab4"]
 [ext_resource type="PackedScene" uid="uid://cod16iwe4mb0c" path="res://stages/credits/credit_roll.tscn" id="3_xkwhf"]

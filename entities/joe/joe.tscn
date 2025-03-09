@@ -1,7 +1,7 @@
 [gd_scene load_steps=38 format=3 uid="uid://cg7liji5n86ce"]
 
 [ext_resource type="Script" uid="uid://c6oe8oddyhcg2" path="res://entities/joe/joe.gd" id="1_7fmcv"]
-[ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://entities/joe/assets/Joe Palette/eye_dropper.gdshader" id="1_bwvaa"]
+[ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://modules/UI/assets/eye_dropper.gdshader" id="1_bwvaa"]
 [ext_resource type="Texture2D" uid="uid://dw7hj0wqq5ye6" path="res://entities/joe/assets/Joe-Sheet.png" id="2_bwvaa"]
 [ext_resource type="Texture2D" uid="uid://qlu3l8wa6173" path="res://entities/joe/assets/Joe_Explode-Sheet.png" id="3_cskce"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://c6lsykbsbquak" path="res://entities/joe/assets/animation_blend_tree.tres" id="4_xevyh"]

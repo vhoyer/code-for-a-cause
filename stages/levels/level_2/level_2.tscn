@@ -26,9 +26,10 @@ position = Vector2(278, 256)
 position = Vector2(1305, 320)
 weight_to_trigger = 2
 
-[node name="LevelUtilsGoToNext" type="Node" parent="Map/BigButton" index="5"]
+[node name="LevelUtilsGoToNext" type="Node" parent="Map/BigButton" index="5" node_paths=PackedStringArray("player")]
 script = ExtResource("6_8h6y0")
 next_level = ExtResource("7_c2xoi")
+player = NodePath("../../../Player")
 metadata/_custom_type_script = "uid://bc3swpk52572o"
 
 [node name="Lever" parent="Map" index="4" instance=ExtResource("8_jpuhn")]

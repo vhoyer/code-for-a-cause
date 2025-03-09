@@ -20,9 +20,10 @@ position = Vector2(490, 15)
 [node name="BigButton" parent="." index="5" instance=ExtResource("6_oe8px")]
 position = Vector2(795, 288)
 
-[node name="LevelUtilsGoToNext" type="Node" parent="BigButton" index="5"]
+[node name="LevelUtilsGoToNext" type="Node" parent="BigButton" index="5" node_paths=PackedStringArray("player")]
 script = ExtResource("3_wcd4r")
 next_level = ExtResource("4_oe8px")
+player = NodePath("../../Player")
 metadata/_custom_type_script = "uid://bc3swpk52572o"
 
 [node name="Button" parent="." index="6" instance=ExtResource("5_wcd4r")]

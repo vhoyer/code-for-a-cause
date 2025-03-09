@@ -43,9 +43,10 @@ door = NodePath("../../DoorUp")
 position = Vector2(967, 416)
 weight_to_trigger = 3
 
-[node name="LevelUtilsGoToNext" type="Node" parent="BigButton" index="5"]
+[node name="LevelUtilsGoToNext" type="Node" parent="BigButton" index="5" node_paths=PackedStringArray("player")]
 script = ExtResource("6_mry4w")
 next_level = ExtResource("7_mry4w")
+player = NodePath("../../Player")
 metadata/_custom_type_script = "uid://bc3swpk52572o"
 
 [node name="Player" parent="." index="10"]

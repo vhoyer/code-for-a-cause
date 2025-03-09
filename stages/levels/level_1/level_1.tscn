@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://s4i10mewh67y" path="res://stages/level_base/level_base.tscn" id="1_qtc3j"]
 [ext_resource type="PackedScene" uid="uid://oybgjtijj1fy" path="res://entities/button/big_button.tscn" id="2_13y66"]
-[ext_resource type="PackedScene" uid="uid://tnqhkfo5hqro" path="res://entities/door/lever.tscn" id="2_qk3f4"]
+[ext_resource type="PackedScene" uid="uid://tnqhkfo5hqro" path="res://entities/lever/lever.tscn" id="2_qk3f4"]
 [ext_resource type="Script" uid="uid://bc3swpk52572o" path="res://entities/level_utils/level_utils_go_to_next.gd" id="3_h3tyy"]
 [ext_resource type="PackedScene" uid="uid://bgys0vnwmn450" path="res://entities/door/open_door.tscn" id="3_ik8q2"]
 [ext_resource type="PackedScene" uid="uid://cqmu50sku78bw" path="res://entities/tutorial_prompt/tutorial_prompt.tscn" id="5_ekd4q"]
 [ext_resource type="Texture2D" uid="uid://cen31lisf5s7j" path="res://stages/main_menu/UI/UI.png" id="6_2arti"]
 [ext_resource type="PackedScene" uid="uid://bvjsy2dwjfxa4" path="res://stages/levels/level_3/level_3.tscn" id="6_ik8q2"]
-[ext_resource type="PackedScene" uid="uid://bqkwecik3x6xd" path="res://entities/lever/door_up.tscn" id="9_wyqeb"]
+[ext_resource type="PackedScene" uid="uid://bqkwecik3x6xd" path="res://entities/door/door_up.tscn" id="9_wyqeb"]
 [ext_resource type="PackedScene" uid="uid://dk0v54smdf5t8" path="res://entities/joe/joe_in_waiting/joe_in_waiting.tscn" id="10_ik8q2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4lu2v"]

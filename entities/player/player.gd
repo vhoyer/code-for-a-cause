@@ -83,6 +83,8 @@ func _physics_process(delta: float) -> void:
 	if selected_joe:
 		selected_joe.process_movent(delta)
 
+	CameraMain.singleton.noi_list = get_all_non_selected_moving_joes()
+
 
 func process_switch(action: StringName, index: int) -> void:
 	if index > joes.get_child_count() - 1:
@@ -112,3 +114,10 @@ func get_rect_containing_all_joes() -> Rect2:
 
 	rect.position.y -= 30
 	return rect
+
+
+func get_all_non_selected_moving_joes() -> Array[Node2D]:
+	var array: Array[Node2D] = []
+	array.append_array(joes.get_children().filter(func(joe: Joe):
+		return joe != selected_joe and joe.velocity.length() > 0))
+	return array

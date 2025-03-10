@@ -12,6 +12,7 @@ static var singleton: CameraMain:
 
 var main_poi: Vector2
 var poi_list: Array[Vector2] = []
+var noi_list: Array[Node2D] = []
 
 
 func _init() -> void:
@@ -31,11 +32,13 @@ func momentarily_add_to_focus(point: Vector2) -> void:
 
 
 func get_rect_containing_points_of_interest() -> Rect2:
-	var list = poi_list.duplicate()
 	var rect:= Rect2(main_poi, Vector2.ONE)
 
-	for point: Vector2 in list:
+	for point: Vector2 in poi_list:
 		rect = rect.expand(point)
+
+	for node: Node2D in noi_list:
+		rect = rect.expand(node.global_position)
 
 	rect.position.y -= 35
 	rect.size.y += 70
@@ -53,7 +56,7 @@ func _physics_process(_delta: float) -> void:
 	var poi = rect.get_center()
 	self.global_position += (poi - self.global_position) * 0.2
 
-	if poi_list.size():
+	if poi_list.size() + noi_list.size() > 1:
 		var zoom_factor_x = get_viewport_rect().size.x / rect.size.x * zoom_constant
 		var zoom_factor_y = get_viewport_rect().size.y / rect.size.y * zoom_constant
 		var zoom_factor = clamp(min(zoom_factor_x, zoom_factor_y), 0.01, 1)

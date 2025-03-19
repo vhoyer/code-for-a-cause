@@ -1,13 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://4umro3rhenhv"]
+[gd_scene load_steps=9 format=3 uid="uid://4umro3rhenhv"]
 
 [ext_resource type="Script" uid="uid://dy6ipym3qsj41" path="res://entities/button/button.gd" id="1_7gf2j"]
 [ext_resource type="Texture2D" uid="uid://rnfifrmnfmki" path="res://entities/button/Buttons.png" id="2_7gf2j"]
+[ext_resource type="AudioStream" uid="uid://cxiopv4ulyjhv" path="res://entities/button/ButtonPress.ogg" id="3_tdykk"]
+[ext_resource type="AudioStream" uid="uid://ct2321lwrywpi" path="res://entities/button/ButtonUnpress.ogg" id="4_x1tbq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2arti"]
 size = Vector2(52, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4lu2v"]
 size = Vector2(56, 6)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bnhup"]
+random_pitch = 1.12
+streams_count = 1
+stream_0/stream = ExtResource("3_tdykk")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xjlp8"]
+random_pitch = 1.12
+streams_count = 1
+stream_0/stream = ExtResource("4_x1tbq")
 
 [node name="Button" type="StaticBody2D"]
 script = ExtResource("1_7gf2j")
@@ -32,6 +44,18 @@ debug_color = Color(0.845326, 0.336928, 0.455054, 0.42)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_4lu2v")
+
+[node name="down" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_bnhup")
+volume_db = -15.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="up" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_xjlp8")
+volume_db = -15.0
+max_polyphony = 5
+bus = &"SFX"
 
 [connection signal="body_entered" from="ActivationArea" to="." method="_on_activation_area_body_entered"]
 [connection signal="body_exited" from="ActivationArea" to="." method="_on_activation_area_body_exited"]

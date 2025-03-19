@@ -3,6 +3,8 @@ extends StaticBody2D
 
 @onready var activation_area: Area2D = $ActivationArea
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var down: AudioStreamPlayer = $down
+@onready var up: AudioStreamPlayer = $up
 
 signal _model_updated()
 signal active_changed(active: bool)
@@ -35,8 +37,10 @@ func update_view() -> void:
 func _on_active_changed(_active: bool) -> void:
 	if active:
 		sprite_2d.frame += 1
+		down.play()
 	else:
 		sprite_2d.frame -= 1
+		up.play()
 
 
 func _on_reactivation_required() -> void:

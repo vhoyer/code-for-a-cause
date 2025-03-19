@@ -21,7 +21,6 @@ player = NodePath("../../Player")
 
 [node name="FirstDoor" parent="Map" index="2" instance=ExtResource("2_uslrr")]
 position = Vector2(278, 256)
-power_counter = 0
 
 [node name="BigButton" parent="Map" index="3" instance=ExtResource("5_21kpk")]
 position = Vector2(1305, 320)
@@ -44,7 +43,6 @@ door = NodePath("../../SecondDoor")
 
 [node name="SecondDoor" parent="Map" index="5" instance=ExtResource("2_uslrr")]
 position = Vector2(1005, 256)
-power_counter = 0
 
 [node name="Button2" parent="Map" index="6" instance=ExtResource("3_1k7yh")]
 position = Vector2(1024, 128)

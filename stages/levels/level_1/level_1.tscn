@@ -90,7 +90,6 @@ shape = SubResource("RectangleShape2D_qk3f4")
 
 [node name="DoorUp" parent="Map" index="5" instance=ExtResource("9_wyqeb")]
 position = Vector2(750, 0)
-power_counter = 0
 
 [node name="Player" parent="." index="5"]
 position = Vector2(-746, 233)

@@ -73,28 +73,21 @@ door = NodePath("../../DoorUp6")
 
 [node name="DoorUp" parent="." index="13" instance=ExtResource("6_iwyd2")]
 position = Vector2(752, -32)
-power_counter = 0
 
 [node name="DoorUp2" parent="." index="14" instance=ExtResource("6_iwyd2")]
 position = Vector2(372, 224)
-power_counter = 0
 
 [node name="DoorUp3" parent="." index="15" instance=ExtResource("6_iwyd2")]
 position = Vector2(466, 224)
-power_counter = 0
 
 [node name="DoorUp4" parent="." index="16" instance=ExtResource("6_iwyd2")]
 position = Vector2(558, 224)
-power_counter = 0
 
 [node name="DoorUp5" parent="." index="17" instance=ExtResource("6_iwyd2")]
 position = Vector2(652, 224)
-power_counter = 0
 
 [node name="DoorUp6" parent="." index="18" instance=ExtResource("6_iwyd2")]
 position = Vector2(17, 224)
-power_counter = 0
 
 [node name="DoorUp7" parent="." index="19" instance=ExtResource("6_iwyd2")]
 position = Vector2(270, -32)
-power_counter = 0

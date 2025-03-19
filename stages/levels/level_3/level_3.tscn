@@ -16,16 +16,13 @@ tile_map_data = PackedByteArray("AAAHAAsAAQACAAEAAAAGAAsAAQABAAEAAAAFAAsAAQABAAE
 
 [node name="DoorUp" parent="." index="3" instance=ExtResource("2_jyppi")]
 position = Vector2(878, 352)
-power_counter = 0
 
 [node name="DoorUp2" parent="." index="4" instance=ExtResource("2_jyppi")]
 position = Vector2(1376, 186)
 rotation = 1.5708
-power_counter = 0
 
 [node name="DoorUp3" parent="." index="5" instance=ExtResource("2_jyppi")]
 position = Vector2(1400, -32)
-power_counter = 0
 
 [node name="Lever" parent="." index="6" instance=ExtResource("3_cxabn")]
 position = Vector2(1170, 160)

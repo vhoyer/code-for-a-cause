@@ -4,6 +4,7 @@ class_name Door
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var glow_player: AnimationPlayer = $glow_player
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 signal _model_updated()
 
@@ -28,6 +29,7 @@ func _ready() -> void:
 
 
 func _update_view() -> void:
+	audio_stream_player.play(0.4)
 	if is_open:
 		animation_player.play("open")
 	else:

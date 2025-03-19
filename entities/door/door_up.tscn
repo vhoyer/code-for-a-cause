@@ -161,5 +161,6 @@ libraries = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_spurm")
-volume_db = -10.0
+volume_db = -15.0
 max_polyphony = 5
+bus = &"SFX"

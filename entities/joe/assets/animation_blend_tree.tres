@@ -1,7 +1,8 @@
-[gd_resource type="AnimationNodeBlendTree" load_steps=40 format=3 uid="uid://c6lsykbsbquak"]
+[gd_resource type="AnimationNodeBlendTree" load_steps=41 format=3 uid="uid://c6lsykbsbquak"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_re8eq"]
 animation = &"air_up"
+advance_on_start = true
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_we4wd"]
 animation = &"air_down"
@@ -129,6 +130,10 @@ switch_mode = 2
 advance_mode = 2
 advance_condition = &"is_on_air"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tluw5"]
+advance_mode = 2
+advance_condition = &"is_on_air"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ru1im"]
 states/air/node = SubResource("AnimationNodeBlendSpace1D_a2bln")
 states/air/position = Vector2(478, -250)
@@ -150,8 +155,8 @@ states/throw_upwards/node = SubResource("AnimationNodeAnimation_617yc")
 states/throw_upwards/position = Vector2(567, 317)
 states/walk_right/node = SubResource("AnimationNodeAnimation_76cwu")
 states/walk_right/position = Vector2(333, -125)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_1u1ix"), "idle", "explode", SubResource("AnimationNodeStateMachineTransition_61inw"), "idle", "air", SubResource("AnimationNodeStateMachineTransition_yu1mo"), "air", "landing", SubResource("AnimationNodeStateMachineTransition_srsoy"), "landing", "idle", SubResource("AnimationNodeStateMachineTransition_h34fi"), "idle", "punch", SubResource("AnimationNodeStateMachineTransition_ahdc6"), "punch", "idle", SubResource("AnimationNodeStateMachineTransition_yobmm"), "idle", "blink", SubResource("AnimationNodeStateMachineTransition_76cwu"), "blink", "idle", SubResource("AnimationNodeStateMachineTransition_b5jg4"), "idle", "grab", SubResource("AnimationNodeStateMachineTransition_6gmym"), "grab", "throw_upwards", SubResource("AnimationNodeStateMachineTransition_617yc"), "throw_upwards", "idle", SubResource("AnimationNodeStateMachineTransition_snqf3"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_5aqsv"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_hxrnx"), "idle", "walk_right", SubResource("AnimationNodeStateMachineTransition_10mpg"), "walk_right", "air", SubResource("AnimationNodeStateMachineTransition_0w1vr"), "landing", "walk_right", SubResource("AnimationNodeStateMachineTransition_gi318"), "walk_right", "idle", SubResource("AnimationNodeStateMachineTransition_betbw"), "walk_right", "punch", SubResource("AnimationNodeStateMachineTransition_re8eq"), "punch", "walk_right", SubResource("AnimationNodeStateMachineTransition_we4wd"), "air", "punch", SubResource("AnimationNodeStateMachineTransition_a2bln"), "punch", "air", SubResource("AnimationNodeStateMachineTransition_il6ij")]
-graph_offset = Vector2(-148, -135)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_1u1ix"), "idle", "explode", SubResource("AnimationNodeStateMachineTransition_61inw"), "idle", "air", SubResource("AnimationNodeStateMachineTransition_yu1mo"), "air", "landing", SubResource("AnimationNodeStateMachineTransition_srsoy"), "landing", "idle", SubResource("AnimationNodeStateMachineTransition_h34fi"), "idle", "punch", SubResource("AnimationNodeStateMachineTransition_ahdc6"), "punch", "idle", SubResource("AnimationNodeStateMachineTransition_yobmm"), "idle", "blink", SubResource("AnimationNodeStateMachineTransition_76cwu"), "blink", "idle", SubResource("AnimationNodeStateMachineTransition_b5jg4"), "idle", "grab", SubResource("AnimationNodeStateMachineTransition_6gmym"), "grab", "throw_upwards", SubResource("AnimationNodeStateMachineTransition_617yc"), "throw_upwards", "idle", SubResource("AnimationNodeStateMachineTransition_snqf3"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_5aqsv"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_hxrnx"), "idle", "walk_right", SubResource("AnimationNodeStateMachineTransition_10mpg"), "walk_right", "air", SubResource("AnimationNodeStateMachineTransition_0w1vr"), "landing", "walk_right", SubResource("AnimationNodeStateMachineTransition_gi318"), "walk_right", "idle", SubResource("AnimationNodeStateMachineTransition_betbw"), "walk_right", "punch", SubResource("AnimationNodeStateMachineTransition_re8eq"), "punch", "walk_right", SubResource("AnimationNodeStateMachineTransition_we4wd"), "air", "punch", SubResource("AnimationNodeStateMachineTransition_a2bln"), "punch", "air", SubResource("AnimationNodeStateMachineTransition_il6ij"), "landing", "air", SubResource("AnimationNodeStateMachineTransition_tluw5")]
+graph_offset = Vector2(-135, -425)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1fyjv"]
 animation = &"turn_left"
@@ -170,7 +175,7 @@ blend_mode = 1
 filters = ["Sprites:scale"]
 
 [resource]
-graph_offset = Vector2(-500.714, 104.559)
+graph_offset = Vector2(-523, 517)
 nodes/animations/node = SubResource("AnimationNodeStateMachine_ru1im")
 nodes/animations/position = Vector2(-60, 160)
 nodes/direction/node = SubResource("AnimationNodeBlendSpace1D_x56t3")

@@ -1,10 +1,13 @@
-[gd_scene load_steps=38 format=3 uid="uid://cg7liji5n86ce"]
+[gd_scene load_steps=44 format=3 uid="uid://cg7liji5n86ce"]
 
 [ext_resource type="Script" uid="uid://c6oe8oddyhcg2" path="res://entities/joe/joe.gd" id="1_7fmcv"]
 [ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://modules/UI/assets/eye_dropper.gdshader" id="1_bwvaa"]
 [ext_resource type="Texture2D" uid="uid://dw7hj0wqq5ye6" path="res://entities/joe/assets/Joe-Sheet.png" id="2_bwvaa"]
 [ext_resource type="Texture2D" uid="uid://qlu3l8wa6173" path="res://entities/joe/assets/Joe_Explode-Sheet.png" id="3_cskce"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://c6lsykbsbquak" path="res://entities/joe/assets/animation_blend_tree.tres" id="4_xevyh"]
+[ext_resource type="AudioStream" uid="uid://d25iookqcmp35" path="res://entities/joe/assets/Jump.ogg" id="6_cabhh"]
+[ext_resource type="AudioStream" uid="uid://c0fipbfeutt4h" path="res://entities/joe/assets/JustExplosion.ogg" id="7_ak1vs"]
+[ext_resource type="AudioStream" uid="uid://bmtn2g5f4w03h" path="res://entities/joe/assets/Punch.ogg" id="8_hc8t0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cskce"]
 shader = ExtResource("1_bwvaa")
@@ -696,7 +699,21 @@ states/grabbed/position = Vector2(434, 237)
 transitions = ["Start", "BlendTree", SubResource("AnimationNodeStateMachineTransition_kmyr7"), "BlendTree", "grabbed", SubResource("AnimationNodeStateMachineTransition_lukas"), "grabbed", "RESET", SubResource("AnimationNodeStateMachineTransition_bwvaa"), "RESET", "BlendTree", SubResource("AnimationNodeStateMachineTransition_cskce")]
 graph_offset = Vector2(-151, -40)
 
-[node name="Joe" type="CharacterBody2D" groups=["button_actor", "grabbable", "lever_actor"]]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_o3s3l"]
+streams_count = 1
+stream_0/stream = ExtResource("6_cabhh")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qs8wu"]
+random_pitch = 1.12
+streams_count = 1
+stream_0/stream = ExtResource("8_hc8t0")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_exgsc"]
+random_pitch = 1.12
+streams_count = 1
+stream_0/stream = ExtResource("7_ak1vs")
+
+[node name="Joe" type="CharacterBody2D" groups=["button_actor", "grabbable"]]
 material = SubResource("ShaderMaterial_cskce")
 collision_layer = 3
 script = ExtResource("1_7fmcv")
@@ -784,9 +801,22 @@ parameters/BlendTree/animations/conditions/is_on_air = false
 parameters/BlendTree/animations/conditions/is_on_floor = false
 parameters/BlendTree/animations/conditions/is_punching = false
 parameters/BlendTree/animations/conditions/is_walking = false
-parameters/BlendTree/animations/air/blend_position = 0.195
+parameters/BlendTree/animations/air/blend_position = -0.361938
 parameters/BlendTree/direction/blend_position = 0.466
 parameters/BlendTree/flip/add_amount = 1.0
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_o3s3l")
+volume_db = -20.0
+max_polyphony = 10
+
+[node name="Punch" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_qs8wu")
+volume_db = -15.0
+
+[node name="JustExplosion" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_exgsc")
+volume_db = -15.0
 
 [connection signal="body_entered" from="VisualRoot/HitboxGrab" to="." method="_on_hitbox_grab_body_entered"]
 [connection signal="body_exited" from="VisualRoot/HitboxGrab" to="." method="_on_hitbox_grab_body_exited"]

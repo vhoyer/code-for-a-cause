@@ -21,6 +21,10 @@ signal died(is_finished: bool, joe: Joe)
 @onready var hitbox_punch: Area2D = $VisualRoot/HitboxPunch
 @onready var grab_position: Marker2D = $GrabPosition
 
+@onready var jump: AudioStreamPlayer = $Jump
+@onready var just_explosion: AudioStreamPlayer = $JustExplosion
+@onready var punch: AudioStreamPlayer = $Punch
+
 
 @export
 var is_grabbed: bool = false
@@ -46,6 +50,9 @@ var health: float:
 	set(value):
 		health = value
 		health_updated.emit(health)
+
+
+var last_velocity: Vector2 = Vector2.ZERO
 
 
 func _ready() -> void:
@@ -105,6 +112,10 @@ func _physics_process(delta: float) -> void:
 		if body is Joe:
 			body.global_position = grab_position.global_position
 
+	if last_velocity.y >= 0 and velocity.y < 0:
+		jump.play()
+	last_velocity = velocity
+
 
 func process_movent(delta: float) -> void:
 	if is_on_floor():
@@ -136,6 +147,7 @@ func process_walking() -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 func smack() -> void:
+	punch.play()
 	var bodies = hitbox_punch.get_overlapping_bodies()
 
 	for body in bodies:
@@ -178,6 +190,7 @@ func throw_grabbed() -> void:
 
 
 func die_begin() -> void:
+	just_explosion.play()
 	died.emit(false, self)
 
 

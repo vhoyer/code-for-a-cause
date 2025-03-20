@@ -13,4 +13,5 @@ func _on_resume_button_down() -> void:
 
 
 func _on_restart_button_down() -> void:
+	get_tree().paused = false
 	StageManager.reload_current_stage()

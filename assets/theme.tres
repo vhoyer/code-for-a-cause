@@ -1,6 +1,18 @@
-[gd_resource type="Theme" load_steps=12 format=3 uid="uid://mktlkqcir8k2"]
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://mktlkqcir8k2"]
 
 [ext_resource type="Texture2D" uid="uid://cen31lisf5s7j" path="res://stages/main_menu/UI/UI.png" id="1_5x3i2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5x3i2"]
+atlas = ExtResource("1_5x3i2")
+region = Rect2(192, 64, 96, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wl1kw"]
+content_margin_left = 4.0
+content_margin_top = 8.0
+content_margin_right = 4.0
+content_margin_bottom = 8.0
+texture = SubResource("AtlasTexture_5x3i2")
+region_rect = Rect2(0, 0, 96, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wl1kw"]
 atlas = ExtResource("1_5x3i2")
@@ -79,6 +91,9 @@ corner_radius_bottom_left = 3
 anti_aliasing_size = 0.15
 
 [resource]
+Button/colors/font_color = Color(0.12549, 0.180392, 0.215686, 1)
+Button/styles/normal = SubResource("StyleBoxTexture_wl1kw")
+Button/styles/pressed = null
 HSlider/icons/grabber = SubResource("AtlasTexture_wl1kw")
 HSlider/icons/grabber_highlight = SubResource("AtlasTexture_lu33j")
 HSlider/styles/grabber_area = SubResource("StyleBoxTexture_5x3i2")

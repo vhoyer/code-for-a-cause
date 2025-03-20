@@ -85,6 +85,3 @@ polygon = PackedVector2Array(-16, 0, -9, -3, 9, -3, 16, 0)
 libraries = {
 &"": SubResource("AnimationLibrary_284lf")
 }
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered_or_exited"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_entered_or_exited"]

@@ -95,8 +95,12 @@ func process_switch(action: StringName, index: int) -> void:
 	if not Input.is_action_just_pressed(action): return
 	if selected_joe == joe: return
 
+	if selected_joe:
+		# remove the old from the group
+		selected_joe.remove_from_group('lever_actor')
 	selected_joe = joe
 	selected_joe.velocity.y -= 200
+	selected_joe.add_to_group('lever_actor')
 
 
 func get_rect_containing_all_joes() -> Rect2:

@@ -5,8 +5,6 @@ extends StaticBody2D
 
 signal active_changed(active: bool)
 
-var listening: bool = false
-
 var active: bool:
 	set(value):
 		if active == value: return
@@ -22,14 +20,10 @@ func _on_active_changed(_active: bool) -> void:
 
 
 func _process(_delta: float) -> void:
-	if not listening: return
 	if Input.is_action_just_pressed("interact"):
-		active = !active
+		var collision_list = activation_area.get_overlapping_bodies()
+		var actors_on_button = collision_list.any(func(body: PhysicsBody2D):
+			return body.is_in_group("lever_actor"))
 
-
-func _on_area_2d_body_entered_or_exited(_body: Node2D) -> void:
-	var collision_list = activation_area.get_overlapping_bodies()
-	var actors_on_button = collision_list.any(func(body: PhysicsBody2D):
-		return body.is_in_group("lever_actor"))
-
-	listening = actors_on_button
+		if actors_on_button:
+			active = !active

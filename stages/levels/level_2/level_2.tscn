@@ -20,7 +20,7 @@ position = Vector2(501, 96)
 player = NodePath("../../Player")
 
 [node name="FirstDoor" parent="Map" index="2" instance=ExtResource("2_uslrr")]
-position = Vector2(278, 256)
+position = Vector2(279, 256)
 
 [node name="BigButton" parent="Map" index="3" instance=ExtResource("5_21kpk")]
 position = Vector2(1305, 320)
@@ -50,10 +50,10 @@ position = Vector2(1024, 128)
 [node name="OpenDoor2" parent="Map/Button2" index="3" node_paths=PackedStringArray("door") instance=ExtResource("4_vnepo")]
 door = NodePath("../../SecondDoor")
 
-[node name="Lever2" parent="Map" index="7" instance=ExtResource("8_jpuhn")]
+[node name="Button" parent="Map" index="7" instance=ExtResource("3_1k7yh")]
 position = Vector2(-87, 128)
 
-[node name="OpenDoor1" parent="Map/Lever2" index="4" node_paths=PackedStringArray("door") instance=ExtResource("4_vnepo")]
+[node name="OpenDoor1" parent="Map/Button" index="5" node_paths=PackedStringArray("door") instance=ExtResource("4_vnepo")]
 door = NodePath("../../FirstDoor")
 
 [node name="Player" parent="." index="4"]

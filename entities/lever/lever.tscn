@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://tnqhkfo5hqro"]
+[gd_scene load_steps=9 format=3 uid="uid://tnqhkfo5hqro"]
 
 [ext_resource type="Texture2D" uid="uid://cwda2wsxelocn" path="res://entities/lever/Lever-sheet.png" id="1_5uc6n"]
 [ext_resource type="Script" uid="uid://bandsob70uxwr" path="res://entities/lever/lever.gd" id="1_kcgeh"]
+[ext_resource type="AudioStream" uid="uid://dwsqx5306yv5h" path="res://entities/lever/Lever.ogg" id="3_ym4b2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kcgeh"]
 radius = 41.1096
@@ -85,3 +86,8 @@ polygon = PackedVector2Array(-16, 0, -9, -3, 9, -3, 16, 0)
 libraries = {
 &"": SubResource("AnimationLibrary_284lf")
 }
+
+[node name="Lever" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ym4b2")
+volume_db = -10.0
+max_polyphony = 5

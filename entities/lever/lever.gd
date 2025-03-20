@@ -2,6 +2,7 @@ extends StaticBody2D
 
 @onready var activation_area: Area2D = $Area2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var lever: AudioStreamPlayer = $Lever
 
 signal active_changed(active: bool)
 
@@ -17,6 +18,7 @@ func _ready() -> void:
 
 func _on_active_changed(_active: bool) -> void:
 	animation_player.play("switch_on" if active else "switch_off")
+	lever.play()
 
 
 func _process(_delta: float) -> void:

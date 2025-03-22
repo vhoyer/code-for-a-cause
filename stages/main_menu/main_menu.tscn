@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://d3756fh13dbkc"]
+[gd_scene load_steps=37 format=4 uid="uid://d3756fh13dbkc"]
 
 [ext_resource type="AudioStream" uid="uid://s4v27rx1rsau" path="res://assets/ost/Don't Stop Moving V3.mp3" id="1_1fmbc"]
 [ext_resource type="Texture2D" uid="uid://b511paydkej4x" path="res://assets/Joe-Sheet.png" id="1_jan3x"]
@@ -107,13 +107,6 @@ shader_parameter/input_palette_texture = ExtResource("3_yb6nn")
 shader_parameter/output_palette_texture = ExtResource("6_5i15u")
 shader_parameter/input_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/output_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emioh"]
-bg_color = Color(0, 0, 0, 0.533333)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r6rw8"]
-atlas = ExtResource("10_8ei0a")
-region = Rect2(0, 0, 96, 96)
 
 [sub_resource type="LabelSettings" id="LabelSettings_8ei0a"]
 font_color = Color(0.223529, 0.290196, 0.313726, 1)
@@ -301,49 +294,34 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_emioh")
+theme_type_variation = &"BackdropPanel"
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/OptionsPanel"]
-layout_mode = 1
-anchors_preset = 15
+layout_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="OptionsPanel" type="NinePatchRect" parent="CanvasLayer/OptionsPanel/CenterContainer"]
-custom_minimum_size = Vector2(200, 160)
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/OptionsPanel/CenterContainer"]
 layout_mode = 2
-theme_type_variation = &"MarinPanelContainer"
-texture = SubResource("AtlasTexture_r6rw8")
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
+theme_type_variation = &"BoltedPanelContainer"
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/OptionsPanel/CenterContainer"]
-custom_minimum_size = Vector2(200, 160)
-layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/OptionsPanel/CenterContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/OptionsPanel/CenterContainer/PanelContainer"]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/OptionsPanel/CenterContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/OptionsPanel/CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/OptionsPanel/CenterContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/OptionsPanel/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Options"
 label_settings = SubResource("LabelSettings_8ei0a")
 
-[node name="ExitButton" type="TextureButton" parent="CanvasLayer/OptionsPanel/CenterContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ExitButton" type="TextureButton" parent="CanvasLayer/OptionsPanel/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_emioh")
 texture_pressed = SubResource("AtlasTexture_gt65w")
@@ -351,19 +329,19 @@ texture_hover = SubResource("AtlasTexture_xcqwa")
 texture_focused = SubResource("AtlasTexture_n2pvs")
 script = ExtResource("17_yb6nn")
 
-[node name="MakeParentControllerFocusStart" type="Node" parent="CanvasLayer/OptionsPanel/CenterContainer/MarginContainer/VBoxContainer/HBoxContainer/ExitButton"]
+[node name="MakeParentControllerFocusStart" type="Node" parent="CanvasLayer/OptionsPanel/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/ExitButton"]
 script = ExtResource("3_mcab4")
 metadata/_custom_type_script = "uid://b6827tfdgmrq2"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/OptionsPanel/CenterContainer/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/OptionsPanel/CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/OptionsPanel/CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/OptionsPanel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Master"
 label_settings = SubResource("LabelSettings_8ei0a")
 
-[node name="HVolumeSlider" type="HSlider" parent="CanvasLayer/OptionsPanel/CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="HVolumeSlider" type="HSlider" parent="CanvasLayer/OptionsPanel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 max_value = 1.0
@@ -373,12 +351,12 @@ script = ExtResource("6_jofpu")
 bus = &"Master"
 metadata/_custom_type_script = "uid://61q2h71kluj0"
 
-[node name="Label2" type="Label" parent="CanvasLayer/OptionsPanel/CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="CanvasLayer/OptionsPanel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "BGM"
 label_settings = SubResource("LabelSettings_8ei0a")
 
-[node name="HVolumeSlider2" type="HSlider" parent="CanvasLayer/OptionsPanel/CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="HVolumeSlider2" type="HSlider" parent="CanvasLayer/OptionsPanel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 max_value = 1.0
@@ -388,12 +366,12 @@ script = ExtResource("6_jofpu")
 bus = &"BGM"
 metadata/_custom_type_script = "uid://61q2h71kluj0"
 
-[node name="Label3" type="Label" parent="CanvasLayer/OptionsPanel/CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="CanvasLayer/OptionsPanel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "SFX"
 label_settings = SubResource("LabelSettings_8ei0a")
 
-[node name="HVolumeSlider3" type="HSlider" parent="CanvasLayer/OptionsPanel/CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="HVolumeSlider3" type="HSlider" parent="CanvasLayer/OptionsPanel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 max_value = 1.0

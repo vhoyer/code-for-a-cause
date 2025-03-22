@@ -1,6 +1,20 @@
-[gd_resource type="Theme" load_steps=22 format=3 uid="uid://mktlkqcir8k2"]
+[gd_resource type="Theme" load_steps=29 format=3 uid="uid://mktlkqcir8k2"]
 
 [ext_resource type="Texture2D" uid="uid://cen31lisf5s7j" path="res://stages/main_menu/UI/UI.png" id="1_5x3i2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emioh"]
+bg_color = Color(0, 0, 0, 0.533333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llqld"]
+atlas = ExtResource("1_5x3i2")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uy2me"]
+texture = SubResource("AtlasTexture_llqld")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wms38"]
 atlas = ExtResource("1_5x3i2")
@@ -112,46 +126,59 @@ expand_margin_bottom = 1.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_la83o"]
 bg_color = Color(0.203922, 0.945098, 0.286275, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6je6"]
-content_margin_left = 8.0
-content_margin_top = 8.0
-content_margin_right = 8.0
-content_margin_bottom = 8.0
-bg_color = Color(0.133333, 0.133333, 0.133333, 0.917647)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_502fs"]
+load_path = "res://.godot/imported/UI.png-5b21c4bc699a0fc368337dc364b7d383.ctex"
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y61vb"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-anti_aliasing_size = 0.15
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctyr4"]
+atlas = SubResource("CompressedTexture2D_502fs")
+region = Rect2(96, 0, 96, 96)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5x3i2"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-anti_aliasing_size = 0.15
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yyr7b"]
+content_margin_left = 24.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+texture = SubResource("AtlasTexture_ctyr4")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_357y2"]
+atlas = ExtResource("1_5x3i2")
+region = Rect2(128, 352, 48, 48)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_357y2"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 7.0
+texture = SubResource("AtlasTexture_357y2")
+texture_margin_left = 6.0
+texture_margin_top = 7.0
+texture_margin_right = 6.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g2p0"]
+atlas = ExtResource("1_5x3i2")
+region = Rect2(320, 352, 48, 48)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lu33j"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 7.0
+texture = SubResource("AtlasTexture_7g2p0")
+texture_margin_left = 6.0
+texture_margin_top = 7.0
+texture_margin_right = 6.0
+texture_margin_bottom = 10.0
 
 [resource]
+BackdropPanel/base_type = &"Panel"
+BackdropPanel/styles/panel = SubResource("StyleBoxFlat_emioh")
+BoltedPanelContainer/base_type = &"PanelContainer"
+BoltedPanelContainer/styles/panel = SubResource("StyleBoxTexture_uy2me")
 Button/colors/font_color = Color(0.12549, 0.180392, 0.215686, 1)
 Button/colors/font_focus_color = Color(0.12549, 0.180392, 0.215686, 1)
 Button/colors/font_hover_color = Color(0.223529, 0.290196, 0.313726, 1)
@@ -169,8 +196,8 @@ HSlider/styles/slider = SubResource("StyleBoxTexture_x2pqw")
 HealthProgressBar/base_type = &"ProgressBar"
 HealthProgressBar/styles/background = SubResource("StyleBoxFlat_knkbs")
 HealthProgressBar/styles/fill = SubResource("StyleBoxFlat_la83o")
-MarinPanelContainer/base_type = &"PanelContainer"
-MarinPanelContainer/styles/panel = SubResource("StyleBoxFlat_l6je6")
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_y61vb")
+HexagonPanelContainer/base_type = &"PanelContainer"
+HexagonPanelContainer/styles/panel = SubResource("StyleBoxTexture_yyr7b")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_357y2")
 SelectedPanelContainer/base_type = &"PanelContainer"
-SelectedPanelContainer/styles/panel = SubResource("StyleBoxFlat_5x3i2")
+SelectedPanelContainer/styles/panel = SubResource("StyleBoxTexture_lu33j")

@@ -26,7 +26,8 @@ func populate_grid() -> void:
 	pass
 
 func add_game(path: String, title: String):
-	var btn = ButtonSceneChanger.new()
+	var btn = Button.new()
+	btn.set_script(ButtonSceneChanger)
 	btn.name = title.replace('_', ' ')
 	self.add_child(btn, true)
 	btn.scene = load(path)

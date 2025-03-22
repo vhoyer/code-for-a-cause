@@ -1,28 +1,249 @@
-[gd_scene load_steps=5 format=3 uid="uid://cod16iwe4mb0c"]
+[gd_scene load_steps=26 format=4 uid="uid://cod16iwe4mb0c"]
 
 [ext_resource type="Script" uid="uid://cdvu0i3xtflk5" path="res://modules/UI/ui_elements/credits_roll/credits_roll.gd" id="1_c2crl"]
 [ext_resource type="Resource" uid="uid://kvfpp3sxfl6a" path="res://stages/credits/credits.tres" id="2_gnuxy"]
 [ext_resource type="Script" uid="uid://b5hbl56s22vne" path="res://stages/credits/go_back.gd" id="3_f6i1q"]
-[ext_resource type="PackedScene" uid="uid://h6lx57r8157l" path="res://entities/background/background.tscn" id="4_melw5"]
+[ext_resource type="AudioStream" uid="uid://s4v27rx1rsau" path="res://assets/ost/Don't Stop Moving V3.mp3" id="4_fmctk"]
+[ext_resource type="Texture2D" uid="uid://b511paydkej4x" path="res://assets/Joe-Sheet.png" id="5_rqflh"]
+[ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://modules/UI/assets/eye_dropper.gdshader" id="6_cdk1d"]
+[ext_resource type="Texture2D" uid="uid://bpxt6b6sae2pv" path="res://entities/joe/assets/Joe Palette/Input Palette.png" id="7_uqyud"]
+[ext_resource type="Texture2D" uid="uid://02h5cfuh1sa" path="res://entities/joe/assets/Joe Palette/Joe Palette 1.png" id="8_qq537"]
+[ext_resource type="Texture2D" uid="uid://c16xn62acx3wt" path="res://entities/joe/assets/Joe Palette/Joe Palette 2.png" id="9_lqgfd"]
+[ext_resource type="Texture2D" uid="uid://c846wnvhks87i" path="res://entities/joe/assets/Joe Palette/Joe Palette 3.png" id="10_n6p6p"]
+[ext_resource type="Texture2D" uid="uid://cpu32fn0r0hgq" path="res://entities/background/Background Parallax smal.png" id="11_yq1qh"]
+[ext_resource type="TileSet" uid="uid://bnfmghrj16pdr" path="res://entities/tile_set/joe_tile_set.tres" id="12_met01"]
+[ext_resource type="Texture2D" uid="uid://dfyb0o6nv0tij" path="res://stages/main_menu/UI/Title.png" id="13_rqflh"]
 
-[node name="CreditRoll" type="ScrollContainer"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cwpn"]
+atlas = ExtResource("5_rqflh")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f40uw"]
+atlas = ExtResource("5_rqflh")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ctay"]
+atlas = ExtResource("5_rqflh")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ev3b6"]
+atlas = ExtResource("5_rqflh")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0a0m"]
+atlas = ExtResource("5_rqflh")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mudq"]
+atlas = ExtResource("5_rqflh")
+region = Rect2(320, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cafmx"]
+atlas = ExtResource("5_rqflh")
+region = Rect2(384, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcix6"]
+atlas = ExtResource("5_rqflh")
+region = Rect2(448, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_de1hn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cwpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f40uw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ctay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ev3b6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0a0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mudq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cafmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcix6")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 10.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tnq84"]
+shader = ExtResource("6_cdk1d")
+shader_parameter/palette_array_size = 0
+shader_parameter/input_palette_texture = ExtResource("7_uqyud")
+shader_parameter/output_palette_texture = ExtResource("8_qq537")
+shader_parameter/input_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/output_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ldls"]
+shader = ExtResource("6_cdk1d")
+shader_parameter/palette_array_size = 0
+shader_parameter/input_palette_texture = ExtResource("7_uqyud")
+shader_parameter/output_palette_texture = ExtResource("9_lqgfd")
+shader_parameter/input_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/output_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nik8d"]
+shader = ExtResource("6_cdk1d")
+shader_parameter/palette_array_size = 0
+shader_parameter/input_palette_texture = ExtResource("7_uqyud")
+shader_parameter/output_palette_texture = ExtResource("10_n6p6p")
+shader_parameter/input_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/output_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="CreditRoll" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_fmctk")
+autoplay = true
+bus = &"BGM"
+
+[node name="BG" type="Node2D" parent="."]
+position = Vector2(0, 16)
+
+[node name="Joe 1" type="AnimatedSprite2D" parent="BG"]
+z_index = 1
+position = Vector2(108, 268)
+sprite_frames = SubResource("SpriteFrames_de1hn")
+animation = &"Walk"
+autoplay = "Walk"
+
+[node name="Joe 2" type="AnimatedSprite2D" parent="BG"]
+z_index = 1
+material = SubResource("ShaderMaterial_tnq84")
+position = Vector2(155, 268)
+sprite_frames = SubResource("SpriteFrames_de1hn")
+animation = &"Walk"
+autoplay = "Walk"
+
+[node name="Joe 3" type="AnimatedSprite2D" parent="BG"]
+z_index = 1
+material = SubResource("ShaderMaterial_7ldls")
+position = Vector2(201, 268)
+sprite_frames = SubResource("SpriteFrames_de1hn")
+animation = &"Walk"
+autoplay = "Walk"
+
+[node name="Joe 4" type="AnimatedSprite2D" parent="BG"]
+z_index = 1
+material = SubResource("ShaderMaterial_nik8d")
+position = Vector2(62, 268)
+sprite_frames = SubResource("SpriteFrames_de1hn")
+animation = &"Walk"
+autoplay = "Walk"
+
+[node name="Base" type="Parallax2D" parent="BG"]
+scroll_scale = Vector2(1, 0)
+repeat_size = Vector2(640, 0)
+autoscroll = Vector2(-3, 0)
+
+[node name="BackgroundParallaxSmal" type="Sprite2D" parent="BG/Base"]
+z_index = -10
+position = Vector2(320, 176)
+texture = ExtResource("11_yq1qh")
+hframes = 5
+
+[node name="Base2" type="Parallax2D" parent="BG"]
+scroll_scale = Vector2(1, 0)
+repeat_size = Vector2(640, 0)
+autoscroll = Vector2(-10, 0)
+
+[node name="BackgroundParallaxSmal" type="Sprite2D" parent="BG/Base2"]
+z_index = -9
+position = Vector2(320, 176)
+texture = ExtResource("11_yq1qh")
+hframes = 5
+frame = 1
+
+[node name="Base3" type="Parallax2D" parent="BG"]
+scroll_scale = Vector2(1, 0)
+repeat_size = Vector2(640, 0)
+autoscroll = Vector2(-20, 0)
+
+[node name="BackgroundParallaxSmal" type="Sprite2D" parent="BG/Base3"]
+z_index = -8
+position = Vector2(320, 176)
+texture = ExtResource("11_yq1qh")
+hframes = 5
+frame = 2
+
+[node name="Base4" type="Parallax2D" parent="BG"]
+scroll_scale = Vector2(1, 0)
+repeat_size = Vector2(640, 0)
+autoscroll = Vector2(-27, 0)
+
+[node name="BackgroundParallaxSmal" type="Sprite2D" parent="BG/Base4"]
+z_index = -7
+position = Vector2(320, 176)
+texture = ExtResource("11_yq1qh")
+hframes = 5
+frame = 3
+
+[node name="Base5" type="Parallax2D" parent="BG"]
+scroll_scale = Vector2(1, 0)
+repeat_size = Vector2(640, 0)
+autoscroll = Vector2(-32, 0)
+
+[node name="BackgroundParallaxSmal" type="Sprite2D" parent="BG/Base5"]
+z_index = -6
+position = Vector2(320, 176)
+texture = ExtResource("11_yq1qh")
+hframes = 5
+frame = 4
+
+[node name="Base6" type="Parallax2D" parent="BG"]
+scroll_scale = Vector2(1, 0)
+repeat_size = Vector2(640, 0)
+autoscroll = Vector2(-35, 0)
+
+[node name="fg" type="TileMapLayer" parent="BG/Base6"]
+tile_map_data = PackedByteArray("AAAAAAkAAQABAAAAAAAAAAoAAQABAAEAAAABAAkAAQABAAAAAAABAAoAAQABAAEAAAACAAkAAQABAAAAAAACAAoAAQABAAEAAAADAAkAAQABAAAAAAADAAoAAQABAAEAAAAEAAkAAQABAAAAAAAEAAoAAQABAAEAAAAFAAkAAQABAAAAAAAFAAoAAQABAAEAAAAGAAkAAQABAAAAAAAGAAoAAQABAAEAAAAHAAkAAQABAAAAAAAHAAoAAQABAAEAAAAIAAkAAQABAAAAAAAIAAoAAQABAAEAAAAJAAkAAQABAAAAAAAJAAoAAQABAAEAAAAKAAkAAQABAAAAAAAKAAoAAQABAAEAAAALAAkAAQABAAAAAAALAAoAAQABAAEAAAAMAAkAAQABAAAAAAAMAAoAAQABAAEAAAANAAkAAQABAAAAAAANAAoAAQABAAEAAAAOAAkAAQABAAAAAAAOAAoAAQABAAEAAAAPAAkAAQABAAAAAAAPAAoAAQABAAEAAAAQAAkAAQABAAAAAAAQAAoAAQABAAEAAAARAAkAAQABAAAAAAARAAoAAQABAAEAAAASAAkAAQABAAAAAAASAAoAAQABAAEAAAATAAkAAQABAAAAAAATAAoAAQABAAEAAAA=")
+tile_set = ExtResource("12_met01")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 256
+
+[node name="CreditRoll" type="ScrollContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 vertical_scroll_mode = 3
 script = ExtResource("1_c2crl")
 content = ExtResource("2_gnuxy")
 credits_duration = 10.0
 
-[node name="Node" type="Node" parent="."]
+[node name="GoBackOnEnd" type="Node" parent="CanvasLayer/MarginContainer/CreditRoll"]
 script = ExtResource("3_f6i1q")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -128
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_right = 256
 
-[node name="Background" parent="CanvasLayer" instance=ExtResource("4_melw5")]
-autoscroll = true
+[node name="Title" type="TextureRect" parent="CanvasLayer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("13_rqflh")
 
-[connection signal="credits_end" from="." to="Node" method="_on_credit_roll_credits_end"]
+[connection signal="credits_end" from="CanvasLayer/MarginContainer/CreditRoll" to="CanvasLayer/MarginContainer/CreditRoll/GoBackOnEnd" method="_on_credit_roll_credits_end"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyifxt4rc2jk1"]
+[gd_scene load_steps=6 format=3 uid="uid://dyifxt4rc2jk1"]
 
 [ext_resource type="Script" uid="uid://lexgt2mmoxam" path="res://entities/menu_pause/menu_pause.gd" id="1_3rksr"]
 [ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://modules/UI/make_parent/make_parent_controller_focus_start.gd" id="2_xhhv8"]
+[ext_resource type="Script" uid="uid://dr8lo2ogpw1hn" path="res://modules/UI/ui_elements/buttons/button_panel_show.gd" id="3_8bbfg"]
 [ext_resource type="Script" uid="uid://yqn6ekdfwf7n" path="res://modules/UI/stage_manager/button_stage_changer.gd" id="3_rdbav"]
 [ext_resource type="PackedScene" uid="uid://dclerjnyqfida" path="res://entities/menu_options/menu_options.tscn" id="4_6t313"]
 
@@ -58,6 +59,12 @@ text = "restart"
 script = ExtResource("2_xhhv8")
 metadata/_custom_type_script = "uid://b6827tfdgmrq2"
 
+[node name="Button" type="Button" parent="Panel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer" node_paths=PackedStringArray("panel")]
+layout_mode = 2
+text = "Settings"
+script = ExtResource("3_8bbfg")
+panel = NodePath("../../../../../../OptionsPanel")
+
 [node name="MainMenu" type="Button" parent="Panel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "main menu"
@@ -66,6 +73,7 @@ method = "back to start"
 metadata/_custom_type_script = "uid://yqn6ekdfwf7n"
 
 [node name="OptionsPanel" parent="." instance=ExtResource("4_6t313")]
+visible = false
 theme_type_variation = &""
 
 [connection signal="button_down" from="Panel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/Resume" to="." method="_on_resume_button_down"]

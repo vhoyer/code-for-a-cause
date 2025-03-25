@@ -10,8 +10,6 @@
 
 [node name="Level_" type="Node2D"]
 
-[node name="PauseLayer" parent="." instance=ExtResource("1_bell1")]
-
 [node name="FactoryV4" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_o0ix0")
 autoplay = true
@@ -36,3 +34,5 @@ player = NodePath("../Player")
 [node name="Player" parent="." instance=ExtResource("6_kkvj6")]
 position = Vector2(148, 235)
 joe_count = 4
+
+[node name="PauseLayer" parent="." instance=ExtResource("1_bell1")]

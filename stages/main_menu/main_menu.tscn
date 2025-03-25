@@ -283,7 +283,7 @@ panel = NodePath("../../../../ChooseLevelPanel")
 layout_mode = 2
 text = "Settings"
 script = ExtResource("16_1fmbc")
-panel = NodePath("")
+panel = NodePath("../../../../OptionsPanel")
 
 [node name="CreditButton" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2

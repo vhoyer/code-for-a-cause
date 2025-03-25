@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://s4i10mewh67y"]
+[gd_scene load_steps=8 format=4 uid="uid://s4i10mewh67y"]
 
+[ext_resource type="PackedScene" uid="uid://dyifxt4rc2jk1" path="res://entities/menu_pause/menu_pause.tscn" id="1_bell1"]
 [ext_resource type="AudioStream" uid="uid://dppx16haaybah" path="res://assets/ost/FactoryV5 (percussion fix).ogg" id="1_o0ix0"]
 [ext_resource type="PackedScene" uid="uid://h6lx57r8157l" path="res://entities/background/background.tscn" id="2_vhqtq"]
 [ext_resource type="TileSet" uid="uid://bnfmghrj16pdr" path="res://entities/tile_set/joe_tile_set.tres" id="3_f3wab"]
@@ -8,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bw08m4c7hnol" path="res://entities/player/player.tscn" id="6_kkvj6"]
 
 [node name="Level_" type="Node2D"]
+
+[node name="PauseLayer" parent="." instance=ExtResource("1_bell1")]
 
 [node name="FactoryV4" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_o0ix0")

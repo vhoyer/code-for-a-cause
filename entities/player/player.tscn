@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bw08m4c7hnol"]
+[gd_scene load_steps=31 format=3 uid="uid://bw08m4c7hnol"]
 
 [ext_resource type="Script" uid="uid://83i8fnbc31h5" path="res://entities/player/player.gd" id="1_symyc"]
 [ext_resource type="PackedScene" uid="uid://cg7liji5n86ce" path="res://entities/joe/joe.tscn" id="2_abrql"]
@@ -6,9 +6,6 @@
 [ext_resource type="Shader" uid="uid://sitqcpfrtjqu" path="res://entities/joe_hud/pulse.gdshader" id="4_j3ovn"]
 [ext_resource type="PackedScene" uid="uid://dqhy0sq863k4g" path="res://entities/joe_hud/joe_hud_floating.tscn" id="13_j3ovn"]
 [ext_resource type="Texture2D" uid="uid://cen31lisf5s7j" path="res://stages/main_menu/UI/UI.png" id="14_3wlsy"]
-[ext_resource type="Script" uid="uid://lexgt2mmoxam" path="res://entities/player/pause_layer.gd" id="14_yqrof"]
-[ext_resource type="Script" uid="uid://yqn6ekdfwf7n" path="res://modules/UI/stage_manager/button_stage_changer.gd" id="15_3wlsy"]
-[ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://modules/UI/make_parent/make_parent_controller_focus_start.gd" id="16_yqrof"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_afbqv"]
 resource_local_to_scene = true
@@ -280,67 +277,3 @@ player = NodePath("../../..")
 controller_input = SubResource("AtlasTexture_ghoj8")
 keyboard_input = SubResource("AtlasTexture_t1t22")
 floating_center = NodePath("..")
-
-[node name="PauseLayer" type="CanvasLayer" parent="."]
-process_mode = 3
-visible = false
-script = ExtResource("14_yqrof")
-
-[node name="Panel" type="Panel" parent="PauseLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_type_variation = &"BackdropPanel"
-
-[node name="CenterContainer" type="CenterContainer" parent="PauseLayer/Panel"]
-process_mode = 2
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="PauseLayer/Panel/CenterContainer"]
-layout_mode = 2
-theme_type_variation = &"BoltedPanelContainer"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PauseLayer/Panel/CenterContainer/PanelContainer"]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="Label" type="Label" parent="PauseLayer/Panel/CenterContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-text = "Paused"
-horizontal_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PauseLayer/Panel/CenterContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Resume" type="Button" parent="PauseLayer/Panel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "resume"
-
-[node name="MakeParentControllerFocusStart" type="Node" parent="PauseLayer/Panel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/Resume"]
-script = ExtResource("16_yqrof")
-metadata/_custom_type_script = "uid://b6827tfdgmrq2"
-
-[node name="Restart" type="Button" parent="PauseLayer/Panel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "restart"
-
-[node name="MakeParentControllerFocusStart" type="Node" parent="PauseLayer/Panel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/Restart"]
-script = ExtResource("16_yqrof")
-metadata/_custom_type_script = "uid://b6827tfdgmrq2"
-
-[node name="MainMenu" type="Button" parent="PauseLayer/Panel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "main menu"
-script = ExtResource("15_3wlsy")
-method = "back to start"
-metadata/_custom_type_script = "uid://yqn6ekdfwf7n"
-
-[connection signal="button_down" from="PauseLayer/Panel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/Resume" to="PauseLayer" method="_on_resume_button_down"]
-[connection signal="button_down" from="PauseLayer/Panel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/Restart" to="PauseLayer" method="_on_restart_button_down"]

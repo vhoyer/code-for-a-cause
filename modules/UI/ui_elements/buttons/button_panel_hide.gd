@@ -1,4 +1,6 @@
 extends BaseButton
 
+@export var panel: Control
+
 func _pressed() -> void:
-	%OptionsPanel.visible = true
+	panel.hide()

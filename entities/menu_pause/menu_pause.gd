@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+func _ready() -> void:
+	self.hide()
+
 func _input(event: InputEvent) -> void:
 	if not event.is_action_pressed('pause'): return
 	self.visible = !self.visible

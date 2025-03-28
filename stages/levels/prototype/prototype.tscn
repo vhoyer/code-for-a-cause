@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://b13hsha0bdokx"]
+[gd_scene load_steps=15 format=4 uid="uid://b13hsha0bdokx"]
 
 [ext_resource type="Texture2D" uid="uid://dqx2y1dwlb5ii" path="res://stages/levels/prototype/assets/tile.png" id="1_8ygb5"]
 [ext_resource type="Script" uid="uid://c1kq2qbtx52ci" path="res://stages/levels/prototype/player.gd" id="2_alp4g"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ueytf85tlnh1" path="res://assets/input_prompt/controller/xbox_dpad_left.png" id="6_powd4"]
 [ext_resource type="AudioStream" uid="uid://cmfdehlnmqnll" path="res://assets/ost/Don't Stop Moving V2.mp3" id="9_4ngc7"]
 [ext_resource type="Script" uid="uid://bimfcm15lx2s2" path="res://stages/levels/prototype/camera_2d.gd" id="10_cgpsk"]
+[ext_resource type="PackedScene" uid="uid://dyifxt4rc2jk1" path="res://entities/menu_pause/menu_pause.tscn" id="11_eubsr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o8j71"]
 texture = ExtResource("1_8ygb5")
@@ -140,3 +141,6 @@ position = Vector2(134, 145)
 script = ExtResource("10_cgpsk")
 camera_mode = "follow_selected"
 player = NodePath("../Player")
+
+[node name="PauseLayer" parent="." instance=ExtResource("11_eubsr")]
+visible = false

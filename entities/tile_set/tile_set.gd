@@ -8,6 +8,9 @@ class_name ForegroundTileMapLayer
 @export
 var conveyor_speed: float = 20.0
 
+@export
+var sfx_db: Dictionary[String, AudioStream] = {}
+
 
 @export
 var debug: bool = false:
@@ -30,6 +33,31 @@ class ForegroundTileMapLayerDebug extends Node2D:
 
 func _ready() -> void:
 	self.tile_set = preload("uid://bnfmghrj16pdr")
+	if not Engine.is_editor_hint():
+		setup_all_cell()
+
+
+func setup_all_cell() -> void:
+	for cell_coord in self.get_used_cells():
+		setup_tile_sfxs(cell_coord)
+
+
+func setup_tile_sfxs(cell_coord: Vector2i) -> void:
+	var cell_data = self.get_cell_tile_data(cell_coord)
+	if not cell_data: return
+
+	var sfx_id = cell_data.get_custom_data('sfx_id')
+	var stream = sfx_db.get(sfx_id, null)
+	if not stream: return
+	
+	var audio = AudioStreamPlayer2D.new()
+	audio.volume_db = -15
+	audio.autoplay = true
+	audio.max_distance = 500
+	audio.attenuation = 4
+	audio.stream = stream
+	audio.position = self.map_to_local(cell_coord)
+	self.add_child(audio)
 
 
 func _physics_process(delta: float) -> void:

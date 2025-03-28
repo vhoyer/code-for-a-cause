@@ -54,5 +54,5 @@ position = Vector2(146, 253)
 player = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("2_13y66")]
-position = Vector2(148, 235)
+position = Vector2(388, 72)
 joe_count = 4

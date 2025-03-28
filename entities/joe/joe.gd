@@ -57,6 +57,7 @@ var last_velocity: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	health = MAX_HEALTH
+	do_life_drain = do_life_drain or !OS.is_debug_build()
 	update_animation_tree_parameters()
 
 

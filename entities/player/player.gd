@@ -3,6 +3,7 @@ extends Node2D
 class_name PlayerController
 
 signal _model_updated()
+signal _player_died()
 
 @onready var joes: Node2D = $Joes
 @onready var joe_hud_holder: HBoxContainer = $CanvasLayer/JoeHudHolder
@@ -49,7 +50,7 @@ func update_view() -> void:
 
 func _on_joe_died(is_finished: bool, joe: Joe) -> void:
 	if is_finished:
-		StageManager.reload_current_stage()
+		_player_died.emit()
 	else:
 		selected_joe = joe
 		for child: Joe in joes.get_children():

@@ -55,10 +55,6 @@ metadata/_custom_type_script = "uid://b6827tfdgmrq2"
 layout_mode = 2
 text = "restart"
 
-[node name="MakeParentControllerFocusStart" type="Node" parent="Panel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/Restart"]
-script = ExtResource("2_xhhv8")
-metadata/_custom_type_script = "uid://b6827tfdgmrq2"
-
 [node name="Button" type="Button" parent="Panel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer" node_paths=PackedStringArray("panel")]
 layout_mode = 2
 text = "Settings"

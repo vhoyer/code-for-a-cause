@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://s4i10mewh67y"]
+[gd_scene load_steps=9 format=3 uid="uid://s4i10mewh67y"]
 
 [ext_resource type="PackedScene" uid="uid://dyifxt4rc2jk1" path="res://entities/menu_pause/menu_pause.tscn" id="1_bell1"]
 [ext_resource type="AudioStream" uid="uid://dppx16haaybah" path="res://assets/ost/FactoryV5 (percussion fix).ogg" id="1_o0ix0"]
@@ -7,10 +7,12 @@
 [ext_resource type="AudioStream" uid="uid://dwj78uiortv8o" path="res://entities/tile_set/Conveyour.ogg" id="4_bell1"]
 [ext_resource type="PackedScene" uid="uid://byqhcnagy2kio" path="res://entities/camera/camera.tscn" id="5_fgqh2"]
 [ext_resource type="PackedScene" uid="uid://bw08m4c7hnol" path="res://entities/player/player.tscn" id="6_kkvj6"]
+[ext_resource type="PackedScene" uid="uid://ciejjlncf57qf" path="res://entities/menu_death/menu_death.tscn" id="8_01xog"]
 
 [node name="Level_" type="Node2D"]
 
 [node name="FactoryV4" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("1_o0ix0")
 autoplay = true
 bus = &"BGM"
@@ -36,3 +38,9 @@ position = Vector2(148, 235)
 joe_count = 4
 
 [node name="PauseLayer" parent="." instance=ExtResource("1_bell1")]
+visible = false
+
+[node name="MenuDeath" parent="." instance=ExtResource("8_01xog")]
+visible = false
+
+[connection signal="_player_died" from="Player" to="MenuDeath" method="display"]

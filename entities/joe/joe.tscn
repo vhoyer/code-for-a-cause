@@ -717,6 +717,7 @@ stream_0/stream = ExtResource("7_ak1vs")
 material = SubResource("ShaderMaterial_cskce")
 collision_layer = 3
 script = ExtResource("1_7fmcv")
+do_life_drain = false
 gravity_by_velocity_mapping = SubResource("Curve_7fmcv")
 
 [node name="VisualRoot" type="Node2D" parent="."]

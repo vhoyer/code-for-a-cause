@@ -18,8 +18,7 @@ var is_open: bool = false:
 @export
 var power_counter: int = 0:
 	set(value):
-		if power_counter < value:
-			glow_player.play('glow')
+		glow_player.play('glow')
 		power_counter = value
 		is_open = power_counter > 0
 

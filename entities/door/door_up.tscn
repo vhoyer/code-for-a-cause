@@ -1,8 +1,102 @@
-[gd_scene load_steps=10 format=3 uid="uid://bqkwecik3x6xd"]
+[gd_scene load_steps=14 format=3 uid="uid://bqkwecik3x6xd"]
 
 [ext_resource type="Texture2D" uid="uid://pll0kyblccpx" path="res://entities/door/MovingDoors-Sheet.png" id="1_05v0y"]
 [ext_resource type="Script" uid="uid://cjnv3l321n7np" path="res://entities/door/door_up.gd" id="1_xv1b5"]
 [ext_resource type="AudioStream" uid="uid://rh01msfoodwj" path="res://entities/door/Door.ogg" id="4_238wp"]
+
+[sub_resource type="Shader" id="Shader_6xwlb"]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform vec4 shine_color : source_color = vec4(1.0); //Shine color
+uniform float alpha_limit : hint_range(0.0, 1.0, 0.1) = 0.0; //Alpha color limit to apply the shine, for example, if you won't to apply the shine to semi-transparent pixels
+uniform float cycle_speed : hint_range(0.0, 10.0, 0.1) = 1.0; //Pulse cycle speed
+uniform bool full_pulse_cycle = false; //[False = Do the effect and make a pause] [True = Do the effect continuosly]
+uniform int mode : hint_range(0, 3, 1) = 0; //[0 = Always off] [1 = Pulse mode] [2 = Always on] [3 = pulse transparency]
+
+void fragment() {
+	//Check if the effect is enabled
+	if (mode > 0) {
+		//Check the pixel alpha value
+		if (COLOR.a >= alpha_limit) {
+			//Check the mode
+			switch (mode) {
+				//Pulse mode
+				case 1: {
+					float cycle = sin(TIME * cycle_speed);
+					COLOR.rgb = mix(COLOR.rgb, shine_color.rgb, (((cycle >= 0.0) || (full_pulse_cycle)) ? abs(cycle) : 0.0) * shine_color.a);
+					break;
+				}
+				//Always on
+				case 2: {
+					COLOR.rgb = mix(COLOR.rgb, shine_color.rgb, shine_color.a);
+					break;
+				}
+				//Pulse transparent mode
+				case 3: {
+					float cycle = sin(TIME * cycle_speed);
+					COLOR.a = (((cycle >= 0.0) || (full_pulse_cycle)) ? abs(cycle) : 0.0) * shine_color.a;
+					break;
+				}
+			}
+		}
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_238wp"]
+shader = SubResource("Shader_6xwlb")
+shader_parameter/shine_color = Color(0.976471, 0.929412, 0.184314, 0.392157)
+shader_parameter/alpha_limit = 0.0
+shader_parameter/cycle_speed = 2.0
+shader_parameter/full_pulse_cycle = true
+shader_parameter/mode = 0
+
+[sub_resource type="Shader" id="Shader_spurm"]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform vec4 shine_color : source_color = vec4(1.0); //Shine color
+uniform float alpha_limit : hint_range(0.0, 1.0, 0.1) = 0.0; //Alpha color limit to apply the shine, for example, if you won't to apply the shine to semi-transparent pixels
+uniform float cycle_speed : hint_range(0.0, 10.0, 0.1) = 1.0; //Pulse cycle speed
+uniform bool full_pulse_cycle = false; //[False = Do the effect and make a pause] [True = Do the effect continuosly]
+uniform int mode : hint_range(0, 3, 1) = 0; //[0 = Always off] [1 = Pulse mode] [2 = Always on] [3 = pulse transparency]
+
+void fragment() {
+	//Check if the effect is enabled
+	if (mode > 0) {
+		//Check the pixel alpha value
+		if (COLOR.a >= alpha_limit) {
+			//Check the mode
+			switch (mode) {
+				//Pulse mode
+				case 1: {
+					float cycle = sin(TIME * cycle_speed);
+					COLOR.rgb = mix(COLOR.rgb, shine_color.rgb, (((cycle >= 0.0) || (full_pulse_cycle)) ? abs(cycle) : 0.0) * shine_color.a);
+					break;
+				}
+				//Always on
+				case 2: {
+					COLOR.rgb = mix(COLOR.rgb, shine_color.rgb, shine_color.a);
+					break;
+				}
+				//Pulse transparent mode
+				case 3: {
+					float cycle = sin(TIME * cycle_speed);
+					COLOR.a = (((cycle >= 0.0) || (full_pulse_cycle)) ? abs(cycle) : 0.0) * shine_color.a;
+					break;
+				}
+			}
+		}
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lfq1r"]
+shader = SubResource("Shader_spurm")
+shader_parameter/shine_color = Color(1, 1, 1, 0.784314)
+shader_parameter/alpha_limit = 0.0
+shader_parameter/cycle_speed = 2.0
+shader_parameter/full_pulse_cycle = true
+shader_parameter/mode = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05v0y"]
 resource_local_to_scene = true
@@ -49,14 +143,26 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("glow:modulate:a")
+tracks/3/path = NodePath("Sprite2D:material:shader_parameter/mode")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("glow:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_hn8tw"]
@@ -65,14 +171,26 @@ length = 3.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("glow:modulate")
-tracks/0/interp = 2
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/mode")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"times": PackedFloat32Array(0, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("glow:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_05v0y"]
@@ -132,19 +250,22 @@ stream_0/stream = ExtResource("4_238wp")
 script = ExtResource("1_xv1b5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_238wp")
 texture = ExtResource("1_05v0y")
 offset = Vector2(0, 31)
 hframes = 4
 vframes = 2
 
 [node name="glow" type="Polygon2D" parent="."]
-modulate = Color(1, 1, 1, 0)
+z_index = -110
+material = SubResource("ShaderMaterial_lfq1r")
 position = Vector2(-0.461538, 3)
-scale = Vector2(0.692308, 0.989123)
-color = Color(0.976471, 0.929412, 0.184314, 0.658824)
-polygon = PackedVector2Array(-8, 0, 5, 0, 5, 64, -8, 64)
+color = Color(0.976471, 0.929412, 0.184314, 1)
+polygon = PackedVector2Array(-6.53846, -5, 3.46154, -8, 3.46154, 65, -6.53846, 62)
+uv = PackedVector2Array(-6.53846, -5, 4.46154, -8, 4.46154, 65, -6.53846, 62)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1.5, 32)
 shape = SubResource("RectangleShape2D_05v0y")
 

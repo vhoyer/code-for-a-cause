@@ -151,6 +151,7 @@ joe_scene = ExtResource("2_abrql")
 position = Vector2(0, 20)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="JoeHudHolder" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 12

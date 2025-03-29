@@ -23,6 +23,8 @@ var selected_joe: Joe:
 		updated_selected_joe.emit(value)
 
 func _ready() -> void:
+	if not Engine.is_editor_hint():
+		$CanvasLayer.show()
 	update_view()
 	_model_updated.connect(update_view)
 

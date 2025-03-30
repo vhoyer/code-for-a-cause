@@ -1,4 +1,7 @@
 extends Node
+## this is stupid, don't use this every, if you want this functionallity
+## use a normal AudioStreamPlayer with a random audio stream with pitch
+## variation, sometimes I'm so dumb :(
 class_name AudioStreamPlayerPool
 
 @export var pool_size:= 20

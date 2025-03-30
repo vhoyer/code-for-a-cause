@@ -44,6 +44,7 @@ void fragment() {
 }"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_238wp"]
+resource_local_to_scene = true
 shader = SubResource("Shader_6xwlb")
 shader_parameter/shine_color = Color(0.976471, 0.929412, 0.184314, 0.392157)
 shader_parameter/alpha_limit = 0.0
@@ -91,6 +92,7 @@ void fragment() {
 }"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lfq1r"]
+resource_local_to_scene = true
 shader = SubResource("Shader_spurm")
 shader_parameter/shine_color = Color(1, 1, 1, 0.784314)
 shader_parameter/alpha_limit = 0.0

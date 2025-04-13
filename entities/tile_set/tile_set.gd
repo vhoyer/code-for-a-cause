@@ -32,7 +32,7 @@ class ForegroundTileMapLayerDebug extends Node2D:
 
 
 func _ready() -> void:
-	self.tile_set = preload("uid://bnfmghrj16pdr")
+	self.tile_set = preload("res://entities/tile_set/joe_tile_set.tres")
 	if not Engine.is_editor_hint():
 		setup_all_cell()
 

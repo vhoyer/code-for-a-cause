@@ -11,7 +11,7 @@ env:
 jobs:
   export-windows:
     name: Windows Export
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:4.3
     steps:
@@ -39,7 +39,7 @@ jobs:
 
   export-linux:
     name: Linux Export
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:4.3
     steps:
@@ -65,7 +65,7 @@ jobs:
 
   export-web:
     name: Web Export
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:4.3
     steps:
@@ -91,7 +91,7 @@ jobs:
 
   export-mac:
     name: Mac Export
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:4.3
     steps:
@@ -120,7 +120,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     needs: [export-mac, export-web, export-linux, export-windows]
     name: Upload builds to itch.io
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:4.3
     env:

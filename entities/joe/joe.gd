@@ -17,6 +17,7 @@ signal died(is_finished: bool, joe: Joe)
 
 
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var visual_root: Node2D = $VisualRoot
 @onready var hitbox_punch: Area2D = $VisualRoot/HitboxPunch
 @onready var grab_position: Marker2D = $GrabPosition

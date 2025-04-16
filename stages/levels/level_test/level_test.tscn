@@ -64,3 +64,5 @@ visible = false
 
 [node name="MenuDeath" parent="." instance=ExtResource("13_o6uoj")]
 visible = false
+
+[connection signal="_player_died" from="Player" to="MenuDeath" method="display"]

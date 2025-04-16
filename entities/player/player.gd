@@ -57,6 +57,8 @@ func _on_joe_died(is_finished: bool, joe: Joe) -> void:
 		selected_joe = joe
 		for child: Joe in joes.get_children():
 			child.process_mode = Node.PROCESS_MODE_DISABLED
+			child.animation_player.process_mode = Node.PROCESS_MODE_ALWAYS
+			child.animation_tree.process_mode = Node.PROCESS_MODE_ALWAYS
 			child.control_lock(true)
 		selected_joe.process_mode = Node.PROCESS_MODE_INHERIT
 

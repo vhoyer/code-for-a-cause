@@ -1,5 +1,8 @@
+@tool
 extends CharacterBody2D
 class_name Joe
+
+signal _model_updated()
 
 const MAX_COYOTE_TIME = 0.15
 const MAX_JUMPS = 1
@@ -26,6 +29,11 @@ signal died(is_finished: bool, joe: Joe)
 @onready var just_explosion: AudioStreamPlayer = $JustExplosion
 @onready var punch: AudioStreamPlayer = $Punch
 
+@export_enum("brown", "yellow", "violet", "red", "cyan")
+var color: String = 'brown':
+	set(value):
+		color = value
+		_model_updated.emit()
 
 @export
 var is_grabbed: bool = false
@@ -57,14 +65,27 @@ var last_velocity: Vector2 = Vector2.ZERO
 
 
 func _ready() -> void:
+	_model_updated.connect(update_view)
+	_model_updated.emit()
+
+	if Engine.is_editor_hint(): return
+
 	health = MAX_HEALTH
 	do_life_drain = do_life_drain or !OS.is_debug_build()
 	update_animation_tree_parameters()
 
 
+func update_view() -> void:
+	const INPUT_PALETTE = preload("res://entities/joe/assets/Joe Palette/Input Palette.png")
+	var output_palette = $VisualRoot.color_dict.get(color, INPUT_PALETTE)
+	self.material.set('shader_parameter/output_palette_texture', output_palette)
+
+
 func _process(_delta: float) -> void:
+	if Engine.is_editor_hint(): return
 	update_animation_tree_parameters()
 	pass
+
 
 func update_animation_tree_parameters() -> void:
 	if abs(velocity.x) > 0:
@@ -88,6 +109,7 @@ func update_animation_tree_parameters() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if Engine.is_editor_hint(): return
 	if do_life_drain:
 		if velocity.length() < 0.01:
 			health -= delta

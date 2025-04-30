@@ -1,17 +1,25 @@
-[gd_scene load_steps=44 format=3 uid="uid://cg7liji5n86ce"]
+[gd_scene load_steps=50 format=3 uid="uid://cg7liji5n86ce"]
 
 [ext_resource type="Script" uid="uid://c6oe8oddyhcg2" path="res://entities/joe/joe.gd" id="1_7fmcv"]
 [ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://modules/UI/assets/eye_dropper.gdshader" id="1_bwvaa"]
 [ext_resource type="Texture2D" uid="uid://dw7hj0wqq5ye6" path="res://entities/joe/assets/Joe-Sheet.png" id="2_bwvaa"]
+[ext_resource type="Script" uid="uid://pal4g83eitid" path="res://entities/joe/visual_root.gd" id="3_ak1vs"]
 [ext_resource type="Texture2D" uid="uid://qlu3l8wa6173" path="res://entities/joe/assets/Joe_Explode-Sheet.png" id="3_cskce"]
+[ext_resource type="Texture2D" uid="uid://bpxt6b6sae2pv" path="res://entities/joe/assets/Joe Palette/Input Palette.png" id="4_f25al"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://c6lsykbsbquak" path="res://entities/joe/assets/animation_blend_tree.tres" id="4_xevyh"]
+[ext_resource type="Texture2D" uid="uid://02h5cfuh1sa" path="res://entities/joe/assets/Joe Palette/Joe Palette 1.png" id="5_lv4ri"]
 [ext_resource type="AudioStream" uid="uid://d25iookqcmp35" path="res://entities/joe/assets/Jump.ogg" id="6_cabhh"]
+[ext_resource type="Texture2D" uid="uid://c16xn62acx3wt" path="res://entities/joe/assets/Joe Palette/Joe Palette 2.png" id="6_uiuvq"]
+[ext_resource type="Texture2D" uid="uid://c846wnvhks87i" path="res://entities/joe/assets/Joe Palette/Joe Palette 3.png" id="7_0525o"]
 [ext_resource type="AudioStream" uid="uid://c0fipbfeutt4h" path="res://entities/joe/assets/JustExplosion.ogg" id="7_ak1vs"]
+[ext_resource type="Texture2D" uid="uid://crn58n3hb23a0" path="res://entities/joe/assets/Joe Palette/Joe Palette 4.png" id="8_e04jy"]
 [ext_resource type="AudioStream" uid="uid://bmtn2g5f4w03h" path="res://entities/joe/assets/Punch.ogg" id="8_hc8t0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cskce"]
 shader = ExtResource("1_bwvaa")
 shader_parameter/palette_array_size = 0
+shader_parameter/input_palette_texture = ExtResource("4_f25al")
+shader_parameter/output_palette_texture = ExtResource("4_f25al")
 shader_parameter/input_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/output_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
@@ -720,9 +728,19 @@ script = ExtResource("1_7fmcv")
 gravity_by_velocity_mapping = SubResource("Curve_7fmcv")
 
 [node name="VisualRoot" type="Node2D" parent="."]
+use_parent_material = true
 position = Vector2(0, -23)
+script = ExtResource("3_ak1vs")
+color_dict = Dictionary[String, Texture2D]({
+"brown": ExtResource("4_f25al"),
+"cyan": ExtResource("8_e04jy"),
+"red": ExtResource("5_lv4ri"),
+"violet": ExtResource("7_0525o"),
+"yellow": ExtResource("6_uiuvq")
+})
 
 [node name="Body" type="Sprite2D" parent="VisualRoot"]
+use_parent_material = true
 texture = ExtResource("2_bwvaa")
 hframes = 12
 vframes = 14
@@ -730,6 +748,7 @@ vframes = 14
 [node name="BodyHandless" type="Sprite2D" parent="VisualRoot"]
 visible = false
 z_index = -10
+use_parent_material = true
 texture = ExtResource("2_bwvaa")
 hframes = 12
 vframes = 14
@@ -738,6 +757,7 @@ frame = 108
 [node name="Hands" type="Sprite2D" parent="VisualRoot"]
 visible = false
 z_index = 10
+use_parent_material = true
 texture = ExtResource("2_bwvaa")
 hframes = 12
 vframes = 14
@@ -745,6 +765,7 @@ frame = 109
 
 [node name="Exploding" type="Sprite2D" parent="VisualRoot"]
 visible = false
+use_parent_material = true
 texture = ExtResource("3_cskce")
 hframes = 22
 
@@ -769,6 +790,7 @@ position = Vector2(0, -19)
 shape = SubResource("CircleShape2D_7fmcv")
 
 [node name="BodyCollision" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -21)
 shape = SubResource("CapsuleShape2D_ak1vs")
 
@@ -777,6 +799,7 @@ collision_layer = 0
 collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+visible = false
 position = Vector2(0, -21)
 shape = SubResource("CapsuleShape2D_7fmcv")
 debug_color = Color(0.999496, 0.0199766, 1.15514e-06, 0.42)

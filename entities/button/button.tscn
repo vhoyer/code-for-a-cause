@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://4umro3rhenhv"]
+[gd_scene load_steps=12 format=3 uid="uid://4umro3rhenhv"]
 
 [ext_resource type="Script" uid="uid://dy6ipym3qsj41" path="res://entities/button/button.gd" id="1_7gf2j"]
 [ext_resource type="Texture2D" uid="uid://rnfifrmnfmki" path="res://entities/button/Buttons.png" id="2_7gf2j"]
@@ -6,10 +6,11 @@
 [ext_resource type="AudioStream" uid="uid://ct2321lwrywpi" path="res://entities/button/ButtonUnpress.ogg" id="4_x1tbq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2arti"]
-size = Vector2(52, 14)
+size = Vector2(52, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4lu2v"]
-size = Vector2(56, 6)
+resource_local_to_scene = true
+size = Vector2(56, 12)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bnhup"]
 random_pitch = 1.12
@@ -20,6 +21,66 @@ stream_0/stream = ExtResource("3_tdykk")
 random_pitch = 1.12
 streams_count = 1
 stream_0/stream = ExtResource("4_x1tbq")
+
+[sub_resource type="Animation" id="Animation_tdykk"]
+resource_name = "pressed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:shape:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(56, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -3)]
+}
+
+[sub_resource type="Animation" id="Animation_x1tbq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:shape:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(56, 12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bnhup"]
+_data = {
+&"RESET": SubResource("Animation_x1tbq"),
+&"pressed": SubResource("Animation_tdykk")
+}
 
 [node name="Button" type="StaticBody2D"]
 script = ExtResource("1_7gf2j")
@@ -37,12 +98,13 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationArea"]
 visible = false
-position = Vector2(0, -7)
+position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_2arti")
 debug_color = Color(0.845326, 0.336928, 0.455054, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
+visible = false
+position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_4lu2v")
 
 [node name="down" type="AudioStreamPlayer" parent="."]
@@ -56,6 +118,11 @@ stream = SubResource("AudioStreamRandomizer_xjlp8")
 volume_db = -15.0
 max_polyphony = 5
 bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bnhup")
+}
 
 [connection signal="body_entered" from="ActivationArea" to="." method="_on_activation_area_body_entered"]
 [connection signal="body_exited" from="ActivationArea" to="." method="_on_activation_area_body_exited"]

@@ -19,7 +19,6 @@ var stopwatch_diplay: String
 var stopwatch_enabled:= false
 
 
-
 func _ready() -> void:
 	self.text = stopwatch_diplay
 
@@ -30,11 +29,15 @@ func _process(delta: float) -> void:
 	self.text = stopwatch_diplay
 
 
-func stopwatch_begin() -> void:
+func stopwatch_start() -> void:
 	stopwatch = 0
 	stopwatch_enabled = true
 
 
-func stopwatch_end() -> String:
+func stopwatch_resume() -> void:
+	stopwatch_enabled = true
+
+
+func stopwatch_stop() -> float:
 	stopwatch_enabled = false
-	return stopwatch_diplay
+	return stopwatch

@@ -5,6 +5,7 @@ extends StaticBody2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var down: AudioStreamPlayer = $down
 @onready var up: AudioStreamPlayer = $up
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 signal _model_updated()
 signal active_changed(active: bool)
@@ -14,9 +15,6 @@ var color: int = 0:
 	set(value):
 		color = value
 		_model_updated.emit()
-
-@export_range(0, 15, 0.5, "or_greater")
-var seconds_to_require_reactivation: float = 10.0
 
 var active: bool:
 	set(value):
@@ -38,9 +36,11 @@ func _on_active_changed(_active: bool) -> void:
 	if active:
 		sprite_2d.frame += 1
 		down.play()
+		animation_player.play('pressed')
 	else:
 		sprite_2d.frame -= 1
 		up.play()
+		animation_player.play('RESET')
 
 
 func _on_reactivation_required() -> void:

@@ -7,6 +7,9 @@ var list_of_persistent_properties: Array[String] = []
 @export
 var scope: String = 'global'
 
+@export
+var save_on_window_closing: bool = true
+
 
 func _enter_tree() -> void:
 	var parent: Node = get_parent() as Node
@@ -25,6 +28,13 @@ func load_persistent_values() -> void:
 
 func _exit_tree() -> void:
 	save_persistent_values()
+
+
+func _notification(what: int) -> void:
+	match what:
+		NOTIFICATION_WM_CLOSE_REQUEST:
+			if save_on_window_closing:
+				save_persistent_values()
 
 
 func save_persistent_values() -> void:

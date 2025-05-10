@@ -19,7 +19,7 @@ func _ready() -> void:
 	bus_id = AudioServer.get_bus_index(bus)
 
 	self.max_value = 1.0
-	self.step = 0.05
+	self.step = 0.01
 	self.value = db_to_linear(AudioServer.get_bus_volume_db(bus_id))
 	self.value_changed.connect(_on_h_slider_value_changed)
 

@@ -134,7 +134,7 @@ region = Rect2(224, 256, 32, 32)
 
 [node name="MainMenu" type="Node2D"]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="GlobalBGMRemote" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_1fmbc")
 autoplay = true
 bus = &"BGM"

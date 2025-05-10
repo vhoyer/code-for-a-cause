@@ -10,6 +10,9 @@ func _ready() -> void:
 
 func _on_active_changed(active: bool) -> void:
 	CameraMain.singleton.momentarily_add_to_focus(door.global_position + Vector2(0, 50))
-	await get_tree().create_timer(0.5).timeout
+	var tree = get_tree()
+	if not tree: return
+
+	await tree.create_timer(0.5).timeout
 
 	door.power_counter += 1 if active else -1

@@ -1,12 +1,11 @@
-[gd_scene load_steps=27 format=4 uid="uid://cod16iwe4mb0c"]
+[gd_scene load_steps=26 format=4 uid="uid://cod16iwe4mb0c"]
 
-[ext_resource type="Script" uid="uid://cdvu0i3xtflk5" path="res://modules/UI/ui_elements/credits_roll/credits_roll.gd" id="1_c2crl"]
-[ext_resource type="Script" uid="uid://mpygmma5f53t" path="res://modules/Audio/global_bgm_remote.gd" id="2_cdk1d"]
-[ext_resource type="Resource" uid="uid://kvfpp3sxfl6a" path="res://stages/credits/credits.tres" id="2_gnuxy"]
+[ext_resource type="Script" uid="uid://bkejev6gdg7ap" path="res://addons/godot-devkit/UI/ui_elements/credits_roll/credits_roll.gd" id="1_c2crl"]
+[ext_resource type="Script" uid="uid://mpygmma5f53t" path="res://addons/godot-devkit/Audio/global_bgm_remote.gd" id="2_cdk1d"]
 [ext_resource type="Script" uid="uid://b5hbl56s22vne" path="res://stages/credits/go_back.gd" id="3_f6i1q"]
 [ext_resource type="AudioStream" uid="uid://s4v27rx1rsau" path="res://assets/ost/Don't Stop Moving V3.mp3" id="4_fmctk"]
 [ext_resource type="Texture2D" uid="uid://b511paydkej4x" path="res://assets/Joe-Sheet.png" id="5_rqflh"]
-[ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://modules/UI/assets/eye_dropper.gdshader" id="6_cdk1d"]
+[ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://addons/godot-devkit/UI/assets/eye_dropper.gdshader" id="6_cdk1d"]
 [ext_resource type="Texture2D" uid="uid://bpxt6b6sae2pv" path="res://entities/joe/assets/Joe Palette/Input Palette.png" id="7_uqyud"]
 [ext_resource type="Texture2D" uid="uid://02h5cfuh1sa" path="res://entities/joe/assets/Joe Palette/Joe Palette 1.png" id="8_qq537"]
 [ext_resource type="Texture2D" uid="uid://c16xn62acx3wt" path="res://entities/joe/assets/Joe Palette/Joe Palette 2.png" id="9_lqgfd"]
@@ -105,7 +104,7 @@ shader_parameter/output_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0,
 
 [node name="CreditRoll" type="Node2D"]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="GlobalBGMRemote" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_fmctk")
 autoplay = true
 bus = &"BGM"
@@ -228,7 +227,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 vertical_scroll_mode = 3
 script = ExtResource("1_c2crl")
-content = ExtResource("2_gnuxy")
 credits_duration = 10.0
 
 [node name="GoBackOnEnd" type="Node" parent="CanvasLayer/MarginContainer/CreditRoll"]

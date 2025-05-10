@@ -18,7 +18,7 @@ config/icon="res://assets/Joe.png"
 
 [autoload]
 
-GlobalBGM="*res://modules/Audio/global_bgm.gd"
+GlobalBGM="*res://addons/godot-devkit/Audio/global_bgm.gd"
 
 [debug]
 
@@ -34,9 +34,15 @@ window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/name="Joe Adventure"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-devkit/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
+"res://addons/": "gray",
+"res://dist/": "gray",
 "res://entities/": "teal",
 "res://modules/": "purple",
 "res://stages/": "yellow"

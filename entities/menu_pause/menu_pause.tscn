@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dyifxt4rc2jk1"]
 
 [ext_resource type="Script" uid="uid://lexgt2mmoxam" path="res://entities/menu_pause/menu_pause.gd" id="1_3rksr"]
-[ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://modules/UI/make_parent/make_parent_controller_focus_start.gd" id="2_xhhv8"]
-[ext_resource type="Script" uid="uid://dr8lo2ogpw1hn" path="res://modules/UI/ui_elements/buttons/button_panel_show.gd" id="3_8bbfg"]
-[ext_resource type="Script" uid="uid://yqn6ekdfwf7n" path="res://modules/UI/stage_manager/button_stage_changer.gd" id="3_rdbav"]
+[ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://addons/godot-devkit/UI/make_parent/make_parent_controller_focus_start.gd" id="2_xhhv8"]
+[ext_resource type="Script" uid="uid://dr8lo2ogpw1hn" path="res://addons/godot-devkit/UI/ui_elements/buttons/button_panel_show.gd" id="3_8bbfg"]
+[ext_resource type="Script" uid="uid://cxn51xclpikx4" path="res://addons/godot-devkit/UI/stage_manager/button_stage_changer.gd" id="3_rdbav"]
 [ext_resource type="PackedScene" uid="uid://dclerjnyqfida" path="res://entities/menu_options/menu_options.tscn" id="4_6t313"]
 
 [node name="MenuPause" type="CanvasLayer"]

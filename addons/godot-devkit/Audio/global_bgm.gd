@@ -29,6 +29,19 @@ func volume_tween(volume_delta_db: float) -> void:
 
 
 func push_bgm(player: AudioStreamPlayer) -> void:
+	var prop_list = [
+		'volume_db',
+		'pitch_scale',
+		'stream_paused',
+		'mix_target',
+		'max_polyphony',
+		'bus',
+		'playback_type',
+		'parameters/looping'
+	]
+	for prop in prop_list:
+		self.set(prop, player.get(prop))
+
 	if self.stream == player.stream:
 		return
 	self.stream = player.stream

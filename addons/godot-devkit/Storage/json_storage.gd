@@ -9,15 +9,14 @@ var logger: Logger
 var _scope: String
 var _storage: Dictionary = {}
 
-
-static var is_cache_valid = {}
+static var _is_cache_valid = {}
 
 
 func _init(prefix: String = '', scope: String = 'global') -> void:
 	super(prefix)
 	logger = Logger.scope('JSONStorage.%s' % scope)
 	self._scope = scope
-	self.is_cache_valid[scope] = true
+	self._is_cache_valid[scope] = true
 	var path = _get_path()
 
 	load_from_file(path)
@@ -31,22 +30,22 @@ func _get_path_backup() -> String:
 
 func set_item(key: String, value: Variant) -> void:
 	reload_storage_if_necessary()
-	_storage[StringName(prefix + key)] = value
+	_storage[self._get_key(key)] = value
 	save_to_file(_get_path())
-	is_cache_valid[_scope] = false
+	_is_cache_valid[_scope] = false
 
 
 func get_item(key: String, default_value: Variant) -> Variant:
 	reload_storage_if_necessary()
-	return _storage.get(StringName(prefix + key), default_value)
+	return _storage.get(self._get_key(key), default_value)
 
 
 func reload_storage_if_necessary() -> void:
-	if is_cache_valid.get(_scope, false):
+	if _is_cache_valid.get(_scope, false):
 		# not necessary, cache is valid
 		return
 	load_from_file(_get_path())
-	is_cache_valid[_scope] = true
+	_is_cache_valid[_scope] = true
 
 
 func load_from_file(path) -> void:

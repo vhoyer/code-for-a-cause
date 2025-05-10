@@ -69,6 +69,7 @@ func add_a_joe() -> void:
 	var hud: JoeHud = joe_hud_holder.get_child(i)
 	var floating_hud: JoeHud = joe_hud_floating_holder.get_child(i)
 	var joe: Joe = joe_scene.instantiate()
+	await get_tree().physics_frame
 	joes.add_child(joe)
 	joe.global_position = selected_joe.global_position + Vector2.UP * 40
 	joe.died.connect(_on_joe_died)

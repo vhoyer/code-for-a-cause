@@ -1,23 +1,23 @@
-[gd_resource type="Resource" script_class="CreditsContent" load_steps=13 format=3 uid="uid://kvfpp3sxfl6a"]
+[gd_resource type="Resource" script_class="CreditsContent" load_steps=15 format=3 uid="uid://kvfpp3sxfl6a"]
 
-[ext_resource type="Script" uid="uid://u8htxqn5o1g7" path="res://modules/UI/ui_elements/credits_roll/credtis_content.gd" id="1_qsq7d"]
-[ext_resource type="Script" uid="uid://7fnsm12af3m5" path="res://modules/UI/ui_elements/credits_roll/credits_section.gd" id="2_poujl"]
-[ext_resource type="Script" uid="uid://djih8r1b8d88p" path="res://modules/UI/ui_elements/credits_roll/credits_block.gd" id="3_fm7xd"]
+[ext_resource type="Script" uid="uid://dkilr2sckvdbq" path="res://addons/godot-devkit/UI/ui_elements/credits_roll/credits_content.gd" id="1_qsq7d"]
+[ext_resource type="Script" uid="uid://hoscsyh2wfg2" path="res://addons/godot-devkit/UI/ui_elements/credits_roll/credits_section.gd" id="2_poujl"]
+[ext_resource type="Script" uid="uid://c8ipei6u4e5bb" path="res://addons/godot-devkit/UI/ui_elements/credits_roll/credits_block.gd" id="3_fm7xd"]
 
 [sub_resource type="Resource" id="Resource_iiad3"]
 script = ExtResource("3_fm7xd")
-main = "Pemmy"
-secondary = Array[String](["pixel artist"])
+main = "pemmy0"
+secondary = Array[String](["Game Designer", "Level Designer", "Narrative Designer", "Concept Artist", "2D Artist / Illustrator", "Animator", "Tester"])
 
 [sub_resource type="Resource" id="Resource_esuuv"]
 script = ExtResource("3_fm7xd")
-main = "Twisty9"
-secondary = Array[String](["music artist"])
+main = "theguitarassassin"
+secondary = Array[String](["Sound Designer", "Composer ", "Testers"])
 
 [sub_resource type="Resource" id="Resource_8ypg7"]
 script = ExtResource("3_fm7xd")
 main = "vhoyer"
-secondary = Array[String](["code artist"])
+secondary = Array[String](["Game Designer", "Level Designer", "UX Designer", "Narrative Designer", "Systems Designer", "Technical Artist", "Lead Programmer", "Gameplay Programmer", "UI Programmer", "Tools Programmer", "Audio Implementer", "Testers", "Legal Team", "Finance & Accounting", "Publisher"])
 
 [sub_resource type="Resource" id="Resource_tiaoh"]
 script = ExtResource("2_poujl")
@@ -54,6 +54,19 @@ type = 0
 title = "cc attribuition"
 blocks = Array[ExtResource("3_fm7xd")]([SubResource("Resource_infj6"), SubResource("Resource_3xqd2"), SubResource("Resource_logpw"), SubResource("Resource_q86jh")])
 
+[sub_resource type="Resource" id="Resource_urebj"]
+script = ExtResource("3_fm7xd")
+main = "Twisty9"
+secondary = Array[String]([])
+metadata/_custom_type_script = "uid://c8ipei6u4e5bb"
+
+[sub_resource type="Resource" id="Resource_iqemq"]
+script = ExtResource("2_poujl")
+type = 1
+title = "Special Thanks"
+blocks = Array[ExtResource("3_fm7xd")]([SubResource("Resource_urebj")])
+metadata/_custom_type_script = "uid://hoscsyh2wfg2"
+
 [resource]
 script = ExtResource("1_qsq7d")
-sections = Array[ExtResource("2_poujl")]([SubResource("Resource_tiaoh"), SubResource("Resource_nmp5h")])
+sections = Array[ExtResource("2_poujl")]([SubResource("Resource_tiaoh"), SubResource("Resource_nmp5h"), SubResource("Resource_iqemq")])

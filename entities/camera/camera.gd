@@ -14,7 +14,7 @@ var main_poi: Vector2
 var poi_list: Array[Vector2] = []
 
 
-func _init() -> void:
+func _ready() -> void:
 	singleton = self
 
 func _exit_tree() -> void:

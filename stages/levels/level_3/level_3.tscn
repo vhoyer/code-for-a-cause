@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bvjsy2dwjfxa4"]
+[gd_scene load_steps=8 format=4 uid="uid://bvjsy2dwjfxa4"]
 
 [ext_resource type="PackedScene" uid="uid://s4i10mewh67y" path="res://stages/level_base/level_base.tscn" id="1_pu3vt"]
 [ext_resource type="PackedScene" uid="uid://bqkwecik3x6xd" path="res://entities/door/door_up.tscn" id="2_jyppi"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://oybgjtijj1fy" path="res://entities/button/big_button.tscn" id="5_cxabn"]
 [ext_resource type="PackedScene" uid="uid://dk0v54smdf5t8" path="res://entities/joe/joe_in_waiting/joe_in_waiting.tscn" id="6_i0ukj"]
 [ext_resource type="Script" uid="uid://bc3swpk52572o" path="res://entities/level_utils/level_utils_go_to_next.gd" id="6_mry4w"]
-[ext_resource type="PackedScene" uid="uid://dx3bgn5x8qmc5" path="res://stages/levels/level_4/level_4.tscn" id="7_mry4w"]
 
 [node name="LevelBase2" instance=ExtResource("1_pu3vt")]
 
@@ -45,7 +44,7 @@ weight_to_trigger = 3
 
 [node name="LevelUtilsGoToNext" type="Node" parent="BigButton" index="5" node_paths=PackedStringArray("player")]
 script = ExtResource("6_mry4w")
-next_level = ExtResource("7_mry4w")
+next_level_path = "uid://dx3bgn5x8qmc5"
 player = NodePath("../../Player")
 metadata/_custom_type_script = "uid://bc3swpk52572o"
 

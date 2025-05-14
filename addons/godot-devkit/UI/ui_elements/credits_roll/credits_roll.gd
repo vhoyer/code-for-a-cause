@@ -48,13 +48,13 @@ func _ready() -> void:
 
 	margin_container = MarginContainer.new()
 	margin_container.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	margin_container.add_theme_constant_override("margin_top", DEFAULT_MARGIN)
+	margin_container.add_theme_constant_override("margin_top", 9999999)
 	margin_container.add_theme_constant_override("margin_bottom", DEFAULT_MARGIN)
 	margin_container.add_child(rich_text_label)
 
 	self.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_SHOW_NEVER
 	self.add_child(margin_container, false, Node.INTERNAL_MODE_BACK)
-	
+
 	if Engine.is_editor_hint(): return
 	if 0 < credits_duration:
 		self.scroll_vertical_ratio = 0
@@ -71,7 +71,6 @@ func populate_credits() -> void:
 
 func _process(_delta: float) -> void:
 	update_size()
-	pass
 
 func update_size() -> void:
 	var height = self.size.y

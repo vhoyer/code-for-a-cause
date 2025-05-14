@@ -38,6 +38,8 @@ var max_scroll: float:
 
 
 func _ready() -> void:
+	var win_height = ProjectSettings.get_setting('display/window/size/viewport_height')
+
 	rich_text_label = RichTextLabel.new()
 	rich_text_label.bbcode_enabled = true
 	rich_text_label.fit_content = true
@@ -48,7 +50,7 @@ func _ready() -> void:
 
 	margin_container = MarginContainer.new()
 	margin_container.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	margin_container.add_theme_constant_override("margin_top", 9999999)
+	margin_container.add_theme_constant_override("margin_top", win_height)
 	margin_container.add_theme_constant_override("margin_bottom", DEFAULT_MARGIN)
 	margin_container.add_child(rich_text_label)
 

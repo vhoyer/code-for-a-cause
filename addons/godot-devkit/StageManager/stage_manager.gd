@@ -67,6 +67,7 @@ var _current_history: HistoryEntry:
 var _loading: bool = false
 var _loading_status: ResourceLoader.ThreadLoadStatus
 var _loading_progress: Array = []
+var _loading_tween: Tween
 
 func _ready() -> void:
 	self.process_mode = Node.PROCESS_MODE_ALWAYS
@@ -75,6 +76,8 @@ func _ready() -> void:
 		'application/run/main_scene',
 		get_tree().current_scene.scene_file_path)
 	_append_to_history(main_stage)
+
+	setup_transition_layer()
 
 
 func _process(_delta: float) -> void:
@@ -85,7 +88,14 @@ func _process(_delta: float) -> void:
 func _load_begin() -> PackedScene:
 	_loading = true
 	ResourceLoader.load_threaded_request(_current_history.stage_file)
-	return await _stage_loaded
+
+	var tween = tween_stage_out()
+	var stage = await _stage_loaded
+
+	if tween.is_running():
+		await tween.finished
+
+	return stage
 
 func _load_step() -> void:
 	_loading_status = ResourceLoader.load_threaded_get_status(
@@ -117,6 +127,10 @@ func _append_to_history(path):
 
 
 func _change_stage_to_file(scene: String) -> void:
+	if _loading:
+		push_error("Stage Manager: Can't request change on stage while another change is already in progress")
+		return
+
 	if _current_cursor != _history.size() - 1:
 		_history.resize(_current_cursor + 1)
 
@@ -130,6 +144,56 @@ func _update_current_stage() -> void:
 	tree.paused = true
 
 	var stage = await _load_begin()
+	
+	tree.change_scene_to_packed(stage)
+	await tree.tree_changed
+
+	await tween_stage_in().finished
 
 	tree.paused = false
-	tree.change_scene_to_packed(stage)
+
+
+
+const TRANSITION_DURATION: float = 0.3
+var transition_canvas_layer: CanvasLayer
+var transition_color_rect: ColorRect
+
+func setup_transition_layer() -> void:
+	transition_canvas_layer = CanvasLayer.new()
+	transition_canvas_layer.name = 'CanvasLayerTransition'
+	self.add_child(transition_canvas_layer)
+	transition_canvas_layer.layer = 128
+	transition_canvas_layer.hide()
+
+	transition_color_rect = ColorRect.new()
+	transition_canvas_layer.add_child(transition_color_rect)
+	transition_color_rect.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	transition_color_rect.modulate = Color.TRANSPARENT
+	transition_color_rect.color = Color.BLACK
+
+func tween_stage_out() -> Tween:
+	_loading_tween = create_tween()
+	if current_stage.has_method('_stage_out'):
+		current_stage._stage_out(_loading_tween, fade_out_to)
+	else:
+		fade_out_to(Color.BLACK, TRANSITION_DURATION)
+
+	return _loading_tween
+
+func tween_stage_in() -> Tween:
+	_loading_tween = create_tween()
+	if current_stage.has_method('_stage_in'):
+		current_stage._stage_in(_loading_tween)
+	else:
+		transition_color_rect.modulate = Color.WHITE
+		transition_canvas_layer.show()
+		_loading_tween.tween_property(transition_color_rect, 'modulate:a', 0, TRANSITION_DURATION)
+		_loading_tween.tween_callback(transition_canvas_layer.hide)
+
+	return _loading_tween
+
+func fade_out_to(color: Color, duration: float) -> void:
+	transition_color_rect.color = color
+	transition_color_rect.modulate = Color.TRANSPARENT
+	transition_canvas_layer.show()
+	_loading_tween.tween_property(transition_color_rect, 'modulate:a', 1.0, duration)

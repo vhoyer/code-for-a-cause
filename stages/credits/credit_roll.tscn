@@ -226,12 +226,10 @@ theme_override_constants/margin_left = 300
 [node name="CreditRoll" type="ScrollContainer" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-scroll_vertical = 331
 vertical_scroll_mode = 3
 script = ExtResource("1_c2crl")
 content = ExtResource("12_cdk1d")
 credits_duration = 10.0
-scroll_vertical_ratio = 0.289336
 
 [node name="GoBackOnEnd" type="Node" parent="CanvasLayer/MarginContainer/CreditRoll"]
 script = ExtResource("3_f6i1q")

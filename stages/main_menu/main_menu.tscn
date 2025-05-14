@@ -1,13 +1,11 @@
-[gd_scene load_steps=44 format=4 uid="uid://d3756fh13dbkc"]
+[gd_scene load_steps=35 format=4 uid="uid://d3756fh13dbkc"]
 
 [ext_resource type="AudioStream" uid="uid://s4v27rx1rsau" path="res://assets/ost/Don't Stop Moving V3.mp3" id="1_1fmbc"]
 [ext_resource type="Texture2D" uid="uid://b511paydkej4x" path="res://assets/Joe-Sheet.png" id="1_jan3x"]
-[ext_resource type="Script" uid="uid://cxn51xclpikx4" path="res://addons/godot-devkit/UI/stage_manager/button_stage_changer.gd" id="1_sknds"]
+[ext_resource type="Script" uid="uid://cxn51xclpikx4" path="res://addons/godot-devkit/StageManager/stage_changer_base_button.gd" id="1_sknds"]
 [ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://addons/godot-devkit/UI/assets/eye_dropper.gdshader" id="2_8ei0a"]
 [ext_resource type="Script" uid="uid://mpygmma5f53t" path="res://addons/godot-devkit/Audio/global_bgm_remote.gd" id="2_c61yf"]
-[ext_resource type="PackedScene" uid="uid://c2v7s5fjbeqhy" path="res://stages/levels/level_1/level_1.tscn" id="3_7wn7o"]
 [ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://addons/godot-devkit/UI/make_parent/make_parent_controller_focus_start.gd" id="3_mcab4"]
-[ext_resource type="PackedScene" uid="uid://cod16iwe4mb0c" path="res://stages/credits/credit_roll.tscn" id="3_xkwhf"]
 [ext_resource type="Texture2D" uid="uid://bpxt6b6sae2pv" path="res://entities/joe/assets/Joe Palette/Input Palette.png" id="3_yb6nn"]
 [ext_resource type="Texture2D" uid="uid://02h5cfuh1sa" path="res://entities/joe/assets/Joe Palette/Joe Palette 1.png" id="4_1fmbc"]
 [ext_resource type="Texture2D" uid="uid://c16xn62acx3wt" path="res://entities/joe/assets/Joe Palette/Joe Palette 2.png" id="5_i3bhe"]
@@ -20,13 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://dclerjnyqfida" path="res://entities/menu_options/menu_options.tscn" id="16_m2o13"]
 [ext_resource type="Script" uid="uid://drpcgykc8fxy6" path="res://addons/godot-devkit/UI/ui_elements/buttons/button_panel_hide.gd" id="17_yb6nn"]
 [ext_resource type="Script" uid="uid://d0rjcb54sccp8" path="res://stages/level_select/level_list.gd" id="20_c61yf"]
-[ext_resource type="PackedScene" uid="uid://ba6rhkgoxue7b" path="res://stages/levels/level_2/level_2.tscn" id="21_emioh"]
-[ext_resource type="PackedScene" uid="uid://bvjsy2dwjfxa4" path="res://stages/levels/level_3/level_3.tscn" id="22_r6rw8"]
-[ext_resource type="PackedScene" uid="uid://dx3bgn5x8qmc5" path="res://stages/levels/level_4/level_4.tscn" id="23_gt65w"]
-[ext_resource type="PackedScene" uid="uid://defwy7xr5v522" path="res://stages/levels/level_5/level_5.tscn" id="24_xcqwa"]
-[ext_resource type="PackedScene" uid="uid://bbito4fxpij2v" path="res://stages/levels/level_mama/level_mama.tscn" id="25_n2pvs"]
-[ext_resource type="PackedScene" uid="uid://dukei2ipri818" path="res://stages/levels/level_test/level_test.tscn" id="26_ucvsa"]
-[ext_resource type="PackedScene" uid="uid://b13hsha0bdokx" path="res://stages/levels/prototype/prototype.tscn" id="27_4u5cv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4cwpn"]
 atlas = ExtResource("1_jan3x")
@@ -269,7 +260,7 @@ size_flags_horizontal = 4
 layout_mode = 2
 text = "Start"
 script = ExtResource("1_sknds")
-scene = ExtResource("3_7wn7o")
+scene_file = "uid://c2v7s5fjbeqhy"
 
 [node name="MakeParentControllerFocusStart" type="Node" parent="CanvasLayer/CenterContainer/HBoxContainer/VBoxContainer/StartGame2"]
 script = ExtResource("3_mcab4")
@@ -291,7 +282,7 @@ panel = NodePath("../../../../OptionsPanel")
 layout_mode = 2
 text = "Credits"
 script = ExtResource("1_sknds")
-scene = ExtResource("3_xkwhf")
+scene_file = "uid://cod16iwe4mb0c"
 
 [node name="OptionsPanel" parent="CanvasLayer" instance=ExtResource("16_m2o13")]
 visible = false
@@ -349,53 +340,53 @@ custom_minimum_size = Vector2(150, 15)
 layout_mode = 2
 text = "level 1"
 script = ExtResource("1_sknds")
-scene = ExtResource("3_7wn7o")
+scene_file = "res://stages/levels/level_1/level_1.tscn"
 
 [node name="level 2" type="Button" parent="CanvasLayer/ChooseLevelPanel/CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(150, 15)
 layout_mode = 2
 text = "level 2"
 script = ExtResource("1_sknds")
-scene = ExtResource("21_emioh")
+scene_file = "res://stages/levels/level_2/level_2.tscn"
 
 [node name="level 3" type="Button" parent="CanvasLayer/ChooseLevelPanel/CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(150, 15)
 layout_mode = 2
 text = "level 3"
 script = ExtResource("1_sknds")
-scene = ExtResource("22_r6rw8")
+scene_file = "res://stages/levels/level_3/level_3.tscn"
 
 [node name="level 4" type="Button" parent="CanvasLayer/ChooseLevelPanel/CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(150, 15)
 layout_mode = 2
 text = "level 4"
 script = ExtResource("1_sknds")
-scene = ExtResource("23_gt65w")
+scene_file = "res://stages/levels/level_4/level_4.tscn"
 
 [node name="level 5" type="Button" parent="CanvasLayer/ChooseLevelPanel/CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(150, 15)
 layout_mode = 2
 text = "level 5"
 script = ExtResource("1_sknds")
-scene = ExtResource("24_xcqwa")
+scene_file = "res://stages/levels/level_5/level_5.tscn"
 
 [node name="level mama" type="Button" parent="CanvasLayer/ChooseLevelPanel/CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(150, 15)
 layout_mode = 2
 text = "level mama"
 script = ExtResource("1_sknds")
-scene = ExtResource("25_n2pvs")
+scene_file = "res://stages/levels/level_mama/level_mama.tscn"
 
 [node name="level test" type="Button" parent="CanvasLayer/ChooseLevelPanel/CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(150, 15)
 layout_mode = 2
 text = "level test"
 script = ExtResource("1_sknds")
-scene = ExtResource("26_ucvsa")
+scene_file = "res://stages/levels/level_test/level_test.tscn"
 
 [node name="prototype" type="Button" parent="CanvasLayer/ChooseLevelPanel/CenterContainer/PanelContainer/VBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(150, 15)
 layout_mode = 2
 text = "prototype"
 script = ExtResource("1_sknds")
-scene = ExtResource("27_4u5cv")
+scene_file = "res://stages/levels/prototype/prototype.tscn"

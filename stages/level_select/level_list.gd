@@ -27,10 +27,10 @@ func populate_grid() -> void:
 
 func add_game(path: String, title: String):
 	var btn = Button.new()
-	btn.set_script(ButtonSceneChanger)
+	btn.set_script(StageChangerBaseButton)
 	btn.name = title.replace('_', ' ')
 	self.add_child(btn, true)
-	btn.scene = load(path)
+	btn.scene_file = path
 	btn.text = btn.name
 	btn.custom_minimum_size = Vector2(150, 15)
 	btn.owner = self.owner;

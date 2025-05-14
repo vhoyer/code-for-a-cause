@@ -12,13 +12,14 @@ config_version=5
 
 config/name="Joe Adventure"
 config/description="No Description"
-run/main_scene="res://stages/main/main.tscn"
+run/main_scene="uid://d3756fh13dbkc"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://assets/Joe.png"
 
 [autoload]
 
 GlobalBGM="*res://addons/godot-devkit/Audio/global_bgm.gd"
+StageManager="*res://addons/godot-devkit/StageManager/stage_manager.gd"
 
 [debug]
 

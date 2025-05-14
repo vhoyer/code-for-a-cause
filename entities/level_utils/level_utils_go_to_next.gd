@@ -1,15 +1,18 @@
 extends Node
 class_name LevelUtilsGoToNext
 
-@export var next_level: PackedScene
-@export var player: PlayerController
+@export_file("*.tscn", "*.scn")
+var next_level_path: String
+
+@export
+var player: PlayerController
 
 func _ready() -> void:
 	var parent = self.get_parent()
 	if parent.has_signal('active_changed'):
 		parent.connect('active_changed', _on_active_changed)
 
-func _on_active_changed(active: bool) -> void: 
+func _on_active_changed(active: bool) -> void:
 	if not active: return
 
 	var between_jump_interval = 0.5
@@ -27,4 +30,4 @@ func _on_active_changed(active: bool) -> void:
 				joe.velocity.y -= 200)
 		tween.tween_interval(between_jump_interval)
 	tween.tween_callback(func():
-		StageManager.push_stage(next_level))
+		StageManager.push_stage(next_level_path))

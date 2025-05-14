@@ -4,6 +4,7 @@ extends EditorPlugin
 
 const autoload_singletons = [
 	['GlobalBGM', "res://addons/godot-devkit/Audio/global_bgm.gd"],
+	['StageManager', "res://addons/godot-devkit/StageManager/stage_manager.gd"],
 ]
 
 # name, base class, path, icon
@@ -52,7 +53,6 @@ func _enable_plugin() -> void:
 
 func _disable_plugin():
 	for autoload in autoload_singletons:
-		print(autoload)
 		remove_autoload_singleton(autoload[0])
 
 	for custom_type in custom_types:

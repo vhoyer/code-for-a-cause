@@ -16,19 +16,7 @@ var go_back_by_count: int = 1
 var scene_file: String
 
 
-var has_scene_manager: bool:
-	get():
-		return StageManager.singleton != null
-
-
 func _pressed() -> void:
-	if not has_scene_manager:
-		var err = get_tree().change_scene_to_file(scene_file)
-		if err != OK: print(error_string(err))
-		return
-
-	get_tree().paused = false
-
 	match method:
 		'to scene':
 			for key in payloads.keys():

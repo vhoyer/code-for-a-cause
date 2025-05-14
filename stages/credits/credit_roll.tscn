@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://cod16iwe4mb0c"]
+[gd_scene load_steps=27 format=4 uid="uid://cod16iwe4mb0c"]
 
 [ext_resource type="Script" uid="uid://bkejev6gdg7ap" path="res://addons/godot-devkit/UI/ui_elements/credits_roll/credits_roll.gd" id="1_c2crl"]
 [ext_resource type="Script" uid="uid://mpygmma5f53t" path="res://addons/godot-devkit/Audio/global_bgm_remote.gd" id="2_cdk1d"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c16xn62acx3wt" path="res://entities/joe/assets/Joe Palette/Joe Palette 2.png" id="9_lqgfd"]
 [ext_resource type="Texture2D" uid="uid://c846wnvhks87i" path="res://entities/joe/assets/Joe Palette/Joe Palette 3.png" id="10_n6p6p"]
 [ext_resource type="Texture2D" uid="uid://cpu32fn0r0hgq" path="res://entities/background/Background Parallax smal.png" id="11_yq1qh"]
+[ext_resource type="Resource" uid="uid://kvfpp3sxfl6a" path="res://stages/credits/credits.tres" id="12_cdk1d"]
 [ext_resource type="TileSet" uid="uid://bnfmghrj16pdr" path="res://entities/tile_set/joe_tile_set.tres" id="12_met01"]
 [ext_resource type="Texture2D" uid="uid://dfyb0o6nv0tij" path="res://stages/main_menu/UI/Title.png" id="13_rqflh"]
 
@@ -220,14 +221,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 256
+theme_override_constants/margin_left = 300
 
 [node name="CreditRoll" type="ScrollContainer" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+scroll_vertical = 331
 vertical_scroll_mode = 3
 script = ExtResource("1_c2crl")
+content = ExtResource("12_cdk1d")
 credits_duration = 10.0
+scroll_vertical_ratio = 0.289336
 
 [node name="GoBackOnEnd" type="Node" parent="CanvasLayer/MarginContainer/CreditRoll"]
 script = ExtResource("3_f6i1q")

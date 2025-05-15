@@ -42,7 +42,7 @@ var is_grabbing: bool = false
 var grab_list:= Set.new()
 
 @export
-var do_life_drain: bool = true
+var do_life_drain: bool = false
 @export
 var gravity_by_velocity_mapping: Curve = Curve.new()
 
@@ -71,7 +71,6 @@ func _ready() -> void:
 	if Engine.is_editor_hint(): return
 
 	health = MAX_HEALTH
-	do_life_drain = do_life_drain or !OS.is_debug_build()
 	update_animation_tree_parameters()
 
 

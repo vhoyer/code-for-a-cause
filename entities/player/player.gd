@@ -95,6 +95,7 @@ func process_switch(action: StringName, index: int) -> void:
 		return
 
 	var joe: Joe = joes.get_child(index)
+	joe.do_life_drain = !!selected_joe
 
 	if selected_joe and selected_joe.health <= 0: return
 	if joe.health <= 0: return

@@ -7,6 +7,7 @@ func _stage_out(tween: Tween, fade_to_color: Callable) -> void:
 	tween.set_trans(Tween.TRANS_QUAD)
 	tween.tween_callback(func():
 		%BG.process_mode = Node.PROCESS_MODE_ALWAYS
+		%ChooseLevelPanel.hide()
 		for child in %BG.get_children():
 			if child is Parallax2D:
 				child.autoscroll *= -2)

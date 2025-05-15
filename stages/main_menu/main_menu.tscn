@@ -294,6 +294,7 @@ scene_file = "uid://cod16iwe4mb0c"
 visible = false
 
 [node name="ChooseLevelPanel" type="Panel" parent="CanvasLayer"]
+unique_name_in_owner = true
 visible = false
 anchors_preset = 15
 anchor_right = 1.0

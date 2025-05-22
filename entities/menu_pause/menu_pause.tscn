@@ -45,7 +45,7 @@ layout_mode = 2
 
 [node name="Resume" type="Button" parent="Panel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "resume"
+text = "Resume"
 
 [node name="MakeParentControllerFocusStart" type="Node" parent="Panel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/Resume"]
 script = ExtResource("2_xhhv8")
@@ -53,7 +53,7 @@ metadata/_custom_type_script = "uid://b6827tfdgmrq2"
 
 [node name="Restart" type="Button" parent="Panel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "restart"
+text = "Restart"
 
 [node name="Button" type="Button" parent="Panel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer" node_paths=PackedStringArray("panel")]
 layout_mode = 2
@@ -63,7 +63,7 @@ panel = NodePath("../../../../../../OptionsPanel")
 
 [node name="MainMenu" type="Button" parent="Panel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "main menu"
+text = "Main Menu"
 script = ExtResource("3_rdbav")
 method = "back to start"
 

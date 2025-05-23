@@ -61,10 +61,10 @@ msgstr "Pengaturan"
 msgid "Master"
 msgstr "Utama"
 
-msgid "BGM"
+msgid "Music"
 msgstr "Musik"
 
-msgid "SFX"
+msgid "Special Effects"
 msgstr "Efek"
 
 msgid "Paused"

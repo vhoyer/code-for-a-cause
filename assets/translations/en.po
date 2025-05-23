@@ -9,4 +9,3 @@ msgstr ""
 
 msgid "en"
 msgstr "English"
-

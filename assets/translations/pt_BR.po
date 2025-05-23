@@ -8,7 +8,7 @@ msgstr ""
 "Language: pt_BR\n"
 
 msgid "pt_BR"
-msgstr "Português"
+msgstr "Português (Brasil)"
 
 msgid "Start"
 msgstr "Iniciar"
@@ -61,14 +61,17 @@ msgstr "Menu Principal"
 msgid "Options"
 msgstr "Opções"
 
-msgid "Master"
-msgstr "Principal"
+msgid "Language"
+msgstr "Idioma"
 
-msgid "BGM"
+msgid "Master"
+msgstr "Geral"
+
+msgid "Music"
 msgstr "Música"
 
-msgid "SFX"
-msgstr "Efeitos"
+msgid "Special Effects"
+msgstr "Efeitos Especiais"
 
 msgid "Paused"
 msgstr "Pausado"

@@ -1,0 +1,74 @@
+# Indonesian translation for Joe Adventure
+msgid ""
+msgstr ""
+"Project-Id-Version: Joe Adventure\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+"Language: id\n"
+
+msgid "Start"
+msgstr "Mulai"
+
+msgid "choose level"
+msgstr "pilih level"
+
+msgid "Settings"
+msgstr "Pengaturan"
+
+msgid "Credits"
+msgstr "Kredit"
+
+msgid "level 1"
+msgstr "level 1"
+
+msgid "level 2"
+msgstr "level 2"
+
+msgid "level 3"
+msgstr "level 3"
+
+msgid "level 4"
+msgstr "level 4"
+
+msgid "level 5"
+msgstr "level 5"
+
+msgid "level mama"
+msgstr "level mama"
+
+msgid "level test"
+msgstr "level tes"
+
+msgid "prototype"
+msgstr "prototipe"
+
+msgid "You died"
+msgstr "Kamu mati"
+
+msgid "Move or Explode!!"
+msgstr "Bergerak atau Meledak!!"
+
+msgid "Restart"
+msgstr "Mulai Ulang"
+
+msgid "Main Menu"
+msgstr "Menu Utama"
+
+msgid "Options"
+msgstr "Pengaturan"
+
+msgid "Master"
+msgstr "Utama"
+
+msgid "BGM"
+msgstr "Musik"
+
+msgid "SFX"
+msgstr "Efek"
+
+msgid "Paused"
+msgstr "Dijeda"
+
+msgid "Resume"
+msgstr "Lanjutkan" 

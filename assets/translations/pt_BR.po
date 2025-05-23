@@ -1,0 +1,74 @@
+# Portuguese translation for Joe Adventure
+msgid ""
+msgstr ""
+"Project-Id-Version: Joe Adventure\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+"Language: pt_BR\n"
+
+msgid "Start"
+msgstr "Iniciar"
+
+msgid "choose level"
+msgstr "escolher nível"
+
+msgid "Settings"
+msgstr "Configurações"
+
+msgid "Credits"
+msgstr "Créditos"
+
+msgid "level 1"
+msgstr "nível 1"
+
+msgid "level 2"
+msgstr "nível 2"
+
+msgid "level 3"
+msgstr "nível 3"
+
+msgid "level 4"
+msgstr "nível 4"
+
+msgid "level 5"
+msgstr "nível 5"
+
+msgid "level mama"
+msgstr "nível mama"
+
+msgid "level test"
+msgstr "nível teste"
+
+msgid "prototype"
+msgstr "protótipo"
+
+msgid "You died"
+msgstr "Você morreu"
+
+msgid "Move or Explode!!"
+msgstr "Mova ou Exploda!!"
+
+msgid "Restart"
+msgstr "Reiniciar"
+
+msgid "Main Menu"
+msgstr "Menu Principal"
+
+msgid "Options"
+msgstr "Opções"
+
+msgid "Master"
+msgstr "Principal"
+
+msgid "BGM"
+msgstr "Música"
+
+msgid "SFX"
+msgstr "Efeitos"
+
+msgid "Paused"
+msgstr "Pausado"
+
+msgid "Resume"
+msgstr "Continuar" 

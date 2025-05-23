@@ -103,7 +103,7 @@ texture_repeat = 0
 material = null
 use_parent_material = false
 clip_contents = false
-custom_minimum_size = Vector2(68, 17)
+custom_minimum_size = Vector2(150, 17)
 layout_direction = 0
 layout_mode = 2
 size_flags_horizontal = 1
@@ -135,6 +135,7 @@ shortcut = null
 shortcut_feedback = true
 shortcut_in_tooltip = true
 script = ExtResource("4_v4vq3")
+selected = 1
 focused_label_settings = SubResource("LabelSettings_v4vq3")
 metadata/_custom_type_script = "uid://bsxqyyun3ckm2"
 
@@ -147,7 +148,7 @@ metadata/_custom_type_script = "uid://b5ht43x20xamo"
 [node name="VBoxContainerAudio" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio"]
+[node name="MasterLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio"]
 layout_mode = 2
 text = "Master"
 
@@ -168,9 +169,9 @@ list_of_persistent_properties = Array[String](["value"])
 scope = "options"
 metadata/_custom_type_script = "uid://b5ht43x20xamo"
 
-[node name="Label2" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio"]
+[node name="BGMLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio"]
 layout_mode = 2
-text = "BGM"
+text = "Music"
 
 [node name="BGM" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio"]
 unique_name_in_owner = true
@@ -189,9 +190,9 @@ list_of_persistent_properties = Array[String](["value"])
 scope = "options"
 metadata/_custom_type_script = "uid://b5ht43x20xamo"
 
-[node name="Label3" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio"]
+[node name="SFXLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio"]
 layout_mode = 2
-text = "SFX"
+text = "Special Effects"
 
 [node name="SFX" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio"]
 unique_name_in_owner = true
@@ -210,6 +211,7 @@ list_of_persistent_properties = Array[String](["value"])
 scope = "options"
 metadata/_custom_type_script = "uid://b5ht43x20xamo"
 
+[connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerLanguage/Language" to="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerLanguage/Language/MakeParentPersistent" method="save_persistent_values" unbinds=1]
 [connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/Master" to="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/Master/MakeParentPersistent" method="save_persistent_values" unbinds=1]
 [connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/BGM" to="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/BGM/MakeParentPersistent" method="save_persistent_values" unbinds=1]
 [connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/SFX" to="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/SFX/MakeParentPersistent" method="save_persistent_values" unbinds=1]

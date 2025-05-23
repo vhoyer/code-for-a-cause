@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=29 format=3 uid="uid://mktlkqcir8k2"]
+[gd_resource type="Theme" load_steps=33 format=3 uid="uid://mktlkqcir8k2"]
 
 [ext_resource type="Texture2D" uid="uid://cen31lisf5s7j" path="res://stages/main_menu/UI/UI.png" id="1_5x3i2"]
 
@@ -88,6 +88,36 @@ texture_margin_top = 4.0
 texture_margin_right = 4.0
 texture_margin_bottom = 8.0
 region_rect = Rect2(0, 0, 96, 32)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5x3i2"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wl1kw"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lu33j"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wycmq"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 0.51)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wl1kw"]
 atlas = ExtResource("1_5x3i2")
@@ -191,6 +221,10 @@ Button/styles/hover = SubResource("StyleBoxTexture_wycmq")
 Button/styles/hover_pressed = SubResource("StyleBoxTexture_7g2p0")
 Button/styles/normal = SubResource("StyleBoxTexture_wl1kw")
 Button/styles/pressed = SubResource("StyleBoxTexture_wms38")
+FlatButton/styles/disabled = SubResource("StyleBoxEmpty_5x3i2")
+FlatButton/styles/hover = SubResource("StyleBoxEmpty_wl1kw")
+FlatButton/styles/normal = SubResource("StyleBoxEmpty_lu33j")
+FlatButton/styles/pressed = SubResource("StyleBoxFlat_wycmq")
 HSlider/icons/grabber = SubResource("AtlasTexture_wl1kw")
 HSlider/icons/grabber_highlight = SubResource("AtlasTexture_lu33j")
 HSlider/styles/grabber_area = SubResource("StyleBoxTexture_5x3i2")
@@ -200,6 +234,8 @@ HealthProgressBar/styles/background = SubResource("StyleBoxFlat_knkbs")
 HealthProgressBar/styles/fill = SubResource("StyleBoxFlat_la83o")
 HexagonPanelContainer/base_type = &"PanelContainer"
 HexagonPanelContainer/styles/panel = SubResource("StyleBoxTexture_yyr7b")
+Label/colors/font_color = Color(0.223529, 0.290196, 0.313726, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_357y2")
 SelectedPanelContainer/base_type = &"PanelContainer"
 SelectedPanelContainer/styles/panel = SubResource("StyleBoxTexture_lu33j")

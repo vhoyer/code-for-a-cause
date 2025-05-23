@@ -87,15 +87,19 @@ msgid "Options"
 msgstr ""
 
 #: entities/menu_options/menu_options.tscn
+msgid "Language"
+msgstr ""
+
+#: entities/menu_options/menu_options.tscn
 msgid "Master"
 msgstr ""
 
 #: entities/menu_options/menu_options.tscn
-msgid "BGM"
+msgid "Music"
 msgstr ""
 
 #: entities/menu_options/menu_options.tscn
-msgid "SFX"
+msgid "Special Effects"
 msgstr ""
 
 #: entities/menu_pause/menu_pause.tscn

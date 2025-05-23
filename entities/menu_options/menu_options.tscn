@@ -1,13 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dclerjnyqfida"]
+[gd_scene load_steps=12 format=3 uid="uid://dclerjnyqfida"]
 
 [ext_resource type="Texture2D" uid="uid://cen31lisf5s7j" path="res://stages/main_menu/UI/UI.png" id="1_tpdi8"]
 [ext_resource type="Script" uid="uid://drpcgykc8fxy6" path="res://addons/godot-devkit/UI/ui_elements/buttons/button_panel_hide.gd" id="2_dvhby"]
 [ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://addons/godot-devkit/UI/make_parent/make_parent_controller_focus_start.gd" id="3_v4vq3"]
 [ext_resource type="Script" uid="uid://61q2h71kluj0" path="res://addons/godot-devkit/UI/ui_elements/volume_slider/h_volume_slider.gd" id="4_8gstu"]
+[ext_resource type="Script" uid="uid://cglxqlyimenu1" path="res://entities/menu_options/language.gd" id="4_v4vq3"]
 [ext_resource type="Script" uid="uid://b5ht43x20xamo" path="res://addons/godot-devkit/UI/make_parent/make_parent_persistent.gd" id="5_dvhby"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_8ei0a"]
-font_color = Color(0.223529, 0.290196, 0.313726, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_emioh"]
 atlas = ExtResource("1_tpdi8")
@@ -24,6 +22,8 @@ region = Rect2(192, 224, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_n2pvs"]
 atlas = ExtResource("1_tpdi8")
 region = Rect2(224, 256, 32, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v4vq3"]
 
 [node name="OptionsPanel" type="Panel"]
 anchors_preset = 15
@@ -48,17 +48,16 @@ theme_type_variation = &"BoltedPanelContainer"
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="HBoxContainerHeading" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainerHeading"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Options"
-label_settings = SubResource("LabelSettings_8ei0a")
 
-[node name="ExitButton" type="TextureButton" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer" node_paths=PackedStringArray("panel")]
+[node name="ExitButton" type="TextureButton" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainerHeading" node_paths=PackedStringArray("panel")]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_emioh")
 texture_pressed = SubResource("AtlasTexture_gt65w")
@@ -67,19 +66,92 @@ texture_focused = SubResource("AtlasTexture_n2pvs")
 script = ExtResource("2_dvhby")
 panel = NodePath("../../../../..")
 
-[node name="MakeParentControllerFocusStart" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/ExitButton"]
+[node name="MakeParentControllerFocusStart" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainerHeading/ExitButton"]
 script = ExtResource("3_v4vq3")
 metadata/_custom_type_script = "uid://b6827tfdgmrq2"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="VBoxContainerLanguage" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
+[node name="LanguageLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerLanguage"]
+layout_mode = 2
+text = "Language"
+
+[node name="Language" type="BaseButton" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerLanguage"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 2
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+clip_contents = false
+custom_minimum_size = Vector2(68, 17)
+layout_direction = 0
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 1.0
+localize_numeral_system = true
+tooltip_text = ""
+tooltip_auto_translate_mode = 0
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 2
+mouse_filter = 0
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+theme = null
+theme_type_variation = &""
+disabled = false
+toggle_mode = false
+button_pressed = false
+action_mode = 1
+button_mask = 1
+keep_pressed_outside = false
+button_group = null
+shortcut = null
+shortcut_feedback = true
+shortcut_in_tooltip = true
+script = ExtResource("4_v4vq3")
+focused_label_settings = SubResource("LabelSettings_v4vq3")
+metadata/_custom_type_script = "uid://bsxqyyun3ckm2"
+
+[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerLanguage/Language"]
+script = ExtResource("5_dvhby")
+list_of_persistent_properties = Array[String](["selected"])
+scope = "options"
+metadata/_custom_type_script = "uid://b5ht43x20xamo"
+
+[node name="VBoxContainerAudio" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio"]
 layout_mode = 2
 text = "Master"
-label_settings = SubResource("LabelSettings_8ei0a")
 
-[node name="Master" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
+[node name="Master" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
@@ -90,18 +162,17 @@ script = ExtResource("4_8gstu")
 bus = &"Master"
 metadata/_custom_type_script = "uid://61q2h71kluj0"
 
-[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/Master"]
+[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/Master"]
 script = ExtResource("5_dvhby")
 list_of_persistent_properties = Array[String](["value"])
 scope = "options"
 metadata/_custom_type_script = "uid://b5ht43x20xamo"
 
-[node name="Label2" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio"]
 layout_mode = 2
 text = "BGM"
-label_settings = SubResource("LabelSettings_8ei0a")
 
-[node name="BGM" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
+[node name="BGM" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
@@ -112,18 +183,17 @@ script = ExtResource("4_8gstu")
 bus = &"BGM"
 metadata/_custom_type_script = "uid://61q2h71kluj0"
 
-[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/BGM"]
+[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/BGM"]
 script = ExtResource("5_dvhby")
 list_of_persistent_properties = Array[String](["value"])
 scope = "options"
 metadata/_custom_type_script = "uid://b5ht43x20xamo"
 
-[node name="Label3" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio"]
 layout_mode = 2
 text = "SFX"
-label_settings = SubResource("LabelSettings_8ei0a")
 
-[node name="SFX" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
+[node name="SFX" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
@@ -134,12 +204,12 @@ script = ExtResource("4_8gstu")
 bus = &"SFX"
 metadata/_custom_type_script = "uid://61q2h71kluj0"
 
-[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/SFX"]
+[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/SFX"]
 script = ExtResource("5_dvhby")
 list_of_persistent_properties = Array[String](["value"])
 scope = "options"
 metadata/_custom_type_script = "uid://b5ht43x20xamo"
 
-[connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/Master" to="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/Master/MakeParentPersistent" method="save_persistent_values" unbinds=1]
-[connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/BGM" to="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/BGM/MakeParentPersistent" method="save_persistent_values" unbinds=1]
-[connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/SFX" to="CenterContainer/PanelContainer/VBoxContainer/VBoxContainer/SFX/MakeParentPersistent" method="save_persistent_values" unbinds=1]
+[connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/Master" to="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/Master/MakeParentPersistent" method="save_persistent_values" unbinds=1]
+[connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/BGM" to="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/BGM/MakeParentPersistent" method="save_persistent_values" unbinds=1]
+[connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/SFX" to="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/SFX/MakeParentPersistent" method="save_persistent_values" unbinds=1]

@@ -7,8 +7,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 "Language: id\n"
 
-msgid "Start"
-msgstr "Mulai"
+msgid "id"
+msgstr "Bahasa Indonesia"
 
 msgid "choose level"
 msgstr "pilih level"
@@ -71,4 +71,4 @@ msgid "Paused"
 msgstr "Dijeda"
 
 msgid "Resume"
-msgstr "Lanjutkan" 
+msgstr "Lanjutkan"

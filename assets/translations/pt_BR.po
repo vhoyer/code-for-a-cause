@@ -7,6 +7,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 "Language: pt_BR\n"
 
+msgid "pt_BR"
+msgstr "Português"
+
 msgid "Start"
 msgstr "Iniciar"
 
@@ -71,4 +74,4 @@ msgid "Paused"
 msgstr "Pausado"
 
 msgid "Resume"
-msgstr "Continuar" 
+msgstr "Continuar"

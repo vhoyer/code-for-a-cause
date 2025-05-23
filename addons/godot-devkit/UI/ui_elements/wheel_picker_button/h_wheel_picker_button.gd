@@ -9,12 +9,12 @@ signal item_selected(index: int)
 @export
 var selected: int = 0:
 	set(value):
-		selected = value
+		selected = wrapi(value, 0, _items.size())
 		_model_updated.emit()
 		item_selected.emit(selected)
 
 
-@export_group('styling')
+@export_group('Styling')
 @export
 var label_style_previous: String = '<'
 @export
@@ -137,11 +137,11 @@ func _input(event: InputEvent) -> void:
 
 
 func _select_next_item() -> void:
-	selected = wrapi(selected + 1, 0, _items.size())
+	selected += 1
 	self.grab_focus()
 
 func _select_prev_item() -> void:
-	selected = wrapi(selected - 1, 0, _items.size())
+	selected -= 1
 	self.grab_focus()
 
 

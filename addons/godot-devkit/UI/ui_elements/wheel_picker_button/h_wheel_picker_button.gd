@@ -88,6 +88,8 @@ func _init() -> void:
 	self.add_child(_layout)
 	_layout.alignment = BoxContainer.ALIGNMENT_CENTER
 	_layout.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_layout.resized.connect(func():
+		self.custom_minimum_size = _layout.size)
 
 	_btn_prev = Button.new()
 	_layout.add_child(_btn_prev)
@@ -112,7 +114,6 @@ func _init() -> void:
 
 
 func _update_view() -> void:
-	self.custom_minimum_size = _layout.size
 	if selected < _items.size():
 		_selected_text.text = get_item_text(selected)
 	else:

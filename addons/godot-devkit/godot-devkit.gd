@@ -40,6 +40,10 @@ const custom_types = [[
 	'HVolumeSlider',
 	'HSlider',
 	"res://addons/godot-devkit/UI/ui_elements/volume_slider/h_volume_slider.gd",
+], [
+	'HWheelPickerButton',
+	'BaseButton',
+	"res://addons/godot-devkit/UI/ui_elements/wheel_picker_button/h_wheel_picker_button.gd",
 ]]
 
 

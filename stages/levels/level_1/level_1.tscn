@@ -70,6 +70,9 @@ position = Vector2(586, 224)
 [node name="OpenDoor" parent="Map/Lever" index="4" node_paths=PackedStringArray("door") instance=ExtResource("3_ik8q2")]
 door = NodePath("../../DoorUp")
 
+[node name="Camera" parent="." index="3"]
+position = Vector2(-744, 207)
+
 [node name="Player" parent="." index="4"]
 position = Vector2(-746, 233)
 joe_count = 1

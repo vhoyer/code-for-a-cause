@@ -101,7 +101,7 @@ func update_animation_tree_parameters() -> void:
 
 	animation_tree.set('parameters/BlendTree/animations/conditions/is_hurting', false)
 	animation_tree.set('parameters/BlendTree/animations/conditions/is_grabbing', is_grabbing)
-	animation_tree.set('parameters/BlendTree/animations/conditions/is_exploding', health <= 0)
+	animation_tree.set('parameters/conditions/is_exploding', health <= 0)
 
 	animation_tree.set('parameters/conditions/is_grabbed', is_grabbed)
 	animation_tree.set('parameters/conditions/not_grabbed', !is_grabbed)

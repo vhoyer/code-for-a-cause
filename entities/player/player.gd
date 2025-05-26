@@ -27,6 +27,7 @@ func _ready() -> void:
 		$CanvasLayer.show()
 	update_view()
 	_model_updated.connect(update_view)
+	updated_selected_joe.connect(_on_selected_joe_changed)
 
 func update_view() -> void:
 	for child in joes.get_children():
@@ -95,10 +96,8 @@ func process_switch(action: StringName, index: int) -> void:
 		return
 
 	var joe: Joe = joes.get_child(index)
-	joe.do_life_drain = !!selected_joe
 
 	if selected_joe and selected_joe.health <= 0: return
-	if joe.health <= 0: return
 	if not Input.is_action_just_pressed(action): return
 	if selected_joe == joe: return
 
@@ -108,6 +107,13 @@ func process_switch(action: StringName, index: int) -> void:
 	selected_joe = joe
 	selected_joe.velocity.y -= 200
 	selected_joe.add_to_group('lever_actor')
+
+
+func _on_selected_joe_changed(_joe: Joe) -> void:
+	if not selected_joe: return
+
+	for joe: Joe in joes.get_children():
+		joe.do_life_drain = true
 
 
 func get_rect_containing_all_joes() -> Rect2:

@@ -1,8 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://oybgjtijj1fy"]
+[gd_scene load_steps=29 format=3 uid="uid://oybgjtijj1fy"]
 
 [ext_resource type="Script" uid="uid://ctcxubg4de43o" path="res://entities/button/big_button.gd" id="1_03o1e"]
 [ext_resource type="Texture2D" uid="uid://rnfifrmnfmki" path="res://entities/button/Buttons.png" id="1_ss3nw"]
-[ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://modules/UI/assets/eye_dropper.gdshader" id="2_84sa2"]
+[ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://addons/godot-devkit/UI/assets/eye_dropper.gdshader" id="2_84sa2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vfrk8"]
 shader = ExtResource("2_84sa2")
@@ -291,6 +291,8 @@ states/down_4/position = Vector2(867, 100)
 transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_55647"), "RESET", "down_1", SubResource("AnimationNodeStateMachineTransition_rondi"), "down_1", "down_2", SubResource("AnimationNodeStateMachineTransition_ior5c"), "down_2", "down_3", SubResource("AnimationNodeStateMachineTransition_rqv8b"), "down_3", "down_2", SubResource("AnimationNodeStateMachineTransition_28e0s"), "down_2", "down_1", SubResource("AnimationNodeStateMachineTransition_1v8u8"), "down_1", "RESET", SubResource("AnimationNodeStateMachineTransition_repn7"), "down_3", "down_4", SubResource("AnimationNodeStateMachineTransition_tksi4"), "down_4", "down_3", SubResource("AnimationNodeStateMachineTransition_qf75f")]
 graph_offset = Vector2(-4, 22)
 
+[sub_resource type="LabelSettings" id="LabelSettings_84sa2"]
+
 [node name="BigButton" type="StaticBody2D"]
 script = ExtResource("1_03o1e")
 
@@ -341,6 +343,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 text = "4"
+label_settings = SubResource("LabelSettings_84sa2")
 horizontal_alignment = 1
 
 [connection signal="body_entered" from="ActivationArea" to="." method="_on_activation_area_body_entered_or_exited"]

@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://s4i10mewh67y"]
+[gd_scene load_steps=9 format=3 uid="uid://s4i10mewh67y"]
 
 [ext_resource type="PackedScene" uid="uid://dyifxt4rc2jk1" path="res://entities/menu_pause/menu_pause.tscn" id="1_bell1"]
 [ext_resource type="AudioStream" uid="uid://dppx16haaybah" path="res://assets/ost/FactoryV5 (percussion fix).ogg" id="1_o0ix0"]
 [ext_resource type="Script" uid="uid://mpygmma5f53t" path="res://addons/godot-devkit/Audio/global_bgm_remote.gd" id="2_07hjy"]
 [ext_resource type="PackedScene" uid="uid://h6lx57r8157l" path="res://entities/background/background.tscn" id="2_vhqtq"]
 [ext_resource type="PackedScene" uid="uid://dhbgcoqkn3kjo" path="res://entities/tile_set/tile_set.tscn" id="3_o0ix0"]
-[ext_resource type="AudioStream" uid="uid://dwj78uiortv8o" path="res://entities/tile_set/Conveyour.ogg" id="4_bell1"]
 [ext_resource type="PackedScene" uid="uid://byqhcnagy2kio" path="res://entities/camera/camera.tscn" id="5_fgqh2"]
 [ext_resource type="PackedScene" uid="uid://bw08m4c7hnol" path="res://entities/player/player.tscn" id="6_kkvj6"]
 [ext_resource type="PackedScene" uid="uid://ciejjlncf57qf" path="res://entities/menu_death/menu_death.tscn" id="8_01xog"]
@@ -27,9 +26,6 @@ z_index = -100
 
 [node name="fg" parent="Map" node_paths=PackedStringArray("player") instance=ExtResource("3_o0ix0")]
 player = NodePath("../../Player")
-sfx_db = Dictionary[String, AudioStream]({
-"conveyour": ExtResource("4_bell1")
-})
 
 [node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_fgqh2")]
 position = Vector2(146, 253)

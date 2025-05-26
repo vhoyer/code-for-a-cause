@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dyifxt4rc2jk1" path="res://entities/menu_pause/menu_pause.tscn" id="1_bell1"]
 [ext_resource type="AudioStream" uid="uid://dppx16haaybah" path="res://assets/ost/FactoryV5 (percussion fix).ogg" id="1_o0ix0"]
-[ext_resource type="Script" uid="uid://mpygmma5f53t" path="res://modules/Audio/global_bgm_remote.gd" id="2_07hjy"]
+[ext_resource type="Script" uid="uid://mpygmma5f53t" path="res://addons/godot-devkit/Audio/global_bgm_remote.gd" id="2_07hjy"]
 [ext_resource type="PackedScene" uid="uid://h6lx57r8157l" path="res://entities/background/background.tscn" id="2_vhqtq"]
 [ext_resource type="PackedScene" uid="uid://dhbgcoqkn3kjo" path="res://entities/tile_set/tile_set.tscn" id="3_o0ix0"]
 [ext_resource type="AudioStream" uid="uid://dwj78uiortv8o" path="res://entities/tile_set/Conveyour.ogg" id="4_bell1"]

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://drpcgykc8fxy6" path="res://addons/godot-devkit/UI/ui_elements/buttons/button_panel_hide.gd" id="2_dvhby"]
 [ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://addons/godot-devkit/UI/make_parent/make_parent_controller_focus_start.gd" id="3_v4vq3"]
 [ext_resource type="Script" uid="uid://61q2h71kluj0" path="res://addons/godot-devkit/UI/ui_elements/volume_slider/h_volume_slider.gd" id="4_8gstu"]
-[ext_resource type="Script" uid="uid://cglxqlyimenu1" path="res://entities/menu_options/language.gd" id="4_v4vq3"]
+[ext_resource type="Script" path="res://entities/menu_options/language.gd" id="4_v4vq3"]
 [ext_resource type="Script" uid="uid://b5ht43x20xamo" path="res://addons/godot-devkit/UI/make_parent/make_parent_persistent.gd" id="5_dvhby"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_emioh"]
@@ -135,7 +135,6 @@ shortcut = null
 shortcut_feedback = true
 shortcut_in_tooltip = true
 script = ExtResource("4_v4vq3")
-selected = 1
 focused_label_settings = SubResource("LabelSettings_v4vq3")
 metadata/_custom_type_script = "uid://bsxqyyun3ckm2"
 

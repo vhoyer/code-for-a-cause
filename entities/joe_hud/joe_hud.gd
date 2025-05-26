@@ -85,22 +85,24 @@ func update_view() -> void:
 
 
 func _on_health_updated(health):
-		match health:
-			var x when x <= 0:
-				input_prompt.modulate.a = 0
-				self.material.set("shader_parameter/mode", 0)
-				beeping.stop()
-				self.visible = !floating
-			var x when x > HEALTH_WARN:
-				input_prompt.modulate.a = 0.8
-				self.material.set("shader_parameter/mode", 0)
-				beeping.stop()
-			_:
-				self.material.set("shader_parameter/mode", 1)
-				input_prompt.modulate.a = 1
-				if not beeping.playing and floating:
-					var length = beeping.stream.get_length()
-					beeping.play(length - HEALTH_WARN)
-		if is_selected:
-				input_prompt.modulate.a = 0.2
-		progress_bar.value = health
+	var length = beeping.stream.get_length()
+	var health_warn = min(HEALTH_WARN, length)
+
+	match health:
+		var x when x <= 0:
+			input_prompt.modulate.a = 0
+			self.material.set("shader_parameter/mode", 0)
+			beeping.stop()
+			self.visible = !floating
+		var x when x > health_warn:
+			input_prompt.modulate.a = 0.8
+			self.material.set("shader_parameter/mode", 0)
+			beeping.stop()
+		_:
+			self.material.set("shader_parameter/mode", 1)
+			input_prompt.modulate.a = 1
+			if not beeping.playing and floating:
+				beeping.play(length - health_warn)
+	if is_selected:
+			input_prompt.modulate.a = 0.2
+	progress_bar.value = health

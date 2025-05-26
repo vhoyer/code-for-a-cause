@@ -117,7 +117,8 @@ jobs:
 
   butler-push:
     # only run this if running the CI on the main branch
-    if: github.ref == 'refs/heads/main'
+    # if: github.ref == 'refs/heads/main'
+    if: false # disable cuz steam
     needs: [export-mac, export-web, export-linux, export-windows]
     name: Upload builds to itch.io
     runs-on: ubuntu-latest

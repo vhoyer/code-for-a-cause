@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://dclerjnyqfida"]
+[gd_scene load_steps=13 format=3 uid="uid://dclerjnyqfida"]
 
+[ext_resource type="Script" uid="uid://b8in1pkabg2ym" path="res://entities/menu_options/menu_options.gd" id="1_8gstu"]
 [ext_resource type="Texture2D" uid="uid://cen31lisf5s7j" path="res://stages/main_menu/UI/UI.png" id="1_tpdi8"]
 [ext_resource type="Script" uid="uid://drpcgykc8fxy6" path="res://addons/godot-devkit/UI/ui_elements/buttons/button_panel_hide.gd" id="2_dvhby"]
 [ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://addons/godot-devkit/UI/make_parent/make_parent_controller_focus_start.gd" id="3_v4vq3"]
@@ -32,6 +33,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"BackdropPanel"
+script = ExtResource("1_8gstu")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 2
@@ -136,13 +138,25 @@ shortcut_feedback = true
 shortcut_in_tooltip = true
 script = ExtResource("4_v4vq3")
 focused_label_settings = SubResource("LabelSettings_v4vq3")
-metadata/_custom_type_script = "uid://bsxqyyun3ckm2"
 
 [node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerLanguage/Language"]
 script = ExtResource("5_dvhby")
 list_of_persistent_properties = Array[String](["selected"])
 scope = "options"
 metadata/_custom_type_script = "uid://b5ht43x20xamo"
+
+[node name="VBoxContainerCamera" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ShakeLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerCamera"]
+layout_mode = 2
+text = "Screen shake"
+
+[node name="ShakeAmount" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerCamera"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 50.0
+value = 20.0
 
 [node name="VBoxContainerAudio" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -211,6 +225,7 @@ scope = "options"
 metadata/_custom_type_script = "uid://b5ht43x20xamo"
 
 [connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerLanguage/Language" to="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerLanguage/Language/MakeParentPersistent" method="save_persistent_values" unbinds=1]
+[connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerCamera/ShakeAmount" to="." method="_on_shake_amount_value_changed"]
 [connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/Master" to="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/Master/MakeParentPersistent" method="save_persistent_values" unbinds=1]
 [connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/BGM" to="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/BGM/MakeParentPersistent" method="save_persistent_values" unbinds=1]
 [connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/SFX" to="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/SFX/MakeParentPersistent" method="save_persistent_values" unbinds=1]

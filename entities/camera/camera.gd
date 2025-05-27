@@ -16,6 +16,7 @@ var poi_list: Array[Vector2] = []
 
 func _ready() -> void:
 	singleton = self
+	player.joe_exploded.connect(_on_player_death)
 
 func _exit_tree() -> void:
 	singleton = null
@@ -28,6 +29,25 @@ func momentarily_add_to_focus(point: Vector2) -> void:
 	tween.tween_interval(3)
 	tween.tween_callback(func():
 		poi_list.erase(point))
+
+
+func _on_player_death() -> void:
+	var original_offset = self.offset
+	var max_shake = SettingsManager.get_screen_shake()
+	var tween = create_tween()
+	
+	const SHAKE_DURATION = 0.5
+	const SHAKE_COUNT = 10
+	const SHAKE_EACH_DURATION = SHAKE_DURATION / SHAKE_COUNT
+	
+	for i in SHAKE_COUNT:
+		var mod = (SHAKE_COUNT - i) / float(SHAKE_COUNT)
+		tween.tween_property(
+			self,
+			'offset',
+			Vector2.from_angle(TAU * randf()) * max_shake * mod,
+			SHAKE_EACH_DURATION)
+	tween.tween_property(self, 'offset', original_offset, 0.1)
 
 
 func get_rect_containing_points_of_interest() -> Rect2:

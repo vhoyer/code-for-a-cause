@@ -6,6 +6,7 @@ const TUTORIAL_LAYER = 4
 
 signal _model_updated()
 signal _player_died()
+signal joe_exploded()
 
 @onready var joes: Node2D = $Joes
 @onready var joe_hud_holder: HBoxContainer = $CanvasLayer/JoeHudHolder
@@ -60,6 +61,7 @@ func _on_joe_died(is_finished: bool, joe: Joe) -> void:
 	if is_finished:
 		_player_died.emit()
 	else:
+		joe_exploded.emit()
 		selected_joe = joe
 		for child: Joe in joes.get_children():
 			child.process_mode = Node.PROCESS_MODE_DISABLED

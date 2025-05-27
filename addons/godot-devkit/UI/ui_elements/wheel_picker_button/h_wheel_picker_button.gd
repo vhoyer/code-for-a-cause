@@ -19,8 +19,15 @@ var selected: int = 0:
 var label_style_previous: String = '<'
 @export
 var label_style_next: String = '>'
+@export_subgroup('label_settings', 'label_settings')
 @export
-var focused_label_settings:= LabelSettings.new()
+var label_settings_focused:= LabelSettings.new()
+@export
+var label_settings_pressed:= LabelSettings.new()
+@export
+var label_settings_hover:= LabelSettings.new()
+@export
+var label_settings_disabled:= LabelSettings.new()
 
 
 class Item extends RefCounted:
@@ -66,6 +73,10 @@ func set_item_text(index: int, text: String) -> void:
 	_items.get(index).text = text
 	_model_updated.emit()
 
+func get_index_by_metadata(metadata: Variant) -> int:
+	return _items.find_custom(func(item: Item):
+		return item.metadata == metadata)
+
 
 var _layout: HBoxContainer
 var _selected_text: Label
@@ -78,6 +89,10 @@ func _init() -> void:
 	self.ready.connect(func():
 		self.focus_entered.connect(_on_focus_entered)
 		self.focus_exited.connect(_on_focus_exited)
+		self.mouse_entered.connect(_on_mouse_entered)
+		self.mouse_exited.connect(_on_mouse_exited)
+		self.button_down.connect(_on_pressed)
+		self.button_up.connect(_on_released)
 
 		item_selected.connect(_item_selected)
 
@@ -120,10 +135,37 @@ func _update_view() -> void:
 		_selected_text.text = ' '
 
 func _on_focus_entered():
-	_selected_text.label_settings = focused_label_settings
+	_selected_text.label_settings = label_settings_focused
 
 func _on_focus_exited():
 	_selected_text.label_settings = null
+
+func _on_mouse_entered():
+	_selected_text.label_settings = label_settings_hover
+
+func _on_mouse_exited():
+	_selected_text.label_settings = null
+
+func _on_pressed():
+	_selected_text.label_settings = label_settings_pressed
+
+func _on_released():
+	_selected_text.label_settings = null
+
+func _on_disabled():
+	_selected_text.label_settings = label_settings_disabled
+
+func _on_enabled():
+	_selected_text.label_settings = null
+
+
+func _set(property: StringName, value: Variant) -> bool:
+	if property == 'disabled':
+		if value:
+			_on_disabled()
+		else:
+			_on_enabled()
+	return false
 
 
 func _input(event: InputEvent) -> void:

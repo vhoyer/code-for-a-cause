@@ -183,6 +183,7 @@ locale/country_filter=[]
 2d_physics/layer_1="physical"
 2d_physics/layer_2="player"
 2d_physics/layer_3="action"
+2d_physics/layer_4="tutorial trigger"
 2d_physics/layer_9="deathzone"
 
 [memory]

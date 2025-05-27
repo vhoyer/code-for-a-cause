@@ -2,6 +2,8 @@
 extends Node2D
 class_name PlayerController
 
+const TUTORIAL_LAYER = 4
+
 signal _model_updated()
 signal _player_died()
 
@@ -25,8 +27,11 @@ var selected_joe: Joe:
 func _ready() -> void:
 	if not Engine.is_editor_hint():
 		$CanvasLayer.show()
+
 	update_view()
 	_model_updated.connect(update_view)
+
+	_on_selected_joe_changed(null)
 	updated_selected_joe.connect(_on_selected_joe_changed)
 
 func update_view() -> void:
@@ -110,10 +115,12 @@ func process_switch(action: StringName, index: int) -> void:
 
 
 func _on_selected_joe_changed(_joe: Joe) -> void:
-	if not selected_joe: return
-
 	for joe: Joe in joes.get_children():
-		joe.do_life_drain = true
+		joe.do_life_drain = !!selected_joe
+		joe.set_collision_layer_value(TUTORIAL_LAYER, false)
+
+	if selected_joe:
+		selected_joe.set_collision_layer_value(TUTORIAL_LAYER, true)
 
 
 func get_rect_containing_all_joes() -> Rect2:

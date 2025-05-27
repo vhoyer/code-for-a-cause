@@ -736,7 +736,7 @@ stream_0/stream = ExtResource("7_ak1vs")
 
 [node name="Joe" type="CharacterBody2D" groups=["button_actor", "grabbable"]]
 material = SubResource("ShaderMaterial_cskce")
-collision_layer = 3
+collision_layer = 11
 script = ExtResource("1_7fmcv")
 do_life_drain = true
 gravity_by_velocity_mapping = SubResource("Curve_7fmcv")

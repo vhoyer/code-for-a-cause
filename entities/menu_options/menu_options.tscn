@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dclerjnyqfida"]
+[gd_scene load_steps=21 format=3 uid="uid://dclerjnyqfida"]
 
 [ext_resource type="Script" uid="uid://b8in1pkabg2ym" path="res://entities/menu_options/menu_options.gd" id="1_8gstu"]
 [ext_resource type="Texture2D" uid="uid://cen31lisf5s7j" path="res://stages/main_menu/UI/UI.png" id="1_tpdi8"]
@@ -35,6 +35,14 @@ font_color = Color(0.223529, 0.290196, 0.313726, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_a6vuf"]
 font_color = Color(0.223529, 0.290196, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cv8x5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xyyr7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kihl8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_liaw8"]
 
 [node name="OptionsPanel" type="Panel"]
 anchors_preset = 15
@@ -276,7 +284,7 @@ texture_repeat = 0
 material = null
 use_parent_material = false
 clip_contents = false
-custom_minimum_size = Vector2(109, 40)
+custom_minimum_size = Vector2(109, 17)
 layout_direction = 0
 layout_mode = 2
 size_flags_horizontal = 1
@@ -308,6 +316,10 @@ shortcut = null
 shortcut_feedback = true
 shortcut_in_tooltip = true
 script = ExtResource("8_a74jp")
+label_settings_focused = SubResource("LabelSettings_cv8x5")
+label_settings_pressed = SubResource("LabelSettings_xyyr7")
+label_settings_hover = SubResource("LabelSettings_kihl8")
+label_settings_disabled = SubResource("LabelSettings_liaw8")
 
 [connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLanguage/Language" to="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLanguage/Language/MakeParentPersistent" method="save_persistent_values" unbinds=1]
 [connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerCamera/ShakeAmount" to="." method="_on_shake_amount_value_changed"]

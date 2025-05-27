@@ -91,6 +91,10 @@ msgid "Language"
 msgstr ""
 
 #: entities/menu_options/menu_options.tscn
+msgid "Screen shake"
+msgstr ""
+
+#: entities/menu_options/menu_options.tscn
 msgid "Master"
 msgstr ""
 
@@ -100,6 +104,10 @@ msgstr ""
 
 #: entities/menu_options/menu_options.tscn
 msgid "Special Effects"
+msgstr ""
+
+#: entities/menu_options/menu_options.tscn
+msgid "speedrun timer"
 msgstr ""
 
 #: entities/menu_pause/menu_pause.tscn

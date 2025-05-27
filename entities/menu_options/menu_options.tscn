@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dclerjnyqfida"]
+[gd_scene load_steps=17 format=3 uid="uid://dclerjnyqfida"]
 
 [ext_resource type="Script" uid="uid://b8in1pkabg2ym" path="res://entities/menu_options/menu_options.gd" id="1_8gstu"]
 [ext_resource type="Texture2D" uid="uid://cen31lisf5s7j" path="res://stages/main_menu/UI/UI.png" id="1_tpdi8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://61q2h71kluj0" path="res://addons/godot-devkit/UI/ui_elements/volume_slider/h_volume_slider.gd" id="4_8gstu"]
 [ext_resource type="Script" path="res://entities/menu_options/language.gd" id="4_v4vq3"]
 [ext_resource type="Script" uid="uid://b5ht43x20xamo" path="res://addons/godot-devkit/UI/make_parent/make_parent_persistent.gd" id="5_dvhby"]
+[ext_resource type="Script" uid="uid://bs35aa4kk5j25" path="res://entities/menu_options/speedrun_on_off.gd" id="8_a74jp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_emioh"]
 atlas = ExtResource("1_tpdi8")
@@ -24,7 +25,16 @@ region = Rect2(192, 224, 32, 32)
 atlas = ExtResource("1_tpdi8")
 region = Rect2(224, 256, 32, 32)
 
-[sub_resource type="LabelSettings" id="LabelSettings_v4vq3"]
+[sub_resource type="LabelSettings" id="LabelSettings_a74jp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b321m"]
+font_color = Color(0.12549, 0.180392, 0.215686, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0wegp"]
+font_color = Color(0.223529, 0.290196, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a6vuf"]
+font_color = Color(0.223529, 0.290196, 0.313726, 1)
 
 [node name="OptionsPanel" type="Panel"]
 anchors_preset = 15
@@ -72,14 +82,20 @@ panel = NodePath("../../../../..")
 script = ExtResource("3_v4vq3")
 metadata/_custom_type_script = "uid://b6827tfdgmrq2"
 
-[node name="VBoxContainerLanguage" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer" type="GridContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 2
+
+[node name="VBoxContainerLanguage" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="LanguageLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerLanguage"]
+[node name="LanguageLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLanguage"]
 layout_mode = 2
 text = "Language"
 
-[node name="Language" type="BaseButton" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerLanguage"]
+[node name="Language" type="BaseButton" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLanguage"]
 _import_path = NodePath("")
 unique_name_in_owner = false
 process_mode = 0
@@ -105,7 +121,7 @@ texture_repeat = 0
 material = null
 use_parent_material = false
 clip_contents = false
-custom_minimum_size = Vector2(150, 17)
+custom_minimum_size = Vector2(150, 21)
 layout_direction = 0
 layout_mode = 2
 size_flags_horizontal = 1
@@ -137,35 +153,38 @@ shortcut = null
 shortcut_feedback = true
 shortcut_in_tooltip = true
 script = ExtResource("4_v4vq3")
-focused_label_settings = SubResource("LabelSettings_v4vq3")
+label_settings_focused = SubResource("LabelSettings_a74jp")
+label_settings_pressed = SubResource("LabelSettings_b321m")
+label_settings_hover = SubResource("LabelSettings_0wegp")
+label_settings_disabled = SubResource("LabelSettings_a6vuf")
 
-[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerLanguage/Language"]
+[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLanguage/Language"]
 script = ExtResource("5_dvhby")
 list_of_persistent_properties = Array[String](["selected"])
 scope = "options"
 metadata/_custom_type_script = "uid://b5ht43x20xamo"
 
-[node name="VBoxContainerCamera" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="VBoxContainerCamera" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="ShakeLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerCamera"]
+[node name="ShakeLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerCamera"]
 layout_mode = 2
 text = "Screen shake"
 
-[node name="ShakeAmount" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerCamera"]
+[node name="ShakeAmount" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerCamera"]
 unique_name_in_owner = true
 layout_mode = 2
 max_value = 50.0
 value = 20.0
 
-[node name="VBoxContainerAudio" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="VBoxContainerAudio" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="MasterLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio"]
+[node name="MasterLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio"]
 layout_mode = 2
 text = "Master"
 
-[node name="Master" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio"]
+[node name="Master" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
@@ -176,17 +195,17 @@ script = ExtResource("4_8gstu")
 bus = &"Master"
 metadata/_custom_type_script = "uid://61q2h71kluj0"
 
-[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/Master"]
+[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio/Master"]
 script = ExtResource("5_dvhby")
 list_of_persistent_properties = Array[String](["value"])
 scope = "options"
 metadata/_custom_type_script = "uid://b5ht43x20xamo"
 
-[node name="BGMLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio"]
+[node name="BGMLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio"]
 layout_mode = 2
 text = "Music"
 
-[node name="BGM" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio"]
+[node name="BGM" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
@@ -197,17 +216,17 @@ script = ExtResource("4_8gstu")
 bus = &"BGM"
 metadata/_custom_type_script = "uid://61q2h71kluj0"
 
-[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/BGM"]
+[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio/BGM"]
 script = ExtResource("5_dvhby")
 list_of_persistent_properties = Array[String](["value"])
 scope = "options"
 metadata/_custom_type_script = "uid://b5ht43x20xamo"
 
-[node name="SFXLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio"]
+[node name="SFXLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio"]
 layout_mode = 2
 text = "Special Effects"
 
-[node name="SFX" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio"]
+[node name="SFX" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
@@ -218,14 +237,81 @@ script = ExtResource("4_8gstu")
 bus = &"SFX"
 metadata/_custom_type_script = "uid://61q2h71kluj0"
 
-[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/SFX"]
+[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio/SFX"]
 script = ExtResource("5_dvhby")
 list_of_persistent_properties = Array[String](["value"])
 scope = "options"
 metadata/_custom_type_script = "uid://b5ht43x20xamo"
 
-[connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerLanguage/Language" to="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerLanguage/Language/MakeParentPersistent" method="save_persistent_values" unbinds=1]
-[connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerCamera/ShakeAmount" to="." method="_on_shake_amount_value_changed"]
-[connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/Master" to="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/Master/MakeParentPersistent" method="save_persistent_values" unbinds=1]
-[connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/BGM" to="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/BGM/MakeParentPersistent" method="save_persistent_values" unbinds=1]
-[connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/SFX" to="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerAudio/SFX/MakeParentPersistent" method="save_persistent_values" unbinds=1]
+[node name="VBoxContainerGameplay" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerGameplay"]
+layout_mode = 2
+text = "speedrun timer"
+
+[node name="SpeedrunOnOff" type="BaseButton" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerGameplay"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 2
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+clip_contents = false
+custom_minimum_size = Vector2(109, 40)
+layout_direction = 0
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 1.0
+localize_numeral_system = true
+tooltip_text = ""
+tooltip_auto_translate_mode = 0
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 2
+mouse_filter = 0
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+theme = null
+theme_type_variation = &""
+disabled = false
+toggle_mode = false
+button_pressed = false
+action_mode = 1
+button_mask = 1
+keep_pressed_outside = false
+button_group = null
+shortcut = null
+shortcut_feedback = true
+shortcut_in_tooltip = true
+script = ExtResource("8_a74jp")
+
+[connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLanguage/Language" to="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLanguage/Language/MakeParentPersistent" method="save_persistent_values" unbinds=1]
+[connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerCamera/ShakeAmount" to="." method="_on_shake_amount_value_changed"]
+[connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio/Master" to="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio/Master/MakeParentPersistent" method="save_persistent_values" unbinds=1]
+[connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio/BGM" to="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio/BGM/MakeParentPersistent" method="save_persistent_values" unbinds=1]
+[connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio/SFX" to="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio/SFX/MakeParentPersistent" method="save_persistent_values" unbinds=1]
+[connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerGameplay/SpeedrunOnOff" to="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerGameplay/SpeedrunOnOff" method="_on_item_selected"]

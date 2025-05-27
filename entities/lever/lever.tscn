@@ -73,7 +73,7 @@ _data = {
 &"switch_on": SubResource("Animation_5uc6n")
 }
 
-[node name="Lever" type="StaticBody2D"]
+[node name="Lever" type="Node2D"]
 script = ExtResource("1_kcgeh")
 
 [node name="TutorialPrompt" parent="." instance=ExtResource("2_gu5ug")]
@@ -97,9 +97,6 @@ debug_color = Color(1.78084e-06, 0.641399, 0.334926, 0.42)
 texture = ExtResource("1_5uc6n")
 offset = Vector2(0, -13)
 hframes = 3
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-16, 0, -9, -3, 9, -3, 16, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

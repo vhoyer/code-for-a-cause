@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Node2D
 
 @onready var activation_area: Area2D = $Area2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer

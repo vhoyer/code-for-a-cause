@@ -267,7 +267,6 @@ polygon = PackedVector2Array(-6.53846, -5, 3.46154, -8, 3.46154, 65, -6.53846, 6
 uv = PackedVector2Array(-6.53846, -5, 4.46154, -8, 4.46154, 65, -6.53846, 62)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-1.5, 32)
 shape = SubResource("RectangleShape2D_05v0y")
 

@@ -30,7 +30,7 @@ metadata/_custom_type_script = "uid://bc3swpk52572o"
 position = Vector2(157, 224)
 
 [node name="DoorUp2" parent="." index="7" instance=ExtResource("3_qv2xk")]
-position = Vector2(617, 352)
+position = Vector2(620, 352)
 
 [node name="DoorUp3" parent="." index="8" instance=ExtResource("3_qv2xk")]
 position = Vector2(-10, 32)

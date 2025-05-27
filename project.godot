@@ -24,6 +24,7 @@ SettingsManager="*res://entities/menu_options/settings_manager.gd"
 
 [debug]
 
+file_logging/enable_file_logging=true
 gdscript/warnings/shadowed_variable=0
 gdscript/warnings/shadowed_global_identifier=2
 
@@ -196,3 +197,8 @@ textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+
+[steam]
+
+initialization/app_id=3749960
+initialization/initialize_on_startup=true

@@ -34,6 +34,11 @@ jobs:
           godot --headless --verbose --export-release "Windows Desktop" "$EXPORT_DIR/windows/$EXPORT_NAME.exe"
           echo "Export complete, checking files:"
           ls -la "$EXPORT_DIR/windows/"
+      - name: Create Build Info (Windows)
+        run: |
+          echo "$GITHUB_SHA" > "build/windows/version"
+          echo "Version file created:"
+          cat "build/windows/version"
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -60,6 +65,11 @@ jobs:
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
           godot --headless --verbose --export-release "Linux" "$EXPORT_DIR/linux/$EXPORT_NAME.x86_64"
+      - name: Create Build Info (Linux)
+        run: |
+          echo "$GITHUB_SHA" > "build/linux/version"
+          echo "Version file created:"
+          cat "build/linux/version"
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:

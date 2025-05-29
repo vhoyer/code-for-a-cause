@@ -34,12 +34,6 @@ jobs:
           godot --headless --verbose --export-release "Windows Desktop" "$EXPORT_DIR/windows/$EXPORT_NAME.exe"
           echo "Export complete, checking files:"
           ls -la "$EXPORT_DIR/windows/"
-      - name: Verify Windows Build
-        run: |
-          echo "Build directory contents:"
-          ls -la build/windows/
-          echo "Checking for game.exe:"
-          ls -la build/windows/game.exe || echo "game.exe not found"
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -81,6 +75,11 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           path: build
+      - name: Set short git commit SHA
+        id: vars
+        run: |
+          calculatedSha=$(git rev-parse --short ${{ github.sha }})
+          echo "COMMIT_SHORT_SHA=$calculatedSha" >> $GITHUB_ENV
       - uses: game-ci/steam-deploy@v3
         with:
           username: ${{ secrets.STEAM_USERNAME }}
@@ -93,7 +92,7 @@ jobs:
           # then copy the contents of config_base64.txt into STEAM_CONFIG_VDF
           configVdf: ${{ secrets.STEAM_CONFIG_VDF }}
           appId: ${{ env.APP_ID }}
-          buildDescription: ${{ github.sha }}
+          buildDescription: "${{ env.COMMIT_SHORT_SHA }} - ${{ github.event.head_commit.message }}"
           rootPath: build
           depot1Path: windows
           depot2Path: linux

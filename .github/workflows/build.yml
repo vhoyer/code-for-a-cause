@@ -77,7 +77,7 @@ jobs:
           path: build/linux
 
   steam-deploy:
-    # if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main'
     needs: [export-linux, export-windows]
     name: Upload to Steam
     runs-on: ubuntu-latest

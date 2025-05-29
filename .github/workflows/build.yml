@@ -32,6 +32,14 @@ jobs:
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
           godot --headless --verbose --export-release "Windows Desktop" "$EXPORT_DIR/windows/$EXPORT_NAME.exe"
+          echo "Export complete, checking files:"
+          ls -la "$EXPORT_DIR/windows/"
+      - name: Verify Windows Build
+        run: |
+          echo "Build directory contents:"
+          ls -la build/windows/
+          echo "Checking for game.exe:"
+          ls -la build/windows/game.exe || echo "game.exe not found"
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:

@@ -87,8 +87,8 @@ jobs:
           appId: ${{ env.APP_ID }}
           buildDescription: ${{ github.sha }}
           rootPath: build
-          depot1Path: build/windows
-          depot2Path: build/linux
+          depot1Path: windows
+          depot2Path: linux
           releaseBranch: prerelease
 
   butler-push:

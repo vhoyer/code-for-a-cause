@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CreditsContent" load_steps=15 format=3 uid="uid://kvfpp3sxfl6a"]
+[gd_resource type="Resource" script_class="CreditsContent" load_steps=13 format=3 uid="uid://kvfpp3sxfl6a"]
 
 [ext_resource type="Script" uid="uid://dkilr2sckvdbq" path="res://addons/godot-devkit/UI/ui_elements/credits_roll/credits_content.gd" id="1_qsq7d"]
 [ext_resource type="Script" uid="uid://hoscsyh2wfg2" path="res://addons/godot-devkit/UI/ui_elements/credits_roll/credits_section.gd" id="2_poujl"]
@@ -7,17 +7,17 @@
 [sub_resource type="Resource" id="Resource_iiad3"]
 script = ExtResource("3_fm7xd")
 main = "pemmy0"
-secondary = Array[String](["Game Designer", "Level Designer", "Narrative Designer", "Concept Artist", "2D Artist / Illustrator", "Animator", "Tester"])
+secondary = Array[String](["Concept Artist", "2D Artist / Animator", "Level Designer"])
 
 [sub_resource type="Resource" id="Resource_esuuv"]
 script = ExtResource("3_fm7xd")
 main = "theguitarassassin"
-secondary = Array[String](["Sound Designer", "Composer ", "Testers"])
+secondary = Array[String](["Composer ", "Sound Designer"])
 
 [sub_resource type="Resource" id="Resource_8ypg7"]
 script = ExtResource("3_fm7xd")
-main = "vhoyer"
-secondary = Array[String](["Game Designer", "Level Designer", "UX Designer", "Narrative Designer", "Systems Designer", "Technical Artist", "Lead Programmer", "Gameplay Programmer", "UI Programmer", "Tools Programmer", "Audio Implementer", "Testers", "Legal Team", "Finance & Accounting", "Publisher"])
+main = "Vinicius Hoyer"
+secondary = Array[String](["Game Designer", "UX Designer", "Lead Programmer"])
 
 [sub_resource type="Resource" id="Resource_tiaoh"]
 script = ExtResource("2_poujl")
@@ -25,21 +25,10 @@ type = 0
 title = "team"
 blocks = Array[ExtResource("3_fm7xd")]([SubResource("Resource_iiad3"), SubResource("Resource_esuuv"), SubResource("Resource_8ypg7")])
 
-[sub_resource type="Resource" id="Resource_infj6"]
-script = ExtResource("3_fm7xd")
-main = "caffinate.itch.io"
-secondary = Array[String](["quaver"])
-
 [sub_resource type="Resource" id="Resource_3xqd2"]
 script = ExtResource("3_fm7xd")
 main = "monkopus.itch.io"
 secondary = Array[String](["Stacked Pixel"])
-metadata/_custom_type_script = "uid://djih8r1b8d88p"
-
-[sub_resource type="Resource" id="Resource_logpw"]
-script = ExtResource("3_fm7xd")
-main = "uheartbeast"
-secondary = Array[String](["Pixel Font"])
 metadata/_custom_type_script = "uid://djih8r1b8d88p"
 
 [sub_resource type="Resource" id="Resource_q86jh"]
@@ -52,7 +41,7 @@ metadata/_custom_type_script = "uid://djih8r1b8d88p"
 script = ExtResource("2_poujl")
 type = 0
 title = "cc attribuition"
-blocks = Array[ExtResource("3_fm7xd")]([SubResource("Resource_infj6"), SubResource("Resource_3xqd2"), SubResource("Resource_logpw"), SubResource("Resource_q86jh")])
+blocks = Array[ExtResource("3_fm7xd")]([SubResource("Resource_3xqd2"), SubResource("Resource_q86jh")])
 
 [sub_resource type="Resource" id="Resource_urebj"]
 script = ExtResource("3_fm7xd")

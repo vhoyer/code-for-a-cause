@@ -157,6 +157,7 @@ outline_color = Color(0.0431373, 0.133333, 0.172549, 1)
 [node name="Player" type="Node2D"]
 script = ExtResource("1_symyc")
 joe_scene = ExtResource("2_abrql")
+color_map = Array[String](["brown", "yellow", "violet", "red"])
 
 [node name="Joes" type="Node2D" parent="."]
 position = Vector2(0, 20)

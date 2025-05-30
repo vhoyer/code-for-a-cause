@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://bmtn2g5f4w03h" path="res://entities/joe/assets/Punch.ogg" id="8_hc8t0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cskce"]
+resource_local_to_scene = true
 shader = ExtResource("1_bwvaa")
 shader_parameter/palette_array_size = 0
 shader_parameter/input_palette_texture = ExtResource("4_f25al")

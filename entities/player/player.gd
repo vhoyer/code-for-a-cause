@@ -18,6 +18,9 @@ signal joe_exploded()
 		joe_count = value
 		_model_updated.emit()
 
+@export_enum("brown", "yellow", "violet", "red", "cyan")
+var color_map: Array[String] = []
+
 signal updated_selected_joe(joe: Joe)
 
 var selected_joe: Joe:
@@ -48,6 +51,8 @@ func update_view() -> void:
 		joe = joe_scene.instantiate()
 		joes.add_child(joe)
 		joe.position.x = 35 * i
+		if i < color_map.size():
+			joe.color = color_map.get(i)
 
 		if Engine.is_editor_hint(): continue
 
@@ -80,6 +85,8 @@ func add_a_joe() -> void:
 	var hud: JoeHud = joe_hud_holder.get_child(i)
 	var floating_hud: JoeHud = joe_hud_floating_holder.get_child(i)
 	var joe: Joe = joe_scene.instantiate()
+	if i < color_map.size():
+		joe.color = color_map.get(i)
 	await get_tree().physics_frame
 	joes.add_child(joe)
 	joe.global_position = selected_joe.global_position + Vector2.UP * 40

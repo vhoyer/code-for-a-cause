@@ -13,3 +13,7 @@ func _stage_out(tween: Tween, fade_to_color: Callable) -> void:
 				child.autoscroll *= -2)
 	tween.tween_property(%BG_Joes, 'position', Vector2(win_width, 0), 2)
 	fade_to_color.call(Color.BLACK, 0.3)
+
+
+func _on_exit_button_pressed() -> void:
+	get_tree().quit()

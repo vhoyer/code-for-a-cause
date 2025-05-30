@@ -718,7 +718,7 @@ states/explode/position = Vector2(536, 101)
 states/grabbed/node = SubResource("AnimationNodeAnimation_a2fff")
 states/grabbed/position = Vector2(434, 200)
 transitions = ["Start", "BlendTree", SubResource("AnimationNodeStateMachineTransition_kmyr7"), "BlendTree", "grabbed", SubResource("AnimationNodeStateMachineTransition_lukas"), "grabbed", "RESET", SubResource("AnimationNodeStateMachineTransition_bwvaa"), "RESET", "BlendTree", SubResource("AnimationNodeStateMachineTransition_cskce"), "BlendTree", "explode", SubResource("AnimationNodeStateMachineTransition_lv4ri"), "explode", "End", SubResource("AnimationNodeStateMachineTransition_f25al")]
-graph_offset = Vector2(-201, -263)
+graph_offset = Vector2(-150, -38)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_o3s3l"]
 streams_count = 1
@@ -840,7 +840,7 @@ parameters/BlendTree/animations/conditions/is_punching = false
 parameters/BlendTree/animations/conditions/is_walking = false
 parameters/BlendTree/animations/air/blend_position = -0.361938
 parameters/BlendTree/direction/blend_position = 0.0126082
-parameters/BlendTree/flip/add_amount = 0.0
+parameters/BlendTree/flip/add_amount = 1.0
 
 [node name="Jump" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_o3s3l")

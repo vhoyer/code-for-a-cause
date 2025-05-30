@@ -1,26 +1,17 @@
-# LANGUAGE translation for Joe Adventure for the following files:
-# res://stages/main_menu/main_menu.tscn
-# res://entities/menu_death/menu_death.tscn
-# res://entities/menu_options/menu_options.tscn
-# res://entities/menu_pause/menu_pause.tscn
-# res://stages/credits/credit_roll.tscn
-# 
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-#, fuzzy
+# Polish translation for Joe Adventure
 msgid ""
 msgstr ""
 "Project-Id-Version: Joe Adventure\n"
-"Language: ja\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 msgid "On"
-msgstr "オン"
+msgstr "Wł."
 
 msgid "Off"
-msgstr "オフ"
+msgstr "Wył."
 
 # Language codes
 msgid "de"
@@ -61,100 +52,100 @@ msgstr "中文 (简体)"
 
 #: stages/main_menu/main_menu.tscn
 msgid "Start"
-msgstr "スタート"
+msgstr "Start"
 
 #: stages/main_menu/main_menu.tscn
 msgid "choose level"
-msgstr "レベルを選択"
+msgstr "wybierz poziom"
 
 #: stages/main_menu/main_menu.tscn entities/menu_pause/menu_pause.tscn
 msgid "Settings"
-msgstr "設定"
+msgstr "Ustawienia"
 
 #: stages/main_menu/main_menu.tscn
 msgid "Credits"
-msgstr "クレジット"
+msgstr "Twórcy"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level 1"
-msgstr "レベル1"
+msgstr "poziom 1"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level 2"
-msgstr "レベル2"
+msgstr "poziom 2"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level 3"
-msgstr "レベル3"
+msgstr "poziom 3"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level 4"
-msgstr "レベル4"
+msgstr "poziom 4"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level 5"
-msgstr "レベル5"
+msgstr "poziom 5"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level mama"
-msgstr "レベルママ"
+msgstr "poziom mama"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level test"
-msgstr "レベルテスト"
+msgstr "poziom testowy"
 
 #: stages/main_menu/main_menu.tscn
 msgid "prototype"
-msgstr "プロトタイプ"
+msgstr "prototyp"
 
 #: entities/menu_death/menu_death.tscn
 msgid "You died"
-msgstr "あなたは死にました"
+msgstr "Zginąłeś/Zginęłaś"
 
 #: entities/menu_death/menu_death.tscn
 msgid "Move or Explode!!"
-msgstr "動け、さもなくば爆発!!"
+msgstr "Rusz się lub Eksploduj!!"
 
 #: entities/menu_death/menu_death.tscn entities/menu_pause/menu_pause.tscn
 msgid "Restart"
-msgstr "リスタート"
+msgstr "Uruchom ponownie"
 
 #: entities/menu_death/menu_death.tscn entities/menu_pause/menu_pause.tscn
 msgid "Main Menu"
-msgstr "メインメニュー"
+msgstr "Menu główne"
 
 #: entities/menu_options/menu_options.tscn
 msgid "Options"
-msgstr "オプション"
+msgstr "Opcje"
 
 #: entities/menu_options/menu_options.tscn
 msgid "Language"
-msgstr "言語"
+msgstr "Język"
 
 #: entities/menu_options/menu_options.tscn
 msgid "Screen shake"
-msgstr "画面の揺れ"
+msgstr "Wstrząs ekranu"
 
 #: entities/menu_options/menu_options.tscn
 msgid "Master"
-msgstr "マスター音量"
+msgstr "Głośność główna"
 
 #: entities/menu_options/menu_options.tscn
 msgid "Music"
-msgstr "音楽"
+msgstr "Muzyka"
 
 #: entities/menu_options/menu_options.tscn
 msgid "Special Effects"
-msgstr "効果音"
+msgstr "Efekty specjalne"
 
 #: entities/menu_options/menu_options.tscn
 msgid "speedrun timer"
-msgstr "スピードランタイマー"
+msgstr "czasomierz speedrunu"
 
 #: entities/menu_pause/menu_pause.tscn
 msgid "Paused"
-msgstr "一時停止"
+msgstr "Wstrzymano"
 
 #: entities/menu_pause/menu_pause.tscn
 msgid "Resume"
-msgstr "再開"
+msgstr "Wznów"

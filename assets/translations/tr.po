@@ -1,26 +1,17 @@
-# LANGUAGE translation for Joe Adventure for the following files:
-# res://stages/main_menu/main_menu.tscn
-# res://entities/menu_death/menu_death.tscn
-# res://entities/menu_options/menu_options.tscn
-# res://entities/menu_pause/menu_pause.tscn
-# res://stages/credits/credit_roll.tscn
-# 
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-#, fuzzy
+# Turkish translation for Joe Adventure
 msgid ""
 msgstr ""
 "Project-Id-Version: Joe Adventure\n"
-"Language: ja\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 msgid "On"
-msgstr "オン"
+msgstr "Açık"
 
 msgid "Off"
-msgstr "オフ"
+msgstr "Kapalı"
 
 # Language codes
 msgid "de"
@@ -61,100 +52,100 @@ msgstr "中文 (简体)"
 
 #: stages/main_menu/main_menu.tscn
 msgid "Start"
-msgstr "スタート"
+msgstr "Başla"
 
 #: stages/main_menu/main_menu.tscn
 msgid "choose level"
-msgstr "レベルを選択"
+msgstr "seviye seç"
 
 #: stages/main_menu/main_menu.tscn entities/menu_pause/menu_pause.tscn
 msgid "Settings"
-msgstr "設定"
+msgstr "Ayarlar"
 
 #: stages/main_menu/main_menu.tscn
 msgid "Credits"
-msgstr "クレジット"
+msgstr "Emeği Geçenler"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level 1"
-msgstr "レベル1"
+msgstr "seviye 1"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level 2"
-msgstr "レベル2"
+msgstr "seviye 2"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level 3"
-msgstr "レベル3"
+msgstr "seviye 3"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level 4"
-msgstr "レベル4"
+msgstr "seviye 4"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level 5"
-msgstr "レベル5"
+msgstr "seviye 5"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level mama"
-msgstr "レベルママ"
+msgstr "anne seviyesi"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level test"
-msgstr "レベルテスト"
+msgstr "test seviyesi"
 
 #: stages/main_menu/main_menu.tscn
 msgid "prototype"
-msgstr "プロトタイプ"
+msgstr "prototip"
 
 #: entities/menu_death/menu_death.tscn
 msgid "You died"
-msgstr "あなたは死にました"
+msgstr "Öldünüz"
 
 #: entities/menu_death/menu_death.tscn
 msgid "Move or Explode!!"
-msgstr "動け、さもなくば爆発!!"
+msgstr "Hareket et ya da Patla!!"
 
 #: entities/menu_death/menu_death.tscn entities/menu_pause/menu_pause.tscn
 msgid "Restart"
-msgstr "リスタート"
+msgstr "Yeniden Başlat"
 
 #: entities/menu_death/menu_death.tscn entities/menu_pause/menu_pause.tscn
 msgid "Main Menu"
-msgstr "メインメニュー"
+msgstr "Ana Menü"
 
 #: entities/menu_options/menu_options.tscn
 msgid "Options"
-msgstr "オプション"
+msgstr "Seçenekler"
 
 #: entities/menu_options/menu_options.tscn
 msgid "Language"
-msgstr "言語"
+msgstr "Dil"
 
 #: entities/menu_options/menu_options.tscn
 msgid "Screen shake"
-msgstr "画面の揺れ"
+msgstr "Ekran sarsıntısı"
 
 #: entities/menu_options/menu_options.tscn
 msgid "Master"
-msgstr "マスター音量"
+msgstr "Ana Ses"
 
 #: entities/menu_options/menu_options.tscn
 msgid "Music"
-msgstr "音楽"
+msgstr "Müzik"
 
 #: entities/menu_options/menu_options.tscn
 msgid "Special Effects"
-msgstr "効果音"
+msgstr "Özel Efektler"
 
 #: entities/menu_options/menu_options.tscn
 msgid "speedrun timer"
-msgstr "スピードランタイマー"
+msgstr "hızlı koşu zamanlayıcısı"
 
 #: entities/menu_pause/menu_pause.tscn
 msgid "Paused"
-msgstr "一時停止"
+msgstr "Duraklatıldı"
 
 #: entities/menu_pause/menu_pause.tscn
 msgid "Resume"
-msgstr "再開"
+msgstr "Devam Et"

@@ -79,6 +79,8 @@ text = "Options"
 
 [node name="ExitButton" type="TextureButton" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainerHeading" node_paths=PackedStringArray("panel")]
 layout_mode = 2
+focus_neighbor_top = NodePath("../../HBoxContainer/VBoxContainerRight/VBoxContainerGameplay/SpeedrunOnOff")
+focus_neighbor_bottom = NodePath("../../VBoxContainerLanguage/Language")
 texture_normal = SubResource("AtlasTexture_emioh")
 texture_pressed = SubResource("AtlasTexture_gt65w")
 texture_hover = SubResource("AtlasTexture_xcqwa")
@@ -90,20 +92,15 @@ panel = NodePath("../../../../..")
 script = ExtResource("3_v4vq3")
 metadata/_custom_type_script = "uid://b6827tfdgmrq2"
 
-[node name="HBoxContainer" type="GridContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="VBoxContainerLanguage" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/h_separation = 16
-theme_override_constants/v_separation = 16
-columns = 2
+size_flags_horizontal = 0
 
-[node name="VBoxContainerLanguage" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="LanguageLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLanguage"]
+[node name="LanguageLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerLanguage"]
 layout_mode = 2
 text = "Language"
 
-[node name="Language" type="BaseButton" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLanguage"]
+[node name="Language" type="BaseButton" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerLanguage"]
 _import_path = NodePath("")
 unique_name_in_owner = false
 process_mode = 0
@@ -129,19 +126,19 @@ texture_repeat = 0
 material = null
 use_parent_material = false
 clip_contents = false
-custom_minimum_size = Vector2(150, 21)
+custom_minimum_size = Vector2(316, 17)
 layout_direction = 0
 layout_mode = 2
-size_flags_horizontal = 1
+size_flags_horizontal = 0
 size_flags_vertical = 1
 size_flags_stretch_ratio = 1.0
 localize_numeral_system = true
 tooltip_text = ""
 tooltip_auto_translate_mode = 0
 focus_neighbor_left = NodePath("")
-focus_neighbor_top = NodePath("")
+focus_neighbor_top = NodePath("../../HBoxContainerHeading/ExitButton")
 focus_neighbor_right = NodePath("")
-focus_neighbor_bottom = NodePath("")
+focus_neighbor_bottom = NodePath("../../HBoxContainer/VBoxContainerLeft/VBoxContainerAudio/Master")
 focus_next = NodePath("")
 focus_previous = NodePath("")
 focus_mode = 2
@@ -166,36 +163,32 @@ label_settings_pressed = SubResource("LabelSettings_b321m")
 label_settings_hover = SubResource("LabelSettings_0wegp")
 label_settings_disabled = SubResource("LabelSettings_a6vuf")
 
-[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLanguage/Language"]
+[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerLanguage/Language"]
 script = ExtResource("5_dvhby")
 list_of_persistent_properties = Array[String](["selected"])
 scope = "options"
 metadata/_custom_type_script = "uid://b5ht43x20xamo"
 
-[node name="VBoxContainerCamera" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="VBoxContainerLeft" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="ShakeLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerCamera"]
-layout_mode = 2
-text = "Screen shake"
-
-[node name="ShakeAmount" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerCamera"]
-unique_name_in_owner = true
-layout_mode = 2
-max_value = 50.0
-value = 20.0
-
-[node name="VBoxContainerAudio" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainerAudio" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft"]
 layout_mode = 2
 
-[node name="MasterLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio"]
+[node name="MasterLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft/VBoxContainerAudio"]
 layout_mode = 2
 text = "Master"
 
-[node name="Master" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio"]
+[node name="Master" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft/VBoxContainerAudio"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+focus_neighbor_top = NodePath("../../../../VBoxContainerLanguage/Language")
+focus_neighbor_bottom = NodePath("../BGM")
 max_value = 1.0
 step = 0.01
 value = 1.0
@@ -203,20 +196,22 @@ script = ExtResource("4_8gstu")
 bus = &"Master"
 metadata/_custom_type_script = "uid://61q2h71kluj0"
 
-[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio/Master"]
+[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft/VBoxContainerAudio/Master"]
 script = ExtResource("5_dvhby")
 list_of_persistent_properties = Array[String](["value"])
 scope = "options"
 metadata/_custom_type_script = "uid://b5ht43x20xamo"
 
-[node name="BGMLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio"]
+[node name="BGMLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft/VBoxContainerAudio"]
 layout_mode = 2
 text = "Music"
 
-[node name="BGM" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio"]
+[node name="BGM" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft/VBoxContainerAudio"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+focus_neighbor_top = NodePath("../Master")
+focus_neighbor_bottom = NodePath("../SFX")
 max_value = 1.0
 step = 0.01
 value = 0.17
@@ -224,20 +219,22 @@ script = ExtResource("4_8gstu")
 bus = &"BGM"
 metadata/_custom_type_script = "uid://61q2h71kluj0"
 
-[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio/BGM"]
+[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft/VBoxContainerAudio/BGM"]
 script = ExtResource("5_dvhby")
 list_of_persistent_properties = Array[String](["value"])
 scope = "options"
 metadata/_custom_type_script = "uid://b5ht43x20xamo"
 
-[node name="SFXLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio"]
+[node name="SFXLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft/VBoxContainerAudio"]
 layout_mode = 2
 text = "Special Effects"
 
-[node name="SFX" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio"]
+[node name="SFX" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft/VBoxContainerAudio"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+focus_neighbor_top = NodePath("../BGM")
+focus_neighbor_bottom = NodePath("../../../VBoxContainerRight/VBoxContainerCamera/ShakeAmount")
 max_value = 1.0
 step = 0.01
 value = 0.7
@@ -245,20 +242,38 @@ script = ExtResource("4_8gstu")
 bus = &"SFX"
 metadata/_custom_type_script = "uid://61q2h71kluj0"
 
-[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio/SFX"]
+[node name="MakeParentPersistent" type="Node" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft/VBoxContainerAudio/SFX"]
 script = ExtResource("5_dvhby")
 list_of_persistent_properties = Array[String](["value"])
 scope = "options"
 metadata/_custom_type_script = "uid://b5ht43x20xamo"
 
-[node name="VBoxContainerGameplay" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainerRight" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerGameplay"]
+[node name="VBoxContainerCamera" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerRight"]
+layout_mode = 2
+
+[node name="ShakeLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerRight/VBoxContainerCamera"]
+layout_mode = 2
+text = "Screen shake"
+
+[node name="ShakeAmount" type="HSlider" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerRight/VBoxContainerCamera"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../../../VBoxContainerLeft/VBoxContainerAudio/SFX")
+focus_neighbor_bottom = NodePath("../../VBoxContainerGameplay/SpeedrunOnOff")
+max_value = 50.0
+value = 20.0
+
+[node name="VBoxContainerGameplay" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerRight"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerRight/VBoxContainerGameplay"]
 layout_mode = 2
 text = "speedrun timer"
 
-[node name="SpeedrunOnOff" type="BaseButton" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerGameplay"]
+[node name="SpeedrunOnOff" type="BaseButton" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerRight/VBoxContainerGameplay"]
 _import_path = NodePath("")
 unique_name_in_owner = false
 process_mode = 0
@@ -284,7 +299,7 @@ texture_repeat = 0
 material = null
 use_parent_material = false
 clip_contents = false
-custom_minimum_size = Vector2(109, 17)
+custom_minimum_size = Vector2(150, 17)
 layout_direction = 0
 layout_mode = 2
 size_flags_horizontal = 1
@@ -294,9 +309,9 @@ localize_numeral_system = true
 tooltip_text = ""
 tooltip_auto_translate_mode = 0
 focus_neighbor_left = NodePath("")
-focus_neighbor_top = NodePath("")
+focus_neighbor_top = NodePath("../../VBoxContainerCamera/ShakeAmount")
 focus_neighbor_right = NodePath("")
-focus_neighbor_bottom = NodePath("")
+focus_neighbor_bottom = NodePath("../../../../HBoxContainerHeading/ExitButton")
 focus_next = NodePath("")
 focus_previous = NodePath("")
 focus_mode = 2
@@ -321,9 +336,9 @@ label_settings_pressed = SubResource("LabelSettings_xyyr7")
 label_settings_hover = SubResource("LabelSettings_kihl8")
 label_settings_disabled = SubResource("LabelSettings_liaw8")
 
-[connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLanguage/Language" to="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLanguage/Language/MakeParentPersistent" method="save_persistent_values" unbinds=1]
-[connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerCamera/ShakeAmount" to="." method="_on_shake_amount_value_changed"]
-[connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio/Master" to="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio/Master/MakeParentPersistent" method="save_persistent_values" unbinds=1]
-[connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio/BGM" to="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio/BGM/MakeParentPersistent" method="save_persistent_values" unbinds=1]
-[connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio/SFX" to="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerAudio/SFX/MakeParentPersistent" method="save_persistent_values" unbinds=1]
-[connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerGameplay/SpeedrunOnOff" to="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerGameplay/SpeedrunOnOff" method="_on_item_selected"]
+[connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerLanguage/Language" to="CenterContainer/PanelContainer/VBoxContainer/VBoxContainerLanguage/Language/MakeParentPersistent" method="save_persistent_values" unbinds=1]
+[connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft/VBoxContainerAudio/Master" to="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft/VBoxContainerAudio/Master/MakeParentPersistent" method="save_persistent_values" unbinds=1]
+[connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft/VBoxContainerAudio/BGM" to="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft/VBoxContainerAudio/BGM/MakeParentPersistent" method="save_persistent_values" unbinds=1]
+[connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft/VBoxContainerAudio/SFX" to="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft/VBoxContainerAudio/SFX/MakeParentPersistent" method="save_persistent_values" unbinds=1]
+[connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerRight/VBoxContainerCamera/ShakeAmount" to="." method="_on_shake_amount_value_changed"]
+[connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerRight/VBoxContainerGameplay/SpeedrunOnOff" to="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerRight/VBoxContainerGameplay/SpeedrunOnOff" method="_on_item_selected"]

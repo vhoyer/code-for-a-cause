@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://d3756fh13dbkc"]
+[gd_scene load_steps=40 format=4 uid="uid://d3756fh13dbkc"]
 
 [ext_resource type="AudioStream" uid="uid://s4v27rx1rsau" path="res://assets/ost/Don't Stop Moving V3.mp3" id="1_1fmbc"]
 [ext_resource type="Script" uid="uid://b03hc4d4irm2f" path="res://stages/main_menu/main_menu.gd" id="1_i3bhe"]
@@ -107,6 +107,22 @@ shader_parameter/input_palette_texture = ExtResource("3_yb6nn")
 shader_parameter/output_palette_texture = ExtResource("6_5i15u")
 shader_parameter/input_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/output_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fmbc"]
+atlas = ExtResource("10_8ei0a")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3bhe"]
+atlas = ExtResource("10_8ei0a")
+region = Rect2(416, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i15u"]
+atlas = ExtResource("10_8ei0a")
+region = Rect2(224, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvy2q"]
+atlas = ExtResource("10_8ei0a")
+region = Rect2(224, 256, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_emioh"]
 atlas = ExtResource("10_8ei0a")
@@ -290,6 +306,14 @@ text = "Credits"
 script = ExtResource("1_sknds")
 scene_file = "uid://cod16iwe4mb0c"
 
+[node name="ExitButton" type="TextureButton" parent="CanvasLayer/CenterContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = SubResource("AtlasTexture_1fmbc")
+texture_pressed = SubResource("AtlasTexture_i3bhe")
+texture_hover = SubResource("AtlasTexture_5i15u")
+texture_focused = SubResource("AtlasTexture_yvy2q")
+
 [node name="OptionsPanel" parent="CanvasLayer" instance=ExtResource("16_m2o13")]
 visible = false
 
@@ -397,3 +421,5 @@ layout_mode = 2
 text = "prototype"
 script = ExtResource("1_sknds")
 scene_file = "res://stages/levels/prototype/prototype.tscn"
+
+[connection signal="pressed" from="CanvasLayer/CenterContainer/HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

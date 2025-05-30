@@ -150,7 +150,10 @@ func _on_pressed():
 	_selected_text.label_settings = label_settings_pressed
 
 func _on_released():
-	_selected_text.label_settings = null
+	if self.has_focus():
+		_on_focus_entered()
+	else:
+		_selected_text.label_settings = null
 
 func _on_disabled():
 	_selected_text.label_settings = label_settings_disabled

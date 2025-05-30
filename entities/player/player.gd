@@ -25,6 +25,8 @@ var selected_joe: Joe:
 		selected_joe = value
 		updated_selected_joe.emit(value)
 
+var alive: bool = true
+
 func _ready() -> void:
 	if not Engine.is_editor_hint():
 		$CanvasLayer.show()
@@ -61,6 +63,7 @@ func _on_joe_died(is_finished: bool, joe: Joe) -> void:
 	if is_finished:
 		_player_died.emit()
 	else:
+		alive = false
 		joe_exploded.emit()
 		selected_joe = joe
 		for child: Joe in joes.get_children():

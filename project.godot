@@ -54,8 +54,8 @@ folder_colors={
 [global_group]
 
 grabbable="joe can grab this"
-button_actor="This object can activate buttons"
-lever_actor="group of bodies that can interact with a lever"
+passive_actor="This object can activate interactables passively"
+active_actor="group of bodies that needs to interactive with interactables actively"
 
 [gui]
 

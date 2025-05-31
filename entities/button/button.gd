@@ -48,14 +48,14 @@ func _on_reactivation_required() -> void:
 
 
 func _on_activation_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("button_actor"):
+	if body.is_in_group("passive_actor"):
 		active = true
 
 
 func _on_activation_area_body_exited(body: Node2D) -> void:
 	var collision_list = activation_area.get_overlapping_bodies()
 	var actors_on_button = collision_list.any(func(body: PhysicsBody2D):
-		return body.is_in_group("button_actor"))
+		return body.is_in_group("passive_actor"))
 
 	if not actors_on_button:
 		active = false

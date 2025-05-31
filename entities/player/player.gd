@@ -79,14 +79,13 @@ func _on_joe_died(is_finished: bool, joe: Joe) -> void:
 		selected_joe.process_mode = Node.PROCESS_MODE_INHERIT
 
 
-func add_a_joe() -> void:
+func add_a_joe(reference_joe: Joe) -> void:
 	var i = joes.get_child_count()
 
 	var hud: JoeHud = joe_hud_holder.get_child(i)
 	var floating_hud: JoeHud = joe_hud_floating_holder.get_child(i)
-	var joe: Joe = joe_scene.instantiate()
-	if i < color_map.size():
-		joe.color = color_map.get(i)
+	var joe: Joe = reference_joe.duplicate()
+	joe.is_waiting = false
 	await get_tree().physics_frame
 	joes.add_child(joe)
 	joe.global_position = selected_joe.global_position + Vector2.UP * 40
@@ -120,10 +119,10 @@ func process_switch(action: StringName, index: int) -> void:
 
 	if selected_joe:
 		# remove the old from the group
-		selected_joe.remove_from_group('lever_actor')
+		selected_joe.remove_from_group('active_actor')
 	selected_joe = joe
 	selected_joe.velocity.y -= 200
-	selected_joe.add_to_group('lever_actor')
+	selected_joe.add_to_group('active_actor')
 
 
 func _on_selected_joe_changed(_joe: Joe) -> void:

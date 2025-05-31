@@ -1,153 +1,34 @@
-[gd_scene load_steps=17 format=3 uid="uid://dk0v54smdf5t8"]
+[gd_scene load_steps=7 format=3 uid="uid://dk0v54smdf5t8"]
 
-[ext_resource type="Texture2D" uid="uid://dw7hj0wqq5ye6" path="res://entities/joe/assets/Joe-Sheet.png" id="1_a5geh"]
 [ext_resource type="Script" uid="uid://6x3156gw1su3" path="res://entities/joe/joe_in_waiting/joe_in_waiting.gd" id="1_krvm7"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a5geh"]
-atlas = ExtResource("1_a5geh")
-region = Rect2(0, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_krvm7"]
-atlas = ExtResource("1_a5geh")
-region = Rect2(64, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mldbn"]
-atlas = ExtResource("1_a5geh")
-region = Rect2(128, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n7w5o"]
-atlas = ExtResource("1_a5geh")
-region = Rect2(192, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bsgjh"]
-atlas = ExtResource("1_a5geh")
-region = Rect2(256, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kjine"]
-atlas = ExtResource("1_a5geh")
-region = Rect2(320, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rle88"]
-atlas = ExtResource("1_a5geh")
-region = Rect2(384, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rxq2t"]
-atlas = ExtResource("1_a5geh")
-region = Rect2(448, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c7y5d"]
-atlas = ExtResource("1_a5geh")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4bdr1"]
-atlas = ExtResource("1_a5geh")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_shkx5"]
-atlas = ExtResource("1_a5geh")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_20kp8"]
-atlas = ExtResource("1_a5geh")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_3afys"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a5geh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_krvm7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mldbn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n7w5o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bsgjh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kjine")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rle88")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rxq2t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c7y5d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4bdr1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_shkx5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_20kp8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c7y5d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4bdr1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_shkx5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_20kp8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c7y5d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4bdr1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_shkx5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_20kp8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c7y5d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4bdr1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_shkx5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_20kp8")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="PackedScene" uid="uid://cg7liji5n86ce" path="res://entities/joe/joe.tscn" id="2_n7w5o"]
+[ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://addons/godot-devkit/UI/assets/eye_dropper.gdshader" id="3_bsgjh"]
+[ext_resource type="Texture2D" uid="uid://bpxt6b6sae2pv" path="res://entities/joe/assets/Joe Palette/Input Palette.png" id="4_kjine"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krvm7"]
 size = Vector2(48, 51)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rle88"]
+resource_local_to_scene = true
+shader = ExtResource("3_bsgjh")
+shader_parameter/palette_array_size = 0
+shader_parameter/input_palette_texture = ExtResource("4_kjine")
+shader_parameter/output_palette_texture = ExtResource("4_kjine")
+shader_parameter/input_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/output_palette_array = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
 [node name="JoeInWaiting" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_krvm7")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -23)
-sprite_frames = SubResource("SpriteFrames_3afys")
-autoplay = "default"
-frame_progress = 0.297998
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -25.5)
 shape = SubResource("RectangleShape2D_krvm7")
+
+[node name="Joe" parent="." instance=ExtResource("2_n7w5o")]
+material = SubResource("ShaderMaterial_rle88")
+is_waiting = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered_exited"]
 [connection signal="body_exited" from="." to="." method="_on_body_entered_exited"]

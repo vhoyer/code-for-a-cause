@@ -55,3 +55,4 @@ joe_count = 2
 [node name="JoeInWaiting" parent="." index="11" node_paths=PackedStringArray("player") instance=ExtResource("6_i0ukj")]
 position = Vector2(1504, 324)
 player = NodePath("../Player")
+color = "violet"

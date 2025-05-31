@@ -42,6 +42,9 @@ var is_grabbing: bool = false
 var grab_list:= Set.new()
 
 @export
+var is_waiting: bool = false
+
+@export
 var do_life_drain: bool = false
 @export
 var gravity_by_velocity_mapping: Curve = Curve.new()
@@ -128,6 +131,9 @@ func _physics_process(delta: float) -> void:
 
 	if abs(velocity.x) < 1:
 		velocity.x = 0
+
+	if is_waiting:
+		velocity = Vector2.ZERO
 
 	move_and_slide()
 

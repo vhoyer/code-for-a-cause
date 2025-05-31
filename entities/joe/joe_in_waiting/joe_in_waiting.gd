@@ -16,6 +16,7 @@ var color: String = "brown":
 var activated: bool = false
 
 func _ready() -> void:
+	assert(player, 'Player needs to be assigned to the joe in waiting node')
 	_model_updated.connect(update_view)
 	update_view()
 

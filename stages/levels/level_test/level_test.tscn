@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dukei2ipri818"]
+[gd_scene load_steps=15 format=4 uid="uid://dukei2ipri818"]
 
 [ext_resource type="AudioStream" uid="uid://d2jc8r3heogdw" path="res://assets/ost/FactoryV4.ogg" id="1_2arti"]
 [ext_resource type="PackedScene" uid="uid://h6lx57r8157l" path="res://entities/background/background.tscn" id="1_advbd"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://tnqhkfo5hqro" path="res://entities/lever/lever.tscn" id="8_ik8q2"]
 [ext_resource type="PackedScene" uid="uid://dyifxt4rc2jk1" path="res://entities/menu_pause/menu_pause.tscn" id="12_tnuep"]
 [ext_resource type="PackedScene" uid="uid://ciejjlncf57qf" path="res://entities/menu_death/menu_death.tscn" id="13_o6uoj"]
+[ext_resource type="PackedScene" uid="uid://dk0v54smdf5t8" path="res://entities/joe/joe_in_waiting/joe_in_waiting.tscn" id="14_o6uoj"]
 
 [node name="Level1" type="Node2D"]
 
@@ -56,13 +57,17 @@ position = Vector2(146, 253)
 player = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("2_13y66")]
-position = Vector2(388, 72)
-joe_count = 4
+position = Vector2(362, 141)
 
 [node name="PauseLayer" parent="." instance=ExtResource("12_tnuep")]
 visible = false
 
 [node name="MenuDeath" parent="." instance=ExtResource("13_o6uoj")]
 visible = false
+
+[node name="JoeInWaiting" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_o6uoj")]
+position = Vector2(285, 163)
+player = NodePath("../Player")
+color = "red"
 
 [connection signal="_player_died" from="Player" to="MenuDeath" method="display"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://cg7liji5n86ce"]
+[gd_scene load_steps=56 format=3 uid="uid://cg7liji5n86ce"]
 
 [ext_resource type="Script" uid="uid://c6oe8oddyhcg2" path="res://entities/joe/joe.gd" id="1_7fmcv"]
 [ext_resource type="Shader" uid="uid://ded2bhk8t0i5j" path="res://addons/godot-devkit/UI/assets/eye_dropper.gdshader" id="1_bwvaa"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://bmtn2g5f4w03h" path="res://entities/joe/assets/Punch.ogg" id="8_hc8t0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cskce"]
+resource_local_to_scene = true
 shader = ExtResource("1_bwvaa")
 shader_parameter/palette_array_size = 0
 shader_parameter/input_palette_texture = ExtResource("4_f25al")
@@ -203,8 +204,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_exgsc"]
 resource_name = "blink"
-length = 1.2
-step = 0.15
+length = 2.0
+loop_mode = 1
+step = 0.08
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -212,10 +214,10 @@ tracks/0/path = NodePath("VisualRoot/Body:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.05),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.08, 0.16, 0.24, 0.32, 0.4, 0.48, 0.56, 0.64),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [12, 13, 14, 15, 16, 17, 18, 19]
+"values": [12, 13, 14, 15, 16, 17, 18, 19, 0]
 }
 
 [sub_resource type="Animation" id="Animation_7fmcv"]
@@ -396,7 +398,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(0, 44)]
+"values": [Vector2(0, 42)]
 }
 
 [sub_resource type="Animation" id="Animation_6dj7v"]
@@ -677,6 +679,9 @@ _data = {
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7fmcv"]
 animation = &"RESET"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lv4ri"]
+animation = &"blink"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f25al"]
 animation = &"explode"
 
@@ -706,6 +711,14 @@ advance_condition = &"is_exploding"
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uiuvq"]
+advance_mode = 2
+advance_expression = "is_waiting"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0525o"]
+advance_mode = 2
+advance_expression = "!is_waiting"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_pa4f7"]
 states/BlendTree/node = ExtResource("4_xevyh")
 states/BlendTree/position = Vector2(434, 13)
@@ -713,12 +726,14 @@ states/End/position = Vector2(617, 13)
 states/RESET/node = SubResource("AnimationNodeAnimation_7fmcv")
 states/RESET/position = Vector2(332, 101)
 states/Start/position = Vector2(253, 13)
+states/blink/node = SubResource("AnimationNodeAnimation_lv4ri")
+states/blink/position = Vector2(434, -107)
 states/explode/node = SubResource("AnimationNodeAnimation_f25al")
 states/explode/position = Vector2(536, 101)
 states/grabbed/node = SubResource("AnimationNodeAnimation_a2fff")
 states/grabbed/position = Vector2(434, 200)
-transitions = ["Start", "BlendTree", SubResource("AnimationNodeStateMachineTransition_kmyr7"), "BlendTree", "grabbed", SubResource("AnimationNodeStateMachineTransition_lukas"), "grabbed", "RESET", SubResource("AnimationNodeStateMachineTransition_bwvaa"), "RESET", "BlendTree", SubResource("AnimationNodeStateMachineTransition_cskce"), "BlendTree", "explode", SubResource("AnimationNodeStateMachineTransition_lv4ri"), "explode", "End", SubResource("AnimationNodeStateMachineTransition_f25al")]
-graph_offset = Vector2(-201, -263)
+transitions = ["Start", "BlendTree", SubResource("AnimationNodeStateMachineTransition_kmyr7"), "BlendTree", "grabbed", SubResource("AnimationNodeStateMachineTransition_lukas"), "grabbed", "RESET", SubResource("AnimationNodeStateMachineTransition_bwvaa"), "RESET", "BlendTree", SubResource("AnimationNodeStateMachineTransition_cskce"), "BlendTree", "explode", SubResource("AnimationNodeStateMachineTransition_lv4ri"), "explode", "End", SubResource("AnimationNodeStateMachineTransition_f25al"), "BlendTree", "blink", SubResource("AnimationNodeStateMachineTransition_uiuvq"), "blink", "BlendTree", SubResource("AnimationNodeStateMachineTransition_0525o")]
+graph_offset = Vector2(-209, -363)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_o3s3l"]
 streams_count = 1
@@ -734,7 +749,7 @@ random_pitch = 1.12
 streams_count = 1
 stream_0/stream = ExtResource("7_ak1vs")
 
-[node name="Joe" type="CharacterBody2D" groups=["button_actor", "grabbable"]]
+[node name="Joe" type="CharacterBody2D" groups=["grabbable", "passive_actor"]]
 material = SubResource("ShaderMaterial_cskce")
 collision_layer = 11
 script = ExtResource("1_7fmcv")
@@ -799,12 +814,10 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VisualRoot/HitboxGrab"]
-visible = false
 position = Vector2(0, -19)
 shape = SubResource("CircleShape2D_7fmcv")
 
 [node name="BodyCollision" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -21)
 shape = SubResource("CapsuleShape2D_ak1vs")
 
@@ -825,6 +838,7 @@ position = Vector2(0, -44)
 libraries = {
 &"": SubResource("AnimationLibrary_7dwdv")
 }
+autoplay = "idle"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_pa4f7")
@@ -840,7 +854,7 @@ parameters/BlendTree/animations/conditions/is_punching = false
 parameters/BlendTree/animations/conditions/is_walking = false
 parameters/BlendTree/animations/air/blend_position = -0.361938
 parameters/BlendTree/direction/blend_position = 0.0126082
-parameters/BlendTree/flip/add_amount = 0.0
+parameters/BlendTree/flip/add_amount = 1.0
 
 [node name="Jump" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_o3s3l")

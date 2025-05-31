@@ -35,8 +35,9 @@ player = NodePath("../Player")
 position = Vector2(148, 235)
 joe_count = 4
 
-[node name="PauseLayer" parent="." instance=ExtResource("1_bell1")]
+[node name="PauseLayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_bell1")]
 visible = false
+player = NodePath("../Player")
 
 [node name="MenuDeath" parent="." instance=ExtResource("8_01xog")]
 visible = false

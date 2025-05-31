@@ -58,3 +58,4 @@ door = NodePath("../../DoorUp2")
 [node name="JoeInWaiting" parent="." index="12" node_paths=PackedStringArray("player") instance=ExtResource("6_e6m1p")]
 position = Vector2(-126, 195)
 player = NodePath("../Player")
+color = "red"

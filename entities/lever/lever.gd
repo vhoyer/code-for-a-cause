@@ -25,7 +25,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
 		var collision_list = activation_area.get_overlapping_bodies()
 		var actors_on_button = collision_list.any(func(body: PhysicsBody2D):
-			return body.is_in_group("lever_actor"))
+			return body.is_in_group("active_actor"))
 
 		if actors_on_button:
 			active = !active

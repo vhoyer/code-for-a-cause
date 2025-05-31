@@ -55,6 +55,6 @@ func _on_activation_area_body_entered_or_exited(_body: Node2D) -> void:
 	var body_list = activation_area.get_overlapping_bodies()
 	var local_weight:= 0
 	for body in body_list:
-		if body.is_in_group('button_actor'):
+		if body.is_in_group('passive_actor'):
 			local_weight += 1
 	weight = local_weight

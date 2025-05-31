@@ -42,6 +42,9 @@ var is_grabbing: bool = false
 var grab_list:= Set.new()
 
 @export
+var is_waiting: bool = false
+
+@export
 var do_life_drain: bool = false
 @export
 var gravity_by_velocity_mapping: Curve = Curve.new()
@@ -122,6 +125,9 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * mult * delta
 	elif is_grabbed:
 		velocity.y = 0
+		for body in grab_list.values():
+			if body is Joe:
+				body.global_position = grab_position.global_position
 
 	# drag
 	velocity.x *= DRAG_FLOOR if is_on_floor() else DRAG_AIR
@@ -129,11 +135,10 @@ func _physics_process(delta: float) -> void:
 	if abs(velocity.x) < 1:
 		velocity.x = 0
 
-	move_and_slide()
+	if is_waiting:
+		velocity = Vector2.ZERO
 
-	for body in grab_list.values():
-		if body is Joe:
-			body.global_position = grab_position.global_position
+	move_and_slide()
 
 	if last_velocity.y >= 0 and velocity.y < 0:
 		jump.play()
@@ -191,7 +196,11 @@ func _on_hitbox_grab_body_entered(body: Node2D) -> void:
 		if body is Joe:
 			body.is_grabbed = true
 			grab_list.add(body)
-			body.global_position.x = self.global_position.x
+			body.global_position = grab_position.global_position
+			body.velocity = Vector2.ZERO
+			body.animation_tree.set(
+				'parameters/BlendTree/direction/blend_position',
+				self.animation_tree.get('parameters/BlendTree/direction/blend_position'))
 			body.control_lock(true)
 
 

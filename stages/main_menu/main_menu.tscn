@@ -191,6 +191,7 @@ autoplay = "Walk"
 scroll_scale = Vector2(1, 0)
 repeat_size = Vector2(640, 0)
 autoscroll = Vector2(-3, 0)
+repeat_times = 3
 
 [node name="BackgroundParallaxSmal" type="Sprite2D" parent="BG/Base"]
 z_index = -10
@@ -202,6 +203,7 @@ hframes = 5
 scroll_scale = Vector2(1, 0)
 repeat_size = Vector2(640, 0)
 autoscroll = Vector2(-10, 0)
+repeat_times = 3
 
 [node name="BackgroundParallaxSmal" type="Sprite2D" parent="BG/Base2"]
 z_index = -9
@@ -214,6 +216,7 @@ frame = 1
 scroll_scale = Vector2(1, 0)
 repeat_size = Vector2(640, 0)
 autoscroll = Vector2(-20, 0)
+repeat_times = 3
 
 [node name="BackgroundParallaxSmal" type="Sprite2D" parent="BG/Base3"]
 z_index = -8
@@ -226,6 +229,7 @@ frame = 2
 scroll_scale = Vector2(1, 0)
 repeat_size = Vector2(640, 0)
 autoscroll = Vector2(-27, 0)
+repeat_times = 3
 
 [node name="BackgroundParallaxSmal" type="Sprite2D" parent="BG/Base4"]
 z_index = -7
@@ -238,6 +242,7 @@ frame = 3
 scroll_scale = Vector2(1, 0)
 repeat_size = Vector2(640, 0)
 autoscroll = Vector2(-32, 0)
+repeat_times = 3
 
 [node name="BackgroundParallaxSmal" type="Sprite2D" parent="BG/Base5"]
 z_index = -6
@@ -250,6 +255,7 @@ frame = 4
 scroll_scale = Vector2(1, 0)
 repeat_size = Vector2(640, 0)
 autoscroll = Vector2(-35, 0)
+repeat_times = 3
 
 [node name="fg" type="TileMapLayer" parent="BG/Base6"]
 tile_map_data = PackedByteArray("AAAAAAkAAQABAAAAAAAAAAoAAQABAAEAAAABAAkAAQABAAAAAAABAAoAAQABAAEAAAACAAkAAQABAAAAAAACAAoAAQABAAEAAAADAAkAAQABAAAAAAADAAoAAQABAAEAAAAEAAkAAQABAAAAAAAEAAoAAQABAAEAAAAFAAkAAQABAAAAAAAFAAoAAQABAAEAAAAGAAkAAQABAAAAAAAGAAoAAQABAAEAAAAHAAkAAQABAAAAAAAHAAoAAQABAAEAAAAIAAkAAQABAAAAAAAIAAoAAQABAAEAAAAJAAkAAQABAAAAAAAJAAoAAQABAAEAAAAKAAkAAQABAAAAAAAKAAoAAQABAAEAAAALAAkAAQABAAAAAAALAAoAAQABAAEAAAAMAAkAAQABAAAAAAAMAAoAAQABAAEAAAANAAkAAQABAAAAAAANAAoAAQABAAEAAAAOAAkAAQABAAAAAAAOAAoAAQABAAEAAAAPAAkAAQABAAAAAAAPAAoAAQABAAEAAAAQAAkAAQABAAAAAAAQAAoAAQABAAEAAAARAAkAAQABAAAAAAARAAoAAQABAAEAAAASAAkAAQABAAAAAAASAAoAAQABAAEAAAATAAkAAQABAAAAAAATAAoAAQABAAEAAAA=")

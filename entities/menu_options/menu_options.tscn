@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dclerjnyqfida"]
+[gd_scene load_steps=22 format=3 uid="uid://dclerjnyqfida"]
 
 [ext_resource type="Script" uid="uid://b8in1pkabg2ym" path="res://entities/menu_options/menu_options.gd" id="1_8gstu"]
 [ext_resource type="Texture2D" uid="uid://cen31lisf5s7j" path="res://stages/main_menu/UI/UI.png" id="1_tpdi8"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cglxqlyimenu1" path="res://entities/menu_options/language.gd" id="4_v4vq3"]
 [ext_resource type="Script" uid="uid://b5ht43x20xamo" path="res://addons/godot-devkit/UI/make_parent/make_parent_persistent.gd" id="5_dvhby"]
 [ext_resource type="Script" uid="uid://bs35aa4kk5j25" path="res://entities/menu_options/speedrun_on_off.gd" id="8_a74jp"]
+[ext_resource type="Script" uid="uid://c0t1frdcn4ecc" path="res://entities/menu_options/fullscreen_on_off.gd" id="8_cv8x5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_emioh"]
 atlas = ExtResource("1_tpdi8")
@@ -175,6 +176,7 @@ theme_override_constants/separation = 16
 
 [node name="VBoxContainerLeft" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="VBoxContainerAudio" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft"]
 layout_mode = 2
@@ -250,6 +252,7 @@ metadata/_custom_type_script = "uid://b5ht43x20xamo"
 
 [node name="VBoxContainerRight" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="VBoxContainerCamera" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerRight"]
 layout_mode = 2
@@ -265,6 +268,69 @@ focus_neighbor_top = NodePath("../../../VBoxContainerLeft/VBoxContainerAudio/SFX
 focus_neighbor_bottom = NodePath("../../VBoxContainerGameplay/SpeedrunOnOff")
 max_value = 50.0
 value = 20.0
+
+[node name="FullScreenLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerRight/VBoxContainerCamera"]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="FullscreenOnOff" type="BaseButton" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerRight/VBoxContainerCamera"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 2
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+clip_contents = false
+custom_minimum_size = Vector2(150, 17)
+layout_direction = 0
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 1.0
+localize_numeral_system = true
+tooltip_text = ""
+tooltip_auto_translate_mode = 0
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("../ShakeAmount")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("../../../../HBoxContainerHeading/ExitButton")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 2
+mouse_filter = 0
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+theme = null
+theme_type_variation = &""
+disabled = false
+toggle_mode = false
+button_pressed = false
+action_mode = 1
+button_mask = 1
+keep_pressed_outside = false
+button_group = null
+shortcut = null
+shortcut_feedback = true
+shortcut_in_tooltip = true
+script = ExtResource("8_cv8x5")
 
 [node name="VBoxContainerGameplay" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerRight"]
 layout_mode = 2
@@ -341,4 +407,5 @@ label_settings_disabled = SubResource("LabelSettings_liaw8")
 [connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft/VBoxContainerAudio/BGM" to="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft/VBoxContainerAudio/BGM/MakeParentPersistent" method="save_persistent_values" unbinds=1]
 [connection signal="drag_ended" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft/VBoxContainerAudio/SFX" to="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerLeft/VBoxContainerAudio/SFX/MakeParentPersistent" method="save_persistent_values" unbinds=1]
 [connection signal="value_changed" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerRight/VBoxContainerCamera/ShakeAmount" to="." method="_on_shake_amount_value_changed"]
+[connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerRight/VBoxContainerCamera/FullscreenOnOff" to="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerRight/VBoxContainerCamera/FullscreenOnOff" method="_on_item_selected"]
 [connection signal="item_selected" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerRight/VBoxContainerGameplay/SpeedrunOnOff" to="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerRight/VBoxContainerGameplay/SpeedrunOnOff" method="_on_item_selected"]

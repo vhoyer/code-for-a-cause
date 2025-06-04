@@ -79,3 +79,7 @@ func save_backup() -> void:
 
 func override_with_backup() -> void:
 	load_from_file(_get_path_backup())
+
+
+func _list_item_keys() -> PackedStringArray:
+	return _storage.keys()

@@ -50,4 +50,7 @@ func increment_deaths() -> void:
 
 
 func complete_levels() -> void:
+	if new_game_plus >= 2:
+		# no new game plus version of the game
+		return
 	_short_term.set_item('new_game_plus', new_game_plus + 1)

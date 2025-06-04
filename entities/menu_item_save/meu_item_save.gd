@@ -49,7 +49,7 @@ func update_view() -> void:
 		else:
 			%Area.text = 'level 1'
 		%GameMode.visible = _save_data.new_game_plus > 0
-		%GameMode.text = 'New Game'.join('+'.repeat(_save_data.new_game_plus))
+		%GameMode.text = 'New Game' + '+'.repeat(_save_data.new_game_plus)
 
 
 func load_data() -> void:

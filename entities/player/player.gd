@@ -121,7 +121,8 @@ func process_switch(action: StringName, index: int) -> void:
 		# remove the old from the group
 		selected_joe.remove_from_group('active_actor')
 	selected_joe = joe
-	selected_joe.velocity.y -= 200
+	if SaveManager.data.new_game_plus <= 1:
+		selected_joe.velocity.y -= 200
 	selected_joe.add_to_group('active_actor')
 
 

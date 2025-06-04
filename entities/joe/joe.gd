@@ -13,7 +13,7 @@ const DRAG_FLOOR = 0.8
 const DRAG_AIR = 0.99
 
 const MAX_HEALTH = 20.0
-const MAX_HEALTH_HARD = 8.0
+const MAX_HEALTH_HARD = 10.0
 
 
 signal health_updated(health: float)

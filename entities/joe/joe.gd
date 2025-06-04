@@ -13,6 +13,7 @@ const DRAG_FLOOR = 0.8
 const DRAG_AIR = 0.99
 
 const MAX_HEALTH = 20.0
+const MAX_HEALTH_HARD = 8.0
 
 
 signal health_updated(health: float)
@@ -73,8 +74,15 @@ func _ready() -> void:
 
 	if Engine.is_editor_hint(): return
 
-	health = MAX_HEALTH
+	restore_health()
 	update_animation_tree_parameters()
+
+
+func restore_health() -> void:
+	if SaveManager.data.new_game_plus > 0:
+		health = MAX_HEALTH_HARD
+	else:
+		health = MAX_HEALTH
 
 
 func update_view() -> void:
@@ -116,7 +124,7 @@ func _physics_process(delta: float) -> void:
 		if velocity.length() < 0.01:
 			health -= delta
 		else:
-			health = MAX_HEALTH
+			restore_health()
 
 	# Add the gravity.
 	if not is_on_floor() or not is_grabbed:

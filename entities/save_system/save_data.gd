@@ -36,6 +36,10 @@ var level: String:
 	set(value):
 		_short_term.set_item('level', value)
 
+var new_game_plus: int:
+	get():
+		return _short_term.get_item('new_game_plus', 0)
+
 
 func empty() -> bool:
 	return global_time == 0
@@ -43,3 +47,7 @@ func empty() -> bool:
 
 func increment_deaths() -> void:
 	_short_term.set_item('deaths', deaths + 1)
+
+
+func complete_levels() -> void:
+	_short_term.set_item('new_game_plus', new_game_plus + 1)

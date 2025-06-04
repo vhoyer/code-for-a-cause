@@ -1,6 +1,8 @@
 extends Node
 class_name LevelUtilsGoToNext
 
+const CREDITS_PATH:= "res://stages/credits/credit_roll.tscn"
+
 @export_file("*.tscn", "*.scn")
 var next_level_path: String
 
@@ -30,6 +32,7 @@ func _on_active_changed(active: bool) -> void:
 				joe.velocity.y -= 200)
 		tween.tween_interval(between_jump_interval)
 	tween.tween_callback(func():
+		var next = next_level_path if next_level_path != '' else CREDITS_PATH
 		SaveManager.data.level = next_level_path
 		SaveManager.data.consolidate_memory()
-		StageManager.push_stage(next_level_path))
+		StageManager.push_stage(next))

@@ -48,7 +48,8 @@ func update_view() -> void:
 			%Area.text = name.get_basename().get_file().replace('_', ' ')
 		else:
 			%Area.text = 'level 1'
-		%GameMode.hide() # TODO: make new game+
+		%GameMode.visible = _save_data.new_game_plus > 0
+		%GameMode.text = 'New Game'.join('+'.repeat(_save_data.new_game_plus))
 
 
 func load_data() -> void:

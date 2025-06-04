@@ -336,6 +336,10 @@ layout_mode = 2
 [node name="MenuItemSave1" parent="CanvasLayer/CenterContainer/HBoxContainer/LoadMenu" instance=ExtResource("17_i3bhe")]
 layout_mode = 2
 
+[node name="MakeParentControllerFocusStart" type="Node" parent="CanvasLayer/CenterContainer/HBoxContainer/LoadMenu/MenuItemSave1/Button" index="0"]
+script = ExtResource("3_mcab4")
+metadata/_custom_type_script = "uid://b6827tfdgmrq2"
+
 [node name="MenuItemSave2" parent="CanvasLayer/CenterContainer/HBoxContainer/LoadMenu" instance=ExtResource("17_i3bhe")]
 layout_mode = 2
 save_index = 1
@@ -348,10 +352,6 @@ save_index = 2
 layout_mode = 2
 size_flags_horizontal = 8
 text = "back"
-
-[node name="MakeParentControllerFocusStart" type="Node" parent="CanvasLayer/CenterContainer/HBoxContainer/LoadMenu/LoadMenuBackButton"]
-script = ExtResource("3_mcab4")
-metadata/_custom_type_script = "uid://b6827tfdgmrq2"
 
 [node name="OptionsPanel" parent="CanvasLayer" instance=ExtResource("16_m2o13")]
 visible = false
@@ -467,3 +467,5 @@ scene_file = "res://stages/levels/prototype/prototype.tscn"
 [connection signal="selected" from="CanvasLayer/CenterContainer/HBoxContainer/LoadMenu/MenuItemSave2" to="." method="_on_menu_item_save_selected"]
 [connection signal="selected" from="CanvasLayer/CenterContainer/HBoxContainer/LoadMenu/MenuItemSave3" to="." method="_on_menu_item_save_selected"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/HBoxContainer/LoadMenu/LoadMenuBackButton" to="." method="_on_load_menu_back_button_pressed"]
+
+[editable path="CanvasLayer/CenterContainer/HBoxContainer/LoadMenu/MenuItemSave1"]

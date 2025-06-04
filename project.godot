@@ -13,8 +13,10 @@ config_version=5
 config/name="Joe Adventure"
 config/description="No Description"
 run/main_scene="uid://d3756fh13dbkc"
+config/custom_user_dir_name=".joe_adventure"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://assets/Joe.png"
+config/use_custom_user_dir.release=true
 
 [autoload]
 

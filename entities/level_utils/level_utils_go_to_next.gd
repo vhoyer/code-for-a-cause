@@ -30,4 +30,6 @@ func _on_active_changed(active: bool) -> void:
 				joe.velocity.y -= 200)
 		tween.tween_interval(between_jump_interval)
 	tween.tween_callback(func():
+		SaveManager.data.level = next_level_path
+		SaveManager.data.consolidate_memory()
 		StageManager.push_stage(next_level_path))

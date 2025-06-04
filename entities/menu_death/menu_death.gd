@@ -6,3 +6,4 @@ func _ready() -> void:
 func display() -> void:
 	get_tree().paused = true
 	self.show()
+	SaveManager.data.increment_deaths()

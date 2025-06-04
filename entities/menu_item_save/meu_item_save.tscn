@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2nebhyjc2lvw"]
+
+[ext_resource type="Script" uid="uid://do4y1okmt3oi4" path="res://entities/menu_item_save/meu_item_save.gd" id="1_3iwxf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1fmbc"]
+font_color = Color(0.12549, 0.180392, 0.215686, 1)
+
+[node name="MarginContainer" type="MarginContainer"]
+script = ExtResource("1_3iwxf")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+
+[node name="Layout" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 12
+
+[node name="LayoutSaved" type="HBoxContainer" parent="Layout"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 20
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Layout/LayoutSaved"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Area" type="Label" parent="Layout/LayoutSaved/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Forest area"
+label_settings = SubResource("LabelSettings_1fmbc")
+
+[node name="GameMode" type="Label" parent="Layout/LayoutSaved/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "New Game+"
+label_settings = SubResource("LabelSettings_1fmbc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Layout/LayoutSaved"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Timer" type="Label" parent="Layout/LayoutSaved/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "00:00:00"
+label_settings = SubResource("LabelSettings_1fmbc")
+
+[node name="Deaths" type="Label" parent="Layout/LayoutSaved/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Deaths 0"
+label_settings = SubResource("LabelSettings_1fmbc")
+
+[node name="LayoutNewGame" type="CenterContainer" parent="Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NewGameLabel" type="Label" parent="Layout/LayoutNewGame"]
+layout_mode = 2
+text = "New game"
+label_settings = SubResource("LabelSettings_1fmbc")
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

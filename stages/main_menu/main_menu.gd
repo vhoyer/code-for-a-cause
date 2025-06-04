@@ -1,6 +1,10 @@
 extends Node2D
 
 
+@export_file("*.tscn")
+var default_starting_scene: String
+
+
 func _stage_out(tween: Tween, fade_to_color: Callable) -> void:
 	var proj_size = Vector2(
 		ProjectSettings.get_setting('display/window/size/viewport_width'),
@@ -21,3 +25,21 @@ func _stage_out(tween: Tween, fade_to_color: Callable) -> void:
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_start_button_pressed() -> void:
+	%MainMenu.hide()
+	%LoadMenu.show()
+
+
+func _on_load_menu_back_button_pressed() -> void:
+	%LoadMenu.hide()
+	%MainMenu.show()
+
+
+func _on_menu_item_save_selected(save_data: SaveData) -> void:
+	SaveManager.load_data(save_data)
+	if SaveManager.data.level == '':
+		StageManager.push_stage(default_starting_scene)
+	else:
+		StageManager.push_stage(SaveManager.data.level)

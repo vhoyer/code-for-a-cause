@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CreditsContent" load_steps=13 format=3 uid="uid://kvfpp3sxfl6a"]
+[gd_resource type="Resource" script_class="CreditsContent" load_steps=15 format=3 uid="uid://kvfpp3sxfl6a"]
 
 [ext_resource type="Script" uid="uid://dkilr2sckvdbq" path="res://addons/godot-devkit/UI/ui_elements/credits_roll/credits_content.gd" id="1_qsq7d"]
 [ext_resource type="Script" uid="uid://hoscsyh2wfg2" path="res://addons/godot-devkit/UI/ui_elements/credits_roll/credits_section.gd" id="2_poujl"]
@@ -49,11 +49,23 @@ main = "Twisty9"
 secondary = Array[String]([])
 metadata/_custom_type_script = "uid://c8ipei6u4e5bb"
 
+[sub_resource type="Resource" id="Resource_logpw"]
+script = ExtResource("3_fm7xd")
+main = "spet_pv"
+secondary = Array[String]([])
+metadata/_custom_type_script = "uid://c8ipei6u4e5bb"
+
+[sub_resource type="Resource" id="Resource_w1d4q"]
+script = ExtResource("3_fm7xd")
+main = "KodBilen"
+secondary = Array[String]([])
+metadata/_custom_type_script = "uid://c8ipei6u4e5bb"
+
 [sub_resource type="Resource" id="Resource_iqemq"]
 script = ExtResource("2_poujl")
 type = 1
 title = "Special Thanks"
-blocks = Array[ExtResource("3_fm7xd")]([SubResource("Resource_urebj")])
+blocks = Array[ExtResource("3_fm7xd")]([SubResource("Resource_urebj"), SubResource("Resource_logpw"), SubResource("Resource_w1d4q")])
 metadata/_custom_type_script = "uid://hoscsyh2wfg2"
 
 [resource]

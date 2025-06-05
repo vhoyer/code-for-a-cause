@@ -304,7 +304,7 @@ metadata/_custom_type_script = "uid://b6827tfdgmrq2"
 
 [node name="ChooseLevelButton" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/MainMenu" node_paths=PackedStringArray("panel")]
 layout_mode = 2
-text = "choose level"
+text = "Choose Level"
 script = ExtResource("16_1fmbc")
 panel = NodePath("../../../../ChooseLevelPanel")
 

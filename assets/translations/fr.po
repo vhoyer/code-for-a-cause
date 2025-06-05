@@ -55,7 +55,7 @@ msgid "Start"
 msgstr "Commencer"
 
 #: stages/main_menu/main_menu.tscn
-msgid "choose level"
+msgid "Choose Level"
 msgstr "choisir un niveau"
 
 #: stages/main_menu/main_menu.tscn entities/menu_pause/menu_pause.tscn

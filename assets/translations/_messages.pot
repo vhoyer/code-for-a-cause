@@ -4,6 +4,8 @@
 # res://entities/menu_options/menu_options.tscn
 # res://entities/menu_pause/menu_pause.tscn
 # res://stages/credits/credit_roll.tscn
+# res://entities/menu_item_save/meu_item_save.tscn
+# res://entities/menu_item_save/meu_item_save.gd
 #
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -20,7 +22,7 @@ msgid "Start"
 msgstr ""
 
 #: stages/main_menu/main_menu.tscn
-msgid "choose level"
+msgid "Choose Level"
 msgstr ""
 
 #: stages/main_menu/main_menu.tscn
@@ -33,6 +35,11 @@ msgid "Credits"
 msgstr ""
 
 #: stages/main_menu/main_menu.tscn
+msgid "back"
+msgstr ""
+
+#: stages/main_menu/main_menu.tscn
+#: entities/menu_item_save/meu_item_save.gd
 msgid "level 1"
 msgstr ""
 
@@ -79,7 +86,7 @@ msgstr ""
 
 #: entities/menu_death/menu_death.tscn
 #: entities/menu_pause/menu_pause.tscn
-msgid "Main Menu"
+msgid "Save and Quit"
 msgstr ""
 
 #: entities/menu_options/menu_options.tscn
@@ -88,10 +95,6 @@ msgstr ""
 
 #: entities/menu_options/menu_options.tscn
 msgid "Language"
-msgstr ""
-
-#: entities/menu_options/menu_options.tscn
-msgid "Screen shake"
 msgstr ""
 
 #: entities/menu_options/menu_options.tscn
@@ -107,6 +110,14 @@ msgid "Special Effects"
 msgstr ""
 
 #: entities/menu_options/menu_options.tscn
+msgid "Screen shake"
+msgstr ""
+
+#: entities/menu_options/menu_options.tscn
+msgid "Fullscreen"
+msgstr ""
+
+#: entities/menu_options/menu_options.tscn
 msgid "speedrun timer"
 msgstr ""
 
@@ -116,4 +127,24 @@ msgstr ""
 
 #: entities/menu_pause/menu_pause.tscn
 msgid "Resume"
+msgstr ""
+
+#: entities/menu_item_save/meu_item_save.tscn
+msgid "Forest area"
+msgstr ""
+
+#: entities/menu_item_save/meu_item_save.tscn
+msgid "New Game++"
+msgstr ""
+
+#: entities/menu_item_save/meu_item_save.tscn
+msgid "00:00:00"
+msgstr ""
+
+#: entities/menu_item_save/meu_item_save.tscn
+msgid "Deaths 0"
+msgstr ""
+
+#: entities/menu_item_save/meu_item_save.tscn
+msgid "New game"
 msgstr ""

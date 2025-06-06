@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpu32fn0r0hgq"
-path="res://.godot/imported/Background Parallax smal.png-42f0505c7410e58431bf9c165180e4b5.ctex"
+uid="uid://bdbyofuou0ram"
+path="res://.godot/imported/hill3.png-2519974ba4b2c33749a1a0b8b3dcedec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/background/Background Parallax smal.png"
-dest_files=["res://.godot/imported/Background Parallax smal.png-42f0505c7410e58431bf9c165180e4b5.ctex"]
+source_file="res://entities/background/garden/hill3.png"
+dest_files=["res://.godot/imported/hill3.png-2519974ba4b2c33749a1a0b8b3dcedec.ctex"]
 
 [params]
 

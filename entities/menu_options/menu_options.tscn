@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dclerjnyqfida"]
+[gd_scene load_steps=26 format=3 uid="uid://dclerjnyqfida"]
 
 [ext_resource type="Script" uid="uid://b8in1pkabg2ym" path="res://entities/menu_options/menu_options.gd" id="1_8gstu"]
 [ext_resource type="Texture2D" uid="uid://cen31lisf5s7j" path="res://stages/main_menu/UI/UI.png" id="1_tpdi8"]
@@ -36,6 +36,14 @@ font_color = Color(0.223529, 0.290196, 0.313726, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_a6vuf"]
 font_color = Color(0.223529, 0.290196, 0.313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nqews"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_stdpv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yl8y6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xf5ff"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cv8x5"]
 
@@ -331,6 +339,10 @@ shortcut = null
 shortcut_feedback = true
 shortcut_in_tooltip = true
 script = ExtResource("8_cv8x5")
+label_settings_focused = SubResource("LabelSettings_nqews")
+label_settings_pressed = SubResource("LabelSettings_stdpv")
+label_settings_hover = SubResource("LabelSettings_yl8y6")
+label_settings_disabled = SubResource("LabelSettings_xf5ff")
 
 [node name="VBoxContainerGameplay" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainerRight"]
 layout_mode = 2

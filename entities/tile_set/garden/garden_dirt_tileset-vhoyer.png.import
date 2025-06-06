@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqp301g67aw6n"
-path="res://.godot/imported/hill2.png-cb7ba530607532f5fe3554f4d4090c29.ctex"
+uid="uid://cg4yifukwb8op"
+path="res://.godot/imported/garden_dirt_tileset-vhoyer.png-16a0bbac465d3716385c2ec45de6a8a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/background/hill2.png"
-dest_files=["res://.godot/imported/hill2.png-cb7ba530607532f5fe3554f4d4090c29.ctex"]
+source_file="res://entities/tile_set/garden/garden_dirt_tileset-vhoyer.png"
+dest_files=["res://.godot/imported/garden_dirt_tileset-vhoyer.png-16a0bbac465d3716385c2ec45de6a8a8.ctex"]
 
 [params]
 

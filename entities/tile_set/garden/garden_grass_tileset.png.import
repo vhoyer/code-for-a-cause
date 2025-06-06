@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c65hhgji0wjr7"
-path="res://.godot/imported/Background Parallax.png-768a9d41066d8ed0674fb7c3643f3576.ctex"
+uid="uid://bu6pci0uyb310"
+path="res://.godot/imported/garden_grass_tileset.png-e9ebab7f45005f7bb84507f37ff3c12e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/background/Background Parallax.png"
-dest_files=["res://.godot/imported/Background Parallax.png-768a9d41066d8ed0674fb7c3643f3576.ctex"]
+source_file="res://entities/tile_set/garden/garden_grass_tileset.png"
+dest_files=["res://.godot/imported/garden_grass_tileset.png-e9ebab7f45005f7bb84507f37ff3c12e.ctex"]
 
 [params]
 

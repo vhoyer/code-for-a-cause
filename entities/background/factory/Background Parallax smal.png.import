@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck4qthbmfuryh"
-path="res://.godot/imported/spikes1.png-e81df27685c07a95bb59bc75bcb9f202.ctex"
+uid="uid://cpu32fn0r0hgq"
+path="res://.godot/imported/Background Parallax smal.png-e10705bcd232809334c40325ceeba73d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/tile_set/spikes1.png"
-dest_files=["res://.godot/imported/spikes1.png-e81df27685c07a95bb59bc75bcb9f202.ctex"]
+source_file="res://entities/background/factory/Background Parallax smal.png"
+dest_files=["res://.godot/imported/Background Parallax smal.png-e10705bcd232809334c40325ceeba73d.ctex"]
 
 [params]
 

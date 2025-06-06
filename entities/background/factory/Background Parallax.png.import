@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx6qbmx4nng7y"
-path="res://.godot/imported/ConvetorBelt-Sheet.png-fc6261abc4049d6217f8586459b9b601.ctex"
+uid="uid://c65hhgji0wjr7"
+path="res://.godot/imported/Background Parallax.png-ee6b9db65ce05fdaef528abc863d61a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/tile_set/ConvetorBelt-Sheet.png"
-dest_files=["res://.godot/imported/ConvetorBelt-Sheet.png-fc6261abc4049d6217f8586459b9b601.ctex"]
+source_file="res://entities/background/factory/Background Parallax.png"
+dest_files=["res://.godot/imported/Background Parallax.png-ee6b9db65ce05fdaef528abc863d61a6.ctex"]
 
 [params]
 

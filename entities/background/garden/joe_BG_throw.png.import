@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhbp5vm3k7x1v"
-path="res://.godot/imported/joe_BG_punch.png-69cf4362547aa3ab2e26aff30cf986a0.ctex"
+uid="uid://cmvgxtjg04qdt"
+path="res://.godot/imported/joe_BG_throw.png-fd1ca0bf1a01a3b8a0b03e2b82e62269.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/background/joe_BG_punch.png"
-dest_files=["res://.godot/imported/joe_BG_punch.png-69cf4362547aa3ab2e26aff30cf986a0.ctex"]
+source_file="res://entities/background/garden/joe_BG_throw.png"
+dest_files=["res://.godot/imported/joe_BG_throw.png-fd1ca0bf1a01a3b8a0b03e2b82e62269.ctex"]
 
 [params]
 

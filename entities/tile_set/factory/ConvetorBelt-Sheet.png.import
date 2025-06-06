@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu6pci0uyb310"
-path="res://.godot/imported/garden_grass_tileset.png-c37bf373b05e59ebf1e6152ff8b880a5.ctex"
+uid="uid://bx6qbmx4nng7y"
+path="res://.godot/imported/ConvetorBelt-Sheet.png-175d59581f6a5dccaaf2448aa463e6bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/tile_set/garden_grass_tileset.png"
-dest_files=["res://.godot/imported/garden_grass_tileset.png-c37bf373b05e59ebf1e6152ff8b880a5.ctex"]
+source_file="res://entities/tile_set/factory/ConvetorBelt-Sheet.png"
+dest_files=["res://.godot/imported/ConvetorBelt-Sheet.png-175d59581f6a5dccaaf2448aa463e6bc.ctex"]
 
 [params]
 

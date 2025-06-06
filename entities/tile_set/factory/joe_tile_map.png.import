@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db7vb1smgaf8p"
-path="res://.godot/imported/garden_fence_tileset.png-066465617d83ce929af4f03a1f020ee9.ctex"
+uid="uid://b67e0v1lu5lsy"
+path="res://.godot/imported/joe_tile_map.png-54e58aac1757565443f145aae4a86289.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/tile_set/garden_fence_tileset.png"
-dest_files=["res://.godot/imported/garden_fence_tileset.png-066465617d83ce929af4f03a1f020ee9.ctex"]
+source_file="res://entities/tile_set/factory/joe_tile_map.png"
+dest_files=["res://.godot/imported/joe_tile_map.png-54e58aac1757565443f145aae4a86289.ctex"]
 
 [params]
 

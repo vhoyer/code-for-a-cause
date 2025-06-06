@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c65hhgji0wjr7"
-path="res://.godot/imported/Background Parallax.png-768a9d41066d8ed0674fb7c3643f3576.ctex"
+uid="uid://bdbyofuou0ram"
+path="res://.godot/imported/hill3.png-2519974ba4b2c33749a1a0b8b3dcedec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/background/Background Parallax.png"
-dest_files=["res://.godot/imported/Background Parallax.png-768a9d41066d8ed0674fb7c3643f3576.ctex"]
+source_file="res://entities/background/garden/hill3.png"
+dest_files=["res://.godot/imported/hill3.png-2519974ba4b2c33749a1a0b8b3dcedec.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx6qbmx4nng7y"
-path="res://.godot/imported/ConvetorBelt-Sheet.png-fc6261abc4049d6217f8586459b9b601.ctex"
+uid="uid://dhsun58xmlo0"
+path="res://.godot/imported/spikes2.png-1b0b993b1dd966f1a79495de387302ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/tile_set/ConvetorBelt-Sheet.png"
-dest_files=["res://.godot/imported/ConvetorBelt-Sheet.png-fc6261abc4049d6217f8586459b9b601.ctex"]
+source_file="res://entities/tile_set/factory/spikes2.png"
+dest_files=["res://.godot/imported/spikes2.png-1b0b993b1dd966f1a79495de387302ae.ctex"]
 
 [params]
 

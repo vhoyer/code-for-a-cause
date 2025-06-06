@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd35q4pk3w2u7"]
+
+[ext_resource type="Texture2D" uid="uid://ce3tg006jio52" path="res://entities/background/garden/garden background.png" id="1_5i377"]
+[ext_resource type="Texture2D" uid="uid://bdbyofuou0ram" path="res://entities/background/garden/hill3.png" id="2_glks1"]
+[ext_resource type="Texture2D" uid="uid://cqp301g67aw6n" path="res://entities/background/garden/hill2.png" id="3_f1xgj"]
+[ext_resource type="Texture2D" uid="uid://b1ttlhb0w8hbi" path="res://entities/background/garden/hill1.png" id="4_l23n1"]
+
+[node name="GardenBackground" type="Node2D"]
+
+[node name="Sky" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.01, 0)
+repeat_size = Vector2(640, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Sky"]
+position = Vector2(320, 168)
+texture = ExtResource("1_5i377")
+hframes = 3
+
+[node name="Cloud" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.025, 0.1)
+repeat_size = Vector2(640, 0)
+autoscroll = Vector2(0.35, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Cloud"]
+position = Vector2(320, 168)
+texture = ExtResource("1_5i377")
+hframes = 3
+frame = 1
+
+[node name="Hill3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.15, 0.2)
+scroll_offset = Vector2(48, 35)
+repeat_size = Vector2(682, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Hill3"]
+position = Vector2(320, 168)
+texture = ExtResource("2_glks1")
+
+[node name="Hill2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.17, 0.2)
+scroll_offset = Vector2(310, 35)
+repeat_size = Vector2(1254, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Hill2"]
+position = Vector2(320, 168)
+texture = ExtResource("3_f1xgj")
+
+[node name="Hill1" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.19, 0.2)
+scroll_offset = Vector2(-250, 35)
+repeat_size = Vector2(1254, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Hill1"]
+position = Vector2(320, 168)
+texture = ExtResource("4_l23n1")
+
+[node name="Fog" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 1)
+repeat_size = Vector2(640, 0)
+autoscroll = Vector2(-10, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Fog"]
+position = Vector2(320, 168)
+texture = ExtResource("1_5i377")
+hframes = 3
+frame = 2

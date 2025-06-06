@@ -1,13 +1,18 @@
 @tool
 extends TileMapLayer
-class_name ForegroundTileMapLayer
+class_name GameTileMap
 
 @export var player: PlayerController
 
-@export_group('Conveyor Belt', 'conveyor')
+@export_group('Drag Along', 'drag')
 @export
-var conveyor_speed: float = 20.0
+var drag_speed: float = 20.0
+## add a value of 1 to go positively in the x direction and -1 to go to the other side
+@export
+var drag_direction_custom_data_layer_name:= 'drag_direction'
 
+## use 'sfx_id' as a custom data layer name for identifing what tiles should produce what sound
+## keys in the sfx_db should match the name in the 'sfx_id' in the tiles
 @export
 var sfx_db: Dictionary[String, AudioStream] = {}
 
@@ -32,7 +37,6 @@ class ForegroundTileMapLayerDebug extends Node2D:
 
 
 func _ready() -> void:
-	self.tile_set = preload("res://entities/tile_set/joe_tile_set.tres")
 	if not Engine.is_editor_hint():
 		setup_all_cell()
 
@@ -47,6 +51,7 @@ func setup_tile_sfxs(cell_coord: Vector2i) -> void:
 	if not cell_data: return
 
 	var sfx_id = cell_data.get_custom_data('sfx_id')
+	if sfx_id == null: return
 	var stream = sfx_db.get(sfx_id, null)
 	if not stream: return
 	
@@ -62,16 +67,10 @@ func setup_tile_sfxs(cell_coord: Vector2i) -> void:
 
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
-	conveyor_belt_process(delta)
-	deathzone_process(delta)
+	drag_along_process(delta)
 
 
-func deathzone_process(delta: float) -> void:
-	for joe: Joe in player.joes.get_children():
-		pass
-
-
-func conveyor_belt_process(delta: float) -> void:
+func drag_along_process(delta: float) -> void:
 	for joe: Joe in player.joes.get_children():
 		if not joe.is_on_floor(): continue
 
@@ -89,5 +88,6 @@ func conveyor_belt_process(delta: float) -> void:
 
 		if not floor_cell_data: continue
 
-		var drag_along = floor_cell_data.get_custom_data('drag_along')
-		joe.position.x += conveyor_speed * drag_along * delta * 2
+		var drag_along = floor_cell_data.get_custom_data(drag_direction_custom_data_layer_name)
+		if drag_along == null: continue
+		joe.position.x += drag_speed * drag_along * delta * 2

@@ -10,9 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://02h5cfuh1sa" path="res://entities/joe/assets/Joe Palette/Joe Palette 1.png" id="8_qq537"]
 [ext_resource type="Texture2D" uid="uid://c16xn62acx3wt" path="res://entities/joe/assets/Joe Palette/Joe Palette 2.png" id="9_lqgfd"]
 [ext_resource type="Texture2D" uid="uid://c846wnvhks87i" path="res://entities/joe/assets/Joe Palette/Joe Palette 3.png" id="10_n6p6p"]
-[ext_resource type="Texture2D" uid="uid://cpu32fn0r0hgq" path="res://entities/background/Background Parallax smal.png" id="11_yq1qh"]
+[ext_resource type="Texture2D" uid="uid://cpu32fn0r0hgq" path="res://entities/background/factory/Background Parallax smal.png" id="11_yq1qh"]
 [ext_resource type="Resource" uid="uid://kvfpp3sxfl6a" path="res://stages/credits/credits.tres" id="12_cdk1d"]
-[ext_resource type="TileSet" uid="uid://bnfmghrj16pdr" path="res://entities/tile_set/joe_tile_set.tres" id="12_met01"]
+[ext_resource type="TileSet" uid="uid://bnfmghrj16pdr" path="res://entities/tile_set/factory/factory_tile_set.tres" id="12_met01"]
 [ext_resource type="Texture2D" uid="uid://dfyb0o6nv0tij" path="res://stages/main_menu/UI/Title.png" id="13_rqflh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4cwpn"]

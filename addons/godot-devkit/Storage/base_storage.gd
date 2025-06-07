@@ -28,6 +28,10 @@ func override_with_backup() -> void:
 	push_error('override_with_backup needs to be overwritten')
 
 
+func erase_storage() -> void:
+	push_error('erase_storage needs to be overwritten')
+
+
 func _list_item_keys() -> PackedStringArray:
 	push_error('_list_item_keys needs to be overwritten')
 	return []

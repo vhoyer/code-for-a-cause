@@ -28,5 +28,9 @@ func override_with_backup() -> void:
 	_storage.set(_scope, _backup.get(_scope, {}).duplicate(true))
 
 
+func erase_storage() -> void:
+	_storage.set(_scope, {})
+
+
 func _list_item_keys() -> PackedStringArray:
 	return _storage.get(_scope, {}).keys()

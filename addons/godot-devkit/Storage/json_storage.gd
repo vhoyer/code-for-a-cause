@@ -81,5 +81,12 @@ func override_with_backup() -> void:
 	load_from_file(_get_path_backup())
 
 
+func erase_storage() -> void:
+	_storage = {}
+	save_to_file(_get_path())
+	_is_cache_valid[_scope] = false
+
+
+
 func _list_item_keys() -> PackedStringArray:
 	return _storage.keys()

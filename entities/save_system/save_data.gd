@@ -4,8 +4,10 @@ extends RefCounted
 var _short_term: InMemoryStorage
 var _long_term: JSONStorage
 
+var save_id: String
+
 func _init(index: int) -> void:
-	var save_id = 'save%s' % index
+	save_id = 'save%s' % index
 	_long_term = JSONStorage.new('', save_id)
 	_short_term = InMemoryStorage.new('', save_id)
 	_short_term._override_with(_long_term)
@@ -18,6 +20,10 @@ func consolidate_memory() -> void:
 func remember() -> void:
 	_short_term._override_with(_long_term)
 
+
+func amnesia() -> void:
+	_long_term.erase_storage()
+	_short_term.erase_storage()
 
 
 var global_time: float:

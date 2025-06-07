@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://d3756fh13dbkc"]
+[gd_scene load_steps=49 format=4 uid="uid://d3756fh13dbkc"]
 
 [ext_resource type="AudioStream" uid="uid://s4v27rx1rsau" path="res://assets/ost/Don't Stop Moving V3.mp3" id="1_1fmbc"]
 [ext_resource type="Script" uid="uid://b03hc4d4irm2f" path="res://stages/main_menu/main_menu.gd" id="1_i3bhe"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://addons/godot-devkit/UI/make_parent/make_parent_controller_focus_start.gd" id="3_mcab4"]
 [ext_resource type="Texture2D" uid="uid://bpxt6b6sae2pv" path="res://entities/joe/assets/Joe Palette/Input Palette.png" id="3_yb6nn"]
 [ext_resource type="Texture2D" uid="uid://02h5cfuh1sa" path="res://entities/joe/assets/Joe Palette/Joe Palette 1.png" id="4_1fmbc"]
+[ext_resource type="Script" uid="uid://bdsmgvivx4k0e" path="res://stages/main_menu/bg.gd" id="4_yvy2q"]
 [ext_resource type="Texture2D" uid="uid://c16xn62acx3wt" path="res://entities/joe/assets/Joe Palette/Joe Palette 2.png" id="5_i3bhe"]
 [ext_resource type="Texture2D" uid="uid://c846wnvhks87i" path="res://entities/joe/assets/Joe Palette/Joe Palette 3.png" id="6_5i15u"]
 [ext_resource type="Texture2D" uid="uid://cpu32fn0r0hgq" path="res://entities/background/factory/Background Parallax smal.png" id="7_yvy2q"]
@@ -19,6 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://dclerjnyqfida" path="res://entities/menu_options/menu_options.tscn" id="16_m2o13"]
 [ext_resource type="PackedScene" uid="uid://d2nebhyjc2lvw" path="res://entities/menu_item_save/meu_item_save.tscn" id="17_i3bhe"]
 [ext_resource type="Script" uid="uid://drpcgykc8fxy6" path="res://addons/godot-devkit/UI/ui_elements/buttons/button_panel_hide.gd" id="17_yb6nn"]
+[ext_resource type="Script" uid="uid://dy0scq6mq6mid" path="res://addons/godot-devkit/UI/ui_elements/input_prompt/input_prompt.gd" id="18_5i15u"]
+[ext_resource type="Script" uid="uid://b6joos17t40vg" path="res://stages/main_menu/load_menu_items.gd" id="18_hj5j6"]
 [ext_resource type="Script" uid="uid://d0rjcb54sccp8" path="res://stages/level_select/level_list.gd" id="20_c61yf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4cwpn"]
@@ -125,6 +128,26 @@ region = Rect2(224, 224, 32, 32)
 atlas = ExtResource("10_8ei0a")
 region = Rect2(224, 256, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj5j6"]
+atlas = ExtResource("10_8ei0a")
+region = Rect2(416, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul6aj"]
+atlas = ExtResource("10_8ei0a")
+region = Rect2(384, 288, 32, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cqrje"]
+outline_size = 2
+outline_color = Color(0.12549, 0.180392, 0.215686, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2o13"]
+atlas = ExtResource("10_8ei0a")
+region = Rect2(480, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c61yf"]
+atlas = ExtResource("10_8ei0a")
+region = Rect2(0, 288, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_emioh"]
 atlas = ExtResource("10_8ei0a")
 region = Rect2(0, 224, 32, 32)
@@ -153,14 +176,15 @@ script = ExtResource("2_c61yf")
 
 [node name="BG" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, 16)
+position = Vector2(0, 180)
+script = ExtResource("4_yvy2q")
 
 [node name="BG_Joes" type="Node2D" parent="BG"]
 unique_name_in_owner = true
 
 [node name="Joe 1" type="AnimatedSprite2D" parent="BG/BG_Joes"]
 z_index = 1
-position = Vector2(108, 268)
+position = Vector2(108, 88)
 sprite_frames = SubResource("SpriteFrames_cqrje")
 animation = &"Walk"
 autoplay = "Walk"
@@ -168,7 +192,7 @@ autoplay = "Walk"
 [node name="Joe 2" type="AnimatedSprite2D" parent="BG/BG_Joes"]
 z_index = 1
 material = SubResource("ShaderMaterial_m2o13")
-position = Vector2(155, 268)
+position = Vector2(155, 88)
 sprite_frames = SubResource("SpriteFrames_cqrje")
 animation = &"Walk"
 autoplay = "Walk"
@@ -176,7 +200,7 @@ autoplay = "Walk"
 [node name="Joe 3" type="AnimatedSprite2D" parent="BG/BG_Joes"]
 z_index = 1
 material = SubResource("ShaderMaterial_c61yf")
-position = Vector2(201, 268)
+position = Vector2(201, 88)
 sprite_frames = SubResource("SpriteFrames_cqrje")
 animation = &"Walk"
 autoplay = "Walk"
@@ -184,20 +208,21 @@ autoplay = "Walk"
 [node name="Joe 4" type="AnimatedSprite2D" parent="BG/BG_Joes"]
 z_index = 1
 material = SubResource("ShaderMaterial_emioh")
-position = Vector2(62, 268)
+position = Vector2(62, 88)
 sprite_frames = SubResource("SpriteFrames_cqrje")
 animation = &"Walk"
 autoplay = "Walk"
 
 [node name="Base" type="Parallax2D" parent="BG"]
 scroll_scale = Vector2(1, 0)
-repeat_size = Vector2(640, 0)
+repeat_size = Vector2(640, 384)
 autoscroll = Vector2(-3, 0)
 repeat_times = 3
+follow_viewport = false
 
 [node name="BackgroundParallaxSmal" type="Sprite2D" parent="BG/Base"]
 z_index = -10
-position = Vector2(320, 176)
+position = Vector2(320, -4)
 texture = ExtResource("7_yvy2q")
 hframes = 5
 
@@ -206,10 +231,11 @@ scroll_scale = Vector2(1, 0)
 repeat_size = Vector2(640, 0)
 autoscroll = Vector2(-10, 0)
 repeat_times = 3
+follow_viewport = false
 
 [node name="BackgroundParallaxSmal" type="Sprite2D" parent="BG/Base2"]
 z_index = -9
-position = Vector2(320, 176)
+position = Vector2(320, -4)
 texture = ExtResource("7_yvy2q")
 hframes = 5
 frame = 1
@@ -219,10 +245,11 @@ scroll_scale = Vector2(1, 0)
 repeat_size = Vector2(640, 0)
 autoscroll = Vector2(-20, 0)
 repeat_times = 3
+follow_viewport = false
 
 [node name="BackgroundParallaxSmal" type="Sprite2D" parent="BG/Base3"]
 z_index = -8
-position = Vector2(320, 176)
+position = Vector2(320, -4)
 texture = ExtResource("7_yvy2q")
 hframes = 5
 frame = 2
@@ -232,10 +259,11 @@ scroll_scale = Vector2(1, 0)
 repeat_size = Vector2(640, 0)
 autoscroll = Vector2(-27, 0)
 repeat_times = 3
+follow_viewport = false
 
 [node name="BackgroundParallaxSmal" type="Sprite2D" parent="BG/Base4"]
 z_index = -7
-position = Vector2(320, 176)
+position = Vector2(320, -4)
 texture = ExtResource("7_yvy2q")
 hframes = 5
 frame = 3
@@ -245,10 +273,11 @@ scroll_scale = Vector2(1, 0)
 repeat_size = Vector2(640, 0)
 autoscroll = Vector2(-32, 0)
 repeat_times = 3
+follow_viewport = false
 
 [node name="BackgroundParallaxSmal" type="Sprite2D" parent="BG/Base5"]
 z_index = -6
-position = Vector2(320, 176)
+position = Vector2(320, -4)
 texture = ExtResource("7_yvy2q")
 hframes = 5
 frame = 4
@@ -258,69 +287,71 @@ scroll_scale = Vector2(1, 0)
 repeat_size = Vector2(640, 0)
 autoscroll = Vector2(-35, 0)
 repeat_times = 3
+follow_viewport = false
 
 [node name="fg" type="TileMapLayer" parent="BG/Base6"]
-tile_map_data = PackedByteArray("AAAAAAkAAQABAAAAAAAAAAoAAQABAAEAAAABAAkAAQABAAAAAAABAAoAAQABAAEAAAACAAkAAQABAAAAAAACAAoAAQABAAEAAAADAAkAAQABAAAAAAADAAoAAQABAAEAAAAEAAkAAQABAAAAAAAEAAoAAQABAAEAAAAFAAkAAQABAAAAAAAFAAoAAQABAAEAAAAGAAkAAQABAAAAAAAGAAoAAQABAAEAAAAHAAkAAQABAAAAAAAHAAoAAQABAAEAAAAIAAkAAQABAAAAAAAIAAoAAQABAAEAAAAJAAkAAQABAAAAAAAJAAoAAQABAAEAAAAKAAkAAQABAAAAAAAKAAoAAQABAAEAAAALAAkAAQABAAAAAAALAAoAAQABAAEAAAAMAAkAAQABAAAAAAAMAAoAAQABAAEAAAANAAkAAQABAAAAAAANAAoAAQABAAEAAAAOAAkAAQABAAAAAAAOAAoAAQABAAEAAAAPAAkAAQABAAAAAAAPAAoAAQABAAEAAAAQAAkAAQABAAAAAAAQAAoAAQABAAEAAAARAAkAAQABAAAAAAARAAoAAQABAAEAAAASAAkAAQABAAAAAAASAAoAAQABAAEAAAATAAkAAQABAAAAAAATAAoAAQABAAEAAAA=")
+position = Vector2(0, -180)
+tile_map_data = PackedByteArray("AAAAAAkAAQABAAAAAAAAAAoAAQABAAEAAAABAAkAAQABAAAAAAABAAoAAQABAAEAAAACAAkAAQABAAAAAAACAAoAAQABAAEAAAADAAkAAQABAAAAAAADAAoAAQABAAEAAAAEAAkAAQABAAAAAAAEAAoAAQABAAEAAAAFAAkAAQABAAAAAAAFAAoAAQABAAEAAAAGAAkAAQABAAAAAAAGAAoAAQABAAEAAAAHAAkAAQABAAAAAAAHAAoAAQABAAEAAAAIAAkAAQABAAAAAAAIAAoAAQABAAEAAAAJAAkAAQABAAAAAAAJAAoAAQABAAEAAAAKAAkAAQABAAAAAAAKAAoAAQABAAEAAAALAAkAAQABAAAAAAALAAoAAQABAAEAAAAMAAkAAQABAAAAAAAMAAoAAQABAAEAAAANAAkAAQABAAAAAAANAAoAAQABAAEAAAAOAAkAAQABAAAAAAAOAAoAAQABAAEAAAAPAAkAAQABAAAAAAAPAAoAAQABAAEAAAAQAAkAAQABAAAAAAAQAAoAAQABAAEAAAARAAkAAQABAAAAAAARAAoAAQABAAEAAAASAAkAAQABAAAAAAASAAoAAQABAAEAAAATAAkAAQABAAAAAAATAAoAAQABAAEAAAABAAsAAQABAAEAAAABAAwAAQABAAEAAAABAA0AAQABAAEAAAACAAsAAQABAAEAAAACAAwAAQABAAEAAAACAA0AAQABAAEAAAADAAsAAQABAAEAAAADAAwAAQABAAEAAAADAA0AAQABAAEAAAAEAAsAAQABAAEAAAAEAAwAAQABAAEAAAAEAA0AAQABAAEAAAAFAAsAAQABAAEAAAAFAAwAAQABAAEAAAAFAA0AAQABAAEAAAAGAAsAAQABAAEAAAAGAAwAAQABAAEAAAAGAA0AAQABAAEAAAAHAAsAAQABAAEAAAAHAAwAAQABAAEAAAAHAA0AAQABAAEAAAAIAAsAAQABAAEAAAAIAAwAAQABAAEAAAAIAA0AAQABAAEAAAAJAAsAAQABAAEAAAAJAAwAAQABAAEAAAAJAA0AAQABAAEAAAAKAAsAAQABAAEAAAAKAAwAAQABAAEAAAAKAA0AAQABAAEAAAAAAAsAAQABAAEAAAAAAAwAAQABAAEAAAAAAA0AAQABAAEAAAAAAA4AAQABAAEAAAABAA4AAQABAAEAAAACAA4AAQABAAEAAAADAA4AAQABAAEAAAAEAA4AAQABAAEAAAAFAA4AAQABAAEAAAAGAA4AAQABAAEAAAAHAA4AAQABAAEAAAAIAA4AAQABAAEAAAAJAA4AAQABAAEAAAAKAA4AAQABAAEAAAALAAsAAQABAAEAAAALAAwAAQABAAEAAAALAA0AAQABAAEAAAALAA4AAQABAAEAAAAMAAsAAQABAAEAAAAMAAwAAQABAAEAAAAMAA0AAQABAAEAAAAMAA4AAQABAAEAAAANAAsAAQABAAEAAAANAAwAAQABAAEAAAANAA0AAQABAAEAAAAOAAsAAQABAAEAAAAOAAwAAQABAAEAAAAOAA0AAQABAAEAAAAPAAsAAQABAAEAAAAPAAwAAQABAAEAAAAPAA0AAQABAAEAAAAQAAsAAQABAAEAAAAQAAwAAQABAAEAAAAQAA0AAQABAAEAAAARAAsAAQABAAEAAAARAAwAAQABAAEAAAARAA0AAQABAAEAAAASAAsAAQABAAEAAAASAAwAAQABAAEAAAATAAsAAQABAAEAAAATAAwAAQABAAEAAAASAA0AAQABAAEAAAATAA0AAQABAAEAAAANAA4AAQABAAEAAAAOAA4AAQABAAEAAAAPAA4AAQABAAEAAAAQAA4AAQABAAEAAAARAA4AAQABAAEAAAASAA4AAQABAAEAAAATAA4AAQABAAEAAAABAA8AAQABAAEAAAACAA8AAQABAAEAAAADAA8AAQABAAEAAAAAAA8AAQABAAEAAAAEAA8AAQABAAEAAAAFAA8AAQABAAEAAAAGAA8AAQABAAEAAAAHAA8AAQABAAEAAAAIAA8AAQABAAEAAAAJAA8AAQABAAEAAAAKAA8AAQABAAEAAAALAA8AAQABAAEAAAAMAA8AAQABAAEAAAANAA8AAQABAAEAAAAOAA8AAQABAAEAAAAPAA8AAQABAAEAAAAQAA8AAQABAAEAAAARAA8AAQABAAEAAAASAA8AAQABAAEAAAATAA8AAQABAAEAAAAAABAAAQABAAEAAAAAABEAAQABAAEAAAAAABIAAQABAAEAAAAAABMAAQABAAEAAAAAABQAAQABAAEAAAAAABUAAQABAAEAAAAAABYAAQABAAEAAAAAABcAAQABAAEAAAAAABgAAQABAAEAAAAAABkAAQABAAEAAAAAABoAAQABAAEAAAAAABsAAQABAAEAAAAAABwAAQABAAEAAAAAAB0AAQABAAEAAAAAAB4AAQABAAEAAAAAAB8AAQABAAEAAAAAACAAAQABAAEAAAAAACEAAQABAAEAAAAAACIAAQABAAEAAAAAACMAAQABAAEAAAAAACQAAQABAAEAAAAAACUAAQABAAEAAAAAACYAAQABAAEAAAAAACcAAQABAAEAAAAAACgAAQABAAEAAAAAACkAAQABAAEAAAAAACoAAQABAAEAAAAAACsAAQABAAEAAAABABAAAQABAAEAAAABABEAAQABAAEAAAABABIAAQABAAEAAAABABMAAQABAAEAAAABABQAAQABAAEAAAABABUAAQABAAEAAAABABYAAQABAAEAAAABABcAAQABAAEAAAABABgAAQABAAEAAAABABkAAQABAAEAAAABABoAAQABAAEAAAABABsAAQABAAEAAAABABwAAQABAAEAAAABAB0AAQABAAEAAAABAB4AAQABAAEAAAABAB8AAQABAAEAAAABACAAAQABAAEAAAABACEAAQABAAEAAAABACIAAQABAAEAAAABACMAAQABAAEAAAABACQAAQABAAEAAAABACUAAQABAAEAAAABACYAAQABAAEAAAABACcAAQABAAEAAAABACgAAQABAAEAAAABACkAAQABAAEAAAABACoAAQABAAEAAAABACsAAQABAAEAAAACABAAAQABAAEAAAACABEAAQABAAEAAAACABIAAQABAAEAAAACABMAAQABAAEAAAACABQAAQABAAEAAAACABUAAQABAAEAAAACABYAAQABAAEAAAACABcAAQABAAEAAAACABgAAQABAAEAAAACABkAAQABAAEAAAACABoAAQABAAEAAAACABsAAQABAAEAAAACABwAAQABAAEAAAACAB0AAQABAAEAAAACAB4AAQABAAEAAAACAB8AAQABAAEAAAACACAAAQABAAEAAAACACEAAQABAAEAAAACACIAAQABAAEAAAACACMAAQABAAEAAAACACQAAQABAAEAAAACACUAAQABAAEAAAACACYAAQABAAEAAAACACcAAQABAAEAAAACACgAAQABAAEAAAACACkAAQABAAEAAAACACoAAQABAAEAAAACACsAAQABAAEAAAADABAAAQABAAEAAAADABEAAQABAAEAAAADABIAAQABAAEAAAADABMAAQABAAEAAAADABQAAQABAAEAAAADABUAAQABAAEAAAADABYAAQABAAEAAAADABcAAQABAAEAAAADABgAAQABAAEAAAADABkAAQABAAEAAAADABoAAQABAAEAAAADABsAAQABAAEAAAADABwAAQABAAEAAAADAB0AAQABAAEAAAADAB4AAQABAAEAAAADAB8AAQABAAEAAAADACAAAQABAAEAAAADACEAAQABAAEAAAADACIAAQABAAEAAAADACMAAQABAAEAAAADACQAAQABAAEAAAADACUAAQABAAEAAAADACYAAQABAAEAAAADACcAAQABAAEAAAADACgAAQABAAEAAAADACkAAQABAAEAAAADACoAAQABAAEAAAADACsAAQABAAEAAAAEABAAAQABAAEAAAAEABEAAQABAAEAAAAEABIAAQABAAEAAAAEABMAAQABAAEAAAAEABQAAQABAAEAAAAEABUAAQABAAEAAAAEABYAAQABAAEAAAAEABcAAQABAAEAAAAEABgAAQABAAEAAAAEABkAAQABAAEAAAAEABoAAQABAAEAAAAEABsAAQABAAEAAAAEABwAAQABAAEAAAAEAB0AAQABAAEAAAAEAB4AAQABAAEAAAAEAB8AAQABAAEAAAAEACAAAQABAAEAAAAEACEAAQABAAEAAAAEACIAAQABAAEAAAAEACMAAQABAAEAAAAEACQAAQABAAEAAAAEACUAAQABAAEAAAAEACYAAQABAAEAAAAEACcAAQABAAEAAAAEACgAAQABAAEAAAAEACkAAQABAAEAAAAEACoAAQABAAEAAAAEACsAAQABAAEAAAAFABAAAQABAAEAAAAFABEAAQABAAEAAAAFABIAAQABAAEAAAAFABMAAQABAAEAAAAFABQAAQABAAEAAAAFABUAAQABAAEAAAAFABYAAQABAAEAAAAFABcAAQABAAEAAAAFABgAAQABAAEAAAAFABkAAQABAAEAAAAFABoAAQABAAEAAAAFABsAAQABAAEAAAAFABwAAQABAAEAAAAFAB0AAQABAAEAAAAFAB4AAQABAAEAAAAFAB8AAQABAAEAAAAFACAAAQABAAEAAAAFACEAAQABAAEAAAAFACIAAQABAAEAAAAFACMAAQABAAEAAAAFACQAAQABAAEAAAAFACUAAQABAAEAAAAFACYAAQABAAEAAAAFACcAAQABAAEAAAAFACgAAQABAAEAAAAFACkAAQABAAEAAAAFACoAAQABAAEAAAAFACsAAQABAAEAAAAGABAAAQABAAEAAAAGABEAAQABAAEAAAAGABIAAQABAAEAAAAGABMAAQABAAEAAAAGABQAAQABAAEAAAAGABUAAQABAAEAAAAGABYAAQABAAEAAAAGABcAAQABAAEAAAAGABgAAQABAAEAAAAGABkAAQABAAEAAAAGABoAAQABAAEAAAAGABsAAQABAAEAAAAGABwAAQABAAEAAAAGAB0AAQABAAEAAAAGAB4AAQABAAEAAAAGAB8AAQABAAEAAAAGACAAAQABAAEAAAAGACEAAQABAAEAAAAGACIAAQABAAEAAAAGACMAAQABAAEAAAAGACQAAQABAAEAAAAGACUAAQABAAEAAAAGACYAAQABAAEAAAAGACcAAQABAAEAAAAGACgAAQABAAEAAAAGACkAAQABAAEAAAAGACoAAQABAAEAAAAGACsAAQABAAEAAAAHABAAAQABAAEAAAAHABEAAQABAAEAAAAHABIAAQABAAEAAAAHABMAAQABAAEAAAAHABQAAQABAAEAAAAHABUAAQABAAEAAAAHABYAAQABAAEAAAAHABcAAQABAAEAAAAHABgAAQABAAEAAAAHABkAAQABAAEAAAAHABoAAQABAAEAAAAHABsAAQABAAEAAAAHABwAAQABAAEAAAAHAB0AAQABAAEAAAAHAB4AAQABAAEAAAAHAB8AAQABAAEAAAAHACAAAQABAAEAAAAHACEAAQABAAEAAAAHACIAAQABAAEAAAAHACMAAQABAAEAAAAHACQAAQABAAEAAAAHACUAAQABAAEAAAAHACYAAQABAAEAAAAHACcAAQABAAEAAAAHACgAAQABAAEAAAAHACkAAQABAAEAAAAHACoAAQABAAEAAAAHACsAAQABAAEAAAAIABAAAQABAAEAAAAIABEAAQABAAEAAAAIABIAAQABAAEAAAAIABMAAQABAAEAAAAIABQAAQABAAEAAAAIABUAAQABAAEAAAAIABYAAQABAAEAAAAIABcAAQABAAEAAAAIABgAAQABAAEAAAAIABkAAQABAAEAAAAIABoAAQABAAEAAAAIABsAAQABAAEAAAAIABwAAQABAAEAAAAIAB0AAQABAAEAAAAIAB4AAQABAAEAAAAIAB8AAQABAAEAAAAIACAAAQABAAEAAAAIACEAAQABAAEAAAAIACIAAQABAAEAAAAIACMAAQABAAEAAAAIACQAAQABAAEAAAAIACUAAQABAAEAAAAIACYAAQABAAEAAAAIACcAAQABAAEAAAAIACgAAQABAAEAAAAIACkAAQABAAEAAAAIACoAAQABAAEAAAAIACsAAQABAAEAAAAJABAAAQABAAEAAAAJABEAAQABAAEAAAAJABIAAQABAAEAAAAJABMAAQABAAEAAAAJABQAAQABAAEAAAAJABUAAQABAAEAAAAJABYAAQABAAEAAAAJABcAAQABAAEAAAAJABgAAQABAAEAAAAJABkAAQABAAEAAAAJABoAAQABAAEAAAAJABsAAQABAAEAAAAJABwAAQABAAEAAAAJAB0AAQABAAEAAAAJAB4AAQABAAEAAAAJAB8AAQABAAEAAAAJACAAAQABAAEAAAAJACEAAQABAAEAAAAJACIAAQABAAEAAAAJACMAAQABAAEAAAAJACQAAQABAAEAAAAJACUAAQABAAEAAAAJACYAAQABAAEAAAAJACcAAQABAAEAAAAJACgAAQABAAEAAAAJACkAAQABAAEAAAAJACoAAQABAAEAAAAJACsAAQABAAEAAAAKABAAAQABAAEAAAAKABEAAQABAAEAAAAKABIAAQABAAEAAAAKABMAAQABAAEAAAAKABQAAQABAAEAAAAKABUAAQABAAEAAAAKABYAAQABAAEAAAAKABcAAQABAAEAAAAKABgAAQABAAEAAAAKABkAAQABAAEAAAAKABoAAQABAAEAAAAKABsAAQABAAEAAAAKABwAAQABAAEAAAAKAB0AAQABAAEAAAAKAB4AAQABAAEAAAAKAB8AAQABAAEAAAAKACAAAQABAAEAAAAKACEAAQABAAEAAAAKACIAAQABAAEAAAAKACMAAQABAAEAAAAKACQAAQABAAEAAAAKACUAAQABAAEAAAAKACYAAQABAAEAAAAKACcAAQABAAEAAAAKACgAAQABAAEAAAAKACkAAQABAAEAAAAKACoAAQABAAEAAAAKACsAAQABAAEAAAALABAAAQABAAEAAAALABEAAQABAAEAAAALABIAAQABAAEAAAALABMAAQABAAEAAAALABQAAQABAAEAAAALABUAAQABAAEAAAALABYAAQABAAEAAAALABcAAQABAAEAAAALABgAAQABAAEAAAALABkAAQABAAEAAAALABoAAQABAAEAAAALABsAAQABAAEAAAALABwAAQABAAEAAAALAB0AAQABAAEAAAALAB4AAQABAAEAAAALAB8AAQABAAEAAAALACAAAQABAAEAAAALACEAAQABAAEAAAALACIAAQABAAEAAAALACMAAQABAAEAAAALACQAAQABAAEAAAALACUAAQABAAEAAAALACYAAQABAAEAAAALACcAAQABAAEAAAALACgAAQABAAEAAAALACkAAQABAAEAAAALACoAAQABAAEAAAALACsAAQABAAEAAAAMABAAAQABAAEAAAAMABEAAQABAAEAAAAMABIAAQABAAEAAAAMABMAAQABAAEAAAAMABQAAQABAAEAAAAMABUAAQABAAEAAAAMABYAAQABAAEAAAAMABcAAQABAAEAAAAMABgAAQABAAEAAAAMABkAAQABAAEAAAAMABoAAQABAAEAAAAMABsAAQABAAEAAAAMABwAAQABAAEAAAAMAB0AAQABAAEAAAAMAB4AAQABAAEAAAAMAB8AAQABAAEAAAAMACAAAQABAAEAAAAMACEAAQABAAEAAAAMACIAAQABAAEAAAAMACMAAQABAAEAAAAMACQAAQABAAEAAAAMACUAAQABAAEAAAAMACYAAQABAAEAAAAMACcAAQABAAEAAAAMACgAAQABAAEAAAAMACkAAQABAAEAAAAMACoAAQABAAEAAAAMACsAAQABAAEAAAANABAAAQABAAEAAAANABEAAQABAAEAAAANABIAAQABAAEAAAANABMAAQABAAEAAAANABQAAQABAAEAAAANABUAAQABAAEAAAANABYAAQABAAEAAAANABcAAQABAAEAAAANABgAAQABAAEAAAANABkAAQABAAEAAAANABoAAQABAAEAAAANABsAAQABAAEAAAANABwAAQABAAEAAAANAB0AAQABAAEAAAANAB4AAQABAAEAAAANAB8AAQABAAEAAAANACAAAQABAAEAAAANACEAAQABAAEAAAANACIAAQABAAEAAAANACMAAQABAAEAAAANACQAAQABAAEAAAANACUAAQABAAEAAAANACYAAQABAAEAAAANACcAAQABAAEAAAANACgAAQABAAEAAAANACkAAQABAAEAAAANACoAAQABAAEAAAANACsAAQABAAEAAAAOABAAAQABAAEAAAAOABEAAQABAAEAAAAOABIAAQABAAEAAAAOABMAAQABAAEAAAAOABQAAQABAAEAAAAOABUAAQABAAEAAAAOABYAAQABAAEAAAAOABcAAQABAAEAAAAOABgAAQABAAEAAAAOABkAAQABAAEAAAAOABoAAQABAAEAAAAOABsAAQABAAEAAAAOABwAAQABAAEAAAAOAB0AAQABAAEAAAAOAB4AAQABAAEAAAAOAB8AAQABAAEAAAAOACAAAQABAAEAAAAOACEAAQABAAEAAAAOACIAAQABAAEAAAAOACMAAQABAAEAAAAOACQAAQABAAEAAAAOACUAAQABAAEAAAAOACYAAQABAAEAAAAOACcAAQABAAEAAAAOACgAAQABAAEAAAAOACkAAQABAAEAAAAOACoAAQABAAEAAAAOACsAAQABAAEAAAAPABAAAQABAAEAAAAPABEAAQABAAEAAAAPABIAAQABAAEAAAAPABMAAQABAAEAAAAPABQAAQABAAEAAAAPABUAAQABAAEAAAAPABYAAQABAAEAAAAPABcAAQABAAEAAAAPABgAAQABAAEAAAAPABkAAQABAAEAAAAPABoAAQABAAEAAAAPABsAAQABAAEAAAAPABwAAQABAAEAAAAPAB0AAQABAAEAAAAPAB4AAQABAAEAAAAPAB8AAQABAAEAAAAPACAAAQABAAEAAAAPACEAAQABAAEAAAAPACIAAQABAAEAAAAPACMAAQABAAEAAAAPACQAAQABAAEAAAAPACUAAQABAAEAAAAPACYAAQABAAEAAAAPACcAAQABAAEAAAAPACgAAQABAAEAAAAPACkAAQABAAEAAAAPACoAAQABAAEAAAAPACsAAQABAAEAAAAQABAAAQABAAEAAAAQABEAAQABAAEAAAAQABIAAQABAAEAAAAQABMAAQABAAEAAAAQABQAAQABAAEAAAAQABUAAQABAAEAAAAQABYAAQABAAEAAAAQABcAAQABAAEAAAAQABgAAQABAAEAAAAQABkAAQABAAEAAAAQABoAAQABAAEAAAAQABsAAQABAAEAAAAQABwAAQABAAEAAAAQAB0AAQABAAEAAAAQAB4AAQABAAEAAAAQAB8AAQABAAEAAAAQACAAAQABAAEAAAAQACEAAQABAAEAAAAQACIAAQABAAEAAAAQACMAAQABAAEAAAAQACQAAQABAAEAAAAQACUAAQABAAEAAAAQACYAAQABAAEAAAAQACcAAQABAAEAAAAQACgAAQABAAEAAAAQACkAAQABAAEAAAAQACoAAQABAAEAAAAQACsAAQABAAEAAAARABAAAQABAAEAAAARABEAAQABAAEAAAARABIAAQABAAEAAAARABMAAQABAAEAAAARABQAAQABAAEAAAARABUAAQABAAEAAAARABYAAQABAAEAAAARABcAAQABAAEAAAARABgAAQABAAEAAAARABkAAQABAAEAAAARABoAAQABAAEAAAARABsAAQABAAEAAAARABwAAQABAAEAAAARAB0AAQABAAEAAAARAB4AAQABAAEAAAARAB8AAQABAAEAAAARACAAAQABAAEAAAARACEAAQABAAEAAAARACIAAQABAAEAAAARACMAAQABAAEAAAARACQAAQABAAEAAAARACUAAQABAAEAAAARACYAAQABAAEAAAARACcAAQABAAEAAAARACgAAQABAAEAAAARACkAAQABAAEAAAARACoAAQABAAEAAAARACsAAQABAAEAAAASABAAAQABAAEAAAASABEAAQABAAEAAAASABIAAQABAAEAAAASABMAAQABAAEAAAASABQAAQABAAEAAAASABUAAQABAAEAAAASABYAAQABAAEAAAASABcAAQABAAEAAAASABgAAQABAAEAAAASABkAAQABAAEAAAASABoAAQABAAEAAAASABsAAQABAAEAAAASABwAAQABAAEAAAASAB0AAQABAAEAAAASAB4AAQABAAEAAAASAB8AAQABAAEAAAASACAAAQABAAEAAAASACEAAQABAAEAAAASACIAAQABAAEAAAASACMAAQABAAEAAAASACQAAQABAAEAAAASACUAAQABAAEAAAASACYAAQABAAEAAAASACcAAQABAAEAAAASACgAAQABAAEAAAASACkAAQABAAEAAAASACoAAQABAAEAAAASACsAAQABAAEAAAATABAAAQABAAEAAAATABEAAQABAAEAAAATABIAAQABAAEAAAATABMAAQABAAEAAAATABQAAQABAAEAAAATABUAAQABAAEAAAATABYAAQABAAEAAAATABcAAQABAAEAAAATABgAAQABAAEAAAATABkAAQABAAEAAAATABoAAQABAAEAAAATABsAAQABAAEAAAATABwAAQABAAEAAAATAB0AAQABAAEAAAATAB4AAQABAAEAAAATAB8AAQABAAEAAAATACAAAQABAAEAAAATACEAAQABAAEAAAATACIAAQABAAEAAAATACMAAQABAAEAAAATACQAAQABAAEAAAATACUAAQABAAEAAAATACYAAQABAAEAAAATACcAAQABAAEAAAATACgAAQABAAEAAAATACkAAQABAAEAAAATACoAAQABAAEAAAATACsAAQABAAEAAAA=")
 tile_set = ExtResource("8_hj5j6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+ratio = 1.7778
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/AspectRatioContainer"]
 layout_mode = 2
-theme_override_constants/separation = 64
-alignment = 1
+mouse_filter = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 16
 
-[node name="Title" type="TextureRect" parent="CanvasLayer/CenterContainer/HBoxContainer"]
+[node name="Title" type="TextureRect" parent="CanvasLayer/AspectRatioContainer/MarginContainer"]
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 4
 texture = ExtResource("9_ul6aj")
 
-[node name="MainMenu" type="VBoxContainer" parent="CanvasLayer/CenterContainer/HBoxContainer"]
+[node name="MainMenu" type="VBoxContainer" parent="CanvasLayer/AspectRatioContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 8
+size_flags_vertical = 4
 
-[node name="StartGame2" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/MainMenu"]
-visible = false
-layout_mode = 2
-text = "Start"
-script = ExtResource("1_sknds")
-scene_file = "uid://c2v7s5fjbeqhy"
-
-[node name="StartButton" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/MainMenu"]
+[node name="StartButton" type="Button" parent="CanvasLayer/AspectRatioContainer/MarginContainer/MainMenu"]
 layout_mode = 2
 text = "Start"
 
-[node name="MakeParentControllerFocusStart" type="Node" parent="CanvasLayer/CenterContainer/HBoxContainer/MainMenu/StartButton"]
+[node name="MakeParentControllerFocusStart" type="Node" parent="CanvasLayer/AspectRatioContainer/MarginContainer/MainMenu/StartButton"]
 script = ExtResource("3_mcab4")
 metadata/_custom_type_script = "uid://b6827tfdgmrq2"
 
-[node name="ChooseLevelButton" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/MainMenu" node_paths=PackedStringArray("panel")]
+[node name="ChooseLevelButton" type="Button" parent="CanvasLayer/AspectRatioContainer/MarginContainer/MainMenu" node_paths=PackedStringArray("panel")]
 layout_mode = 2
 text = "Choose Level"
 script = ExtResource("16_1fmbc")
 panel = NodePath("../../../../ChooseLevelPanel")
 
-[node name="SettingButton" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/MainMenu" node_paths=PackedStringArray("panel")]
+[node name="SettingButton" type="Button" parent="CanvasLayer/AspectRatioContainer/MarginContainer/MainMenu" node_paths=PackedStringArray("panel")]
 layout_mode = 2
 text = "Settings"
 script = ExtResource("16_1fmbc")
 panel = NodePath("../../../../OptionsPanel")
 
-[node name="CreditButton" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/MainMenu"]
+[node name="CreditButton" type="Button" parent="CanvasLayer/AspectRatioContainer/MarginContainer/MainMenu"]
 layout_mode = 2
 text = "Credits"
 script = ExtResource("1_sknds")
 scene_file = "uid://cod16iwe4mb0c"
 
-[node name="ExitButton" type="TextureButton" parent="CanvasLayer/CenterContainer/HBoxContainer/MainMenu"]
+[node name="ExitButton" type="TextureButton" parent="CanvasLayer/AspectRatioContainer/MarginContainer/MainMenu"]
 layout_mode = 2
 size_flags_horizontal = 8
 texture_normal = SubResource("AtlasTexture_1fmbc")
@@ -328,30 +359,84 @@ texture_pressed = SubResource("AtlasTexture_i3bhe")
 texture_hover = SubResource("AtlasTexture_5i15u")
 texture_focused = SubResource("AtlasTexture_yvy2q")
 
-[node name="LoadMenu" type="VBoxContainer" parent="CanvasLayer/CenterContainer/HBoxContainer"]
+[node name="LoadMenu" type="MarginContainer" parent="CanvasLayer/AspectRatioContainer/MarginContainer"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
 
-[node name="MenuItemSave1" parent="CanvasLayer/CenterContainer/HBoxContainer/LoadMenu" instance=ExtResource("17_i3bhe")]
+[node name="LoadMenuItems" type="VBoxContainer" parent="CanvasLayer/AspectRatioContainer/MarginContainer/LoadMenu"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+script = ExtResource("18_hj5j6")
+
+[node name="MenuItemSave1" parent="CanvasLayer/AspectRatioContainer/MarginContainer/LoadMenu/LoadMenuItems" instance=ExtResource("17_i3bhe")]
 layout_mode = 2
 
-[node name="MakeParentControllerFocusStart" type="Node" parent="CanvasLayer/CenterContainer/HBoxContainer/LoadMenu/MenuItemSave1/Button" index="0"]
+[node name="MakeParentControllerFocusStart" type="Node" parent="CanvasLayer/AspectRatioContainer/MarginContainer/LoadMenu/LoadMenuItems/MenuItemSave1/Button" index="0"]
 script = ExtResource("3_mcab4")
 metadata/_custom_type_script = "uid://b6827tfdgmrq2"
 
-[node name="MenuItemSave2" parent="CanvasLayer/CenterContainer/HBoxContainer/LoadMenu" instance=ExtResource("17_i3bhe")]
+[node name="MenuItemSave2" parent="CanvasLayer/AspectRatioContainer/MarginContainer/LoadMenu/LoadMenuItems" instance=ExtResource("17_i3bhe")]
 layout_mode = 2
 save_index = 1
 
-[node name="MenuItemSave3" parent="CanvasLayer/CenterContainer/HBoxContainer/LoadMenu" instance=ExtResource("17_i3bhe")]
+[node name="MenuItemSave3" parent="CanvasLayer/AspectRatioContainer/MarginContainer/LoadMenu/LoadMenuItems" instance=ExtResource("17_i3bhe")]
 layout_mode = 2
 save_index = 2
 
-[node name="LoadMenuBackButton" type="Button" parent="CanvasLayer/CenterContainer/HBoxContainer/LoadMenu"]
+[node name="LoadMenuBackButton" type="Button" parent="CanvasLayer/AspectRatioContainer/MarginContainer/LoadMenu/LoadMenuItems"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "back"
+
+[node name="SavePrompts" type="HBoxContainer" parent="CanvasLayer/AspectRatioContainer/MarginContainer/LoadMenu"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/AspectRatioContainer/MarginContainer/LoadMenu/SavePrompts"]
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="InputPrompt" type="TextureRect" parent="CanvasLayer/AspectRatioContainer/MarginContainer/LoadMenu/SavePrompts/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_hj5j6")
+script = ExtResource("18_5i15u")
+controller_texture = SubResource("AtlasTexture_hj5j6")
+keyboard_texture = SubResource("AtlasTexture_ul6aj")
+metadata/_custom_type_script = "uid://dy0scq6mq6mid"
+
+[node name="Label" type="Label" parent="CanvasLayer/AspectRatioContainer/MarginContainer/LoadMenu/SavePrompts/HBoxContainer"]
+layout_mode = 2
+text = "load game"
+label_settings = SubResource("LabelSettings_cqrje")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/AspectRatioContainer/MarginContainer/LoadMenu/SavePrompts"]
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="InputPrompt" type="TextureRect" parent="CanvasLayer/AspectRatioContainer/MarginContainer/LoadMenu/SavePrompts/HBoxContainer2"]
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_m2o13")
+script = ExtResource("18_5i15u")
+controller_texture = SubResource("AtlasTexture_m2o13")
+keyboard_texture = SubResource("AtlasTexture_c61yf")
+metadata/_custom_type_script = "uid://dy0scq6mq6mid"
+
+[node name="Label" type="Label" parent="CanvasLayer/AspectRatioContainer/MarginContainer/LoadMenu/SavePrompts/HBoxContainer2"]
+layout_mode = 2
+text = "Delete Save"
+label_settings = SubResource("LabelSettings_cqrje")
 
 [node name="OptionsPanel" parent="CanvasLayer" instance=ExtResource("16_m2o13")]
 visible = false
@@ -461,11 +546,11 @@ text = "prototype"
 script = ExtResource("1_sknds")
 scene_file = "res://stages/levels/prototype/prototype.tscn"
 
-[connection signal="pressed" from="CanvasLayer/CenterContainer/HBoxContainer/MainMenu/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/CenterContainer/HBoxContainer/MainMenu/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="selected" from="CanvasLayer/CenterContainer/HBoxContainer/LoadMenu/MenuItemSave1" to="." method="_on_menu_item_save_selected"]
-[connection signal="selected" from="CanvasLayer/CenterContainer/HBoxContainer/LoadMenu/MenuItemSave2" to="." method="_on_menu_item_save_selected"]
-[connection signal="selected" from="CanvasLayer/CenterContainer/HBoxContainer/LoadMenu/MenuItemSave3" to="." method="_on_menu_item_save_selected"]
-[connection signal="pressed" from="CanvasLayer/CenterContainer/HBoxContainer/LoadMenu/LoadMenuBackButton" to="." method="_on_load_menu_back_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/MarginContainer/MainMenu/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/MarginContainer/MainMenu/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="selected" from="CanvasLayer/AspectRatioContainer/MarginContainer/LoadMenu/LoadMenuItems/MenuItemSave1" to="." method="_on_menu_item_save_selected"]
+[connection signal="selected" from="CanvasLayer/AspectRatioContainer/MarginContainer/LoadMenu/LoadMenuItems/MenuItemSave2" to="." method="_on_menu_item_save_selected"]
+[connection signal="selected" from="CanvasLayer/AspectRatioContainer/MarginContainer/LoadMenu/LoadMenuItems/MenuItemSave3" to="." method="_on_menu_item_save_selected"]
+[connection signal="pressed" from="CanvasLayer/AspectRatioContainer/MarginContainer/LoadMenu/LoadMenuItems/LoadMenuBackButton" to="." method="_on_load_menu_back_button_pressed"]
 
-[editable path="CanvasLayer/CenterContainer/HBoxContainer/LoadMenu/MenuItemSave1"]
+[editable path="CanvasLayer/AspectRatioContainer/MarginContainer/LoadMenu/LoadMenuItems/MenuItemSave1"]

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cen31lisf5s7j" path="res://stages/main_menu/UI/UI.png" id="1_5x3i2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emioh"]
-bg_color = Color(0, 0, 0, 0.533333)
+bg_color = Color(0, 0, 0, 0.733333)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_llqld"]
 atlas = ExtResource("1_5x3i2")

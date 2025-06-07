@@ -1,5 +1,5 @@
 @tool
-class_name MeuItemSave
+class_name MenuItemSave
 extends MarginContainer
 
 signal _model_updated()
@@ -54,7 +54,11 @@ func update_view() -> void:
 
 func load_data() -> void:
 	_save_data = SaveData.new(save_index)
-	pass
+
+
+func erase_data() -> void:
+	_save_data.amnesia()
+	_model_updated.emit()
 
 
 func _on_button_button_down() -> void:

@@ -5,12 +5,12 @@ extends Node2D
 var default_starting_scene: String
 
 
+func _ready() -> void:
+	%BG_Joes
+
+
 func _stage_out(tween: Tween, fade_to_color: Callable) -> void:
-	var proj_size = Vector2(
-		ProjectSettings.get_setting('display/window/size/viewport_width'),
-		ProjectSettings.get_setting('display/window/size/viewport_height'))
-	var cur_size = DisplayServer.window_get_size()
-	var width = proj_size.x / proj_size.aspect() * cur_size.aspect()
+	var width = get_viewport_rect().size.x
 	
 	tween.set_trans(Tween.TRANS_QUAD)
 	tween.tween_callback(func():

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg4yifukwb8op"
-path="res://.godot/imported/garden_dirt_tileset-vhoyer.png-16a0bbac465d3716385c2ec45de6a8a8.ctex"
+uid="uid://dulnosb4sd63d"
+path="res://.godot/imported/garden_dirtgrass_tileset.png-e9eb7dd7d636761eb8f9ebc7eb332920.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/tile_set/garden/garden_dirt_tileset-vhoyer.png"
-dest_files=["res://.godot/imported/garden_dirt_tileset-vhoyer.png-16a0bbac465d3716385c2ec45de6a8a8.ctex"]
+source_file="res://entities/tile_set/garden/garden_dirtgrass_tileset.png"
+dest_files=["res://.godot/imported/garden_dirtgrass_tileset.png-e9eb7dd7d636761eb8f9ebc7eb332920.ctex"]
 
 [params]
 

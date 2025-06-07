@@ -24,6 +24,7 @@ GlobalBGM="*res://addons/godot-devkit/Audio/global_bgm.gd"
 StageManager="*res://addons/godot-devkit/StageManager/stage_manager.gd"
 SettingsManager="*res://entities/menu_options/settings_manager.gd"
 SaveManager="*res://entities/save_system/save_manager.gd"
+GlobalModal="*res://entities/global_modal/global_modal.tscn"
 
 [debug]
 

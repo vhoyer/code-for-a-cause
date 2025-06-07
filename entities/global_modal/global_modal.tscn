@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddjkqfarxaepy"]
+
+[ext_resource type="Script" uid="uid://csxkeyg340hv8" path="res://entities/global_modal/global_modal.gd" id="1_wnkam"]
+[ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://addons/godot-devkit/UI/make_parent/make_parent_controller_focus_start.gd" id="2_e8bn0"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 120
+script = ExtResource("1_wnkam")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"BackdropPanel"
+
+[node name="GlobalModal" type="CenterContainer" parent="."]
+offset_left = 64.0
+offset_right = 576.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GlobalModal"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="RichTextLabel" parent="GlobalModal/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+text = "Are you sure that's what you really want to do?
+this is kind of ireversable"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GlobalModal/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="ButtonConfirm" type="Button" parent="GlobalModal/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "ok"
+
+[node name="MakeParentControllerFocusStart" type="Node" parent="GlobalModal/VBoxContainer/HBoxContainer/ButtonConfirm"]
+script = ExtResource("2_e8bn0")
+metadata/_custom_type_script = "uid://b6827tfdgmrq2"
+
+[node name="ButtonCancel" type="Button" parent="GlobalModal/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "cancel"
+
+[connection signal="pressed" from="GlobalModal/VBoxContainer/HBoxContainer/ButtonConfirm" to="." method="_on_button_confirm_pressed"]
+[connection signal="pressed" from="GlobalModal/VBoxContainer/HBoxContainer/ButtonCancel" to="." method="_on_button_cancel_pressed"]

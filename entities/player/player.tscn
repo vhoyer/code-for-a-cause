@@ -205,6 +205,8 @@ controller_input = SubResource("AtlasTexture_gx6sm")
 keyboard_input = SubResource("AtlasTexture_yqrof")
 
 [node name="JoeHudFloatingHolder" type="Control" parent="CanvasLayer"]
+process_mode = 4
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

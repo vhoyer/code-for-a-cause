@@ -10,8 +10,8 @@ var type: String = 'factory':
 		_model_updated.emit()
 
 const MAP:= {
-	'garden': "res://entities/background/garden/garden_background.tscn",
-	'factory': "res://entities/background/factory/factory_background.tscn",
+	'garden': "uid://bd35q4pk3w2u7",
+	'factory': "uid://bhylkbcc0ofh1",
 }
 
 func _ready() -> void:

@@ -291,6 +291,7 @@ keyboard_input = SubResource("AtlasTexture_t1t22")
 floating_center = NodePath("..")
 
 [node name="SpeedrunTimer" type="MarginContainer" parent="CanvasLayer"]
+process_mode = 3
 offset_right = 160.0
 offset_bottom = 69.0
 theme_override_constants/margin_left = 16

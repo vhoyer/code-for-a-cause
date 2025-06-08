@@ -56,7 +56,7 @@ msgid "Start"
 msgstr "Mulai"
 
 #: stages/main_menu/main_menu.tscn
-msgid "choose level"
+msgid "Choose Level"
 msgstr "pilih level"
 
 #: stages/main_menu/main_menu.tscn entities/menu_pause/menu_pause.tscn

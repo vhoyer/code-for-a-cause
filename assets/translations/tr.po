@@ -2,10 +2,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joe Adventure\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8-bit\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
 
 msgid "On"
 msgstr "Açık"
@@ -55,8 +60,8 @@ msgid "Start"
 msgstr "Başla"
 
 #: stages/main_menu/main_menu.tscn
-msgid "choose level"
-msgstr "seviye seç"
+msgid "Choose Level"
+msgstr "Bölüm Seç"
 
 #: stages/main_menu/main_menu.tscn entities/menu_pause/menu_pause.tscn
 msgid "Settings"
@@ -68,43 +73,43 @@ msgstr "Emeği Geçenler"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level 1"
-msgstr "seviye 1"
+msgstr "Bölüm 1"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level 2"
-msgstr "seviye 2"
+msgstr "Bölüm 2"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level 3"
-msgstr "seviye 3"
+msgstr "Bölüm 3"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level 4"
-msgstr "seviye 4"
+msgstr "Bölüm 4"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level 5"
-msgstr "seviye 5"
+msgstr "Bölüm 5"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level mama"
-msgstr "anne seviyesi"
+msgstr "Ana Bölümü"
 
 #: stages/main_menu/main_menu.tscn
 msgid "level test"
-msgstr "test seviyesi"
+msgstr "Test Bölümü"
 
 #: stages/main_menu/main_menu.tscn
 msgid "prototype"
-msgstr "prototip"
+msgstr "Prototip"
 
 #: entities/menu_death/menu_death.tscn
 msgid "You died"
-msgstr "Öldünüz"
+msgstr "Öldün"
 
 #: entities/menu_death/menu_death.tscn
 msgid "Move or Explode!!"
-msgstr "Hareket et ya da Patla!!"
+msgstr "Kımılda yoksa havaya uçarsın!"
 
 #: entities/menu_death/menu_death.tscn entities/menu_pause/menu_pause.tscn
 msgid "Restart"
@@ -124,7 +129,7 @@ msgstr "Dil"
 
 #: entities/menu_options/menu_options.tscn
 msgid "Screen shake"
-msgstr "Ekran sarsıntısı"
+msgstr "Ekran Sarsıntısı"
 
 #: entities/menu_options/menu_options.tscn
 msgid "Master"
@@ -140,11 +145,23 @@ msgstr "Özel Efektler"
 
 #: entities/menu_options/menu_options.tscn
 msgid "speedrun timer"
-msgstr "hızlı koşu zamanlayıcısı"
+msgstr "Speedrun Saati"
+
+#: entities/menu_options/menu_options.tscn
+msgid "Fullscreen"
+msgstr "Tam Ekran"
 
 #: entities/menu_pause/menu_pause.tscn
 msgid "Paused"
 msgstr "Duraklatıldı"
+
+#: entities/menu_pause/menu_pause.tscn
+msgid "Save and Quit"
+msgstr "Kaydet ve Çık"
+
+#: entities/menu_pause/menu_pause.tscn
+msgid "Resume"
+msgstr "Devam Et"
 
 #: entities/menu_pause/menu_pause.tscn
 msgid "Resume"

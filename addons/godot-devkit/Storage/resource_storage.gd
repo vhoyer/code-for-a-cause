@@ -58,3 +58,7 @@ func override_with_backup() -> void:
 	var loaded = ResourceLoader.load(_get_path_backup(), "", ResourceLoader.CACHE_MODE_IGNORE)
 	ResourceSaver.save(loaded, _get_path())
 	is_cache_valid[_scope] = false
+
+
+func _list_item_keys() -> PackedStringArray:
+	return _storage.data.keys()

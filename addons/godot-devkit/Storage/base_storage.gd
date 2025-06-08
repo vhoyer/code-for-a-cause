@@ -26,3 +26,18 @@ func save_backup() -> void:
 
 func override_with_backup() -> void:
 	push_error('override_with_backup needs to be overwritten')
+
+
+func erase_storage() -> void:
+	push_error('erase_storage needs to be overwritten')
+
+
+func _list_item_keys() -> PackedStringArray:
+	push_error('_list_item_keys needs to be overwritten')
+	return []
+
+
+func _override_with(storage: BaseStorage, prefix: String = '') -> void:
+	for key: String in storage._list_item_keys():
+		if not key.begins_with(prefix): continue
+		set_item(key, storage.get_item(key, null))

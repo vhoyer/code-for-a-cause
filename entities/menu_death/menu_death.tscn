@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://rqt5jwoc64ne" path="res://entities/menu_death/menu_death.gd" id="1_bfi3f"]
 [ext_resource type="Script" uid="uid://blradsu2fddrt" path="res://addons/godot-devkit/UI/ui_elements/buttons/restart_button.gd" id="1_s35jv"]
-[ext_resource type="Script" uid="uid://cxn51xclpikx4" path="res://addons/godot-devkit/StageManager/stage_changer_base_button.gd" id="2_8sust"]
 [ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://addons/godot-devkit/UI/make_parent/make_parent_controller_focus_start.gd" id="3_0xv41"]
+[ext_resource type="Script" uid="uid://dtf46gb1ewnbo" path="res://entities/menu_pause/main_menu_btn.gd" id="4_ftx3l"]
 
 [node name="MenuDeath" type="CanvasLayer"]
 script = ExtResource("1_bfi3f")
@@ -46,6 +46,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_type_variation = &"BodyLabel"
 text = "Move or Explode!!"
+horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -63,6 +64,6 @@ metadata/_custom_type_script = "uid://b6827tfdgmrq2"
 [node name="MainMenuButton" type="Button" parent="Panel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Main Menu"
-script = ExtResource("2_8sust")
+text = "Save and Quit"
+script = ExtResource("4_ftx3l")
 method = "back to start"

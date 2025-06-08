@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://lexgt2mmoxam" path="res://entities/menu_pause/menu_pause.gd" id="1_3rksr"]
 [ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://addons/godot-devkit/UI/make_parent/make_parent_controller_focus_start.gd" id="2_xhhv8"]
 [ext_resource type="Script" uid="uid://dr8lo2ogpw1hn" path="res://addons/godot-devkit/UI/ui_elements/buttons/button_panel_show.gd" id="3_8bbfg"]
-[ext_resource type="Script" uid="uid://cxn51xclpikx4" path="res://addons/godot-devkit/StageManager/stage_changer_base_button.gd" id="3_rdbav"]
 [ext_resource type="PackedScene" uid="uid://dclerjnyqfida" path="res://entities/menu_options/menu_options.tscn" id="4_6t313"]
+[ext_resource type="Script" uid="uid://dtf46gb1ewnbo" path="res://entities/menu_pause/main_menu_btn.gd" id="4_8bbfg"]
 
 [node name="MenuPause" type="CanvasLayer"]
 process_mode = 3
@@ -63,8 +63,8 @@ panel = NodePath("../../../../../../OptionsPanel")
 
 [node name="MainMenu" type="Button" parent="Panel/CenterContainer/PanelContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Main Menu"
-script = ExtResource("3_rdbav")
+text = "Save and Quit"
+script = ExtResource("4_8bbfg")
 method = "back to start"
 
 [node name="OptionsPanel" parent="." instance=ExtResource("4_6t313")]

@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://ct2321lwrywpi" path="res://entities/button/ButtonUnpress.ogg" id="4_x1tbq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2arti"]
-size = Vector2(52, 14)
+size = Vector2(52, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4lu2v"]
 resource_local_to_scene = true
@@ -37,8 +37,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationArea"]
-visible = false
-position = Vector2(0, -7)
+position = Vector2(0, -17)
 shape = SubResource("RectangleShape2D_2arti")
 debug_color = Color(0.845326, 0.336928, 0.455054, 0.42)
 

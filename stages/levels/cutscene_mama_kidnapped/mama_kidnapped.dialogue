@@ -1,0 +1,13 @@
+~ start
+do! next_frame(0)
+once upon a time
+do next_frame(1)
+do! next_frame(2)
+where joe mama
+do next_frame(3)
+do! next_frame(4)
+was kidnapped
+do! next_frame(5)
+to the food factory!
+do next_level()
+=> END

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://be34lcv1e7vcr"
+path="res://.godot/imported/mama_kidnapped.dialogue-c530499379d34f384ad27fa1c5af6d99.tres"
+
+[deps]
+
+source_file="res://stages/levels/cutscene_mama_kidnapped/mama_kidnapped.dialogue"
+dest_files=["res://.godot/imported/mama_kidnapped.dialogue-c530499379d34f384ad27fa1c5af6d99.tres"]
+
+[params]
+
+defaults=true

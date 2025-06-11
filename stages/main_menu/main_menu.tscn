@@ -166,7 +166,7 @@ region = Rect2(224, 256, 32, 32)
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_i3bhe")
-default_starting_scene = "uid://c2v7s5fjbeqhy"
+default_starting_scene = "uid://c0gyptt4epmw"
 
 [node name="GlobalBGMRemote" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_1fmbc")

@@ -2,7 +2,6 @@ class_name SpeedrunTimer
 extends MarginContainer
 
 @onready var stopwatch_global: Stopwatch = %StopwatchGlobal
-@onready var stopwatch_local: Stopwatch = %StopwatchLocal
 
 func _ready() -> void:
 	_on_settings_updated('speedrun_timer')

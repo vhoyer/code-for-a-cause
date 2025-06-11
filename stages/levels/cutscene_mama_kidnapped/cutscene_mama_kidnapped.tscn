@@ -13,20 +13,20 @@ scale = Vector2(3, 3)
 texture = ExtResource("1_8x21c")
 centered = false
 
-[node name="Marker2D0" type="Marker2D" parent="FramePositions" index="0"]
+[node name="MamaFace" type="Marker2D" parent="FramePositions" index="0"]
 position = Vector2(417, 420)
 
-[node name="Marker2D1" type="Marker2D" parent="FramePositions" index="1"]
+[node name="WordJoe" type="Marker2D" parent="FramePositions" index="1"]
 position = Vector2(331, 192)
 
-[node name="Marker2D2" type="Marker2D" parent="FramePositions" index="2"]
+[node name="WordMama" type="Marker2D" parent="FramePositions" index="2"]
 position = Vector2(745, 156)
 
-[node name="Marker2D3" type="Marker2D" parent="FramePositions" index="3"]
+[node name="WordGets" type="Marker2D" parent="FramePositions" index="3"]
 position = Vector2(319, 856)
 
-[node name="Marker2D4" type="Marker2D" parent="FramePositions" index="4"]
-position = Vector2(969, 927)
+[node name="WordKidnapped" type="Marker2D" parent="FramePositions" index="4"]
+position = Vector2(973, 982)
 
-[node name="Marker2D5" type="Marker2D" parent="FramePositions" index="5"]
+[node name="Truck" type="Marker2D" parent="FramePositions" index="5"]
 position = Vector2(1137, 551)

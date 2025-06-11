@@ -1,13 +1,13 @@
 ~ start
-do! next_frame(0)
+do! go_to('MamaFace')
 once upon a time
-do next_frame(1)
-do! next_frame(2)
+do go_to('WordJoe')
+do! go_to('WordMama')
 where joe mama
-do next_frame(3)
-do! next_frame(4)
+do go_to('WordGets')
+do! go_to('WordKidnapped')
 was kidnapped
-do! next_frame(5)
+do! go_to('Truck')
 to the food factory!
 do next_level()
 => END

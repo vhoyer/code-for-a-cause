@@ -1,9 +1,16 @@
-[gd_resource type="Theme" load_steps=33 format=3 uid="uid://mktlkqcir8k2"]
+[gd_resource type="Theme" load_steps=34 format=3 uid="uid://mktlkqcir8k2"]
 
 [ext_resource type="Texture2D" uid="uid://cen31lisf5s7j" path="res://stages/main_menu/UI/UI.png" id="1_5x3i2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emioh"]
 bg_color = Color(0, 0, 0, 0.733333)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5x3i2"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 0, 0, 0.866667)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_llqld"]
 atlas = ExtResource("1_5x3i2")
@@ -207,6 +214,8 @@ texture_margin_bottom = 10.0
 [resource]
 BackdropPanel/base_type = &"Panel"
 BackdropPanel/styles/panel = SubResource("StyleBoxFlat_emioh")
+BackdropPanelContainer/base_type = &"PanelContainer"
+BackdropPanelContainer/styles/panel = SubResource("StyleBoxFlat_5x3i2")
 BodyLabel/base_type = &"Label"
 BodyLabel/colors/font_color = Color(0.12549, 0.180392, 0.215686, 1)
 BoltedPanelContainer/base_type = &"PanelContainer"

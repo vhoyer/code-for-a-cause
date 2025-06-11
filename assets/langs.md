@@ -12,3 +12,4 @@
 | Traditional Chinese | `zh-TW` |
 | Korean              | `ko`    |
 | Turkish             | `tr`    |
+| Indonesian          | `id`    |

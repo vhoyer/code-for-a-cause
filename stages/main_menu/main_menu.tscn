@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://b6827tfdgmrq2" path="res://addons/godot-devkit/UI/make_parent/make_parent_controller_focus_start.gd" id="3_mcab4"]
 [ext_resource type="Texture2D" uid="uid://bpxt6b6sae2pv" path="res://entities/joe/assets/Joe Palette/Input Palette.png" id="3_yb6nn"]
 [ext_resource type="Texture2D" uid="uid://02h5cfuh1sa" path="res://entities/joe/assets/Joe Palette/Joe Palette 1.png" id="4_1fmbc"]
-[ext_resource type="Script" uid="uid://bdsmgvivx4k0e" path="res://stages/main_menu/bg.gd" id="4_yvy2q"]
+[ext_resource type="Script" path="res://stages/main_menu/bg.gd" id="4_yvy2q"]
 [ext_resource type="Texture2D" uid="uid://c16xn62acx3wt" path="res://entities/joe/assets/Joe Palette/Joe Palette 2.png" id="5_i3bhe"]
 [ext_resource type="Texture2D" uid="uid://c846wnvhks87i" path="res://entities/joe/assets/Joe Palette/Joe Palette 3.png" id="6_5i15u"]
 [ext_resource type="Texture2D" uid="uid://cpu32fn0r0hgq" path="res://entities/background/factory/Background Parallax smal.png" id="7_yvy2q"]
@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://d2nebhyjc2lvw" path="res://entities/menu_item_save/meu_item_save.tscn" id="17_i3bhe"]
 [ext_resource type="Script" uid="uid://drpcgykc8fxy6" path="res://addons/godot-devkit/UI/ui_elements/buttons/button_panel_hide.gd" id="17_yb6nn"]
 [ext_resource type="Script" uid="uid://dy0scq6mq6mid" path="res://addons/godot-devkit/UI/ui_elements/input_prompt/input_prompt.gd" id="18_5i15u"]
-[ext_resource type="Script" uid="uid://b6joos17t40vg" path="res://stages/main_menu/load_menu_items.gd" id="18_hj5j6"]
+[ext_resource type="Script" path="res://stages/main_menu/load_menu_items.gd" id="18_hj5j6"]
 [ext_resource type="Script" uid="uid://d0rjcb54sccp8" path="res://stages/level_select/level_list.gd" id="20_c61yf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4cwpn"]
@@ -166,7 +166,7 @@ region = Rect2(224, 256, 32, 32)
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_i3bhe")
-default_starting_scene = "uid://c0gyptt4epmw"
+default_starting_scene = "uid://cmt3v3lwv6r1d"
 
 [node name="GlobalBGMRemote" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_1fmbc")

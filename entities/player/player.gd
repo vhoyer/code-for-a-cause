@@ -124,6 +124,7 @@ func process_switch(action: StringName, index: int) -> void:
 	if SaveManager.data.new_game_plus <= 1:
 		selected_joe.velocity.y -= 200
 	selected_joe.add_to_group('active_actor')
+	SaveManager.data.increment_joe_switch()
 
 
 func _on_selected_joe_changed(_joe: Joe) -> void:

@@ -214,9 +214,9 @@ autoplay = "Walk"
 
 [node name="Base" type="Parallax2D" parent="BG"]
 scroll_scale = Vector2(1, 0)
-repeat_size = Vector2(640, 384)
+repeat_size = Vector2(640, 0)
 autoscroll = Vector2(-3, 0)
-repeat_times = 3
+repeat_times = 6
 follow_viewport = false
 
 [node name="BackgroundParallaxSmal" type="Sprite2D" parent="BG/Base"]
@@ -229,7 +229,7 @@ hframes = 5
 scroll_scale = Vector2(1, 0)
 repeat_size = Vector2(640, 0)
 autoscroll = Vector2(-10, 0)
-repeat_times = 3
+repeat_times = 6
 follow_viewport = false
 
 [node name="BackgroundParallaxSmal" type="Sprite2D" parent="BG/Base2"]
@@ -243,7 +243,7 @@ frame = 1
 scroll_scale = Vector2(1, 0)
 repeat_size = Vector2(640, 0)
 autoscroll = Vector2(-20, 0)
-repeat_times = 3
+repeat_times = 6
 follow_viewport = false
 
 [node name="BackgroundParallaxSmal" type="Sprite2D" parent="BG/Base3"]
@@ -257,7 +257,7 @@ frame = 2
 scroll_scale = Vector2(1, 0)
 repeat_size = Vector2(640, 0)
 autoscroll = Vector2(-27, 0)
-repeat_times = 3
+repeat_times = 6
 follow_viewport = false
 
 [node name="BackgroundParallaxSmal" type="Sprite2D" parent="BG/Base4"]
@@ -271,7 +271,7 @@ frame = 3
 scroll_scale = Vector2(1, 0)
 repeat_size = Vector2(640, 0)
 autoscroll = Vector2(-32, 0)
-repeat_times = 3
+repeat_times = 6
 follow_viewport = false
 
 [node name="BackgroundParallaxSmal" type="Sprite2D" parent="BG/Base5"]
@@ -285,7 +285,7 @@ frame = 4
 scroll_scale = Vector2(1, 0)
 repeat_size = Vector2(640, 0)
 autoscroll = Vector2(-35, 0)
-repeat_times = 3
+repeat_times = 6
 follow_viewport = false
 
 [node name="fg" type="TileMapLayer" parent="BG/Base6"]

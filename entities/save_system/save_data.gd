@@ -60,7 +60,8 @@ func increment_deaths() -> void:
 
 
 func increment_joe_switch() -> void:
-	_short_term.set_item('switch_count', switch_count + 1)
+	var key = 'switch_count[%s]' % [LevelsManager.current.area]
+	_short_term.set_item(key, switch_count + 1)
 
 
 func complete_levels() -> void:

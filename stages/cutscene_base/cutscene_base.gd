@@ -6,9 +6,6 @@ signal active_changed(active: bool)
 @export
 var dialogue: DialogueResource
 
-@export_file("*.tscn", "*.scn")
-var next_level_path: String
-
 
 @onready var positions: Node = %FramePositions
 @onready var camera: Camera2D = %Camera2D
@@ -23,7 +20,3 @@ func go_to(name: String) -> void:
 	tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 	tween.tween_property(camera, 'global_position', marker.global_position, 1)
 	await tween.finished
-
-
-func next_level() -> void:
-	StageManager.push_stage(next_level_path)

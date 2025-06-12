@@ -26,6 +26,7 @@ SettingsManager="*res://entities/menu_options/settings_manager.gd"
 SaveManager="*res://entities/save_system/save_manager.gd"
 GlobalModal="*res://entities/global_modal/global_modal.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+LevelsManager="*res://entities/levels_manager/levels_manager.tscn"
 
 [debug]
 
@@ -36,6 +37,10 @@ gdscript/warnings/shadowed_global_identifier=2
 [dialogue_manager]
 
 runtime/balloon_path="res://entities/dialogue_balloon/balloon.tscn"
+editor/new_file_template="~ start
+imagine an amazing story in here
+do LevelsManager.next_level()
+=> END"
 
 [display]
 
@@ -192,7 +197,7 @@ locale/translation_remaps={
 "res://assets/fonts/Stacked pixel.ttf": PackedStringArray("res://assets/fonts/upheavtt.ttf:pt", "res://assets/fonts/unifontex-font/Unifontexmono-2vrqo.ttf:zh", "res://assets/fonts/unifontex-font/Unifontexmono-2vrqo.ttf:ja", "res://assets/fonts/unifontex-font/Unifontexmono-2vrqo.ttf:zh", "res://assets/fonts/upheavtt.ttf:es", "res://assets/fonts/upheavtt.ttf:fr", "res://assets/fonts/unifontex-font/Unifontexmono-2vrqo.ttf:ko", "res://assets/fonts/unifontex-font/Unifontexmono-2vrqo.ttf:ru", "res://assets/fonts/unifontex-font/Unifontexmono-2vrqo.ttf:pl", "res://assets/fonts/unifontex-font/Unifontexmono-2vrqo.ttf:tr")
 }
 locale/translations=PackedStringArray("res://assets/translations/en.po", "res://assets/translations/pt_BR.po", "res://assets/translations/id.po", "res://assets/translations/ja.po", "res://assets/translations/de.po", "res://assets/translations/es_ES.po", "res://assets/translations/fr.po", "res://assets/translations/ko.po", "res://assets/translations/pl.po", "res://assets/translations/ru.po", "res://assets/translations/tr.po", "res://assets/translations/zh_CN.po")
-locale/translations_pot_files=PackedStringArray("res://stages/main_menu/main_menu.tscn", "res://entities/menu_death/menu_death.tscn", "res://entities/menu_options/menu_options.tscn", "res://entities/menu_pause/menu_pause.tscn", "res://stages/credits/credit_roll.tscn", "res://entities/menu_item_save/meu_item_save.tscn", "res://entities/menu_item_save/meu_item_save.gd", "res://entities/global_modal/global_modal.gd", "res://entities/menu_options/fullscreen_on_off.gd", "res://entities/menu_options/speedrun_on_off.gd", "res://stages/levels/cutscene_mama_kidnapped/mama_kidnapped.dialogue")
+locale/translations_pot_files=PackedStringArray("res://stages/main_menu/main_menu.tscn", "res://entities/menu_death/menu_death.tscn", "res://entities/menu_options/menu_options.tscn", "res://entities/menu_pause/menu_pause.tscn", "res://stages/credits/credit_roll.tscn", "res://entities/menu_item_save/meu_item_save.tscn", "res://entities/menu_item_save/meu_item_save.gd", "res://entities/global_modal/global_modal.gd", "res://entities/menu_options/fullscreen_on_off.gd", "res://entities/menu_options/speedrun_on_off.gd", "res://stages/levels/cutscene_mama_kidnapped/mama_kidnapped.dialogue", "res://stages/levels/cutscene_mama_free/mama_free.dialogue")
 locale/locale_filter_mode=1
 locale/language_filter=["de", "en", "es", "fr", "id", "ja", "ko", "pl", "pt", "ru", "tr", "zh"]
 locale/country_filter=[]

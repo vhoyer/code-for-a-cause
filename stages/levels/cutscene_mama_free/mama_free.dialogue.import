@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cvvr4fjxomsau"
+path="res://.godot/imported/mama_free.dialogue-6d126d7a47bd5ba936e09e817a22366b.tres"
+
+[deps]
+
+source_file="res://stages/levels/cutscene_mama_free/mama_free.dialogue"
+dest_files=["res://.godot/imported/mama_free.dialogue-6d126d7a47bd5ba936e09e817a22366b.tres"]
+
+[params]
+
+defaults=true

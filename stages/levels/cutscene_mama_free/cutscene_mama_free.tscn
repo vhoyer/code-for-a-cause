@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtkf6rwxyy5a4"]
+
+[ext_resource type="PackedScene" uid="uid://c0gyptt4epmw" path="res://stages/cutscene_base/cutscene_base.tscn" id="1_m7gjh"]
+[ext_resource type="Resource" uid="uid://cvvr4fjxomsau" path="res://stages/levels/cutscene_mama_free/mama_free.dialogue" id="2_q34kj"]
+[ext_resource type="Texture2D" uid="uid://bdk4impnfdep6" path="res://stages/levels/cutscene_mama_free/assets/frame0004.png" id="2_qtxjj"]
+
+[node name="Cutscene" instance=ExtResource("1_m7gjh")]
+dialogue = ExtResource("2_q34kj")
+
+[node name="Sprite2D" type="Sprite2D" parent="AddCutsceneContentHere" index="0"]
+texture = ExtResource("2_qtxjj")
+centered = false

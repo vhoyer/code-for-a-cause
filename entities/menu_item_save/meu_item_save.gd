@@ -41,13 +41,7 @@ func update_view() -> void:
 		layout_new_game.hide()
 		%Timer.text = Util.time_display(_save_data.global_time)
 		%Deaths.text = tr('deaths: %d', 'save file display') % [_save_data.deaths]
-		if _save_data.level:
-			var name = _save_data.level
-			if name.begins_with('uid://'):
-				name = ResourceUID.get_id_path(ResourceUID.text_to_id(name))
-			%Area.text = name.get_basename().get_file().replace('_', ' ')
-		else:
-			%Area.text = tr('level 1')
+		%Area.text = LevelsManager.get_level(_save_data.level).name
 		%GameMode.visible = _save_data.new_game_plus > 0
 		%GameMode.text = tr('New Game', 'New Game Plus (+ will be added to the end of this string)') + '+'.repeat(_save_data.new_game_plus)
 

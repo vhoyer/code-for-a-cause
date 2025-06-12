@@ -9,5 +9,5 @@ do! go_to('WordKidnapped')
 was kidnapped
 do! go_to('Truck')
 to the food factory!
-do next_level()
+do LevelsManager.next_level()
 => END

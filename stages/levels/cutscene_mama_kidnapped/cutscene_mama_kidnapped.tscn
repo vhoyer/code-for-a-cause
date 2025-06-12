@@ -6,7 +6,6 @@
 
 [node name="Cutscene" instance=ExtResource("1_76ipm")]
 dialogue = ExtResource("2_4i6vp")
-next_level_path = "uid://c2v7s5fjbeqhy"
 
 [node name="Sprite2D" type="Sprite2D" parent="AddCutsceneContentHere" index="0"]
 scale = Vector2(3, 3)

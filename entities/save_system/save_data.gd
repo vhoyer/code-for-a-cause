@@ -36,9 +36,9 @@ var deaths: int:
 	get():
 		return _short_term.get_item('deaths', 0)
 
-var level: String:
+var level: int:
 	get():
-		return _short_term.get_item('level', '')
+		return _short_term.get_item('level', 0)
 	set(value):
 		_short_term.set_item('level', value)
 

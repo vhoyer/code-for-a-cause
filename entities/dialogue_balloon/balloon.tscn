@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://baxcyuf5t6nxr"]
+[gd_scene load_steps=5 format=3 uid="uid://baxcyuf5t6nxr"]
 
 [ext_resource type="Script" uid="uid://dk4605cweha26" path="res://entities/dialogue_balloon/balloon.gd" id="1_36de5"]
+[ext_resource type="AudioStream" uid="uid://dvshgtj2wdqc0" path="res://entities/dialogue_balloon/363210__cabled_mess__beep_modular.wav" id="2_0wkjc"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 
@@ -16,6 +17,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Beep" type="AudioStreamPlayer" parent="Balloon"]
+unique_name_in_owner = true
+stream = ExtResource("2_0wkjc")
+volume_db = -15.0
+max_polyphony = 20
+bus = &"SFX"
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon"]
 layout_mode = 1
@@ -116,4 +124,5 @@ layout_mode = 2
 text = "Response example"
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="spoke" from="Balloon/MarginContainer/PanelContainer/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
 [connection signal="response_selected" from="Balloon/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

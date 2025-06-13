@@ -51,6 +51,9 @@ var mutation_cooldown: Timer = Timer.new()
 ## The menu of responses
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
+## The beep
+@onready var beep: AudioStreamPlayer = %Beep
+
 
 func _ready() -> void:
 	balloon.hide()
@@ -174,3 +177,7 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 
 #endregion
+
+
+func _on_dialogue_label_spoke(_letter: String, _letter_index: int, _speed: float) -> void:
+	beep.play()

@@ -6,6 +6,13 @@
 # res://stages/credits/credit_roll.tscn
 # res://entities/menu_item_save/meu_item_save.tscn
 # res://entities/menu_item_save/meu_item_save.gd
+# res://entities/global_modal/global_modal.gd
+# res://entities/menu_options/fullscreen_on_off.gd
+# res://entities/menu_options/speedrun_on_off.gd
+# res://stages/levels/cutscene_mama_kidnapped/mama_kidnapped.dialogue
+# res://stages/levels/cutscene_mama_free/mama_free.dialogue
+# res://stages/levels/unlock_new_game_plus/unlock.dialogue
+# res://stages/levels/unlock_new_game_plus/unlock_new_game_plus.gd
 #
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -39,7 +46,14 @@ msgid "back"
 msgstr ""
 
 #: stages/main_menu/main_menu.tscn
-#: entities/menu_item_save/meu_item_save.gd
+msgid "load game"
+msgstr ""
+
+#: stages/main_menu/main_menu.tscn
+msgid "Delete Save"
+msgstr ""
+
+#: stages/main_menu/main_menu.tscn
 msgid "level 1"
 msgstr ""
 
@@ -147,4 +161,164 @@ msgstr ""
 
 #: entities/menu_item_save/meu_item_save.tscn
 msgid "New game"
+msgstr ""
+
+#: entities/menu_item_save/meu_item_save.gd
+msgctxt "save file display"
+msgid "deaths: %d"
+msgstr ""
+
+#: entities/menu_item_save/meu_item_save.gd
+msgctxt "New Game Plus (+ will be added to the end of this string)"
+msgid "New Game"
+msgstr ""
+
+#: entities/global_modal/global_modal.gd
+msgctxt "prompt dialog default positive button"
+msgid "ok"
+msgstr ""
+
+#: entities/global_modal/global_modal.gd
+msgctxt "prompt dialog default negative button"
+msgid "cancel"
+msgstr ""
+
+#: entities/menu_options/fullscreen_on_off.gd
+#: entities/menu_options/speedrun_on_off.gd
+msgctxt "true false picker"
+msgid "On"
+msgstr ""
+
+#: entities/menu_options/fullscreen_on_off.gd
+#: entities/menu_options/speedrun_on_off.gd
+msgctxt "true false picker"
+msgid "Off"
+msgstr ""
+
+#: stages/levels/cutscene_mama_kidnapped/mama_kidnapped.dialogue
+msgid "once upon a time"
+msgstr ""
+
+#: stages/levels/cutscene_mama_kidnapped/mama_kidnapped.dialogue
+msgid "where joe mama"
+msgstr ""
+
+#: stages/levels/cutscene_mama_kidnapped/mama_kidnapped.dialogue
+msgid "was kidnapped"
+msgstr ""
+
+#: stages/levels/cutscene_mama_kidnapped/mama_kidnapped.dialogue
+msgid "to the food factory!"
+msgstr ""
+
+#: stages/levels/cutscene_mama_free/mama_free.dialogue
+msgid "imagine an amazing story in here"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "You've switched between joes {{SaveManager.data.switch_count}} times, can you do it in less switches?"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "Anyway"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "Thanks for playing the game!"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "[next=auto]"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "Canceling this does nothing, please try again"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "No really, I trust you can click on the \"ok\", try again"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "No really, I trust you can click on the \"ok\", try one more time"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "hmm[wait=1], is that button broken?[wait=1] maybe someone should look into that[wait=0.5]..."
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "Can you do it again?"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "No no[wait=1], I checked[wait=1], the button you are pressing is indeed the \"cancel\" one[wait=0.5]..."
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "Next time, choose the \"ok\", maybe you missed that instruction, right?"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "Ok, somehow I get the feeling that you are messing with me, right?"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "Now, I do not appreciate this kind of attitude, please stop"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "Seriously, the game has ended, new game plus is fun, you know? more challenges!"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "I hope you like it, but if you keep doing this, you are never going to get out of here!!"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "Please, press \"cancel\"!!"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "Please??"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "!!!!!!"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "So you think you are funny, no?"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "Ok ok[wait=0.5], I get it[wait=1], sometimes you need to feel a little[wait=0.5]... rebelious, no?"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "Here, let me do it for you"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "..."
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "There, you are all set"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "Also, you better enjoy looking at credits, because you are not skipping them anymore"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock.dialogue
+msgid "No really, you've played twice now, you are incredible"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock_new_game_plus.gd
+msgid "You've unlocked new game plus, load your save file again to play it"
+msgstr ""
+
+#: stages/levels/unlock_new_game_plus/unlock_new_game_plus.gd
+msgid "You've unlocked new game plus plus, load your save file again to play it"
 msgstr ""

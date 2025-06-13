@@ -20,7 +20,7 @@ var current: GameLevel:
 		return levels[current_index]
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if event.is_action_pressed('cheat_next_level'):
 		next_level()
 

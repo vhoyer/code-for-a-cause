@@ -66,8 +66,9 @@ func increment_deaths() -> void:
 
 
 func increment_joe_switch() -> void:
+	_short_term.set_item('switch_count', switch_count + 1)
 	var key = 'switch_count[%s]' % [LevelsManager.current.area]
-	_short_term.set_item(key, switch_count + 1)
+	_short_term.set_item(key, _short_term.get_item(key, 0))
 
 
 func increment_new_game_plus() -> void:
@@ -75,3 +76,4 @@ func increment_new_game_plus() -> void:
 		# no new game plus version of the game
 		return
 	_short_term.set_item('new_game_plus', new_game_plus + 1)
+	_short_term.set_item('switch_count', 0)

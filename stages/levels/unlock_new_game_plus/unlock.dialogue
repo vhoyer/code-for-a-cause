@@ -1,5 +1,8 @@
 ~ start
 Thanks for playing the game!
+You've switched between joes {{SaveManager.data.switch_count}} times, can you do it in less switches?
+Anyway
+[next=auto]
 =>< prompt
 Canceling this does nothing, please try again
 [next=auto]
@@ -49,7 +52,16 @@ do LevelsManager.next_level()
 => END
 
 ~ prompt
-if GlobalModal.prompt("You've unlocked new game plus, begin a new game file to access it")
+if SaveManager.data.new_game_plus == 0:
+	if prompt_new_game_plus():
+		do LevelsManager.next_level()
+		=> END!
+elif SaveManager.data.new_game_plus == 1:
+	if prompt_new_game_plus_plus():
+		do LevelsManager.next_level()
+		=> END!
+else:
+	No seriously, you've played it twice now, you are a legend
 	do LevelsManager.next_level()
 	=> END!
 => END

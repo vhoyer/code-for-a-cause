@@ -1,0 +1,55 @@
+~ start
+Thanks for playing the game!
+=>< prompt
+Canceling this does nothing, please try again
+[next=auto]
+=>< prompt
+No really, I trust you can click on the "ok", try again
+[next=auto]
+=>< prompt
+No really, I trust you can click on the "ok", try one more time
+[next=auto]
+=>< prompt
+do GlobalBGM.stop()
+hmm[wait=1], is that button broken?[wait=1] maybe someone should look into that[wait=0.5]...
+Can you do it again?
+[next=auto]
+=>< prompt
+No no[wait=1], I checked[wait=1], the button you are pressing is indeed the "cancel" one[wait=0.5]...
+Next time, choose the "ok", maybe you missed that instruction, right?
+[next=auto]
+=>< prompt
+Ok, somehow I get the feeling that you are messing with me, right?
+[next=auto]
+=>< prompt
+Now, I do not appreciate this kind of attitude, please stop
+[next=auto]
+=>< prompt
+Seriously, the game has ended, new game plus is fun, you know? more challenges!
+I hope you like it, but if you keep doing this, you are never going to get out of here!!
+[next=auto]
+=>< prompt
+Please, press "cancel"!!
+[next=auto]
+=>< prompt
+Please??
+[next=auto]
+=>< prompt
+!!!!!!
+[next=auto]
+=>< prompt
+So you think you are funny, no?
+Ok ok[wait=0.5], I get it[wait=1], sometimes you need to feel a little[wait=0.5]... rebelious, no?
+Here, let me do it for you
+...
+do SaveManager.data.unskippable_credits = true
+There, you are all set
+Also, you better enjoy looking at credits, because you are not skipping them anymore
+do LevelsManager.next_level()
+=> END
+
+~ prompt
+if GlobalModal.prompt("You've unlocked new game plus, begin a new game file to access it")
+	do LevelsManager.next_level()
+	=> END!
+=> END

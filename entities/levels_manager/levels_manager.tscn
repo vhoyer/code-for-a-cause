@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cs0a1c4d2073w"]
+[gd_scene load_steps=12 format=3 uid="uid://cs0a1c4d2073w"]
 
 [ext_resource type="Script" uid="uid://cmjjsmvx5hial" path="res://entities/levels_manager/levels_manager.gd" id="1_sqyri"]
 [ext_resource type="Script" uid="uid://26h0iwia6euh" path="res://entities/levels_manager/game_level.gd" id="2_u8uub"]
@@ -59,6 +59,13 @@ area = "factory"
 scene = "uid://dtkf6rwxyy5a4"
 metadata/_custom_type_script = "uid://26h0iwia6euh"
 
+[sub_resource type="Resource" id="Resource_kwu67"]
+script = ExtResource("2_u8uub")
+name = "ending shenanigans"
+area = "end"
+scene = "uid://dp76vbnar1oj3"
+metadata/_custom_type_script = "uid://26h0iwia6euh"
+
 [node name="LevelsManager" type="Node"]
 script = ExtResource("1_sqyri")
-levels = Array[ExtResource("2_u8uub")]([SubResource("Resource_ymjw7"), SubResource("Resource_u8uub"), SubResource("Resource_8cwh0"), SubResource("Resource_qlgor"), SubResource("Resource_hw0uh"), SubResource("Resource_23e7d"), SubResource("Resource_g5mjk"), SubResource("Resource_y0h4d")])
+levels = Array[ExtResource("2_u8uub")]([SubResource("Resource_ymjw7"), SubResource("Resource_u8uub"), SubResource("Resource_8cwh0"), SubResource("Resource_qlgor"), SubResource("Resource_hw0uh"), SubResource("Resource_23e7d"), SubResource("Resource_g5mjk"), SubResource("Resource_y0h4d"), SubResource("Resource_kwu67")])

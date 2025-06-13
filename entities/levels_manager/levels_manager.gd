@@ -20,6 +20,11 @@ var current: GameLevel:
 		return levels[current_index]
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed('cheat_next_level'):
+		next_level()
+
+
 func get_level(index: int) -> GameLevel:
 	if index == -1:
 		return levels.front()
@@ -29,8 +34,8 @@ func get_level(index: int) -> GameLevel:
 func load_level() -> void:
 	if current_index == -1:
 		# reached the end of the levels
-		current_index = 0
-		SaveManager.data.complete_levels()
+		SaveManager.data.level = 0
+		SaveManager.data.increment_new_game_plus()
 		SaveManager.data.consolidate_memory()
 		StageManager.push_stage(CREDITS_PATH)
 	else:

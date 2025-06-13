@@ -36,6 +36,12 @@ var deaths: int:
 	get():
 		return _short_term.get_item('deaths', 0)
 
+var unskippable_credits: bool:
+	get():
+		return _short_term.get_item('unskippable_credits', false)
+	set(value):
+		_short_term.set_item('unskippable_credits', value)
+
 var level: int:
 	get():
 		return _short_term.get_item('level', 0)
@@ -64,7 +70,7 @@ func increment_joe_switch() -> void:
 	_short_term.set_item(key, switch_count + 1)
 
 
-func complete_levels() -> void:
+func increment_new_game_plus() -> void:
 	if new_game_plus >= 2:
 		# no new game plus version of the game
 		return

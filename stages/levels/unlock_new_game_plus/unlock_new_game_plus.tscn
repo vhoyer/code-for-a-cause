@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp76vbnar1oj3"]
+
+[ext_resource type="PackedScene" uid="uid://c0gyptt4epmw" path="res://stages/cutscene_base/cutscene_base.tscn" id="1_v7q06"]
+[ext_resource type="Resource" uid="uid://77ivb5qf4f2t" path="res://stages/levels/unlock_new_game_plus/unlock.dialogue" id="2_y6cqs"]
+
+[node name="Cutscene" instance=ExtResource("1_v7q06")]
+dialogue = ExtResource("2_y6cqs")

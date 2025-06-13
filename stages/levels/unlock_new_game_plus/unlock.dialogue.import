@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://77ivb5qf4f2t"
+path="res://.godot/imported/unlock.dialogue-a985a5fd979a17473e311bc6df4a87b2.tres"
+
+[deps]
+
+source_file="res://stages/levels/unlock_new_game_plus/unlock.dialogue"
+dest_files=["res://.godot/imported/unlock.dialogue-a985a5fd979a17473e311bc6df4a87b2.tres"]
+
+[params]
+
+defaults=true
